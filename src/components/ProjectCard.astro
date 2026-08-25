@@ -1,0 +1,109 @@
+---
+interface Props {
+  title: string;
+  code: string;
+  category: string;
+  location: string;
+  highlights: string[];
+  metrics: {
+    tir?: string;
+    van?: string;
+    ley?: string;
+    inversion?: string;
+  };
+  status: string;
+  presentationUrl: string;
+  imageUrl: string;
+}
+
+const {
+  title,
+  code,
+  category,
+  location,
+  highlights,
+  metrics,
+  status,
+  presentationUrl,
+  imageUrl
+} = Astro.props;
+---
+
+<div class="bg-white rounded-2xl border border-slate-200/90 overflow-hidden shadow-xs hover:shadow-xl hover:border-slate-300 transition-all duration-300 flex flex-col group">
+  <!-- Image Header with Badges -->
+  <div class="relative h-56 overflow-hidden bg-slate-900">
+    <img
+      src={imageUrl}
+      alt={title}
+      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+      onerror="this.onerror=null; this.src='/assets/Oro 1.jpg';"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
+    
+    <!-- Top Tags -->
+    <div class="absolute top-4 left-4 right-4 flex items-center justify-between">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-900/80 text-white backdrop-blur-md border border-white/10">
+        <i class="fa-solid fa-gem text-amber-400 text-[10px]"></i> {category}
+      </span>
+      <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/90 text-white shadow-xs">
+        <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> {status}
+      </span>
+    </div>
+
+    <!-- Bottom Image Info -->
+    <div class="absolute bottom-4 left-4 right-4">
+      <span class="text-[11px] font-bold text-amber-400 uppercase tracking-widest block">{code}</span>
+      <h3 class="text-xl font-bold text-white leading-tight">{title}</h3>
+      <p class="text-xs text-slate-300 flex items-center gap-1.5 mt-0.5">
+        <i class="fa-solid fa-location-dot text-slate-400 text-[11px]"></i> {location}
+      </p>
+    </div>
+  </div>
+
+  <!-- Card Body -->
+  <div class="p-6 flex-grow flex flex-col justify-between space-y-6">
+    <!-- Highlights list -->
+    <ul class="space-y-2">
+      {highlights.map((item) => (
+        <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-600">
+          <i class="fa-solid fa-check text-amber-600 text-xs mt-1 shrink-0"></i>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Metrics Grid -->
+    <div class="grid grid-cols-3 gap-2 bg-slate-50 p-3 rounded-xl border border-slate-100 text-center">
+      {metrics.ley && (
+        <div>
+          <span class="text-[10px] uppercase tracking-wider text-slate-600 font-semibold block">Ley Promedio</span>
+          <span class="text-sm font-bold text-slate-900 tabular-nums">{metrics.ley}</span>
+        </div>
+      )}
+      {metrics.tir && (
+        <div>
+          <span class="text-[10px] uppercase tracking-wider text-slate-600 font-semibold block">TIR Proyectada</span>
+          <span class="text-sm font-bold text-emerald-600 tabular-nums">{metrics.tir}</span>
+        </div>
+      )}
+      {metrics.inversion && (
+        <div>
+          <span class="text-[10px] uppercase tracking-wider text-slate-600 font-semibold block">Inversión</span>
+          <span class="text-sm font-bold text-slate-900 tabular-nums">{metrics.inversion}</span>
+        </div>
+      )}
+    </div>
+
+    <!-- Card Action Button (Opens Presentation Viewer) -->
+    <div class="pt-2 border-t border-slate-100">
+      <a
+        href={presentationUrl}
+        class="w-full flex items-center justify-center gap-2 bg-slate-900 hover:bg-amber-600 text-white font-semibold text-sm py-3 px-4 rounded-xl transition-all shadow-xs group/btn"
+      >
+        <i class="fa-solid fa-chalkboard-user text-amber-400 group-hover/btn:text-white transition-colors"></i>
+        <span>Abrir Presentación Ejecutiva</span>
+        <i class="fa-solid fa-arrow-right text-xs group-hover/btn:translate-x-1 transition-transform"></i>
+      </a>
+    </div>
+  </div>
+</div>

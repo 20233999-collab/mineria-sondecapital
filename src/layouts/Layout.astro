@@ -1,0 +1,172 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Sonde Capital | Private Equity & Minería Estratégica",
+  description = "Firma de inversión privada y desarrollo minero de alta ley. Portafolio de proyectos polimetálicos y oportunidades de inversión institucional."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/assets/sonde_logo_transparent.png" />
+
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased selection:bg-amber-500 selection:text-white">
+    <!-- Navbar Component -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-xs transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <a href="/" class="flex items-center gap-3 group">
+            <img
+              src="/assets/sonde_logo_transparent.png"
+              alt="Sonde Capital"
+              class="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+            />
+            <div class="flex flex-col">
+              <span class="text-xs tracking-widest text-slate-500 font-semibold uppercase">Private Equity</span>
+            </div>
+          </a>
+
+          <!-- Navigation Links -->
+          <nav class="hidden md:flex items-center space-x-8">
+            <a href="/#proyectos" class="text-sm font-semibold text-slate-700 hover:text-amber-600 transition-colors">
+              Portafolio de Proyectos
+            </a>
+            <a href="/#tesis" class="text-sm font-semibold text-slate-700 hover:text-amber-600 transition-colors">
+              Tesis de Inversión
+            </a>
+            <a href="/#rendimientos" class="text-sm font-semibold text-slate-700 hover:text-amber-600 transition-colors">
+              Proyecciones Financieras
+            </a>
+            <a href="/#contacto" class="text-sm font-semibold text-slate-700 hover:text-amber-600 transition-colors">
+              Relación con Inversionistas
+            </a>
+          </nav>
+
+          <!-- Action CTA -->
+          <div class="flex items-center gap-3">
+            <a
+              href="/#proyectos"
+              class="hidden sm:inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all shadow-sm active:scale-95 border border-slate-800"
+            >
+              <span>Ver Presentaciones</span>
+              <i class="fa-solid fa-arrow-right text-xs text-amber-400"></i>
+            </a>
+            
+            <a
+              href="/#contacto"
+              class="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold px-4 py-2.5 rounded-lg text-sm transition-all shadow-xs active:scale-95"
+            >
+              <i class="fa-solid fa-briefcase text-xs"></i>
+              <span>Agendar Reunión</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Slot -->
+    <main class="flex-grow pt-20">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 border-t border-slate-800 pt-16 pb-12 mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800/80">
+          <!-- Col 1 -->
+          <div class="md:col-span-2 space-y-4">
+            <img src="/assets/sonde_logo_transparent.png" alt="Sonde Capital" class="h-10 w-auto object-contain brightness-0 invert" />
+            <p class="text-sm text-slate-400 max-w-md leading-relaxed">
+              Firma de inversión privada y gestión estratégica de activos mineros de alto potencial. Conectamos proyectos polimetálicos de alta ley con capital institucional e inversionistas calificados.
+            </p>
+            <div class="flex items-center gap-4 pt-2">
+              <span class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded-full">
+                <i class="fa-solid fa-shield-halved text-[10px]"></i> Estándares NI 43-101 / JORC
+              </span>
+              <span class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full">
+                <i class="fa-solid fa-globe text-[10px]"></i> Perú & Latam
+              </span>
+            </div>
+          </div>
+
+          <!-- Col 2 -->
+          <div>
+            <h4 class="text-xs uppercase tracking-wider text-slate-300 font-bold mb-4">Proyectos Estratégicos</h4>
+            <ul class="space-y-2.5 text-sm">
+              <li>
+                <a href="/proyectos/borboyona" class="hover:text-amber-400 transition-colors flex items-center gap-2">
+                  <i class="fa-solid fa-chevron-right text-[10px] text-amber-500"></i> Proyecto Borboyona
+                </a>
+              </li>
+              <li>
+                <a href="/proyectos/borboyona#arenas" class="hover:text-amber-400 transition-colors flex items-center gap-2">
+                  <i class="fa-solid fa-chevron-right text-[10px] text-amber-500"></i> Arenas del Santa
+                </a>
+              </li>
+              <li>
+                <a href="/proyectos/metales-adriano" class="hover:text-amber-400 transition-colors flex items-center gap-2">
+                  <i class="fa-solid fa-chevron-right text-[10px] text-amber-500"></i> Metales Estratégicos Adriano
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 3 -->
+          <div>
+            <h4 class="text-xs uppercase tracking-wider text-slate-300 font-bold mb-4">Contacto Institucional</h4>
+            <ul class="space-y-2.5 text-sm">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-envelope text-slate-500 text-xs"></i>
+                <span>inversiones@sondecapital.com</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-phone text-slate-500 text-xs"></i>
+                <span>+51 (1) 700-0000</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-slate-500 text-xs"></i>
+                <span>San Isidro Financial District, Lima</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-4">
+          <p>© 2026 Sonde Capital. Todos los derechos reservados.</p>
+          <p class="text-slate-400 max-w-xl text-center sm:text-right">
+            Aviso Legal: La información presentada en este portal y en los visores de presentaciones ejecutivas tiene fines estrictamente informativos y de evaluación confidencial para inversionistas calificados.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,402 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import FinancialChart from '../components/FinancialChart.astro';
+
+const projects = [
+  {
+    title: "Proyecto Polimetálico Borboyona",
+    code: "BOR-2026",
+    category: "Polimetálico (Cu, Ag, Zn, Pb)",
+    location: "Sierra Central, Perú",
+    highlights: [
+      "Vetas epitermales de alta ley con anomalías geofísicas confirmadas.",
+      "Acceso directo pavimentado y agua industrial disponible.",
+      "Recuperación metalúrgica preliminar superior al 88% en pruebas de laboratorio."
+    ],
+    metrics: {
+      ley: "14.5 oz/TC Ag",
+      tir: "42.8%",
+      inversion: "$3.5M USD"
+    },
+    status: "Concesión Titulada",
+    presentationUrl: "/proyectos/borboyona",
+    imageUrl: "/assets/Oro 6.jpg"
+  },
+  {
+    title: "Proyecto Arenas del Santa",
+    code: "STA-2026",
+    category: "Metales Preciosos & Oro Aluvial",
+    location: "Cuenca del Río Santa, Áncash",
+    highlights: [
+      "Gran volumen de gravas auríferas de fácil extracción superficial.",
+      "Bajo costo de operación (Opex) mediante gravimetría limpia sin cianuro.",
+      "Estudios de impacto ambiental y licencias operativas avanzadas."
+    ],
+    metrics: {
+      ley: "1.2 g/m³ Au",
+      tir: "38.5%",
+      inversion: "$2.2M USD"
+    },
+    status: "Due Diligence",
+    presentationUrl: "/proyectos/borboyona#arenas",
+    imageUrl: "/assets/oro 2.jpg"
+  },
+  {
+    title: "Strategic Metals & Rare Earths Adriano",
+    code: "ADR-2026",
+    category: "Metales Estratégicos & Tierras Raras",
+    location: "Sur del Perú",
+    highlights: [
+      "Presencia de elementos de transición clave para la transición energética global.",
+      "Amplio potencial de exploración en bloque continuo de 1,200 hectáreas.",
+      "Acuerdos sociales vigentes con comunidades locales."
+    ],
+    metrics: {
+      ley: "Tierras Raras",
+      tir: "35.0%",
+      inversion: "$1.8M USD"
+    },
+    status: "Fase de Prospección",
+    presentationUrl: "/proyectos/metales-adriano",
+    imageUrl: "/assets/Fondo oro 2.jpg"
+  }
+];
+---
+
+<Layout
+  title="Sonde Capital | Private Equity & Portafolio Minero Estratégico"
+  description="Plataforma institucional de inversión minera privada. Acceso a presentaciones ejecutivas, tesis de inversión y reportes técnicos de alta ley."
+>
+  <!-- HERO SECTION -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white pt-24 pb-20 sm:pt-32 sm:pb-28 border-b border-slate-800">
+    <!-- Ambient texture and lighting -->
+    <div class="absolute inset-0 opacity-15 pointer-events-none">
+      <img
+        src="/assets/Fondo oro 2.jpg"
+        alt="Texture"
+        class="w-full h-full object-cover grayscale mix-blend-luminosity"
+      />
+    </div>
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-amber-500/20 to-blue-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <!-- Institutional Trust Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-extrabold uppercase tracking-widest mb-6 backdrop-blur-md">
+        <i class="fa-solid fa-shield-halved text-amber-400"></i>
+        <span>Private Equity & Activos Mineros Estratégicos</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight mb-6">
+        Desarrollo de Activos Mineros de <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-400">Alta Ley</span> con Retorno Institucional
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed mb-10">
+        Gestionamos oportunidades exclusivas de inversión en depósitos polimetálicos y metales estratégicos en Perú, respaldados por rigurosa validación geológica, seguridad jurídica y modelos financieros de alta rentabilidad.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-16">
+        <a
+          href="#proyectos"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold px-7 py-3.5 rounded-xl text-sm transition-all shadow-md active:scale-95"
+        >
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <span>Explorar Presentaciones de Proyectos</span>
+        </a>
+        <a
+          href="#rendimientos"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-900/80 hover:bg-slate-800 text-white font-semibold px-7 py-3.5 rounded-xl text-sm border border-slate-700 transition-all active:scale-95"
+        >
+          <span>Ver Proyecciones</span>
+          <i class="fa-solid fa-arrow-right text-xs text-amber-400"></i>
+        </a>
+      </div>
+
+      <!-- Macro Key Stats (KPI Cards) -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto text-left">
+        <div class="bg-slate-900/80 backdrop-blur-md p-5 rounded-2xl border border-slate-800/80">
+          <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold block">Activos Evaluados</span>
+          <span class="text-2xl sm:text-3xl font-extrabold text-white tabular-nums">$45M+ USD</span>
+          <span class="text-[11px] text-amber-400 mt-1 block">Filtro técnico riguroso</span>
+        </div>
+        <div class="bg-slate-900/80 backdrop-blur-md p-5 rounded-2xl border border-slate-800/80">
+          <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold block">TIR Promedio Estimada</span>
+          <span class="text-2xl sm:text-3xl font-extrabold text-emerald-400 tabular-nums">38.7% - 42.8%</span>
+          <span class="text-[11px] text-slate-400 mt-1 block">Escenarios base y optimista</span>
+        </div>
+        <div class="bg-slate-900/80 backdrop-blur-md p-5 rounded-2xl border border-slate-800/80">
+          <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold block">Seguridad Jurídica</span>
+          <span class="text-2xl sm:text-3xl font-extrabold text-white">100%</span>
+          <span class="text-[11px] text-emerald-400 mt-1 block">Títulos en regla SUNARP</span>
+        </div>
+        <div class="bg-slate-900/80 backdrop-blur-md p-5 rounded-2xl border border-slate-800/80">
+          <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold block">Estándares Internacionales</span>
+          <span class="text-2xl sm:text-3xl font-extrabold text-white">NI 43-101</span>
+          <span class="text-[11px] text-amber-400 mt-1 block">Metodología JORC & QA/QC</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO / EXECUTIVE PRESENTATION ACCESS SECTION -->
+  <section id="proyectos" class="py-20 sm:py-28 bg-slate-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-xs uppercase font-extrabold tracking-widest text-amber-600 mb-2 block">
+            Portafolio Estratégico de Activos
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Visor de Presentaciones para Comités y Gerencias
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base max-w-2xl mt-2">
+            Cada proyecto cuenta con una subpágina personalizada en formato presentación interactiva (*slide deck*), lista para proyectar o compartir en comités de inversión.
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <span class="text-xs text-slate-500 font-semibold">Mostrando 3 activos activos</span>
+        </div>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((project) => (
+          <ProjectCard {...project} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FINANCIAL PROJECTIONS & CASHFLOW DASHBOARD -->
+  <section id="rendimientos" class="py-20 sm:py-28 bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Left text info -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-xs uppercase font-extrabold tracking-widest text-amber-600 block">
+            Modelación Financiera & Rentabilidad
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            Proyecciones Robustas Respaldadas por Datos Técnicos
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+            Nuestros modelos financieros integran curvas de precios conservadoras para Cobre, Plata, Zinc y Oro, considerando costos de capital (Capex) optimizados y márgenes operativos (Opex) controlados.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 text-sm font-bold border border-amber-200">
+                <i class="fa-solid fa-chart-pie"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">Rápido Periodo de Recuperación (Payback)</h4>
+                <p class="text-xs text-slate-500">Estimado en menos de 24 meses en fase de producción comercial.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 text-sm font-bold border border-emerald-200">
+                <i class="fa-solid fa-money-bill-trend-up"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-slate-900">Márgenes EBITDA Superiores al 55%</h4>
+                <p class="text-xs text-slate-500">Impulsados por la alta ley mineral y cercanía a infraestructura vial.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4">
+            <a
+              href="/proyectos/borboyona"
+              class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold px-6 py-3 rounded-xl text-xs transition-all shadow-xs"
+            >
+              <span>Ver Modelo Completo en Presentación Borboyona</span>
+              <i class="fa-solid fa-arrow-right text-xs text-amber-400"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right interactive chart -->
+        <div class="lg:col-span-7">
+          <FinancialChart
+            chartId="homeFinancialChart"
+            title="Curva de Retorno Proyectado — Sonde Capital"
+            subtitle="Modelo consolidado para proyectos polimetálicos (en Millones USD)"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVESTMENT THESIS & RIGOROUS PILLARS -->
+  <section id="tesis" class="py-20 sm:py-28 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase font-extrabold tracking-widest text-amber-600 block mb-2">
+          Nuestra Metodología
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Cuatro Pilares de Confianza Institucional
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-3">
+          Maximizamos la certidumbre de inversión mediante protocolos de auditoría exhaustivos en cada etapa del activo.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Pillar 1 -->
+        <div class="bg-white p-7 rounded-2xl border border-slate-200/90 shadow-xs hover:border-slate-300 card-hover">
+          <div class="w-12 h-12 rounded-xl bg-slate-900 text-amber-400 flex items-center justify-center text-xl mb-5">
+            <i class="fa-solid fa-gem"></i>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 mb-2">Geología de Alta Ley</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Solo incorporamos proyectos con anomalías confirmadas por laboratorios acreditados (ALS Chemex / SGS) con leyes superiores a la media del sector.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="bg-white p-7 rounded-2xl border border-slate-200/90 shadow-xs hover:border-slate-300 card-hover">
+          <div class="w-12 h-12 rounded-xl bg-slate-900 text-amber-400 flex items-center justify-center text-xl mb-5">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 mb-2">Seguridad Jurídica</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Concesiones 100% saneadas e inscritas en INGEMMET y SUNARP, con títulos libres de gravámenes o litigios de terceros.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="bg-white p-7 rounded-2xl border border-slate-200/90 shadow-xs hover:border-slate-300 card-hover">
+          <div class="w-12 h-12 rounded-xl bg-slate-900 text-amber-400 flex items-center justify-center text-xl mb-5">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 mb-2">Estructuras Flexibles</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Mecanismos de inversión adaptados: participación accionaria directa, esquemas de *Earn-in*, opciones de adquisición escalonada o regalías NSR.
+          </p>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="bg-white p-7 rounded-2xl border border-slate-200/90 shadow-xs hover:border-slate-300 card-hover">
+          <div class="w-12 h-12 rounded-xl bg-slate-900 text-amber-400 flex items-center justify-center text-xl mb-5">
+            <i class="fa-solid fa-users-rays"></i>
+          </div>
+          <h3 class="text-base font-bold text-slate-900 mb-2">Relacionamiento Social</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Licencia social basada en acuerdos de desarrollo sostenible, contratación local y respeto irrestricto al medio ambiente.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVESTOR CONTACT & DIRECT MEETING SCHEDULER -->
+  <section id="contacto" class="py-20 sm:py-28 bg-slate-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 opacity-90"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Contact Information -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-xs uppercase font-extrabold tracking-widest text-amber-400 block">
+            Relación con Inversionistas
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+            Coordinar Presentación Privada o Solicitar Data Room
+          </h2>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Nuestro equipo directivo está disponible para sostener reuniones ejecutivas presenciales o virtuales con gerentes de inversión, fondos de capital privado e inversionistas estratégicos.
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <div class="flex items-center gap-3 text-sm text-slate-300">
+              <i class="fa-solid fa-envelope text-amber-400 w-5"></i>
+              <span>inversiones@sondecapital.com</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm text-slate-300">
+              <i class="fa-solid fa-phone text-amber-400 w-5"></i>
+              <span>+51 (1) 700-0000 / +51 999-000-000</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm text-slate-300">
+              <i class="fa-solid fa-location-dot text-amber-400 w-5"></i>
+              <span>Centro Financiero San Isidro, Lima - Perú</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact / Schedule Form -->
+        <div class="lg:col-span-7 bg-white text-slate-900 p-8 sm:p-10 rounded-3xl shadow-2xl border border-slate-200">
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Solicitud de Reunión / Acceso a Documentación</h3>
+          <p class="text-xs text-slate-500 mb-6">Completa los datos para recibir las credenciales de acceso al Data Room confidencial.</p>
+
+          <form class="space-y-4" onsubmit="event.preventDefault(); alert('Gracias por su interés en Sonde Capital. Un director de inversiones se comunicará a la brevedad.');">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nombre Completo</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Ej. Ing. Carlos Mendoza"
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white"
+                />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Empresa / Fondo</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Ej. Andean Capital Partners"
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Correo Corporativo</label>
+                <input
+                  type="email"
+                  required
+                  placeholder="carlos@fondo.com"
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white"
+                />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Proyecto de Interés</label>
+                <select class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white">
+                  <option value="borboyona">Proyecto Polimetálico Borboyona</option>
+                  <option value="arenas">Proyecto Arenas del Santa</option>
+                  <option value="adriano">Strategic Metals Adriano</option>
+                  <option value="todos">Portafolio Completo</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Mensaje / Requerimiento Específico</label>
+              <textarea
+                rows="3"
+                placeholder="Indique el ticket de interés estimado o dudas técnicas sobre el yacimiento..."
+                class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full py-3.5 px-6 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm transition-all shadow-md active:scale-95 flex items-center justify-center gap-2"
+            >
+              <i class="fa-solid fa-paper-plane text-amber-400 text-xs"></i>
+              <span>Enviar Solicitud de Inversión</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

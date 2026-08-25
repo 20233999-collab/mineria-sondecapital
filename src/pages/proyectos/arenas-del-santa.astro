@@ -1,0 +1,606 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="Las Arenas del Santa | Placer Aurífero & Minerales Pesados | Sonde Capital"
+  description="Depósito de placer aurífero y minerales pesados en la costa del Pacífico. 32 elementos confirmados, monacita, hafnio, escandio y oro en 2,100 hectáreas."
+>
+  <!-- Hero Section with wave motif -->
+  <section id="overview" class="pt-16 pb-24 lg:pt-24 lg:pb-32 relative overflow-hidden bg-slate-50 border-b border-slate-200/80">
+    <!-- Ambient Wave Background Pattern -->
+    <div
+      class="absolute inset-0 opacity-[0.03] pointer-events-none"
+      style="background-image: radial-gradient(#0F172A 1px, transparent 1px); background-size: 32px 32px;"
+    ></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-4xl mx-auto">
+        <!-- Confidentiality Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-950 text-white text-xs font-semibold tracking-wider uppercase mb-6 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+          Estrictamente Confidencial · Solo Inversionistas Calificados
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 leading-tight mb-4 tracking-tight">
+          Las Arenas del Santa
+        </h1>
+        
+        <p class="text-lg sm:text-xl text-slate-900 font-semibold mb-4">
+          Depósito de Placer Aurífero y Minerales Pesados (Origen Fluvio-Marino)
+        </p>
+
+        <p class="text-base sm:text-lg text-slate-600 mb-10 max-w-3xl mx-auto leading-relaxed">
+          Una de las minas con mayor concentración estratégica de monacita en la costa del Pacífico. Acceso directo a cadenas de suministro para tierras raras pesadas (Tb, Dy) y elementos críticos (Hf, Sc) para la industria de defensa y energías limpias.
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a
+            href="#dashboard"
+            class="w-full sm:w-auto bg-slate-900 hover:bg-slate-950 text-white font-semibold rounded-xl px-8 py-4 transition-all hover:-translate-y-0.5 shadow-md flex items-center justify-center gap-2"
+          >
+            <i class="fa-solid fa-chart-pie text-amber-400"></i>
+            <span>Ver Datos & Gráficos</span>
+          </a>
+          <a
+            href="#technical"
+            class="w-full sm:w-auto bg-white border border-slate-300 hover:bg-slate-100 text-slate-900 font-semibold rounded-xl px-8 py-4 transition-all flex items-center justify-center gap-2 shadow-xs"
+          >
+            <i class="fa-solid fa-file-lines text-slate-600"></i>
+            <span>Ficha Técnica del Placer</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPI Cards Section -->
+  <section class="pb-12 bg-white relative z-20 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 -mt-16">
+        <!-- KPI 1 -->
+        <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-amber-500 flex flex-col justify-between h-full transform transition duration-300 hover:-translate-y-1 border border-slate-200">
+          <div>
+            <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Precio de Venta (USD)</p>
+            <h3 class="text-3xl font-extrabold text-slate-950 tabular-nums">$690 MM</h3>
+          </div>
+          <div class="mt-4 flex items-center text-xs text-teal-600 font-semibold">
+            <i class="fa-solid fa-arrow-trend-up mr-1.5"></i>
+            Estructura de Compra Total
+          </div>
+        </div>
+
+        <!-- KPI 2 -->
+        <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-slate-800 flex flex-col justify-between h-full transform transition duration-300 hover:-translate-y-1 border border-slate-200">
+          <div>
+            <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Elementos Confirmados</p>
+            <h3 class="text-3xl font-extrabold text-slate-950 tabular-nums">32</h3>
+          </div>
+          <div class="mt-4 flex items-center text-xs text-slate-700">
+            <span class="inline-block w-2 h-2 rounded-full bg-amber-500 mr-2"></span>
+            15 Tierras Raras + 17 Críticos
+          </div>
+        </div>
+
+        <!-- KPI 3 -->
+        <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-slate-800 flex flex-col justify-between h-full transform transition duration-300 hover:-translate-y-1 border border-slate-200">
+          <div>
+            <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Escala del Litoral</p>
+            <h3 class="text-3xl font-extrabold text-slate-950 tabular-nums">2,100<span class="text-lg text-slate-500 ml-1">ha</span></h3>
+          </div>
+          <div class="mt-4 flex items-center text-xs text-slate-700">
+            <span class="inline-block px-2 py-0.5 rounded bg-slate-100 border border-slate-200 mr-2 font-bold text-[11px]">45km</span>
+            03 Concesiones Mineras
+          </div>
+        </div>
+
+        <!-- KPI 4 -->
+        <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-teal-500 flex flex-col justify-between h-full transform transition duration-300 hover:-translate-y-1 border border-slate-200">
+          <div>
+            <p class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Potencial Estimado</p>
+            <h3 class="text-3xl font-extrabold text-slate-950 tabular-nums">700M<span class="text-lg text-slate-500 ml-1">TM</span></h3>
+          </div>
+          <div class="mt-4 flex items-center text-xs text-slate-700">
+            <i class="fa-solid fa-circle-check mr-1.5 text-teal-600"></i>
+            Magnetita + 20M Oz Au
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Geo-strategic Context Section (Nexo Perú - India) -->
+  <section class="py-20 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-bold tracking-wider uppercase mb-4 text-slate-700">
+            <i class="fa-solid fa-globe text-amber-600"></i> Análisis Geoestratégico
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-950 mb-6 leading-tight">
+            El Nexo Perú-India: Una Ventana Táctica
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base mb-4 leading-relaxed">
+            Las Arenas del Santa presenta una mineralogía análoga a la industria doméstica de la India (placeres de monacita de Kerala y Odisha, IREL). Para compradores institucionales asiáticos, esto implica una curva de aprendizaje metalúrgico inexistente: es un tipo de depósito ya dominado.
+          </p>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+            Ubicado estratégicamente sobre la Carretera Panamericana, a 75 km del puerto de Salaverry y con conexión a mediano plazo al <strong>Megapuerto de Chancay</strong> (reduciendo el tránsito hacia Asia a 21-23 días). En el marco de la <em>National Critical Mineral Mission</em> (India, 2025), este proyecto representa la frontera diplomática ideal para asegurar autonomía frente a China en el suministro de Hafnio, Escandio y Tierras Raras Pesadas.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-center text-sm font-semibold text-slate-900">
+              <i class="fa-solid fa-check text-amber-500 mr-3"></i>
+              100% Extracción a Cielo Abierto
+            </li>
+            <li class="flex items-center text-sm font-semibold text-slate-900">
+              <i class="fa-solid fa-check text-amber-500 mr-3"></i>
+              Contratos de estabilidad tributaria y cambiaria (10-15 años)
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-slate-950 text-white rounded-3xl p-8 sm:p-10 relative overflow-hidden shadow-2xl border border-slate-800">
+          <h3 class="text-xl font-bold text-white mb-6 border-b border-slate-800 pb-4 flex items-center justify-between">
+            <span>Indicadores País (Perú)</span>
+            <i class="fa-solid fa-trophy text-amber-400 text-sm"></i>
+          </h3>
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="text-slate-300">Producción Mundial de Cobre</span>
+                <span class="text-amber-400 font-bold">#2 Global</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2">
+                <div class="bg-amber-500 h-2 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="text-slate-300">Reservas Mundiales de Plata</span>
+                <span class="text-amber-400 font-bold">#1 Global</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2">
+                <div class="bg-amber-500 h-2 rounded-full" style="width: 95%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="text-slate-300">Producción de Oro (Latam)</span>
+                <span class="text-teal-400 font-bold">Entre los 8 mejores</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2">
+                <div class="bg-teal-500 h-2 rounded-full" style="width: 75%"></div>
+              </div>
+            </div>
+          </div>
+          <p class="mt-6 text-xs text-slate-400 leading-relaxed border-t border-slate-800/80 pt-4">
+            Con un marco minero de más de un siglo, el Perú extiende hoy su capacidad a las tierras raras. China representa ya el 32% de las exportaciones del país, confirmando su capacidad como corredor bioceánico.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard Section -->
+  <section id="dashboard" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-10">
+        <span class="text-xs uppercase font-extrabold tracking-widest text-amber-600 block mb-1">
+          Análisis de Yacimiento
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-950">Dashboard de Análisis de Placer</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <!-- Gold Grades Chart -->
+        <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-xs border border-slate-200">
+          <h3 class="text-base font-bold text-slate-900 mb-1">Tenores de Oro (mg/m³)</h3>
+          <p class="text-xs text-slate-500 mb-6">Promedios reportados por estudios independientes</p>
+          <div class="relative h-72 w-full">
+            <canvas id="santaGradesChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Critical Metals Value Distribution Chart -->
+        <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-xs border border-slate-200">
+          <h3 class="text-base font-bold text-slate-900 mb-1">Distribución Teórica de Valor In-Situ</h3>
+          <p class="text-xs text-slate-500 mb-6">Basado en certificación ALS (2026) y precios SMM/Fastmarkets</p>
+          <div class="relative h-72 w-full flex items-center justify-center">
+            <canvas id="santaValueChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Material Estimation Table -->
+      <div class="bg-white rounded-2xl shadow-xs border border-slate-200 overflow-hidden">
+        <div class="px-6 py-5 border-b border-slate-200 bg-slate-50">
+          <h3 class="font-bold text-slate-900 text-sm sm:text-base">Estimado de Material — Zona Norte (MRC1 Exploraciones, 2018)</h3>
+          <p class="text-xs text-slate-500 mt-1">Calculado sobre la base de 41 calicatas. *Volumen bruto de arena, sujeto a certificación formal de reservas.</p>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="min-w-full divide-y divide-slate-200 text-left">
+            <thead class="bg-slate-100">
+              <tr>
+                <th scope="col" class="px-6 py-3.5 text-xs font-bold text-slate-700 uppercase tracking-wider tabular-nums">Área Evaluada (m²)</th>
+                <th scope="col" class="px-6 py-3.5 text-xs font-bold text-slate-700 uppercase tracking-wider tabular-nums">Prof. Promedio (m)</th>
+                <th scope="col" class="px-6 py-3.5 text-xs font-bold text-slate-700 uppercase tracking-wider tabular-nums">Volumen (m³)</th>
+                <th scope="col" class="px-6 py-3.5 text-xs font-bold text-slate-700 uppercase tracking-wider tabular-nums">Peso Específico (t/m³)</th>
+                <th scope="col" class="px-6 py-3.5 text-xs font-bold text-slate-700 uppercase tracking-wider tabular-nums">Tonelaje (TM)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 bg-white text-sm">
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="px-6 py-4 font-semibold text-slate-950 tabular-nums">38,362,606</td>
+                <td class="px-6 py-4 text-slate-600 tabular-nums">1.51</td>
+                <td class="px-6 py-4 text-slate-600 tabular-nums">57,927,535.1</td>
+                <td class="px-6 py-4 text-slate-600 tabular-nums">1.8</td>
+                <td class="px-6 py-4 font-bold text-amber-600 tabular-nums">104,269,563.1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Sheet Section -->
+  <section id="technical" class="py-20 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-8">
+        <span class="text-xs uppercase font-extrabold tracking-widest text-amber-600 block mb-1">
+          Ensayos de Laboratorio
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-950 mb-3">Perfil de Minerales y Elementos Estratégicos</h2>
+        <p class="text-slate-600 text-sm sm:text-base max-w-3xl">
+          Certificado por laboratorio ALS Perú S.A. (LI26179573, 5-jun-2026). El proyecto presenta un flujo de ingresos dual: metales preciosos (Oro) para mitigación de volatilidad, y una suite excepcional de minerales críticos para tecnología avanzada.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-xs border border-slate-200 overflow-hidden mb-12">
+        <div class="overflow-x-auto">
+          <table class="min-w-full divide-y divide-slate-200 text-left">
+            <thead class="bg-slate-950 text-white">
+              <tr>
+                <th scope="col" class="px-6 py-4 text-xs font-bold uppercase tracking-wider">Elemento / Mineral</th>
+                <th scope="col" class="px-6 py-4 text-xs font-bold uppercase tracking-wider">Ley / Proporción Reportada</th>
+                <th scope="col" class="px-6 py-4 text-xs font-bold uppercase tracking-wider">Zona de Extracción</th>
+                <th scope="col" class="px-6 py-4 text-xs font-bold uppercase tracking-wider">Importancia Estratégica</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 bg-white text-sm">
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="px-6 py-4 font-bold text-slate-900">Oro (Au)</td>
+                <td class="px-6 py-4 text-slate-600 tabular-nums">65 – 140 mg/m³ (prom. arenas/cordones)</td>
+                <td class="px-6 py-4 text-slate-600">Playa N / C / S</td>
+                <td class="px-6 py-4"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 text-slate-800 border border-slate-200">Respaldo Financiero</span></td>
+              </tr>
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="px-6 py-4 font-bold text-slate-900">Magnetita</td>
+                <td class="px-6 py-4 text-slate-600 tabular-nums">12% promedio (Arenas negras, Prioridad 1)</td>
+                <td class="px-6 py-4 text-slate-600">General</td>
+                <td class="px-6 py-4"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-100 text-blue-800 border border-blue-200">Acero / Construcción</span></td>
+              </tr>
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="px-6 py-4 font-bold text-slate-900">Ilmenita</td>
+                <td class="px-6 py-4 text-slate-600 tabular-nums">25% (fracción 0.2–1.0 A, arenas negras)</td>
+                <td class="px-6 py-4 text-slate-600">General</td>
+                <td class="px-6 py-4"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-100 text-blue-800 border border-blue-200">Aleaciones de Titanio</span></td>
+              </tr>
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="px-6 py-4 font-bold text-slate-900">Monacita (Portadora REE)</td>
+                <td class="px-6 py-4 text-slate-600 tabular-nums">0.2 – 2% (horizontes de arena)</td>
+                <td class="px-6 py-4 text-slate-600">Alta conc. en Guadalupito</td>
+                <td class="px-6 py-4"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-200">Tierras Raras (Ce, Nd, La)</span></td>
+              </tr>
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="px-6 py-4 font-bold text-slate-900">Hafnio (Hf) & Escandio (Sc)</td>
+                <td class="px-6 py-4 text-slate-600 tabular-nums">Identificado / ~87% de valor in-situ</td>
+                <td class="px-6 py-4 text-slate-600">Confirmación ALS</td>
+                <td class="px-6 py-4"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-800 border border-red-200">CRÍTICO: Aeroespacial</span></td>
+              </tr>
+              <tr class="hover:bg-slate-50 transition-colors">
+                <td class="px-6 py-4 font-bold text-slate-900">Andalucita</td>
+                <td class="px-6 py-4 text-slate-600 tabular-nums">40% (fracción &gt; 3.0 A, arenas negras)</td>
+                <td class="px-6 py-4 text-slate-600">General</td>
+                <td class="px-6 py-4"><span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold bg-orange-100 text-orange-800 border border-orange-200">Refractarios</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Investment Structure Section -->
+  <section id="structure" class="py-20 bg-slate-950 text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase font-extrabold tracking-widest text-amber-400 block mb-2">
+          Condiciones Comerciales
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">Estructura de Inversión (2026)</h2>
+        <p class="text-slate-300 text-sm sm:text-base">
+          Tres modalidades diseñadas para adaptarse al apetito de riesgo y horizonte de inversión de actores estratégicos institucionales, especialmente del mercado asiático.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Option 1 -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-amber-500 transition-colors flex flex-col relative overflow-hidden">
+          <div class="absolute top-0 right-0 bg-amber-500 text-slate-950 text-[10px] font-extrabold px-3 py-1 uppercase tracking-widest rounded-bl-xl">
+            Adquisición Total
+          </div>
+          <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center mb-6 text-amber-400 text-xl">
+            <i class="fa-solid fa-building-columns"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-white">Compra del 100%</h3>
+          <p class="text-amber-400 font-bold text-sm mb-4 tabular-nums">USD $690,000,000</p>
+          <p class="text-slate-300 text-sm mb-8 flex-grow leading-relaxed">
+            Adquisición de las 3 concesiones (2,100 ha) y expediente técnico completo. El comprador asume control total del activo, cronograma y desarrollo.
+          </p>
+          <div class="text-xs text-slate-400 uppercase tracking-wider font-bold pt-4 border-t border-slate-800">
+            Ideal para: Empresas Estatales (SOEs)
+          </div>
+        </div>
+
+        <!-- Option 2 -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-amber-500 transition-colors flex flex-col">
+          <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center mb-6 text-amber-400 text-xl">
+            <i class="fa-solid fa-handshake"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-white">Joint Venture & Operación</h3>
+          <p class="text-amber-400 font-bold text-sm mb-4">A definir según aporte</p>
+          <p class="text-slate-300 text-sm mb-8 flex-grow leading-relaxed">
+            Financiamiento de la campaña de certificación de recursos a cambio de participación en ingresos. Riesgo y control operativo compartidos.
+          </p>
+          <div class="text-xs text-slate-400 uppercase tracking-wider font-bold pt-4 border-t border-slate-800">
+            Ideal para: Fondos PE / Mineras Mid-tier
+          </div>
+        </div>
+
+        <!-- Option 3 -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 hover:border-amber-500 transition-colors flex flex-col">
+          <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center mb-6 text-amber-400 text-xl">
+            <i class="fa-solid fa-truck-ramp-box"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-white">Suministro de Material (EXW)</h3>
+          <p class="text-amber-400 font-bold text-sm mb-4">Contrato de Largo Plazo</p>
+          <p class="text-slate-300 text-sm mb-8 flex-grow leading-relaxed">
+            Asegura fuente de materia prima fuera de China (concentrados de monacita) sin adquisición de derechos mineros. Menor riesgo de capital.
+          </p>
+          <div class="text-xs text-slate-400 uppercase tracking-wider font-bold pt-4 border-t border-slate-800">
+            Ideal para: Procesadores Asiáticos (IREL)
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="mt-16 bg-slate-900 rounded-2xl border border-slate-800 p-8">
+        <h3 class="text-lg font-bold text-white mb-6">Proceso de Transacción y Cierre</h3>
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 text-sm">
+          <div class="border-l-2 border-amber-500 pl-4 py-2">
+            <div class="text-amber-400 font-bold mb-1">01 - Inmediato</div>
+            <div class="text-white font-medium">Consulta</div>
+            <div class="text-slate-400 text-xs mt-1">Verificación institucional</div>
+          </div>
+          <div class="border-l-2 border-slate-700 pl-4 py-2">
+            <div class="text-slate-300 font-bold mb-1">02 - Semana 1-2</div>
+            <div class="text-white font-medium">Firma NDA</div>
+            <div class="text-slate-400 text-xs mt-1">Acceso a datos geoquímicos</div>
+          </div>
+          <div class="border-l-2 border-slate-700 pl-4 py-2">
+            <div class="text-slate-300 font-bold mb-1">03 - Mes 1-2</div>
+            <div class="text-white font-medium">Due Diligence</div>
+            <div class="text-slate-400 text-xs mt-1">Visita técnica al sitio</div>
+          </div>
+          <div class="border-l-2 border-slate-700 pl-4 py-2">
+            <div class="text-slate-300 font-bold mb-1">04 - Mes 2-4</div>
+            <div class="text-white font-medium">Term Sheet</div>
+            <div class="text-slate-400 text-xs mt-1">Estructura confirmada</div>
+          </div>
+          <div class="border-l-2 border-slate-700 pl-4 py-2">
+            <div class="text-slate-300 font-bold mb-1">05 - Mes 4-6</div>
+            <div class="text-white font-medium">Cierre Legal</div>
+            <div class="text-slate-400 text-xs mt-1">Transferencia o JV</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Room & NDA Section -->
+  <section id="contact" class="py-24 bg-slate-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-5">
+          <!-- Left info banner -->
+          <div class="md:col-span-2 bg-slate-950 p-8 sm:p-10 text-white flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400 block mb-2">
+                Confidencialidad
+              </span>
+              <h3 class="text-2xl font-extrabold mb-4">Acceso al Data Room</h3>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-8">
+                El acceso completo a las calicatas, planos catastrales, certificados del laboratorio ALS y los 6 estudios históricos (1982-2026) requiere la firma de un NDA formal.
+              </p>
+            </div>
+            <div class="space-y-3 pt-6 border-t border-slate-800 text-xs text-slate-400">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-amber-400"></i>
+                <span>Miraflores, Lima, Perú</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-envelope text-amber-400"></i>
+                <span>inversiones@sondecapital.com</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right form -->
+          <div class="md:col-span-3 p-8 sm:p-10">
+            <form onsubmit="event.preventDefault(); alert('Solicitud registrada. El equipo de Sonde Capital enviará el acuerdo NDA para Las Arenas del Santa a su correo corporativo.');" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nombre Completo</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Ej. Carlos Mendoza"
+                    class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white"
+                  />
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Institución / Entidad</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Nombre del Fondo o Empresa"
+                    class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white"
+                  />
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Correo Electrónico Corporativo</label>
+                <input
+                  type="email"
+                  required
+                  placeholder="email@institucion.com"
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white"
+                />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Interés Estratégico (Las Arenas del Santa)</label>
+                <select class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white">
+                  <option>Compra Total (USD $690M)</option>
+                  <option>Joint Venture / Operador</option>
+                  <option>Acuerdo de Suministro EXW</option>
+                </select>
+              </div>
+              <div class="pt-2">
+                <button
+                  type="submit"
+                  class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-md flex justify-center items-center gap-2 text-sm active:scale-95"
+                >
+                  <i class="fa-solid fa-lock text-amber-400 text-xs"></i>
+                  <span>Solicitar Credenciales y NDA</span>
+                </button>
+                <p class="text-[11px] text-slate-400 mt-3 text-center">
+                  Toda solicitud está sujeta a verificación de identidad y capacidad institucional.
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    // 1. Gold Grades Chart
+    const canvasGrades = document.getElementById('santaGradesChart');
+    if (canvasGrades) {
+      const ctxGrades = canvasGrades.getContext('2d');
+      new Chart(ctxGrades, {
+        type: 'bar',
+        data: {
+          labels: ['Playa Norte', 'Playa Centro', 'Playa Sur'],
+          datasets: [
+            {
+              label: 'Tenor de Au (mg/m³)',
+              data: [75, 65, 75],
+              backgroundColor: [
+                'rgba(217, 119, 6, 0.85)',
+                'rgba(245, 158, 11, 0.85)',
+                'rgba(217, 119, 6, 0.85)'
+              ],
+              borderRadius: 6,
+              borderSkipped: false,
+              barPercentage: 0.55
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: '#0F172A',
+              titleFont: { family: "'Plus Jakarta Sans', sans-serif", size: 13 },
+              bodyFont: { family: "'Inter', sans-serif", size: 12 },
+              padding: 12,
+              cornerRadius: 8,
+              callbacks: {
+                label: function (context) {
+                  return context.parsed.y + ' mg/m³ (promedio)';
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              grid: { color: 'rgba(15, 23, 42, 0.06)' },
+              ticks: { font: { family: "'Inter', sans-serif" }, color: '#64748B' }
+            },
+            x: {
+              grid: { display: false },
+              ticks: { font: { family: "'Inter', sans-serif" }, color: '#64748B' }
+            }
+          }
+        }
+      });
+    }
+
+    // 2. Value Distribution Chart
+    const canvasValue = document.getElementById('santaValueChart');
+    if (canvasValue) {
+      const ctxValue = canvasValue.getContext('2d');
+      new Chart(ctxValue, {
+        type: 'doughnut',
+        data: {
+          labels: ['Hafnio (Hf)', 'Escandio (Sc)', 'Otros (Tierras Raras, Galio, etc.)'],
+          datasets: [
+            {
+              data: [70, 17, 13],
+              backgroundColor: ['#0F172A', '#0D9488', '#CBD5E1'],
+              borderWidth: 0,
+              hoverOffset: 4
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '68%',
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                font: { family: "'Inter', sans-serif", size: 12 },
+                color: '#334155',
+                usePointStyle: true,
+                padding: 15
+              }
+            },
+            tooltip: {
+              backgroundColor: '#0F172A',
+              titleFont: { family: "'Plus Jakarta Sans', sans-serif", size: 13 },
+              bodyFont: { family: "'Inter', sans-serif", size: 12 },
+              padding: 12,
+              cornerRadius: 8,
+              callbacks: {
+                label: function (context) {
+                  return ' ' + context.parsed + '% del valor in-situ estimado';
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+  });
+</script>

@@ -2,44 +2,44 @@
 // Componente dinámico para explorar la megaestructura "El Tesoro"
 ---
 
-<div class="bg-slate-950 text-white rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl relative overflow-hidden">
+<div class="bg-slate-950 text-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 lg:p-10 border border-slate-800 shadow-2xl relative overflow-hidden">
   <!-- Radial Glow Behind -->
   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
   <div class="relative z-10">
     <!-- Header -->
-    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 pb-6 border-b border-slate-800">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 sm:gap-6 mb-6 sm:mb-8 pb-4 sm:pb-6 border-b border-slate-800">
       <div>
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs font-extrabold uppercase tracking-widest mb-2">
           <i class="fa-solid fa-gem text-amber-400"></i> Columna Vertebral del Proyecto
         </div>
-        <h3 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+        <h3 class="text-xl sm:text-4xl font-extrabold text-white tracking-tight">
           La Megaestructura «El Tesoro» (2.58 BT)
         </h3>
-        <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-2xl">
+        <p class="text-slate-400 text-xs sm:text-base mt-2 max-w-2xl">
           Estructura mineralizada de escala colosal. Una de las mayores concentraciones continuas de Plata, Cobre y Plomo documentadas en propiedades privadas de Sudamérica.
         </p>
       </div>
 
-      <!-- Quick Dimension Selector Tabs -->
-      <div class="flex items-center gap-2 bg-slate-900/90 p-1.5 rounded-2xl border border-slate-800 self-start lg:self-auto" id="tesoroViewTabs">
+      <!-- Quick Dimension Selector Tabs (Scrollable on mobile) -->
+      <div class="w-full sm:w-auto flex items-center gap-1.5 overflow-x-auto no-scrollbar bg-slate-900/90 p-1.5 rounded-2xl border border-slate-800 self-start lg:self-auto -mx-1 px-1 sm:mx-0 sm:px-1.5" id="tesoroViewTabs">
         <button
           type="button"
-          class="tesoro-tab-btn px-4 py-2 text-xs font-bold rounded-xl transition-all bg-amber-500 text-slate-950 shadow-xs"
+          class="tesoro-tab-btn px-3.5 sm:px-4 py-2 text-xs font-bold rounded-xl transition-all bg-amber-500 text-slate-950 shadow-xs shrink-0"
           data-tab="dimensiones"
         >
           Dimensiones Físicas
         </button>
         <button
           type="button"
-          class="tesoro-tab-btn px-4 py-2 text-xs font-bold rounded-xl transition-all text-slate-400 hover:text-white"
+          class="tesoro-tab-btn px-3.5 sm:px-4 py-2 text-xs font-bold rounded-xl transition-all text-slate-400 hover:text-white shrink-0"
           data-tab="geologia"
         >
           Doble Tipología
         </button>
         <button
           type="button"
-          class="tesoro-tab-btn px-4 py-2 text-xs font-bold rounded-xl transition-all text-slate-400 hover:text-white"
+          class="tesoro-tab-btn px-3.5 sm:px-4 py-2 text-xs font-bold rounded-xl transition-all text-slate-400 hover:text-white shrink-0"
           data-tab="recursos"
         >
           Potencial 2.58 BT

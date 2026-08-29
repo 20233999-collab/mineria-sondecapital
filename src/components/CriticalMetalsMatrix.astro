@@ -2,110 +2,110 @@
 // Matriz interactiva de minerales críticos y demanda geopolítica
 ---
 
-<div class="bg-white rounded-3xl border border-slate-200/90 shadow-sm p-6 sm:p-10 transition-all">
-  <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 pb-6 border-b border-slate-100">
+<div class="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-sm p-4 sm:p-8 lg:p-10 transition-all">
+  <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 sm:gap-6 mb-6 sm:mb-8 pb-4 sm:pb-6 border-b border-slate-100">
     <div>
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 border border-amber-500/20 text-xs font-extrabold uppercase tracking-widest mb-2">
         <i class="fa-solid fa-atom text-amber-600"></i> Portafolio de Minerales Críticos
       </div>
-      <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+      <h3 class="text-xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
         Metales Esenciales para la Transición Energética
       </h3>
-      <p class="text-sm text-slate-600 mt-1 max-w-2xl">
+      <p class="text-xs sm:text-sm text-slate-600 mt-1 max-w-2xl">
         Selecciona cada elemento para analizar su ley promedio en la propiedad, recurso metálico contenido y su rol indispensable en la electromovilidad y energías limpias.
       </p>
     </div>
   </div>
 
-  <!-- Metal Selector Pill Bar -->
-  <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar" id="metalSelectors">
+  <!-- Metal Selector Pill Bar (Touch scrollable) -->
+  <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-6 no-scrollbar -mx-2 px-2 sm:mx-0 sm:px-0" id="metalSelectors">
     <button
       type="button"
-      class="metal-tab-btn px-5 py-3 rounded-2xl font-extrabold text-xs tracking-wider uppercase transition-all flex items-center gap-2.5 bg-slate-900 text-white shadow-md border border-slate-900 shrink-0"
+      class="metal-tab-btn px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-extrabold text-[11px] sm:text-xs tracking-wider uppercase transition-all flex items-center gap-2 bg-slate-900 text-white shadow-md border border-slate-900 shrink-0"
       data-metal="cu"
     >
-      <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+      <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-amber-500"></span>
       <span>Cobre (Cu · 7.0%)</span>
     </button>
 
     <button
       type="button"
-      class="metal-tab-btn px-5 py-3 rounded-2xl font-extrabold text-xs tracking-wider uppercase transition-all flex items-center gap-2.5 bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200 shrink-0"
+      class="metal-tab-btn px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-extrabold text-[11px] sm:text-xs tracking-wider uppercase transition-all flex items-center gap-2 bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200 shrink-0"
       data-metal="ag"
     >
-      <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+      <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-slate-400"></span>
       <span>Plata (Ag · 31 oz/t)</span>
     </button>
 
     <button
       type="button"
-      class="metal-tab-btn px-5 py-3 rounded-2xl font-extrabold text-xs tracking-wider uppercase transition-all flex items-center gap-2.5 bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200 shrink-0"
+      class="metal-tab-btn px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-extrabold text-[11px] sm:text-xs tracking-wider uppercase transition-all flex items-center gap-2 bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200 shrink-0"
       data-metal="pb"
     >
-      <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+      <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-slate-400"></span>
       <span>Plomo (Pb · 38.0%)</span>
     </button>
 
     <button
       type="button"
-      class="metal-tab-btn px-5 py-3 rounded-2xl font-extrabold text-xs tracking-wider uppercase transition-all flex items-center gap-2.5 bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200 shrink-0"
+      class="metal-tab-btn px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-extrabold text-[11px] sm:text-xs tracking-wider uppercase transition-all flex items-center gap-2 bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200 shrink-0"
       data-metal="zn"
     >
-      <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+      <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-slate-400"></span>
       <span>Zinc (Zn · 5.0%)</span>
     </button>
 
     <button
       type="button"
-      class="metal-tab-btn px-5 py-3 rounded-2xl font-extrabold text-xs tracking-wider uppercase transition-all flex items-center gap-2.5 bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200 shrink-0"
+      class="metal-tab-btn px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl font-extrabold text-[11px] sm:text-xs tracking-wider uppercase transition-all flex items-center gap-2 bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200 shrink-0"
       data-metal="au"
     >
-      <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+      <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-slate-400"></span>
       <span>Oro (Au · 7 g/t)</span>
     </button>
   </div>
 
   <!-- Dynamic Detail Card -->
-  <div class="bg-slate-50 rounded-3xl p-6 sm:p-10 border border-slate-200/90 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+  <div class="bg-slate-50 rounded-2xl sm:rounded-3xl p-4 sm:p-8 lg:p-10 border border-slate-200/90 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
     <!-- Left Info Column -->
-    <div class="lg:col-span-7 space-y-6">
+    <div class="lg:col-span-7 space-y-4 sm:space-y-6">
       <div class="flex items-center gap-3">
-        <span class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight" id="metalTitle">
+        <span class="text-xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight" id="metalTitle">
           Cobre de Transición Energética (Cu)
         </span>
       </div>
 
-      <p class="text-sm sm:text-base text-slate-600 leading-relaxed" id="metalGeopolitics">
+      <p class="text-xs sm:text-base text-slate-600 leading-relaxed" id="metalGeopolitics">
         Los vehículos eléctricos (EV) consumen 2.5 veces más cobre que los autos de combustión convencional. Informes del USGS advierten que el mundo requerirá construir el equivalente a dos minas del tamaño de La Escondida cada mes para satisfacer la demanda global de redes inteligentes y descarbonización.
       </p>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
-        <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-2xs">
-          <span class="text-[11px] uppercase tracking-wider text-slate-500 font-bold block">Ley Promedio</span>
-          <span class="text-xl font-extrabold text-slate-900 tabular-nums" id="metalLey">7.00 %</span>
-          <span class="text-[10px] text-amber-600 font-semibold block mt-0.5" id="metalPpm">70,000 PPM</span>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-4 pt-2">
+        <div class="bg-white p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-slate-200/80 shadow-2xs">
+          <span class="text-[10px] sm:text-[11px] uppercase tracking-wider text-slate-500 font-bold block">Ley Promedio</span>
+          <span class="text-lg sm:text-xl font-extrabold text-slate-900 tabular-nums" id="metalLey">7.00 %</span>
+          <span class="text-[9px] sm:text-[10px] text-amber-600 font-semibold block mt-0.5" id="metalPpm">70,000 PPM</span>
         </div>
 
-        <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-2xs">
-          <span class="text-[11px] uppercase tracking-wider text-slate-500 font-bold block">Recurso Metálico</span>
-          <span class="text-xl font-extrabold text-slate-900 tabular-nums" id="metalRecurso">65,200,000 t</span>
-          <span class="text-[10px] text-slate-500 font-medium block mt-0.5">Toneladas puras</span>
+        <div class="bg-white p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-slate-200/80 shadow-2xs">
+          <span class="text-[10px] sm:text-[11px] uppercase tracking-wider text-slate-500 font-bold block">Recurso Metálico</span>
+          <span class="text-lg sm:text-xl font-extrabold text-slate-900 tabular-nums" id="metalRecurso">65,200,000 t</span>
+          <span class="text-[9px] sm:text-[10px] text-slate-500 font-medium block mt-0.5">Toneladas puras</span>
         </div>
 
-        <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-2xs col-span-2 sm:col-span-1">
-          <span class="text-[11px] uppercase tracking-wider text-slate-500 font-bold block">Precio Mercado</span>
-          <span class="text-xl font-extrabold text-emerald-600 tabular-nums" id="metalPrecio">$14,253 USD / t</span>
-          <span class="text-[10px] text-slate-500 font-medium block mt-0.5">LME Internacional</span>
+        <div class="bg-white p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-slate-200/80 shadow-2xs col-span-2 sm:col-span-1">
+          <span class="text-[10px] sm:text-[11px] uppercase tracking-wider text-slate-500 font-bold block">Precio Mercado</span>
+          <span class="text-lg sm:text-xl font-extrabold text-emerald-600 tabular-nums" id="metalPrecio">$14,253 USD / t</span>
+          <span class="text-[9px] sm:text-[10px] text-slate-500 font-medium block mt-0.5">LME Internacional</span>
         </div>
       </div>
     </div>
 
     <!-- Right Highlight Box -->
-    <div class="lg:col-span-5 bg-slate-900 text-white rounded-2xl p-6 sm:p-8 text-center space-y-4 shadow-xl border border-slate-800">
-      <span class="text-xs uppercase font-extrabold tracking-widest text-amber-400 block">
+    <div class="lg:col-span-5 bg-slate-900 text-white rounded-xl sm:rounded-2xl p-5 sm:p-8 text-center space-y-3 sm:space-y-4 shadow-xl border border-slate-800">
+      <span class="text-[10px] sm:text-xs uppercase font-extrabold tracking-widest text-amber-400 block">
         Valor Bruto Contenido
       </span>
-      <div class="text-3xl sm:text-4xl font-extrabold text-white tabular-nums" id="metalGrossValue">
+      <div class="text-2xl sm:text-4xl font-extrabold text-white tabular-nums" id="metalGrossValue">
         $929,295 MM USD
       </div>
       <p class="text-xs text-slate-400 leading-relaxed" id="metalNote">

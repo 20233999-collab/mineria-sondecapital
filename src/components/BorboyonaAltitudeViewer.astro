@@ -2,138 +2,138 @@
 // Visualizador dinámico de muestreos por nivel de altitud (msnm)
 ---
 
-<div class="bg-white rounded-3xl border border-slate-200/90 shadow-sm p-6 sm:p-10 transition-all">
-  <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 pb-6 border-b border-slate-100">
+<div class="bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-sm p-4 sm:p-8 lg:p-10 transition-all">
+  <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 sm:gap-6 mb-6 sm:mb-8 pb-4 sm:pb-6 border-b border-slate-100">
     <div>
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 border border-amber-500/20 text-xs font-extrabold uppercase tracking-widest mb-2">
         <i class="fa-solid fa-mountain text-amber-600"></i> Corte Geológico Longitudinal
       </div>
-      <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+      <h3 class="text-xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
         Muestreos de Alta Ley en Socavones por Altitud
       </h3>
-      <p class="text-sm text-slate-600 mt-1 max-w-2xl">
+      <p class="text-xs sm:text-sm text-slate-600 mt-1 max-w-2xl">
         Haz clic en cada cota altitudinal para explorar los testigos y ensayos geoquímicos extraídos directamente en los frentes de explotación de la mina (1,700 a 2,800 msnm).
       </p>
     </div>
 
     <!-- Altitude indicator badge -->
-    <div class="flex items-center gap-3 bg-slate-900 text-white px-4 py-2.5 rounded-2xl shadow-xs self-start lg:self-auto">
-      <i class="fa-solid fa-layer-group text-amber-400"></i>
+    <div class="flex items-center gap-3 bg-slate-900 text-white px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-xs self-start lg:self-auto">
+      <i class="fa-solid fa-layer-group text-amber-400 text-sm"></i>
       <div>
-        <span class="text-[10px] uppercase tracking-wider text-slate-400 block font-semibold">Cota Activa</span>
-        <span class="text-base font-extrabold text-white tabular-nums" id="activeAltitudeBadge">2,228 msnm</span>
+        <span class="text-[9px] sm:text-[10px] uppercase tracking-wider text-slate-400 block font-semibold">Cota Activa</span>
+        <span class="text-sm sm:text-base font-extrabold text-white tabular-nums" id="activeAltitudeBadge">2,228 msnm</span>
       </div>
     </div>
   </div>
 
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
     <!-- Left: Interactive Level Selector (Vertical Mountain Slicer) -->
     <div class="lg:col-span-4 space-y-2.5" id="levelSelectorContainer">
       <button
         type="button"
-        class="altitude-level-btn w-full text-left p-4 rounded-2xl border transition-all flex items-center justify-between group bg-slate-900 text-white border-slate-900 shadow-md"
+        class="altitude-level-btn w-full text-left p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border transition-all flex items-center justify-between group bg-slate-900 text-white border-slate-900 shadow-md"
         data-level="2228"
       >
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs shrink-0 shadow-xs">
+        <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs shrink-0 shadow-xs">
             2228m
           </div>
-          <div>
-            <h4 class="font-bold text-sm leading-tight text-white group-hover:text-amber-300 transition-colors">Labor NP 502 (Récord)</h4>
-            <span class="text-xs text-amber-400 font-semibold tabular-nums">333.27 oz/t Ag · 72.36% Pb</span>
+          <div class="min-w-0 flex-1">
+            <h4 class="font-bold text-xs sm:text-sm leading-tight text-white group-hover:text-amber-300 transition-colors truncate">Labor NP 502 (Récord)</h4>
+            <span class="text-[11px] sm:text-xs text-amber-400 font-semibold tabular-nums block truncate">333.27 oz/t Ag · 72.36% Pb</span>
           </div>
         </div>
-        <i class="fa-solid fa-chevron-right text-xs text-amber-400 group-hover:translate-x-1 transition-transform"></i>
+        <i class="fa-solid fa-chevron-right text-xs text-amber-400 group-hover:translate-x-1 transition-transform shrink-0 ml-2"></i>
       </button>
 
       <button
         type="button"
-        class="altitude-level-btn w-full text-left p-4 rounded-2xl border transition-all flex items-center justify-between group bg-slate-50 text-slate-700 border-slate-200/80 hover:bg-slate-100/80 hover:border-slate-300"
+        class="altitude-level-btn w-full text-left p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border transition-all flex items-center justify-between group bg-slate-50 text-slate-700 border-slate-200/80 hover:bg-slate-100/80 hover:border-slate-300"
         data-level="2565-1"
       >
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-slate-200 text-slate-800 flex items-center justify-center font-bold text-xs shrink-0">
+        <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-200 text-slate-800 flex items-center justify-center font-bold text-xs shrink-0">
             2565m
           </div>
-          <div>
-            <h4 class="font-bold text-sm leading-tight text-slate-900 group-hover:text-amber-600 transition-colors">Asandrana (Muestra 1)</h4>
-            <span class="text-xs text-slate-500 font-medium tabular-nums">131.00 oz/t Ag · 75.60% Pb</span>
+          <div class="min-w-0 flex-1">
+            <h4 class="font-bold text-xs sm:text-sm leading-tight text-slate-900 group-hover:text-amber-600 transition-colors truncate">Asandrana (Muestra 1)</h4>
+            <span class="text-[11px] sm:text-xs text-slate-500 font-medium tabular-nums block truncate">131.00 oz/t Ag · 75.60% Pb</span>
           </div>
         </div>
-        <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:translate-x-1 transition-transform"></i>
+        <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:translate-x-1 transition-transform shrink-0 ml-2"></i>
       </button>
 
       <button
         type="button"
-        class="altitude-level-btn w-full text-left p-4 rounded-2xl border transition-all flex items-center justify-between group bg-slate-50 text-slate-700 border-slate-200/80 hover:bg-slate-100/80 hover:border-slate-300"
+        class="altitude-level-btn w-full text-left p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border transition-all flex items-center justify-between group bg-slate-50 text-slate-700 border-slate-200/80 hover:bg-slate-100/80 hover:border-slate-300"
         data-level="2565-2"
       >
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-slate-200 text-slate-800 flex items-center justify-center font-bold text-xs shrink-0">
+        <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-200 text-slate-800 flex items-center justify-center font-bold text-xs shrink-0">
             2565m
           </div>
-          <div>
-            <h4 class="font-bold text-sm leading-tight text-slate-900 group-hover:text-amber-600 transition-colors">Asandrana Lente Profundo</h4>
-            <span class="text-xs text-slate-500 font-medium tabular-nums">142.00 oz/t Ag · 75.00% Pb</span>
+          <div class="min-w-0 flex-1">
+            <h4 class="font-bold text-xs sm:text-sm leading-tight text-slate-900 group-hover:text-amber-600 transition-colors truncate">Asandrana Lente Profundo</h4>
+            <span class="text-[11px] sm:text-xs text-slate-500 font-medium tabular-nums block truncate">142.00 oz/t Ag · 75.00% Pb</span>
           </div>
         </div>
-        <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:translate-x-1 transition-transform"></i>
+        <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:translate-x-1 transition-transform shrink-0 ml-2"></i>
       </button>
 
       <button
         type="button"
-        class="altitude-level-btn w-full text-left p-4 rounded-2xl border transition-all flex items-center justify-between group bg-slate-50 text-slate-700 border-slate-200/80 hover:bg-slate-100/80 hover:border-slate-300"
+        class="altitude-level-btn w-full text-left p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border transition-all flex items-center justify-between group bg-slate-50 text-slate-700 border-slate-200/80 hover:bg-slate-100/80 hover:border-slate-300"
         data-level="skarn-cu"
       >
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-slate-200 text-slate-800 flex items-center justify-center font-bold text-xs shrink-0">
+        <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-200 text-slate-800 flex items-center justify-center font-bold text-xs shrink-0">
             Contacto
           </div>
-          <div>
-            <h4 class="font-bold text-sm leading-tight text-slate-900 group-hover:text-amber-600 transition-colors">Skarns Periféricos Cu-Ag</h4>
-            <span class="text-xs text-slate-500 font-medium tabular-nums">5% - 17% Cobre puro</span>
+          <div class="min-w-0 flex-1">
+            <h4 class="font-bold text-xs sm:text-sm leading-tight text-slate-900 group-hover:text-amber-600 transition-colors truncate">Skarns Periféricos Cu-Ag</h4>
+            <span class="text-[11px] sm:text-xs text-slate-500 font-medium tabular-nums block truncate">5% - 17% Cobre puro</span>
           </div>
         </div>
-        <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:translate-x-1 transition-transform"></i>
+        <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:translate-x-1 transition-transform shrink-0 ml-2"></i>
       </button>
 
       <button
         type="button"
-        class="altitude-level-btn w-full text-left p-4 rounded-2xl border transition-all flex items-center justify-between group bg-slate-50 text-slate-700 border-slate-200/80 hover:bg-slate-100/80 hover:border-slate-300"
+        class="altitude-level-btn w-full text-left p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border transition-all flex items-center justify-between group bg-slate-50 text-slate-700 border-slate-200/80 hover:bg-slate-100/80 hover:border-slate-300"
         data-level="1711"
       >
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-slate-200 text-slate-800 flex items-center justify-center font-bold text-xs shrink-0">
+        <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-slate-200 text-slate-800 flex items-center justify-center font-bold text-xs shrink-0">
             1711m
           </div>
-          <div>
-            <h4 class="font-bold text-sm leading-tight text-slate-900 group-hover:text-amber-600 transition-colors">Concesión Esperanza</h4>
-            <span class="text-xs text-slate-500 font-medium tabular-nums">18.92% Pb · 15.92% Zn</span>
+          <div class="min-w-0 flex-1">
+            <h4 class="font-bold text-xs sm:text-sm leading-tight text-slate-900 group-hover:text-amber-600 transition-colors truncate">Concesión Esperanza</h4>
+            <span class="text-[11px] sm:text-xs text-slate-500 font-medium tabular-nums block truncate">18.92% Pb · 15.92% Zn</span>
           </div>
         </div>
-        <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:translate-x-1 transition-transform"></i>
+        <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:translate-x-1 transition-transform shrink-0 ml-2"></i>
       </button>
     </div>
 
     <!-- Right: Dynamic Level Detail Canvas -->
-    <div class="lg:col-span-8 bg-slate-950 text-white rounded-3xl p-6 sm:p-8 relative overflow-hidden shadow-2xl border border-slate-800">
+    <div class="lg:col-span-8 bg-slate-950 text-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 relative overflow-hidden shadow-2xl border border-slate-800">
       <!-- Ambient background halo -->
       <div class="absolute top-0 right-0 w-80 h-80 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div class="relative z-10 space-y-6">
+      <div class="relative z-10 space-y-5 sm:space-y-6">
         <!-- Header of active sample -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-800">
           <div>
-            <span class="text-[11px] font-extrabold uppercase tracking-widest text-amber-400 block" id="sampleSectorBadge">
+            <span class="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-widest text-amber-400 block" id="sampleSectorBadge">
               SECTOR VETA EL TESORO / NP 502
             </span>
-            <h4 class="text-xl sm:text-2xl font-extrabold text-white mt-1" id="sampleTitle">
+            <h4 class="text-lg sm:text-2xl font-extrabold text-white mt-1 leading-snug" id="sampleTitle">
               Labor Nivel 2228 — Estructura Craquelada
             </h4>
           </div>
-          <div class="bg-slate-900 px-3.5 py-1.5 rounded-xl border border-slate-800 text-right">
-            <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Potencia / Ancho</span>
-            <span class="text-sm font-bold text-amber-400 tabular-nums" id="samplePotencia">0.85 metros</span>
+          <div class="bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-800 self-start sm:self-auto text-left sm:text-right">
+            <span class="text-[9px] sm:text-[10px] text-slate-400 uppercase tracking-wider block">Potencia / Ancho</span>
+            <span class="text-xs sm:text-sm font-bold text-amber-400 tabular-nums" id="samplePotencia">0.85 metros</span>
           </div>
         </div>
 

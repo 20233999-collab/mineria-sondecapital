@@ -1,0 +1,339 @@
+---
+// Visualizador dinámico de muestreos por nivel de altitud (msnm)
+---
+
+<div class="bg-white rounded-3xl border border-slate-200/90 shadow-sm p-6 sm:p-10 transition-all">
+  <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 pb-6 border-b border-slate-100">
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 border border-amber-500/20 text-xs font-extrabold uppercase tracking-widest mb-2">
+        <i class="fa-solid fa-mountain text-amber-600"></i> Corte Geológico Longitudinal
+      </div>
+      <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+        Muestreos de Alta Ley en Socavones por Altitud
+      </h3>
+      <p class="text-sm text-slate-600 mt-1 max-w-2xl">
+        Haz clic en cada cota altitudinal para explorar los testigos y ensayos geoquímicos extraídos directamente en los frentes de explotación de la mina (1,700 a 2,800 msnm).
+      </p>
+    </div>
+
+    <!-- Altitude indicator badge -->
+    <div class="flex items-center gap-3 bg-slate-900 text-white px-4 py-2.5 rounded-2xl shadow-xs self-start lg:self-auto">
+      <i class="fa-solid fa-layer-group text-amber-400"></i>
+      <div>
+        <span class="text-[10px] uppercase tracking-wider text-slate-400 block font-semibold">Cota Activa</span>
+        <span class="text-base font-extrabold text-white tabular-nums" id="activeAltitudeBadge">2,228 msnm</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    <!-- Left: Interactive Level Selector (Vertical Mountain Slicer) -->
+    <div class="lg:col-span-4 space-y-2.5" id="levelSelectorContainer">
+      <button
+        type="button"
+        class="altitude-level-btn w-full text-left p-4 rounded-2xl border transition-all flex items-center justify-between group bg-slate-900 text-white border-slate-900 shadow-md"
+        data-level="2228"
+      >
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs shrink-0 shadow-xs">
+            2228m
+          </div>
+          <div>
+            <h4 class="font-bold text-sm leading-tight text-white group-hover:text-amber-300 transition-colors">Labor NP 502 (Récord)</h4>
+            <span class="text-xs text-amber-400 font-semibold tabular-nums">333.27 oz/t Ag · 72.36% Pb</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-xs text-amber-400 group-hover:translate-x-1 transition-transform"></i>
+      </button>
+
+      <button
+        type="button"
+        class="altitude-level-btn w-full text-left p-4 rounded-2xl border transition-all flex items-center justify-between group bg-slate-50 text-slate-700 border-slate-200/80 hover:bg-slate-100/80 hover:border-slate-300"
+        data-level="2565-1"
+      >
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-slate-200 text-slate-800 flex items-center justify-center font-bold text-xs shrink-0">
+            2565m
+          </div>
+          <div>
+            <h4 class="font-bold text-sm leading-tight text-slate-900 group-hover:text-amber-600 transition-colors">Asandrana (Muestra 1)</h4>
+            <span class="text-xs text-slate-500 font-medium tabular-nums">131.00 oz/t Ag · 75.60% Pb</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:translate-x-1 transition-transform"></i>
+      </button>
+
+      <button
+        type="button"
+        class="altitude-level-btn w-full text-left p-4 rounded-2xl border transition-all flex items-center justify-between group bg-slate-50 text-slate-700 border-slate-200/80 hover:bg-slate-100/80 hover:border-slate-300"
+        data-level="2565-2"
+      >
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-slate-200 text-slate-800 flex items-center justify-center font-bold text-xs shrink-0">
+            2565m
+          </div>
+          <div>
+            <h4 class="font-bold text-sm leading-tight text-slate-900 group-hover:text-amber-600 transition-colors">Asandrana Lente Profundo</h4>
+            <span class="text-xs text-slate-500 font-medium tabular-nums">142.00 oz/t Ag · 75.00% Pb</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:translate-x-1 transition-transform"></i>
+      </button>
+
+      <button
+        type="button"
+        class="altitude-level-btn w-full text-left p-4 rounded-2xl border transition-all flex items-center justify-between group bg-slate-50 text-slate-700 border-slate-200/80 hover:bg-slate-100/80 hover:border-slate-300"
+        data-level="skarn-cu"
+      >
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-slate-200 text-slate-800 flex items-center justify-center font-bold text-xs shrink-0">
+            Contacto
+          </div>
+          <div>
+            <h4 class="font-bold text-sm leading-tight text-slate-900 group-hover:text-amber-600 transition-colors">Skarns Periféricos Cu-Ag</h4>
+            <span class="text-xs text-slate-500 font-medium tabular-nums">5% - 17% Cobre puro</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:translate-x-1 transition-transform"></i>
+      </button>
+
+      <button
+        type="button"
+        class="altitude-level-btn w-full text-left p-4 rounded-2xl border transition-all flex items-center justify-between group bg-slate-50 text-slate-700 border-slate-200/80 hover:bg-slate-100/80 hover:border-slate-300"
+        data-level="1711"
+      >
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-slate-200 text-slate-800 flex items-center justify-center font-bold text-xs shrink-0">
+            1711m
+          </div>
+          <div>
+            <h4 class="font-bold text-sm leading-tight text-slate-900 group-hover:text-amber-600 transition-colors">Concesión Esperanza</h4>
+            <span class="text-xs text-slate-500 font-medium tabular-nums">18.92% Pb · 15.92% Zn</span>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-right text-xs text-slate-400 group-hover:translate-x-1 transition-transform"></i>
+      </button>
+    </div>
+
+    <!-- Right: Dynamic Level Detail Canvas -->
+    <div class="lg:col-span-8 bg-slate-950 text-white rounded-3xl p-6 sm:p-8 relative overflow-hidden shadow-2xl border border-slate-800">
+      <!-- Ambient background halo -->
+      <div class="absolute top-0 right-0 w-80 h-80 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 space-y-6">
+        <!-- Header of active sample -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+          <div>
+            <span class="text-[11px] font-extrabold uppercase tracking-widest text-amber-400 block" id="sampleSectorBadge">
+              SECTOR VETA EL TESORO / NP 502
+            </span>
+            <h4 class="text-xl sm:text-2xl font-extrabold text-white mt-1" id="sampleTitle">
+              Labor Nivel 2228 — Estructura Craquelada
+            </h4>
+          </div>
+          <div class="bg-slate-900 px-3.5 py-1.5 rounded-xl border border-slate-800 text-right">
+            <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Potencia / Ancho</span>
+            <span class="text-sm font-bold text-amber-400 tabular-nums" id="samplePotencia">0.85 metros</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Assay Bars Grid -->
+        <div class="space-y-4">
+          <!-- Silver (Ag) -->
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span class="text-slate-300 flex items-center gap-1.5">
+                <i class="fa-solid fa-gem text-amber-400 text-[10px]"></i> Plata (Ag)
+              </span>
+              <span class="text-amber-400 font-extrabold tabular-nums" id="sampleAgVal">333.27 oz/t</span>
+            </div>
+            <div class="w-full bg-slate-900 rounded-full h-3 overflow-hidden p-0.5 border border-slate-800">
+              <div
+                class="bg-gradient-to-r from-amber-400 to-yellow-300 h-full rounded-full transition-all duration-700"
+                id="sampleAgBar"
+                style="width: 100%;"
+              ></div>
+            </div>
+            <span class="text-[10px] text-slate-400 mt-1 block" id="sampleAgSub">
+              (Equivalente a más de 10,360 g/t Ag — Una de las leyes más ricas registradas en el Perú)
+            </span>
+          </div>
+
+          <!-- Lead (Pb) -->
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span class="text-slate-300 flex items-center gap-1.5">
+                <i class="fa-solid fa-shield text-slate-400 text-[10px]"></i> Plomo (Pb)
+              </span>
+              <span class="text-white font-extrabold tabular-nums" id="samplePbVal">72.36 %</span>
+            </div>
+            <div class="w-full bg-slate-900 rounded-full h-3 overflow-hidden p-0.5 border border-slate-800">
+              <div
+                class="bg-gradient-to-r from-slate-400 to-slate-200 h-full rounded-full transition-all duration-700"
+                id="samplePbBar"
+                style="width: 72%;"
+              ></div>
+            </div>
+            <span class="text-[10px] text-slate-400 mt-1 block">Galena masiva pura apta para fundición inmediata.</span>
+          </div>
+
+          <!-- Zinc (Zn) or Copper (Cu) -->
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span class="text-slate-300 flex items-center gap-1.5">
+                <i class="fa-solid fa-bolt text-teal-400 text-[10px]"></i> Cobre / Zinc Complementario
+              </span>
+              <span class="text-teal-400 font-extrabold tabular-nums" id="sampleExtraVal">0.70 % Cu</span>
+            </div>
+            <div class="w-full bg-slate-900 rounded-full h-3 overflow-hidden p-0.5 border border-slate-800">
+              <div
+                class="bg-gradient-to-r from-teal-500 to-emerald-400 h-full rounded-full transition-all duration-700"
+                id="sampleExtraBar"
+                style="width: 25%;"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Description Box -->
+        <div class="bg-slate-900/90 rounded-2xl p-4 sm:p-5 border border-slate-800/90">
+          <h5 class="text-xs uppercase font-extrabold text-amber-400 tracking-wider mb-1 flex items-center gap-2">
+            <i class="fa-solid fa-circle-info text-[11px]"></i> Interpretación Geológica del Testigo
+          </h5>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed" id="sampleDescription">
+            Mineralización epitermal-metasomática en roca encajonante craquelada con densa concentración de sulfosales de plata y galena argentífera. Las vetas demuestran continuidad estructural hacia niveles inferiores inexplorados.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const data = {
+      '2228': {
+        altitude: '2,228 msnm',
+        sector: 'SECTOR VETA EL TESORO / NP 502',
+        title: 'Labor Nivel 2228 — Estructura Craquelada',
+        potencia: '0.85 metros',
+        agVal: '333.27 oz/t',
+        agBar: '100%',
+        agSub: '(Equivalente a más de 10,360 g/t Ag — Una de las leyes más ricas registradas en el Perú)',
+        pbVal: '72.36 %',
+        pbBar: '72.36%',
+        extraVal: '0.70 % Cu',
+        extraBar: '25%',
+        desc: 'Mineralización epitermal-metasomática en roca encajonante craquelada con densa concentración de sulfosales de plata y galena argentífera. Las vetas demuestran continuidad estructural hacia niveles inferiores inexplorados.'
+      },
+      '2565-1': {
+        altitude: '2,565 msnm',
+        sector: 'SECTOR ASANDRANA — NIVEL SUPERIOR',
+        title: 'Labor Asandrana — Clavo Mineralizado',
+        potencia: 'Veta Abierta',
+        agVal: '131.00 oz/t',
+        agBar: '65%',
+        agSub: '(Testigo de cuarzo-sulfuros con plata nativa visible)',
+        pbVal: '75.60 %',
+        pbBar: '75.6%',
+        extraVal: 'Alta Recuperación Metalúrgica',
+        extraBar: '85%',
+        desc: 'Clavo mineralizado con mineralización masiva de galena y presencia de plata en sulfosales. Confirmación de enriquecimiento secundario de altísimo grado.'
+      },
+      '2565-2': {
+        altitude: '2,565 msnm',
+        sector: 'SECTOR ASANDRANA — LENTE PROFUNDO',
+        title: 'Asandrana Lente Profundo (Muestra 2)',
+        potencia: 'Lente Ciego',
+        agVal: '142.00 oz/t',
+        agBar: '70%',
+        agSub: '(Ensayos certificados por MVM Exploraciones y Dr. Marco Einaudi)',
+        pbVal: '75.00 %',
+        pbBar: '75.0%',
+        extraVal: 'Zinc Asociado',
+        extraBar: '30%',
+        desc: 'Lente mineralizado profundo que comprueba que la alta ley no se limita a la superficie sino que se proyecta con grosor hacia las raíces del sistema metasomático.'
+      },
+      'skarn-cu': {
+        altitude: 'Zona de Contacto',
+        sector: 'BATOLITO DE LA COSTA / FORMACIÓN CHULEC',
+        title: 'Skarns Periféricos de Cobre & Plata',
+        potencia: '> 80.0 metros',
+        agVal: '8.0 - 30.0 oz/t',
+        agBar: '35%',
+        agSub: '(Excelente crédito de metales preciosos en concentrado de cobre)',
+        pbVal: '15.0 - 38.0 %',
+        pbBar: '38%',
+        extraVal: '5.0 % a 17.0 % Cobre Puro',
+        extraBar: '95%',
+        desc: 'Mega-potencias metasomáticas superiores a 80 metros con leyes excepcionales de cobre (hasta 17% Cu), que confirman el núcleo de pórfido y skarn análogo a Antamina y Bingham Canyon.'
+      },
+      '1711': {
+        altitude: '1,711 msnm',
+        sector: 'CONCESIÓN ESPERANZA — NIVEL BASE',
+        title: 'Concesión Esperanza Nivel 1711',
+        potencia: 'Estructura Skarn',
+        agVal: '11.81 oz/t',
+        agBar: '20%',
+        agSub: '(Mineralización continua en la cota más baja explorada)',
+        pbVal: '18.92 %',
+        pbBar: '25%',
+        extraVal: '15.92 % Zinc (Zn)',
+        extraBar: '60%',
+        desc: 'Estructura metasomática polimetálica basal con fuerte enriquecimiento de Zinc y Plomo, demostrando que la columna mineralizada vertical supera los 1,000 metros de extensión.'
+      }
+    };
+
+    const buttons = document.querySelectorAll('.altitude-level-btn');
+    const badgeEl = document.getElementById('activeAltitudeBadge');
+    const sectorEl = document.getElementById('sampleSectorBadge');
+    const titleEl = document.getElementById('sampleTitle');
+    const potenciaEl = document.getElementById('samplePotencia');
+    const agValEl = document.getElementById('sampleAgVal');
+    const agBarEl = document.getElementById('sampleAgBar');
+    const agSubEl = document.getElementById('sampleAgSub');
+    const pbValEl = document.getElementById('samplePbVal');
+    const pbBarEl = document.getElementById('samplePbBar');
+    const extraValEl = document.getElementById('sampleExtraVal');
+    const extraBarEl = document.getElementById('sampleExtraBar');
+    const descEl = document.getElementById('sampleDescription');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const lvl = btn.getAttribute('data-level');
+        const d = data[lvl];
+        if (!d) return;
+
+        // Reset button states
+        buttons.forEach((b) => {
+          b.className = 'altitude-level-btn w-full text-left p-4 rounded-2xl border transition-all flex items-center justify-between group bg-slate-50 text-slate-700 border-slate-200/80 hover:bg-slate-100/80 hover:border-slate-300';
+          const icon = b.querySelector('.altitude-level-btn > div > div');
+          if (icon) icon.className = 'w-10 h-10 rounded-xl bg-slate-200 text-slate-800 flex items-center justify-center font-bold text-xs shrink-0';
+          const h4 = b.querySelector('h4');
+          if (h4) h4.className = 'font-bold text-sm leading-tight text-slate-900 group-hover:text-amber-600 transition-colors';
+        });
+
+        // Set active button state
+        btn.className = 'altitude-level-btn w-full text-left p-4 rounded-2xl border transition-all flex items-center justify-between group bg-slate-900 text-white border-slate-900 shadow-md';
+        const activeIcon = btn.querySelector('.altitude-level-btn > div > div');
+        if (activeIcon) activeIcon.className = 'w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs shrink-0 shadow-xs';
+        const activeH4 = btn.querySelector('h4');
+        if (activeH4) activeH4.className = 'font-bold text-sm leading-tight text-white group-hover:text-amber-300 transition-colors';
+
+        // Update details with micro-animation
+        if (badgeEl) badgeEl.textContent = d.altitude;
+        if (sectorEl) sectorEl.textContent = d.sector;
+        if (titleEl) titleEl.textContent = d.title;
+        if (potenciaEl) potenciaEl.textContent = d.potencia;
+        if (agValEl) agValEl.textContent = d.agVal;
+        if (agBarEl) agBarEl.style.width = d.agBar;
+        if (agSubEl) agSubEl.textContent = d.agSub;
+        if (pbValEl) pbValEl.textContent = d.pbVal;
+        if (pbBarEl) pbBarEl.style.width = d.pbBar;
+        if (extraValEl) extraValEl.textContent = d.extraVal;
+        if (extraBarEl) extraBarEl.style.width = d.extraBar;
+        if (descEl) descEl.textContent = d.desc;
+      });
+    });
+  });
+</script>

@@ -1,0 +1,216 @@
+---
+// Componente dinámico para explorar la megaestructura "El Tesoro"
+---
+
+<div class="bg-slate-950 text-white rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl relative overflow-hidden">
+  <!-- Radial Glow Behind -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[350px] bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="relative z-10">
+    <!-- Header -->
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 pb-6 border-b border-slate-800">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 text-xs font-extrabold uppercase tracking-widest mb-2">
+          <i class="fa-solid fa-gem text-amber-400"></i> Columna Vertebral del Proyecto
+        </div>
+        <h3 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          La Megaestructura «El Tesoro» (2.58 BT)
+        </h3>
+        <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-2xl">
+          Estructura mineralizada de escala colosal. Una de las mayores concentraciones continuas de Plata, Cobre y Plomo documentadas en propiedades privadas de Sudamérica.
+        </p>
+      </div>
+
+      <!-- Quick Dimension Selector Tabs -->
+      <div class="flex items-center gap-2 bg-slate-900/90 p-1.5 rounded-2xl border border-slate-800 self-start lg:self-auto" id="tesoroViewTabs">
+        <button
+          type="button"
+          class="tesoro-tab-btn px-4 py-2 text-xs font-bold rounded-xl transition-all bg-amber-500 text-slate-950 shadow-xs"
+          data-tab="dimensiones"
+        >
+          Dimensiones Físicas
+        </button>
+        <button
+          type="button"
+          class="tesoro-tab-btn px-4 py-2 text-xs font-bold rounded-xl transition-all text-slate-400 hover:text-white"
+          data-tab="geologia"
+        >
+          Doble Tipología
+        </button>
+        <button
+          type="button"
+          class="tesoro-tab-btn px-4 py-2 text-xs font-bold rounded-xl transition-all text-slate-400 hover:text-white"
+          data-tab="recursos"
+        >
+          Potencial 2.58 BT
+        </button>
+      </div>
+    </div>
+
+    <!-- TAB 1: DIMENSIONES FÍSICAS -->
+    <div class="tesoro-tab-content grid grid-cols-1 md:grid-cols-3 gap-6" id="tab-dimensiones">
+      <!-- 6 Kilómetros -->
+      <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/40 transition-all card-hover group">
+        <div class="flex justify-between items-start mb-4">
+          <span class="text-xs uppercase font-extrabold tracking-wider text-amber-400">Extensión Horizontal</span>
+          <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-amber-400 text-xs">
+            <i class="fa-solid fa-arrows-left-right"></i>
+          </div>
+        </div>
+        <h4 class="text-3xl sm:text-4xl font-extrabold text-white tabular-nums">+6.0 km</h4>
+        <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+          Corrida longitudinal continua rastreada sin interrupción estructural con dirección predominante NE-SW.
+        </p>
+        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 flex items-center gap-1.5">
+          <i class="fa-solid fa-check text-emerald-400"></i> Abierta en rumbo hacia el sur
+        </div>
+      </div>
+
+      <!-- Ancho 80m a 600m -->
+      <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/40 transition-all card-hover group">
+        <div class="flex justify-between items-start mb-4">
+          <span class="text-xs uppercase font-extrabold tracking-wider text-amber-400">Potencia / Grosor</span>
+          <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-amber-400 text-xs">
+            <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+          </div>
+        </div>
+        <h4 class="text-3xl sm:text-4xl font-extrabold text-white tabular-nums">80m — 600m</h4>
+        <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+          Se ensancha desde 80 metros en el flanco oriental hasta alcanzar 600 metros de ancho en su extremo occidental.
+        </p>
+        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 flex items-center gap-1.5">
+          <i class="fa-solid fa-check text-emerald-400"></i> Apta para minado a gran escala
+        </div>
+      </div>
+
+      <!-- Profundidad 2,500m -->
+      <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800 hover:border-amber-500/40 transition-all card-hover group">
+        <div class="flex justify-between items-start mb-4">
+          <span class="text-xs uppercase font-extrabold tracking-wider text-amber-400">Extensión Vertical</span>
+          <div class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center text-amber-400 text-xs">
+            <i class="fa-solid fa-arrow-down-long"></i>
+          </div>
+        </div>
+        <h4 class="text-3xl sm:text-4xl font-extrabold text-white tabular-nums">&gt;2,500 m</h4>
+        <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+          Continuidad vertical desde las cotas superficiales (2,800 msnm) hasta las raíces del sistema ígneo por debajo de 300 msnm.
+        </p>
+        <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 flex items-center gap-1.5">
+          <i class="fa-solid fa-check text-emerald-400"></i> Vetas abiertas en profundidad
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: DOBLE TIPOLOGÍA -->
+    <div class="tesoro-tab-content hidden grid-cols-1 md:grid-cols-2 gap-6" id="tab-geologia">
+      <div class="bg-slate-900/80 p-6 sm:p-8 rounded-2xl border border-slate-800">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-sm">
+            01
+          </div>
+          <div>
+            <h4 class="text-lg font-bold text-white">Sistema de Skarn Masivo</h4>
+            <span class="text-xs text-amber-400">Potencias &gt; 80 metros</span>
+          </div>
+        </div>
+        <p class="text-sm text-slate-300 leading-relaxed mb-4">
+          Cuerpos de reemplazamiento metasomático en el contacto entre el Batolito de la Costa y las calizas de la Formación Chulec-Pariatambo. Mantos de granate y epidota con mineralización masiva de sulfuros.
+        </p>
+        <ul class="space-y-2 text-xs text-slate-400">
+          <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-400 text-[10px]"></i> Alta ley de Cobre y Plata en mantos de óxidos de Manganeso (32% Mn).</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-400 text-[10px]"></i> Análogo exacto al skarn de la mina Antamina (Huaraz).</li>
+        </ul>
+      </div>
+
+      <div class="bg-slate-900/80 p-6 sm:p-8 rounded-2xl border border-slate-800">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-sm">
+            02
+          </div>
+          <div>
+            <h4 class="text-lg font-bold text-white">Sistema de Vetas Polimetálicas</h4>
+            <span class="text-xs text-blue-400">Leyes récord de Plata y Plomo</span>
+          </div>
+        </div>
+        <p class="text-sm text-slate-300 leading-relaxed mb-4">
+          Relleno hidrotermal de fracturas y brechas de rumbo NE-SW. Concentraciones sobresalientes con muestras certificadas de hasta 333 oz/t de Plata y 75% de Plomo.
+        </p>
+        <ul class="space-y-2 text-xs text-slate-400">
+          <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-400 text-[10px]"></i> Clavos mineralizados de alta pureza explotables por galerías existentes.</li>
+          <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-400 text-[10px]"></i> Excelente recuperación metalúrgica (&gt;88%) en flotación convencional.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TAB 3: POTENCIAL 2.58 BT -->
+    <div class="tesoro-tab-content hidden bg-slate-900/80 p-6 sm:p-8 rounded-2xl border border-slate-800" id="tab-recursos">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 space-y-4">
+          <span class="text-xs uppercase font-extrabold tracking-wider text-amber-400 block">Estimación de Volumen y Tonelaje</span>
+          <h4 class="text-2xl sm:text-3xl font-extrabold text-white">2.58 Mil Millones de Toneladas</h4>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Basado en el modelamiento geológico de 6 km de longitud por 150m de potencia promedio y 1,000m de columna evaluada con densidad promedio de 2.85 t/m³, la sola estructura «El Tesoro» aporta el 85% del tonelaje total inferido de toda la propiedad (3.01 BT).
+          </p>
+          <div class="flex flex-wrap gap-3 pt-2">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">
+              <strong class="text-white">Densidad:</strong> 2.85 g/cm³
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">
+              <strong class="text-white">Estructuras Totales:</strong> 16 zonas
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs text-slate-300">
+              <strong class="text-amber-400">Validado:</strong> MVM & Dr. Einaudi
+            </span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-slate-950 p-6 rounded-2xl border border-slate-800 text-center space-y-3">
+          <span class="text-xs text-slate-400 uppercase tracking-wider block font-semibold">Valor Bruto In-Situ Contenido</span>
+          <span class="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-300 tabular-nums">
+            +$1.48 Trillones USD
+          </span>
+          <p class="text-xs text-slate-400">
+            Sustentado en 65.2M t de Cobre, 131.5M t de Plomo, 74.9M t de Zinc y 6.4M oz de Plata a precios de mercado actuales.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.tesoro-tab-btn');
+    const contents = {
+      'dimensiones': document.getElementById('tab-dimensiones'),
+      'geologia': document.getElementById('tab-geologia'),
+      'recursos': document.getElementById('tab-recursos'),
+    };
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-tab');
+
+        // Reset tab styles
+        tabs.forEach((t) => {
+          t.className = 'tesoro-tab-btn px-4 py-2 text-xs font-bold rounded-xl transition-all text-slate-400 hover:text-white';
+        });
+        tab.className = 'tesoro-tab-btn px-4 py-2 text-xs font-bold rounded-xl transition-all bg-amber-500 text-slate-950 shadow-xs';
+
+        // Toggle content
+        Object.keys(contents).forEach((key) => {
+          const el = contents[key];
+          if (el) {
+            if (key === target) {
+              el.classList.remove('hidden');
+              el.classList.add(key === 'dimensiones' ? 'grid' : (key === 'geologia' ? 'grid' : 'block'));
+            } else {
+              el.classList.add('hidden');
+              el.classList.remove('grid', 'block');
+            }
+          }
+        });
+      });
+    });
+  });
+</script>

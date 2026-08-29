@@ -1,0 +1,294 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BorboyonaAltitudeViewer from '../../components/BorboyonaAltitudeViewer.astro';
+import TesoroStructureExplorer from '../../components/TesoroStructureExplorer.astro';
+import CriticalMetalsMatrix from '../../components/CriticalMetalsMatrix.astro';
+import GlobalBenchmarking from '../../components/GlobalBenchmarking.astro';
+import ChancayLogisticsCorridor from '../../components/ChancayLogisticsCorridor.astro';
+---
+
+<Layout
+  title="Proyecto Polimetálico Borboyona & Tocllano | Lone Star Mineral & Sonde Capital"
+  description="Depósito de skarn y vetas polimetálicas de alta ley de clase mundial en Huancavelica, Perú. +3,000 millones de toneladas de recursos inferidos, estructura El Tesoro de 6 km y leyes excepcionales de plata, cobre, plomo y zinc."
+>
+  <!-- 1. KINETIC SPATIAL HERO SECTION (HIGH DYNAMISM & IMPACT) -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white pt-24 pb-20 sm:pt-36 sm:pb-32 border-b border-slate-800">
+    <!-- Ambient texture and luminous atmospheric bloom -->
+    <div class="absolute inset-0 opacity-20 pointer-events-none">
+      <img
+        src="/assets/Oro 6.jpg"
+        alt="Geology Texture"
+        class="w-full h-full object-cover mix-blend-luminosity grayscale scale-105"
+      />
+    </div>
+    
+    <!-- Concentrated glowing orbs -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-gradient-to-tr from-amber-500/20 via-yellow-400/10 to-blue-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+      <!-- Status & Confidentiality Badge -->
+      <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-900/90 border border-amber-500/40 text-amber-300 text-xs font-extrabold uppercase tracking-widest mb-6 backdrop-blur-md shadow-lg shadow-amber-500/5">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+        <span>Lone Star Mineral Exploration & Dev. Corp. · Propuesta de Adquisición Integral</span>
+      </div>
+
+      <!-- Main Kinetic Headline -->
+      <div class="max-w-5xl mx-auto mb-6">
+        <span class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.3em] text-slate-400 block mb-2">
+          Depósito Polimetálico de Escala Mundial · Perú
+        </span>
+        <h1 class="text-3xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1]">
+          Proyecto Polimetálico <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-yellow-300 shimmer-gold">
+            Borboyona & Tocllano
+          </span>
+        </h1>
+      </div>
+
+      <!-- Subtitle -->
+      <p class="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-10 font-normal">
+        Un yacimiento tipo Skarn y Vetas de alta ley con potencial documentado de <strong class="text-white">+3,000 Millones de Toneladas</strong>. Calificado por la Universidad de Stanford como un <em class="text-amber-300 not-italic font-bold">«monstruo geológico»</em> análogo a Antamina y Bingham Canyon.
+      </p>
+
+      <!-- Action Buttons with "Button-in-Button" Pattern -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-lg mx-auto mb-16">
+        <a
+          href="#altitud"
+          class="btn-nested w-full sm:w-auto bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 shadow-xl shadow-amber-500/10 group"
+        >
+          <span>Explorar Muestreos en Socavón</span>
+          <div class="btn-nested-icon bg-slate-950/10 text-slate-950">
+            <i class="fa-solid fa-arrow-down text-xs"></i>
+          </div>
+        </a>
+
+        <a
+          href="#tesoro"
+          class="btn-nested w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 group"
+        >
+          <span>Estructura «El Tesoro»</span>
+          <div class="btn-nested-icon bg-slate-800 text-amber-400">
+            <i class="fa-solid fa-gem text-xs"></i>
+          </div>
+        </a>
+      </div>
+
+      <!-- Macro Key Metrics (Hardware Double-Bezel Architecture) -->
+      <div class="double-bezel max-w-5xl mx-auto text-left shadow-2xl">
+        <div class="double-bezel-inner p-4 sm:p-6 bg-slate-950/90 border border-slate-800 grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- KPI 1 -->
+          <div class="bg-slate-900/90 p-4 sm:p-5 rounded-2xl border border-slate-800/80">
+            <span class="text-[10px] sm:text-xs uppercase tracking-wider text-slate-400 font-bold block">Recursos Inferidos</span>
+            <span class="text-2xl sm:text-3xl font-extrabold text-white tabular-nums">3.01 BT</span>
+            <span class="text-[11px] text-amber-400 mt-1 block font-semibold">16 estructuras modeladas</span>
+          </div>
+
+          <!-- KPI 2 -->
+          <div class="bg-slate-900/90 p-4 sm:p-5 rounded-2xl border border-slate-800/80">
+            <span class="text-[10px] sm:text-xs uppercase tracking-wider text-slate-400 font-bold block">Valor Bruto In-Situ</span>
+            <span class="text-2xl sm:text-3xl font-extrabold text-emerald-400 tabular-nums">+$1.48 Trillones</span>
+            <span class="text-[11px] text-slate-400 mt-1 block">Metales contenidos (LME)</span>
+          </div>
+
+          <!-- KPI 3 -->
+          <div class="bg-slate-900/90 p-4 sm:p-5 rounded-2xl border border-slate-800/80">
+            <span class="text-[10px] sm:text-xs uppercase tracking-wider text-slate-400 font-bold block">Área Consolidada</span>
+            <span class="text-2xl sm:text-3xl font-extrabold text-white tabular-nums">5,500 ha</span>
+            <span class="text-[11px] text-amber-400 mt-1 block font-semibold">13 Concesiones 100% Tituladas</span>
+          </div>
+
+          <!-- KPI 4 -->
+          <div class="bg-slate-900/90 p-4 sm:p-5 rounded-2xl border border-slate-800/80">
+            <span class="text-[10px] sm:text-xs uppercase tracking-wider text-slate-400 font-bold block">Régimen Operativo</span>
+            <span class="text-2xl sm:text-3xl font-extrabold text-white">365 Días</span>
+            <span class="text-[11px] text-emerald-400 mt-1 block font-semibold">1,700 - 2,800 msnm sin nieve</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. INTERACTIVE TESORO EXPLORER SECTION -->
+  <section id="tesoro" class="py-20 sm:py-28 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <TesoroStructureExplorer />
+    </div>
+  </section>
+
+  <!-- 3. INTERACTIVE ALTITUDE & ADITS SLICER SECTION -->
+  <section id="altitud" class="py-20 sm:py-28 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <BorboyonaAltitudeViewer />
+    </div>
+  </section>
+
+  <!-- 4. CRITICAL METALS & ENERGY TRANSITION MATRIX -->
+  <section id="minerales" class="py-20 sm:py-28 bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <CriticalMetalsMatrix />
+    </div>
+  </section>
+
+  <!-- 5. STANFORD BENCHMARKING (ANTAMINA, BINGHAM, ESCONDIDA) -->
+  <section id="benchmarking" class="py-20 sm:py-28 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <GlobalBenchmarking />
+    </div>
+  </section>
+
+  <!-- 6. LOGISTICS & CHANCAY MEGAPORT CORRIDOR -->
+  <section id="logistica" class="py-20 sm:py-28 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <ChancayLogisticsCorridor />
+    </div>
+  </section>
+
+  <!-- 7. LEGAL, SOCIAL & PERU RISK-FREE ENVIRONMENT -->
+  <section class="py-20 sm:py-28 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase font-extrabold tracking-widest text-amber-600 block mb-2">
+          Garantía Institucional
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Seguridad Jurídica, Licencia Social y Marco Perú
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-2">
+          Activo libre de contingencias, listo para transferencia inmediata de derechos mineros e infraestructura subterránea.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- 100% Titulado -->
+        <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-xs card-hover">
+          <div class="w-12 h-12 rounded-2xl bg-slate-900 text-amber-400 flex items-center justify-center text-xl mb-6">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+          <h4 class="text-lg font-bold text-slate-900 mb-2">Estatus Legal 100% Saneado</h4>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Las 13 concesiones (5,500 ha) se encuentran totalmente tituladas bajo el Decreto Ley 708, libres de gravámenes, cargas, litigios limítrofes o disputas judiciales. Derechos de vigencia al día.
+          </p>
+          <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-emerald-600 flex items-center gap-1.5">
+            <i class="fa-solid fa-check"></i> Transferencia inmediata
+          </div>
+        </div>
+
+        <!-- Licencia Social -->
+        <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-xs card-hover">
+          <div class="w-12 h-12 rounded-2xl bg-slate-900 text-amber-400 flex items-center justify-center text-xl mb-6">
+            <i class="fa-solid fa-handshake-angle"></i>
+          </div>
+          <h4 class="text-lg font-bold text-slate-900 mb-2">Licencia Social de Ticrapo</h4>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Relación de mutuo beneficio y diálogo activo con la comunidad de Ticrapo y distritos aledaños. Convenios vigentes de servidumbre superficial y programas de dinamismo económico regional.
+          </p>
+          <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-emerald-600 flex items-center gap-1.5">
+            <i class="fa-solid fa-check"></i> Convivencia armónica garantizada
+          </div>
+        </div>
+
+        <!-- Marco País Perú -->
+        <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-xs card-hover">
+          <div class="w-12 h-12 rounded-2xl bg-slate-900 text-amber-400 flex items-center justify-center text-xl mb-6">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h4 class="text-lg font-bold text-slate-900 mb-2">Estabilidad Fiscal y Macroeconómica</h4>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Perú ofrece estabilidad constitucional, libre repatriación del 100% de utilidades, convenios de estabilidad jurídica y régimen de devolución definitiva de IGV para exploración.
+          </p>
+          <div class="mt-6 pt-4 border-t border-slate-100 text-xs font-bold text-emerald-600 flex items-center gap-1.5">
+            <i class="fa-solid fa-check"></i> Top 2 productor global de Cobre, Zinc y Plata
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. DATA ROOM ACCESS TERMINAL & NDA REQUEST -->
+  <section id="contacto" class="py-24 bg-slate-950 text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-6 space-y-6">
+            <span class="text-xs uppercase font-extrabold tracking-widest text-amber-400 block">
+              Proceso Transaccional Confidencial
+            </span>
+            <h3 class="text-2xl sm:text-4xl font-extrabold text-white leading-tight">
+              Solicitar Data Room & Due Diligence Técnico
+            </h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              El acceso a los certificados originales de laboratorio (ALS Chemex / SGS), mapas topográficos, cubicación de socavones y el modelo geológico 3D requiere la formalización de un acuerdo de confidencialidad (NDA).
+            </p>
+
+            <div class="space-y-3 pt-2 text-xs text-slate-400">
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-file-shield text-amber-400"></i>
+                <span>Estudios validados por MVM Exploraciones y Dr. Marco Einaudi (Stanford)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i class="fa-solid fa-helicopter text-amber-400"></i>
+                <span>Visitas técnicas guiadas a la mina disponibles para delegaciones acreditadas</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 bg-white text-slate-900 p-6 sm:p-8 rounded-2xl shadow-xl">
+            <form onsubmit="event.preventDefault(); alert('Solicitud registrada para el Proyecto Borboyona & Tocllano. El equipo de Sonde Capital / Lone Star enviará las credenciales a su correo corporativo.');" class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nombre Completo</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Ej. Ing. Roberto Valdivia"
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white"
+                />
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Empresa / Fondo / Trading House</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Ej. Global Resource Partners"
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white"
+                />
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Correo Electrónico Corporativo</label>
+                <input
+                  type="email"
+                  required
+                  placeholder="rvaldivia@holding.com"
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white"
+                />
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Interés Transaccional</label>
+                <select class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white">
+                  <option>Adquisición Total del Activo (Venta 100%)</option>
+                  <option>Joint Venture / Operador Estratégico</option>
+                  <option>Acuerdo de Offtake / Financiamiento</option>
+                  <option>Solicitar Visita Técnica a Mina</option>
+                </select>
+              </div>
+
+              <div class="pt-2">
+                <button
+                  type="submit"
+                  class="w-full bg-slate-950 hover:bg-slate-900 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-md flex justify-center items-center gap-2 text-sm active:scale-95"
+                >
+                  <i class="fa-solid fa-lock text-amber-400 text-xs"></i>
+                  <span>Solicitar Acceso al Data Room</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

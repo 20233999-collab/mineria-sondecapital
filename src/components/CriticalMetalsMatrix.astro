@@ -1,0 +1,215 @@
+---
+// Matriz interactiva de minerales críticos y demanda geopolítica
+---
+
+<div class="bg-white rounded-3xl border border-slate-200/90 shadow-sm p-6 sm:p-10 transition-all">
+  <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 pb-6 border-b border-slate-100">
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 border border-amber-500/20 text-xs font-extrabold uppercase tracking-widest mb-2">
+        <i class="fa-solid fa-atom text-amber-600"></i> Portafolio de Minerales Críticos
+      </div>
+      <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+        Metales Esenciales para la Transición Energética
+      </h3>
+      <p class="text-sm text-slate-600 mt-1 max-w-2xl">
+        Selecciona cada elemento para analizar su ley promedio en la propiedad, recurso metálico contenido y su rol indispensable en la electromovilidad y energías limpias.
+      </p>
+    </div>
+  </div>
+
+  <!-- Metal Selector Pill Bar -->
+  <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar" id="metalSelectors">
+    <button
+      type="button"
+      class="metal-tab-btn px-5 py-3 rounded-2xl font-extrabold text-xs tracking-wider uppercase transition-all flex items-center gap-2.5 bg-slate-900 text-white shadow-md border border-slate-900 shrink-0"
+      data-metal="cu"
+    >
+      <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+      <span>Cobre (Cu · 7.0%)</span>
+    </button>
+
+    <button
+      type="button"
+      class="metal-tab-btn px-5 py-3 rounded-2xl font-extrabold text-xs tracking-wider uppercase transition-all flex items-center gap-2.5 bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200 shrink-0"
+      data-metal="ag"
+    >
+      <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+      <span>Plata (Ag · 31 oz/t)</span>
+    </button>
+
+    <button
+      type="button"
+      class="metal-tab-btn px-5 py-3 rounded-2xl font-extrabold text-xs tracking-wider uppercase transition-all flex items-center gap-2.5 bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200 shrink-0"
+      data-metal="pb"
+    >
+      <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+      <span>Plomo (Pb · 38.0%)</span>
+    </button>
+
+    <button
+      type="button"
+      class="metal-tab-btn px-5 py-3 rounded-2xl font-extrabold text-xs tracking-wider uppercase transition-all flex items-center gap-2.5 bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200 shrink-0"
+      data-metal="zn"
+    >
+      <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+      <span>Zinc (Zn · 5.0%)</span>
+    </button>
+
+    <button
+      type="button"
+      class="metal-tab-btn px-5 py-3 rounded-2xl font-extrabold text-xs tracking-wider uppercase transition-all flex items-center gap-2.5 bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200 shrink-0"
+      data-metal="au"
+    >
+      <span class="w-2.5 h-2.5 rounded-full bg-slate-400"></span>
+      <span>Oro (Au · 7 g/t)</span>
+    </button>
+  </div>
+
+  <!-- Dynamic Detail Card -->
+  <div class="bg-slate-50 rounded-3xl p-6 sm:p-10 border border-slate-200/90 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+    <!-- Left Info Column -->
+    <div class="lg:col-span-7 space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight" id="metalTitle">
+          Cobre de Transición Energética (Cu)
+        </span>
+      </div>
+
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed" id="metalGeopolitics">
+        Los vehículos eléctricos (EV) consumen 2.5 veces más cobre que los autos de combustión convencional. Informes del USGS advierten que el mundo requerirá construir el equivalente a dos minas del tamaño de La Escondida cada mes para satisfacer la demanda global de redes inteligentes y descarbonización.
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
+        <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-2xs">
+          <span class="text-[11px] uppercase tracking-wider text-slate-500 font-bold block">Ley Promedio</span>
+          <span class="text-xl font-extrabold text-slate-900 tabular-nums" id="metalLey">7.00 %</span>
+          <span class="text-[10px] text-amber-600 font-semibold block mt-0.5" id="metalPpm">70,000 PPM</span>
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-2xs">
+          <span class="text-[11px] uppercase tracking-wider text-slate-500 font-bold block">Recurso Metálico</span>
+          <span class="text-xl font-extrabold text-slate-900 tabular-nums" id="metalRecurso">65,200,000 t</span>
+          <span class="text-[10px] text-slate-500 font-medium block mt-0.5">Toneladas puras</span>
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-2xs col-span-2 sm:col-span-1">
+          <span class="text-[11px] uppercase tracking-wider text-slate-500 font-bold block">Precio Mercado</span>
+          <span class="text-xl font-extrabold text-emerald-600 tabular-nums" id="metalPrecio">$14,253 USD / t</span>
+          <span class="text-[10px] text-slate-500 font-medium block mt-0.5">LME Internacional</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Highlight Box -->
+    <div class="lg:col-span-5 bg-slate-900 text-white rounded-2xl p-6 sm:p-8 text-center space-y-4 shadow-xl border border-slate-800">
+      <span class="text-xs uppercase font-extrabold tracking-widest text-amber-400 block">
+        Valor Bruto Contenido
+      </span>
+      <div class="text-3xl sm:text-4xl font-extrabold text-white tabular-nums" id="metalGrossValue">
+        $929,295 MM USD
+      </div>
+      <p class="text-xs text-slate-400 leading-relaxed" id="metalNote">
+        Representa más del 60% del valor total bruto in-situ del proyecto, confirmando a Borboyona como un polo de cobre de envergadura planetaria.
+      </p>
+      <div class="pt-2">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-500/20 text-amber-300 text-xs font-semibold rounded-full border border-amber-500/30">
+          <i class="fa-solid fa-check text-[10px]"></i> Certificado por MVM & Dr. Marco Einaudi
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const metals = {
+      cu: {
+        title: 'Cobre de Transición Energética (Cu)',
+        geopolitics: 'Los vehículos eléctricos (EV) consumen 2.5 veces más cobre que los autos de combustión convencional. Informes del USGS advierten que el mundo requerirá construir el equivalente a dos minas del tamaño de La Escondida cada mes para satisfacer la demanda global de redes inteligentes y descarbonización.',
+        ley: '7.00 %',
+        ppm: '70,000 PPM',
+        recurso: '65,200,000 t',
+        precio: '$14,253 USD / t',
+        grossValue: '$929,295 MM USD',
+        note: 'Representa el núcleo de mayor valor bruto in-situ de la propiedad, posicionando a Borboyona en el radar directo de las multinacionales de cobre.'
+      },
+      ag: {
+        title: 'Plata de Alta Pureza (Ag)',
+        geopolitics: 'La demanda global de plata industrial se sitúa actualmente por encima de 1.2 mil millones de onzas anuales para paneles solares fotovoltaicos, chips y electrónica de alta precisión, creando un déficit estructural prolongado que premia los yacimientos de alta ley.',
+        ley: '31.00 oz/t',
+        ppm: '964 PPM',
+        recurso: '6,407,000 oz',
+        precio: '$66.00 USD / oz',
+        grossValue: '$422.86 MM USD',
+        note: 'Enriquecida con muestras locales récord en socavón de hasta 333 oz/t de plata pura en frentes de explotación.'
+      },
+      pb: {
+        title: 'Plomo Industrial (Pb)',
+        geopolitics: 'Indispensable para sistemas masivos de respaldo energético en centros de datos e infraestructura eléctrica crítica. Borboyona exhibe una ley promedio monumental del 38%, con clavos masivos de galena de más del 75% de pureza.',
+        ley: '38.00 %',
+        ppm: '380,000 PPM',
+        recurso: '131,530,000 t',
+        precio: '$2,000 USD / t',
+        grossValue: '$263,060 MM USD',
+        note: 'La ley de plomo más densa y pura reportada en el cinturón de Castrovirreyna, permitiendo concentrados limpios sin penalidades.'
+      },
+      zn: {
+        title: 'Zinc Estratégico (Zn)',
+        geopolitics: 'Componente básico para el galvanizado del acero verde en torres eólicas, puentes y transporte marítimo. Perú es el segundo productor mundial de zinc, garantizando infraestructura de procesamiento local inmediata.',
+        ley: '5.00 %',
+        ppm: '50,000 PPM',
+        recurso: '74,950,000 t',
+        precio: '$3,850 USD / t',
+        grossValue: '$288,557 MM USD',
+        note: 'Estructuras de skarn con potencias de más de 80 metros y excelente comportamiento en circuito de flotación.'
+      },
+      au: {
+        title: 'Oro & Refugio Financiero (Au)',
+        geopolitics: 'Proporciona un colchón financiero inmediato y multiplica el flujo de caja libre en etapas iniciales de explotación. Se han identificado lentes de alta ley prospectivos a lo largo de las estructuras.',
+        ley: '7.00 g/t',
+        ppm: '7 PPM',
+        recurso: 'Lentes Prospectivos',
+        precio: '$4,200 USD / oz',
+        grossValue: 'Substancial Adicional',
+        note: 'Mineralización en vetas epitermales que aporta créditos de altísima rentabilidad al concentrado polimetálico.'
+      }
+    };
+
+    const buttons = document.querySelectorAll('.metal-tab-btn');
+    const titleEl = document.getElementById('metalTitle');
+    const geoEl = document.getElementById('metalGeopolitics');
+    const leyEl = document.getElementById('metalLey');
+    const ppmEl = document.getElementById('metalPpm');
+    const recursoEl = document.getElementById('metalRecurso');
+    const precioEl = document.getElementById('metalPrecio');
+    const grossEl = document.getElementById('metalGrossValue');
+    const noteEl = document.getElementById('metalNote');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const m = btn.getAttribute('data-metal');
+        const d = metals[m];
+        if (!d) return;
+
+        buttons.forEach((b) => {
+          b.className = 'metal-tab-btn px-5 py-3 rounded-2xl font-extrabold text-xs tracking-wider uppercase transition-all flex items-center gap-2.5 bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200 shrink-0';
+          const dot = b.querySelector('span:first-child');
+          if (dot) dot.className = 'w-2.5 h-2.5 rounded-full bg-slate-400';
+        });
+
+        btn.className = 'metal-tab-btn px-5 py-3 rounded-2xl font-extrabold text-xs tracking-wider uppercase transition-all flex items-center gap-2.5 bg-slate-900 text-white shadow-md border border-slate-900 shrink-0';
+        const activeDot = btn.querySelector('span:first-child');
+        if (activeDot) activeDot.className = 'w-2.5 h-2.5 rounded-full bg-amber-500';
+
+        if (titleEl) titleEl.textContent = d.title;
+        if (geoEl) geoEl.textContent = d.geopolitics;
+        if (leyEl) leyEl.textContent = d.ley;
+        if (ppmEl) ppmEl.textContent = d.ppm;
+        if (recursoEl) recursoEl.textContent = d.recurso;
+        if (precioEl) precioEl.textContent = d.precio;
+        if (grossEl) grossEl.textContent = d.grossValue;
+        if (noteEl) noteEl.textContent = d.note;
+      });
+    });
+  });
+</script>

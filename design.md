@@ -8,7 +8,7 @@
 - **Claridad Corporativa & Confianza Institucional**: Estética de banca de inversión privada y fondos institucionales (*Private Equity*). Ambientes luminosos, estructurados y con alta legibilidad.
 - **Minimalismo Moderno & Espacio Negativo**: Eliminación de artificios innecesarios. Jerarquías claras, márgenes generosos y acabados nítidos.
 - **Detalles Dorados de Precisión**: Acentos dorados sutiles y elegantes (no estridentes) sobre bases azul marino financiero y fondos perla/blanco arquitectónico.
-- **Enfoque en Datos Financieros y Proyecciones**: Énfasis en la visualización interactiva de flujos de caja, ROI, métricas clave (KPIs) y gráficos de rendimiento (Chart.js / ApexCharts).
+- **Dinamismo, Interactividad & Presentación de Alto Impacto**: Énfasis en la presentación viva y dinámica de la información. Los datos se muestran mediante componentes interactivos, micro-animaciones, selectores en tiempo real, estados reactivos al cursor y transiciones suaves que eliminan la monotonía, logrando que comités, gerentes e inversionistas exploren el proyecto de forma atractiva, ágil e impactante.
 
 ---
 
@@ -39,13 +39,14 @@
 | `--color-gold-600` | `#D97706` | Botones de acción principal (CTA) y estados activos |
 | `--color-gold-light` | `rgba(245, 158, 11, 0.08)` | Fondos de insignias y estados destacados |
 
-### Paleta de Datos Financieros (Data Viz)
-| Token | Hex | Uso en Gráficos |
+### Paleta de Dinamismo, Estados e Interactividad (Dynamic UI & Data Viz)
+| Token | Hex | Uso en Componentes Dinámicos |
 | :--- | :--- | :--- |
-| `--color-chart-primary` | `#0F172A` | Flujo de inversión base / capital acumulado |
-| `--color-chart-gold` | `#D97706` | Retorno esperado / Ganancia proyectada |
-| `--color-chart-teal` | `#0D9488` | EBITDA y márgenes operativos positivos |
-| `--color-chart-grid` | `rgba(15, 23, 42, 0.06)` | Cuadrícula de gráficos interactivos |
+| `--color-interactive-primary` | `#0F172A` | Elementos de datos base y estructuras activas |
+| `--color-interactive-accent` | `#D97706` | Puntos focales interactivos, líneas activas y hover destacado |
+| `--color-interactive-teal` | `#0D9488` | Indicadores de confirmación, badges activos y métricas destacadas |
+| `--color-interactive-glow` | `rgba(217, 119, 6, 0.18)` | Resplandor sutil para elementos enfocados o seleccionados |
+| `--color-interactive-grid` | `rgba(15, 23, 42, 0.06)` | Guías y cuadrículas de apoyo para visualizadores dinámicos |
 
 ---
 
@@ -64,31 +65,31 @@ Tipografía moderna sans-serif estilo Fintech / Venture Capital de alto rendimie
 
 ---
 
-## 4. Componentes y Patrones UI
+## 4. Componentes y Patrones UI de Alto Impacto
 
-### Tarjetas de Métricas (KPI Cards)
-- Superficie blanca pura (`#FFFFFF`) con sombra suave y difusa: `box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05)`.
-- Borde superior sutil con indicador de color (Dorado para retorno, Azul marino para volumen).
-- Cifra principal grande (`text-3xl` o `text-4xl`, peso 700) acompañada de porcentaje de variación o etiqueta institucional.
+### Tarjetas de Métricas Dinámicas (Interactive KPI Cards)
+- Superficie blanca pura (`#FFFFFF`) con elevación suave: `box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05)`.
+- Respuesta al hover interactivo: elevación sutil (`translate-y(-4px)`), sombra difusa reforzada y acento en el borde superior.
+- Cifra principal de gran escala (`text-3xl` o `text-4xl`, peso 700) con animaciones de conteo o revelado progresivo al entrar en viewport.
 
-### Gráficos Interactivos de Proyección Financiera
-- Implementación con **Chart.js** o **ApexCharts** con temas claros calibrados.
-- Tooltips personalizados con fondo oscuro flotante (`#0F172A`), texto blanco y cifras con formato de moneda internacional (USD).
-- Curvas suaves (*monotone spline*) con áreas sombreadas en gradiente tenue hacia abajo.
+### Componentes Dinámicos y Visualizadores Interactivos de Datos
+- **Exploración por Capas**: Módulos interactivos donde el usuario puede alternar vistas, variables o escenarios mediante botones segmentados o pestañas dinámicas sin recarga.
+- **Feedback Visual Inmediato**: Tooltips flotantes (`backdrop-filter: blur(8px)`), barras con llenado progresivo animado y micro-interacciones suaves.
+- **Visualización No Aburrida**: Reemplazo de tablas o listas estáticas por componentes vivos con transiciones fluidas, comparadores interactivos y datos reactivos al cursor.
 
-### Botones de Acción (CTAs)
-- **Botón Primario**: Fondo oro corporativo (`#D97706` con hover a `#B45309`), texto blanco o navy oscuro, bordes con radio suave (`rounded-lg`), elevación ligera al hacer hover.
-- **Botón Secundario**: Fondo blanco con borde fino `#CBD5E1`, texto `#0F172A`, hover con fondo `#F8FAFC`.
+### Botones de Acción y Controles Interactivos (CTAs)
+- **Botón Primario**: Fondo oro corporativo (`#D97706` con hover a `#B45309`), texto blanco o navy oscuro, esquinas suaves (`rounded-xl`), micro-escala al clic (`active:scale-95`).
+- **Botón Secundario / Filtro**: Fondo blanco con borde fino `#CBD5E1`, texto `#0F172A`, cambio de estado visual claro al estar activo.
 
-### Tablas Financieras y Desgloses
-- Filas alternadas suaves (`#F8FAFC`), encabezados en mayúsculas pequeñas (`text-xs tracking-wider text-slate-500`).
-- Estados de badge para validaciones técnicas (ej: *Certificado*, *En Ejecución*, *Alta Ley*).
+### Desgloses Interactivos y Tablas Vivas
+- Filas interactivas con iluminación hover suave (`hover:bg-slate-50`), badges de estado con pulso sutil (ej: *Alta Ley*, *100% Titulado*, *Crítico*).
+- Paneles colapsables y modales ligeros para inspeccionar fichas geológicas sin perder el contexto visual de la página.
 
 ---
 
 ## 5. Arquitectura de Navegación y Secciones
-1. **Hero Institucional**: Título de alto impacto, propuesta de valor de inversión y métricas macro clave.
-2. **Dashboard de Retorno & Proyecciones**: Gráficos interactivos de flujo de caja y rentabilidad proyectada por fases.
-3. **Ficha Técnica del Proyecto (Borboyona / Arenas del Santa)**: Geología, volumen de reservas estimadas, tecnología de extracción y ventajas operativas.
-4. **Estructura de Capital & Términos de Inversión**: Participación accionaria, cronograma de desembolsos y mecanismos de salida/liquidez.
-5. **Formulario / Contacto Directo de Relación con Inversionistas**.
+1. **Hero Institucional de Alto Impacto**: Propuesta de valor contundente, métricas macro en vivo y llamadas a la acción directas.
+2. **Dashboard Dinámico & Módulos Interactivos**: Paneles interactivos de exploración de datos, comparativas en tiempo real y visualizadores vivos de indicadores clave.
+3. **Ficha Técnica & Geológica Dinámica (Borboyona / Arenas del Santa / Adriano)**: Desglose interactivo de mineralogía, calicatas, recursos y ventajas competitivas.
+4. **Estructura de Participación & Opciones de Inversión**: Modelos interactivos de colaboración (Adquisición, JV, Offtake) con cronogramas claros.
+5. **Data Room & Formulario de Acceso Confidencial**: Formulario ágil con validación y solicitud de credenciales institucionales.

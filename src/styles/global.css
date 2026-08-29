@@ -9,13 +9,23 @@
     --color-bg-surface: #ffffff;
     --color-bg-subtle: #f1f5f9;
     --color-border-light: #e2e8f0;
+    --color-border-focus: #cbd5e1;
+
     --color-navy-950: #090d16;
     --color-navy-900: #0f172a;
     --color-navy-800: #1e293b;
     --color-navy-700: #334155;
+
     --color-gold-400: #fbbf24;
     --color-gold-500: #f59e0b;
     --color-gold-600: #d97706;
+
+    /* Interactive & Dynamic UI Tokens */
+    --color-interactive-primary: #0f172a;
+    --color-interactive-accent: #d97706;
+    --color-interactive-teal: #0d9488;
+    --color-interactive-glow: rgba(217, 119, 6, 0.18);
+    --color-interactive-grid: rgba(15, 23, 42, 0.06);
   }
 
   body {
@@ -67,20 +77,75 @@
 }
 
 .card-hover {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .card-hover:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 20px 35px -8px rgba(15, 23, 42, 0.08);
 }
 
-/* Subtle Shimmer & Glow */
-@keyframes goldPulse {
+/* Double-Bezel Hardware Enclosure (high-end-visual-design) */
+.double-bezel {
+  padding: 6px;
+  border-radius: 1.5rem;
+  background: rgba(15, 23, 42, 0.03);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.double-bezel-inner {
+  border-radius: calc(1.5rem - 6px);
+  background: #ffffff;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+/* Button-in-Button Trailing Icon Architecture */
+.btn-nested {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem 0.75rem 1.75rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-nested:active {
+  transform: scale(0.98);
+}
+.btn-nested-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-nested:hover .btn-nested-icon {
+  transform: translateX(2px) translateY(-1px) scale(1.05);
+}
+
+/* Subtle Shimmer & Gold Glow */
+@keyframes shimmerGlow {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.25);
+    filter: drop-shadow(0 0 15px rgba(251, 191, 36, 0.3));
+    background-position: 0% 50%;
   }
   50% {
-    box-shadow: 0 0 0 8px rgba(217, 119, 6, 0);
+    filter: drop-shadow(0 0 28px rgba(245, 158, 11, 0.55));
+    background-position: 100% 50%;
+  }
+}
+.shimmer-gold {
+  background-size: 200% auto;
+  animation: shimmerGlow 5s ease-in-out infinite;
+}
+
+@keyframes goldPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(217, 119, 6, 0);
   }
 }
 .gold-pulse {

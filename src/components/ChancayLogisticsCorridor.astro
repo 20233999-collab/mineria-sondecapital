@@ -1,0 +1,91 @@
+---
+// Componente interactivo del corredor logístico Ticrapo - Megapuerto de Chancay
+---
+
+<div class="bg-white rounded-3xl border border-slate-200/90 shadow-sm p-6 sm:p-10 transition-all">
+  <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8 pb-6 border-b border-slate-100">
+    <div>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 border border-amber-500/20 text-xs font-extrabold uppercase tracking-widest mb-2">
+        <i class="fa-solid fa-route text-amber-600"></i> Ventaja Logística y Portuaria
+      </div>
+      <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+        Conectividad Directa al Megapuerto de Chancay & Callao
+      </h3>
+      <p class="text-sm text-slate-600 mt-1 max-w-2xl">
+        Ubicación privilegiada en la vertiente occidental de los Andes (1,700 - 2,800 msnm). Operación continua los 365 días del año con acceso 100% asfaltado.
+      </p>
+    </div>
+  </div>
+
+  <!-- Interactive Route Map / Timeline -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 card-hover">
+      <div class="w-8 h-8 rounded-xl bg-slate-900 text-amber-400 flex items-center justify-center font-bold text-xs mb-3">
+        01
+      </div>
+      <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">Yacimiento</span>
+      <h4 class="text-base font-extrabold text-slate-900">Mina Borboyona</h4>
+      <p class="text-xs text-slate-500 mt-1">Distrito de Ticrapo, Huancavelica. Altitud moderada sin interrupciones climáticas.</p>
+    </div>
+
+    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 card-hover">
+      <div class="w-8 h-8 rounded-xl bg-slate-900 text-amber-400 flex items-center justify-center font-bold text-xs mb-3">
+        02
+      </div>
+      <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">Acceso Costero</span>
+      <h4 class="text-base font-extrabold text-slate-900">90 km a Pisco</h4>
+      <p class="text-xs text-slate-500 mt-1">Conexión inmediata por vía pavimentada al litoral sur y Panamericana.</p>
+    </div>
+
+    <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200/80 card-hover">
+      <div class="w-8 h-8 rounded-xl bg-slate-900 text-amber-400 flex items-center justify-center font-bold text-xs mb-3">
+        03
+      </div>
+      <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">Corredor Norte</span>
+      <h4 class="text-base font-extrabold text-slate-900">Puerto del Callao</h4>
+      <p class="text-xs text-slate-500 mt-1">Terminal consolidado para concentrados con almacenes y fajas automáticas.</p>
+    </div>
+
+    <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 text-white shadow-md card-hover">
+      <div class="w-8 h-8 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs mb-3">
+        04
+      </div>
+      <span class="text-xs font-bold text-amber-400 uppercase tracking-wider block">Hub Transpacífico</span>
+      <h4 class="text-base font-extrabold text-white">Megapuerto Chancay</h4>
+      <p class="text-xs text-slate-300 mt-1">Reduce el tránsito a Asia en 10-15 días. Abarata costos de flete marítimo FOB.</p>
+    </div>
+  </div>
+
+  <!-- Bottom Logistical KPIs -->
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 bg-slate-900 text-white p-6 sm:p-8 rounded-2xl">
+    <div class="flex items-center gap-4">
+      <div class="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center text-amber-400 text-xl shrink-0">
+        <i class="fa-solid fa-calendar-check"></i>
+      </div>
+      <div>
+        <span class="text-2xl font-extrabold text-white tabular-nums">365 Días</span>
+        <span class="text-xs text-slate-400 block font-medium">Operación sin nieve ni heladas</span>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <div class="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center text-emerald-400 text-xl shrink-0">
+        <i class="fa-solid fa-ship"></i>
+      </div>
+      <div>
+        <span class="text-2xl font-extrabold text-emerald-400 tabular-nums">-15 Días</span>
+        <span class="text-xs text-slate-400 block font-medium">Tránsito marítimo a China y Asia</span>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <div class="w-12 h-12 rounded-2xl bg-slate-800 flex items-center justify-center text-amber-400 text-xl shrink-0">
+        <i class="fa-solid fa-faucet-droplet"></i>
+      </div>
+      <div>
+        <span class="text-2xl font-extrabold text-white tabular-nums">ANA Aprobada</span>
+        <span class="text-xs text-slate-400 block font-medium">Circuito cerrado de recirculación</span>
+      </div>
+    </div>
+  </div>
+</div>

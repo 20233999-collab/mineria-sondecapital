@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import BorboyonaGalleryCarousel from '../../components/BorboyonaGalleryCarousel.astro';
 import BorboyonaAltitudeViewer from '../../components/BorboyonaAltitudeViewer.astro';
 import TesoroStructureExplorer from '../../components/TesoroStructureExplorer.astro';
 import CriticalMetalsMatrix from '../../components/CriticalMetalsMatrix.astro';
@@ -56,7 +57,7 @@ import ChancayLogisticsCorridor from '../../components/ChancayLogisticsCorridor.
       </p>
 
       <!-- Action Buttons with "Button-in-Button" Pattern -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-lg mx-auto mb-12 sm:mb-16 w-full">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-lg mx-auto mb-10 sm:mb-14 w-full">
         <a
           href="#altitud"
           class="btn-nested w-full sm:w-auto bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 shadow-xl shadow-amber-500/10 group justify-center"
@@ -78,37 +79,9 @@ import ChancayLogisticsCorridor from '../../components/ChancayLogisticsCorridor.
         </a>
       </div>
 
-      <!-- Macro Key Metrics (Hardware Double-Bezel Architecture) -->
-      <div class="double-bezel max-w-5xl mx-auto text-left shadow-2xl">
-        <div class="double-bezel-inner p-3 sm:p-6 bg-slate-950/90 border border-slate-800 grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
-          <!-- KPI 1 -->
-          <div class="bg-slate-900/90 p-3.5 sm:p-5 rounded-xl sm:rounded-2xl border border-slate-800/80">
-            <span class="text-[9px] sm:text-xs uppercase tracking-wider text-slate-400 font-bold block">Recursos Inferidos</span>
-            <span class="text-xl sm:text-3xl font-extrabold text-white tabular-nums">3.01 BT</span>
-            <span class="text-[10px] sm:text-[11px] text-amber-400 mt-0.5 sm:mt-1 block font-semibold leading-tight">16 estructuras</span>
-          </div>
-
-          <!-- KPI 2 -->
-          <div class="bg-slate-900/90 p-3.5 sm:p-5 rounded-xl sm:rounded-2xl border border-slate-800/80">
-            <span class="text-[9px] sm:text-xs uppercase tracking-wider text-slate-400 font-bold block">Valor Bruto In-Situ</span>
-            <span class="text-xl sm:text-3xl font-extrabold text-emerald-400 tabular-nums">+$1.48T</span>
-            <span class="text-[10px] sm:text-[11px] text-slate-400 mt-0.5 sm:mt-1 block leading-tight">Metales contenidos</span>
-          </div>
-
-          <!-- KPI 3 -->
-          <div class="bg-slate-900/90 p-3.5 sm:p-5 rounded-xl sm:rounded-2xl border border-slate-800/80">
-            <span class="text-[9px] sm:text-xs uppercase tracking-wider text-slate-400 font-bold block">Área Consolidada</span>
-            <span class="text-xl sm:text-3xl font-extrabold text-white tabular-nums">5,500 ha</span>
-            <span class="text-[10px] sm:text-[11px] text-amber-400 mt-0.5 sm:mt-1 block font-semibold leading-tight">13 Concesiones</span>
-          </div>
-
-          <!-- KPI 4 -->
-          <div class="bg-slate-900/90 p-3.5 sm:p-5 rounded-xl sm:rounded-2xl border border-slate-800/80">
-            <span class="text-[9px] sm:text-xs uppercase tracking-wider text-slate-400 font-bold block">Régimen Operativo</span>
-            <span class="text-xl sm:text-3xl font-extrabold text-white">365 Días</span>
-            <span class="text-[10px] sm:text-[11px] text-emerald-400 mt-0.5 sm:mt-1 block font-semibold leading-tight">1,700 - 2,800 msnm</span>
-          </div>
-        </div>
+      <!-- Photographic Gallery & Field Showcase Carousel (Replaces metrics table) -->
+      <div class="w-full">
+        <BorboyonaGalleryCarousel />
       </div>
     </div>
   </section>

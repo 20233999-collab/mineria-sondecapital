@@ -1,0 +1,531 @@
+---
+// Componente de Carrusel y Galería Geológica HD para Mina Borboyona
+interface GeologicalPhoto {
+  id: number;
+  src: string;
+  srcJpg: string;
+  title: string;
+  desc: string;
+  tag: string;
+  badgeColor: string;
+  location: string;
+}
+
+const photos: GeologicalPhoto[] = [
+  {
+    id: 1,
+    src: '/assets/imagenes-borboyona-hd/Borboyona 1.webp',
+    srcJpg: '/assets/imagenes-borboyona-hd/Borboyona 1.jpg',
+    title: 'Contacto Geológico Fm. Chúlec e Intrusivo Sílico Ácido',
+    desc: 'Falla de contacto regional identificada con flecha de desplazamiento y zona de calicatas activas con muestreo geoquímico directo en roca.',
+    tag: 'Geología Estructural',
+    badgeColor: 'text-amber-400 border-amber-500/30 bg-amber-500/10',
+    location: 'Sector Central · Contacto Principal'
+  },
+  {
+    id: 2,
+    src: '/assets/imagenes-borboyona-hd/Borboyona 2.webp',
+    srcJpg: '/assets/imagenes-borboyona-hd/Borboyona 2.jpg',
+    title: 'Bocaminas Gemelas en Socavón Histórico',
+    desc: 'Ingenieros de exploración en el portal de labores subterráneas en roca competente, constatando estabilidad geomecánica sin sostenimiento artificial.',
+    tag: 'Inspección de Campo',
+    badgeColor: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10',
+    location: 'Cota Media · Labores Históricas'
+  },
+  {
+    id: 3,
+    src: '/assets/imagenes-borboyona-hd/Borboyona 3.webp',
+    srcJpg: '/assets/imagenes-borboyona-hd/Borboyona 3.jpg',
+    title: 'Portal de Acceso a Socavón en Macizo Rocoso',
+    desc: 'Bocamina abierta sobre macizo de roca dura con buzamiento favorable, acceso directo a mantos y vetas polimetálicas de alta ley.',
+    tag: 'Labores Subterráneas',
+    badgeColor: 'text-blue-400 border-blue-500/30 bg-blue-500/10',
+    location: 'Socavón de Acceso Principal'
+  },
+  {
+    id: 4,
+    src: '/assets/imagenes-borboyona-hd/Borboyona 4.webp',
+    srcJpg: '/assets/imagenes-borboyona-hd/Borboyona 4.jpg',
+    title: 'Labor Asandrana y Relieve Cordillerano',
+    desc: 'Panorámica de la topografía cordillerana con ubicación señalizada de la Labor Asandrana y el portal de penetración en ladera.',
+    tag: 'Topografía y Acceso',
+    badgeColor: 'text-amber-400 border-amber-500/30 bg-amber-500/10',
+    location: 'Zona Asandrana · Flanco Este'
+  },
+  {
+    id: 5,
+    src: '/assets/imagenes-borboyona-hd/Borboyona 5.webp',
+    srcJpg: '/assets/imagenes-borboyona-hd/Borboyona 5.jpg',
+    title: 'Bocamina de Exploración Múnac N° 1718',
+    desc: 'Hito catastral y georreferenciado oficial con acceso a labores de exploración avanzada y material acopiado listo para muestreo.',
+    tag: 'Concesión y Puntos Clave',
+    badgeColor: 'text-teal-400 border-teal-500/30 bg-teal-500/10',
+    location: 'Concesión Múnac · Vértice 1718'
+  },
+  {
+    id: 6,
+    src: '/assets/imagenes-borboyona-hd/Borboyona 6.webp',
+    srcJpg: '/assets/imagenes-borboyona-hd/Borboyona 6.jpg',
+    title: 'Canales de Muestreo Marcados en Veta',
+    desc: 'Detalle de canaletas pintadas en roca (códigos 200339 y 200340) para toma de muestras sistemáticas de plata y metales base.',
+    tag: 'Muestreo Geoquímico',
+    badgeColor: 'text-amber-400 border-amber-500/30 bg-amber-500/10',
+    location: 'Interior Labor · Manto Mineralizado'
+  },
+  {
+    id: 7,
+    src: '/assets/imagenes-borboyona-hd/Borboyona 7.webp',
+    srcJpg: '/assets/imagenes-borboyona-hd/Borboyona 7.jpg',
+    title: 'Bocamina Histórica en Corte de Quebrada',
+    desc: 'Equipo de geólogos en el portal inferior evaluando la cartografía de labores y la continuidad de las estructuras de cuarzo y sulfuros.',
+    tag: 'Exploración de Campo',
+    badgeColor: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10',
+    location: 'Corte Inferior · Nivel Base'
+  },
+  {
+    id: 8,
+    src: '/assets/imagenes-borboyona-hd/Borboyona 8.webp',
+    srcJpg: '/assets/imagenes-borboyona-hd/Borboyona 8.jpg',
+    title: 'Labor Nivel 2228 msnm y Traza Vial',
+    desc: 'Trazo de carretera de acceso carrozable continuo hacia la cota 2,228 msnm, permitiendo transporte de maquinaria y concentrados todo el año.',
+    tag: 'Infraestructura y Vías',
+    badgeColor: 'text-purple-400 border-purple-500/30 bg-purple-500/10',
+    location: 'Cota 2,228 msnm · Red Vial'
+  },
+  {
+    id: 9,
+    src: '/assets/imagenes-borboyona-hd/Borboyona 9.webp',
+    srcJpg: '/assets/imagenes-borboyona-hd/Borboyona 9.jpg',
+    title: 'Interior Mina: Tajos, Chimeneas y Galerías',
+    desc: 'Tríptico fotográfico de inspección: portal exterior de roca, pique vertical de ventilación/extracción y amplia cámara subterránea iluminada.',
+    tag: 'Interior de Mina',
+    badgeColor: 'text-cyan-400 border-cyan-500/30 bg-cyan-500/10',
+    location: 'Galería Central & Cámaras Subterráneas'
+  }
+];
+---
+
+<div class="borboyona-carousel-container relative max-w-5xl mx-auto w-full text-left" id="borboyonaGalleryRoot">
+  <!-- Outer Glow & Premium Frame -->
+  <div class="relative rounded-2xl sm:rounded-3xl p-2 sm:p-3 bg-gradient-to-b from-slate-800/80 via-slate-900/90 to-slate-950 border border-slate-700/60 shadow-2xl backdrop-blur-xl">
+    
+    <!-- Top Header Bar inside the Frame -->
+    <div class="flex items-center justify-between px-3 sm:px-5 py-2.5 mb-2 border-b border-slate-800/80">
+      <div class="flex items-center gap-2 sm:gap-3">
+        <span class="flex h-2.5 w-2.5 relative">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-500"></span>
+        </span>
+        <span class="text-xs sm:text-sm font-bold text-white tracking-wide flex items-center gap-1.5">
+          <i class="fa-solid fa-camera text-amber-400 text-xs"></i>
+          Registro Fotográfico & Geológico en Campo
+        </span>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <!-- Slide Counter -->
+        <span class="text-xs font-mono font-bold text-slate-400 tabular-nums px-2.5 py-1 rounded-md bg-slate-950/60 border border-slate-800">
+          <span class="text-amber-400" id="currentSlideNumber">01</span> / 09
+        </span>
+        
+        <!-- Lightbox Trigger Button -->
+        <button
+          type="button"
+          id="btnOpenLightbox"
+          class="hidden sm:inline-flex items-center gap-1.5 text-xs text-slate-300 hover:text-white px-2.5 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700/60 transition-all font-medium cursor-pointer"
+          title="Ver en pantalla completa HD"
+        >
+          <i class="fa-solid fa-expand text-amber-400 text-xs"></i>
+          <span>Zoom HD</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- MAIN VIEWER STAGE (Aspect 16:9 or responsive high-def) -->
+    <div class="relative w-full h-[260px] sm:h-[380px] md:h-[460px] lg:h-[500px] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-950 group select-none">
+      
+      <!-- Slide Images Stack -->
+      <div class="relative w-full h-full" id="slidesStack">
+        {photos.map((item, index) => (
+          <div
+            class={`slide-item absolute inset-0 transition-opacity duration-700 ease-in-out ${index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'}`}
+            data-index={index}
+            data-src={item.src}
+            data-title={item.title}
+            data-desc={item.desc}
+            data-tag={item.tag}
+            data-loc={item.location}
+          >
+            <img
+              src={item.src}
+              alt={item.title}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              class="w-full h-full object-contain sm:object-cover object-center bg-slate-950/90"
+            />
+            
+            <!-- Vignette & Subtle Gradient Overlay for Text Readability -->
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent pointer-events-none"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950/60 via-transparent to-transparent pointer-events-none"></div>
+
+            <!-- Slide Information Overlay -->
+            <div class="absolute bottom-0 inset-x-0 p-4 sm:p-6 lg:p-7 flex flex-col justify-end pointer-events-none">
+              <div class="max-w-2xl">
+                <!-- Tag & Location Pill -->
+                <div class="flex flex-wrap items-center gap-2 mb-1.5 sm:mb-2">
+                  <span class={`text-[10px] sm:text-xs font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border ${item.badgeColor} backdrop-blur-md`}>
+                    {item.tag}
+                  </span>
+                  <span class="text-[10px] sm:text-xs text-slate-300 font-mono flex items-center gap-1 bg-slate-900/80 px-2 py-0.5 rounded border border-slate-700/50 backdrop-blur-md">
+                    <i class="fa-solid fa-location-dot text-amber-400"></i>
+                    {item.location}
+                  </span>
+                </div>
+
+                <!-- Title -->
+                <h3 class="text-base sm:text-xl lg:text-2xl font-extrabold text-white leading-tight drop-shadow-md">
+                  {item.title}
+                </h3>
+
+                <!-- Description -->
+                <p class="text-xs sm:text-sm text-slate-300 mt-1 sm:mt-1.5 line-clamp-2 sm:line-clamp-3 leading-relaxed drop-shadow">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Arrow Controls (Left & Right) -->
+      <button
+        type="button"
+        id="prevSlideBtn"
+        class="absolute left-2.5 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-slate-950/70 hover:bg-amber-500 hover:text-slate-950 text-white border border-slate-700/80 flex items-center justify-center backdrop-blur-md shadow-lg transition-all duration-200 cursor-pointer active:scale-95 group-hover:opacity-100 opacity-90 sm:opacity-75"
+        aria-label="Imagen anterior"
+      >
+        <i class="fa-solid fa-chevron-left text-xs sm:text-base"></i>
+      </button>
+
+      <button
+        type="button"
+        id="nextSlideBtn"
+        class="absolute right-2.5 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-slate-950/70 hover:bg-amber-500 hover:text-slate-950 text-white border border-slate-700/80 flex items-center justify-center backdrop-blur-md shadow-lg transition-all duration-200 cursor-pointer active:scale-95 group-hover:opacity-100 opacity-90 sm:opacity-75"
+        aria-label="Siguiente imagen"
+      >
+        <i class="fa-solid fa-chevron-right text-xs sm:text-base"></i>
+      </button>
+
+      <!-- Autoplay Progress Bar Indicator -->
+      <div class="absolute top-0 left-0 right-0 h-1 bg-slate-800/60 z-20 overflow-hidden">
+        <div id="carouselProgressBar" class="h-full bg-gradient-to-r from-amber-400 to-amber-500 w-0 transition-all duration-100"></div>
+      </div>
+    </div>
+
+    <!-- THUMBNAILS STRIP (Bottom row) -->
+    <div class="mt-3 px-1">
+      <div class="flex items-center gap-2 sm:gap-2.5 overflow-x-auto pb-2 pt-1 no-scrollbar select-none" id="thumbnailsTrack">
+        {photos.map((item, index) => (
+          <button
+            type="button"
+            class={`thumb-btn relative shrink-0 w-16 sm:w-20 md:w-24 h-11 sm:h-14 md:h-16 rounded-lg sm:rounded-xl overflow-hidden border-2 transition-all duration-200 cursor-pointer ${index === 0 ? 'border-amber-400 shadow-md shadow-amber-500/20 scale-100' : 'border-slate-800 opacity-50 hover:opacity-90'}`}
+            data-index={index}
+            title={item.title}
+          >
+            <img
+              src={item.src}
+              alt={`Miniatura ${index + 1}`}
+              loading="lazy"
+              class="w-full h-full object-cover"
+            />
+            <span class="absolute bottom-1 right-1 text-[9px] font-bold font-mono px-1 rounded bg-slate-950/80 text-white border border-slate-800">
+              0{index + 1}
+            </span>
+          </button>
+        ))}
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FULLSCREEN LIGHTBOX MODAL -->
+  <div
+    id="galleryLightboxModal"
+    class="fixed inset-0 z-50 bg-slate-950/95 backdrop-blur-2xl hidden flex-col justify-between p-4 sm:p-8"
+  >
+    <!-- Lightbox Header -->
+    <div class="flex items-center justify-between border-b border-slate-800/80 pb-4">
+      <div class="flex items-center gap-3">
+        <span class="px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
+          Inspección de Detalle HD
+        </span>
+        <h4 id="lightboxTitle" class="text-sm sm:text-base font-bold text-white line-clamp-1"></h4>
+      </div>
+
+      <button
+        type="button"
+        id="btnCloseLightbox"
+        class="w-9 h-9 rounded-full bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 flex items-center justify-center transition-colors cursor-pointer"
+        aria-label="Cerrar vista completa"
+      >
+        <i class="fa-solid fa-xmark text-sm sm:text-base"></i>
+      </button>
+    </div>
+
+    <!-- Lightbox Image Center -->
+    <div class="relative flex-1 flex items-center justify-center p-2 sm:p-6 overflow-hidden">
+      <img
+        id="lightboxImage"
+        src=""
+        alt=""
+        class="max-w-full max-h-[75vh] object-contain rounded-xl shadow-2xl border border-slate-800 transition-transform duration-300 select-none"
+      />
+
+      <!-- Lightbox Nav Buttons -->
+      <button
+        type="button"
+        id="lightboxPrevBtn"
+        class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-slate-900/80 hover:bg-amber-500 hover:text-slate-950 text-white border border-slate-700 flex items-center justify-center cursor-pointer transition-all"
+      >
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button
+        type="button"
+        id="lightboxNextBtn"
+        class="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-slate-900/80 hover:bg-amber-500 hover:text-slate-950 text-white border border-slate-700 flex items-center justify-center cursor-pointer transition-all"
+      >
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <!-- Lightbox Footer -->
+    <div class="border-t border-slate-800/80 pt-3 text-center sm:text-left flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-400">
+      <p id="lightboxDesc" class="max-w-3xl line-clamp-2 text-slate-300"></p>
+      <span class="text-slate-500 font-mono text-[11px]">Usa flechas &larr; &rarr; del teclado o ESC para cerrar</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initBorboyonaCarousel() {
+    const root = document.getElementById('borboyonaGalleryRoot');
+    if (!root) return;
+
+    const slides = Array.from(root.querySelectorAll('.slide-item')) as HTMLElement[];
+    const thumbs = Array.from(root.querySelectorAll('.thumb-btn')) as HTMLElement[];
+    const currentNumEl = root.querySelector('#currentSlideNumber');
+    const progressBar = root.querySelector('#carouselProgressBar') as HTMLElement | null;
+    const prevBtn = root.querySelector('#prevSlideBtn');
+    const nextBtn = root.querySelector('#nextSlideBtn');
+    const thumbsTrack = root.querySelector('#thumbnailsTrack');
+
+    // Lightbox elements
+    const lightboxModal = document.getElementById('galleryLightboxModal');
+    const btnOpenLightbox = root.querySelector('#btnOpenLightbox');
+    const btnCloseLightbox = document.getElementById('btnCloseLightbox');
+    const lightboxImage = document.getElementById('lightboxImage') as HTMLImageElement;
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxDesc = document.getElementById('lightboxDesc');
+    const lightboxPrevBtn = document.getElementById('lightboxPrevBtn');
+    const lightboxNextBtn = document.getElementById('lightboxNextBtn');
+
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    let autoplayTimer: any = null;
+    let progressTimer: any = null;
+    const AUTOPLAY_INTERVAL = 5500;
+    let startTime = Date.now();
+    let isPaused = false;
+
+    function goToSlide(index: number) {
+      if (index < 0) index = totalSlides - 1;
+      if (index >= totalSlides) index = 0;
+
+      currentIndex = index;
+
+      // Update slides visibility
+      slides.forEach((slide, i) => {
+        if (i === currentIndex) {
+          slide.classList.remove('opacity-0', 'pointer-events-none', 'z-0');
+          slide.classList.add('opacity-100', 'z-10');
+        } else {
+          slide.classList.remove('opacity-100', 'z-10');
+          slide.classList.add('opacity-0', 'pointer-events-none', 'z-0');
+        }
+      });
+
+      // Update thumbnails styling
+      thumbs.forEach((thumb, i) => {
+        if (i === currentIndex) {
+          thumb.classList.remove('border-slate-800', 'opacity-50');
+          thumb.classList.add('border-amber-400', 'shadow-md', 'shadow-amber-500/20', 'opacity-100');
+          // Scroll thumbnail track horizontally without jumping whole page vertically
+          if (thumbsTrack) {
+            const trackRect = thumbsTrack.getBoundingClientRect();
+            const thumbRect = thumb.getBoundingClientRect();
+            const offset = thumbRect.left - trackRect.left - (trackRect.width / 2) + (thumbRect.width / 2);
+            thumbsTrack.scrollBy({ left: offset, behavior: 'smooth' });
+          }
+        } else {
+          thumb.classList.remove('border-amber-400', 'shadow-md', 'shadow-amber-500/20', 'opacity-100');
+          thumb.classList.add('border-slate-800', 'opacity-50');
+        }
+      });
+
+      // Update counter
+      if (currentNumEl) {
+        currentNumEl.textContent = String(currentIndex + 1).padStart(2, '0');
+      }
+
+      // If lightbox is open, sync it
+      if (lightboxModal && !lightboxModal.classList.contains('hidden')) {
+        updateLightboxContent();
+      }
+
+      resetProgressBar();
+    }
+
+    function resetProgressBar() {
+      startTime = Date.now();
+      if (progressBar) {
+        progressBar.style.width = '0%';
+      }
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      startTime = Date.now();
+
+      progressTimer = setInterval(() => {
+        if (isPaused) return;
+        const elapsed = Date.now() - startTime;
+        const pct = Math.min(100, (elapsed / AUTOPLAY_INTERVAL) * 100);
+        if (progressBar) {
+          progressBar.style.width = `${pct}%`;
+        }
+        if (elapsed >= AUTOPLAY_INTERVAL) {
+          goToSlide(currentIndex + 1);
+        }
+      }, 50);
+    }
+
+    function stopAutoplay() {
+      if (progressTimer) clearInterval(progressTimer);
+      if (autoplayTimer) clearTimeout(autoplayTimer);
+    }
+
+    // Event listeners for prev/next
+    prevBtn?.addEventListener('click', () => {
+      goToSlide(currentIndex - 1);
+      startAutoplay();
+    });
+
+    nextBtn?.addEventListener('click', () => {
+      goToSlide(currentIndex + 1);
+      startAutoplay();
+    });
+
+    // Thumbnails click
+    thumbs.forEach((thumb) => {
+      thumb.addEventListener('click', () => {
+        const idx = parseInt(thumb.getAttribute('data-index') || '0', 10);
+        goToSlide(idx);
+        startAutoplay();
+      });
+    });
+
+    // Pause on hover
+    root.addEventListener('mouseenter', () => {
+      isPaused = true;
+    });
+    root.addEventListener('mouseleave', () => {
+      isPaused = false;
+      startTime = Date.now() - (parseFloat(progressBar?.style.width || '0') / 100) * AUTOPLAY_INTERVAL;
+    });
+
+    // Touch Swipe Support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    root.addEventListener('touchstart', (e: TouchEvent) => {
+      touchStartX = e.changedTouches[0].screenX;
+      isPaused = true;
+    }, { passive: true });
+
+    root.addEventListener('touchend', (e: TouchEvent) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+      isPaused = false;
+    }, { passive: true });
+
+    function handleSwipe() {
+      const diff = touchEndX - touchStartX;
+      if (Math.abs(diff) > 40) {
+        if (diff < 0) {
+          goToSlide(currentIndex + 1);
+        } else {
+          goToSlide(currentIndex - 1);
+        }
+        startAutoplay();
+      }
+    }
+
+    // LIGHTBOX HANDLERS
+    function updateLightboxContent() {
+      const currentSlide = slides[currentIndex];
+      if (!currentSlide) return;
+
+      const src = currentSlide.getAttribute('data-src') || '';
+      const title = currentSlide.getAttribute('data-title') || '';
+      const desc = currentSlide.getAttribute('data-desc') || '';
+
+      if (lightboxImage) lightboxImage.src = src;
+      if (lightboxTitle) lightboxTitle.textContent = title;
+      if (lightboxDesc) lightboxDesc.textContent = desc;
+    }
+
+    function openLightbox() {
+      if (!lightboxModal) return;
+      stopAutoplay();
+      updateLightboxContent();
+      lightboxModal.classList.remove('hidden');
+      lightboxModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      if (!lightboxModal) return;
+      lightboxModal.classList.remove('flex');
+      lightboxModal.classList.add('hidden');
+      document.body.style.overflow = '';
+      startAutoplay();
+    }
+
+    btnOpenLightbox?.addEventListener('click', openLightbox);
+    btnCloseLightbox?.addEventListener('click', closeLightbox);
+    lightboxPrevBtn?.addEventListener('click', () => goToSlide(currentIndex - 1));
+    lightboxNextBtn?.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+    // Keyboard support
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        goToSlide(currentIndex - 1);
+      } else if (e.key === 'ArrowRight') {
+        goToSlide(currentIndex + 1);
+      }
+    });
+
+    // Start auto loop
+    goToSlide(0);
+    startAutoplay();
+  }
+
+  // Initialize on load and on page swap
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBorboyonaCarousel);
+  } else {
+    initBorboyonaCarousel();
+  }
+  document.addEventListener('astro:page-load', initBorboyonaCarousel);
+</script>

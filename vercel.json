@@ -1,34 +1,38 @@
 {
-  "rewrites": [
+  "cleanUrls": true,
+  "routes": [
     {
-      "source": "/",
+      "src": "^/(?:index(?:\\.html)?)?$",
       "has": [
         {
           "type": "host",
           "value": "borboyona.sondecapital.com"
         }
       ],
-      "destination": "/proyectos/borboyona-mina"
+      "dest": "/proyectos/borboyona-mina"
     },
     {
-      "source": "/",
+      "src": "^/(?:index(?:\\.html)?)?$",
       "has": [
         {
           "type": "host",
           "value": "adriano.sondecapital.com"
         }
       ],
-      "destination": "/proyectos/metales-adriano"
+      "dest": "/proyectos/metales-adriano"
     },
     {
-      "source": "/",
+      "src": "^/(?:index(?:\\.html)?)?$",
       "has": [
         {
           "type": "host",
           "value": "santa.sondecapital.com"
         }
       ],
-      "destination": "/proyectos/arenas-del-santa"
+      "dest": "/proyectos/arenas-del-santa"
+    },
+    {
+      "handle": "filesystem"
     }
   ]
 }

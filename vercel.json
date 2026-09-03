@@ -1,0 +1,34 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "borboyona.sondecapital.com"
+        }
+      ],
+      "destination": "/proyectos/borboyona-mina"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "adriano.sondecapital.com"
+        }
+      ],
+      "destination": "/proyectos/metales-adriano"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "santa.sondecapital.com"
+        }
+      ],
+      "destination": "/proyectos/arenas-del-santa"
+    }
+  ]
+}

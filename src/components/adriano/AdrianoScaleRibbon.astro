@@ -1,0 +1,279 @@
+---
+// Componente de Escala y Métricas Verificadas (Sin proyecciones financieras)
+const metrics = [
+  {
+    kpi: "$2.5 B+",
+    unit: "USD",
+    label: "Precio de Venta / Adquisición",
+    subtext: "Valoración base para adquisición institucional total o consorcio JV",
+    icon: "fa-solid fa-crown",
+    accent: "border-amber-400",
+    badge: "Oportunidad Principal",
+    featured: true
+  },
+  {
+    kpi: "41",
+    unit: "Elementos",
+    label: "Metales Confirmados por Laboratorio",
+    subtext: "15 Tierras Raras (REE) + 23 Metales Tecnológicos por ICP-MS",
+    icon: "fa-solid fa-atom",
+    accent: "border-slate-800",
+    badge: "Espectro Completo",
+    featured: false
+  },
+  {
+    kpi: "2,328",
+    unit: "Hectáreas",
+    label: "Área Titulada en 05 Concesiones",
+    subtext: "Atahualpa, Bonanza, Gasñape, Huascar, Incanato (100% Titulado)",
+    icon: "fa-solid fa-layer-group",
+    accent: "border-slate-800",
+    badge: "100% Titulado",
+    featured: false
+  },
+  {
+    kpi: "100%",
+    unit: "Superficie",
+    label: "Accesibilidad a Tajo Abierto (Open-Pit)",
+    subtext: "Extracción continua sin costosas labores subterráneas ni piques",
+    icon: "fa-solid fa-mountain",
+    accent: "border-teal-500",
+    badge: "Bajo CAPEX Minero",
+    featured: false
+  },
+  {
+    kpi: "15",
+    unit: "Estudios",
+    label: "Certificaciones Internacionales",
+    subtext: "18 años de evaluación analítica (ACTLABS, ALS Chemex, SGS)",
+    icon: "fa-solid fa-certificate",
+    accent: "border-amber-500",
+    badge: "Data ICP-MS Certificada",
+    featured: false
+  },
+  {
+    kpi: "75",
+    unit: "km",
+    label: "Distancia al Puerto de Salaverry",
+    subtext: "Vía asfaltada directa a terminal marítimo de aguas profundas",
+    icon: "fa-solid fa-ship",
+    accent: "border-teal-500",
+    badge: "Corredor Pacífico",
+    featured: false
+  }
+];
+---
+
+<section id="resumen" class="py-20 bg-slate-50 border-b border-slate-200/80 relative overflow-hidden">
+  <!-- Subtle ambient background decor -->
+  <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[720px] h-[360px] bg-gradient-to-b from-amber-200/20 via-sky-200/15 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <!-- Header of the section -->
+    <div class="text-center max-w-3xl mx-auto mb-14" data-animate="fade-up">
+      <span class="text-xs uppercase font-extrabold tracking-widest text-amber-600 block mb-2">
+        Fundamentos del Yacimiento
+      </span>
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-950 font-['Plus_Jakarta_Sans']">
+        Escala & Pilares Verificados
+      </h2>
+      <p class="text-slate-600 text-sm sm:text-base mt-2.5">
+        Métricas físicas, geológicas y legales respaldadas por documentación técnica oficial y títulos de propiedad vigentes.
+      </p>
+    </div>
+
+    <!-- Bento Grid of 6 Verified Hard Metrics -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {metrics.map((item, idx) => (
+        <div
+          data-animate="fade-up"
+          data-delay={idx * 100}
+          class={item.featured
+            ? "sale-card-active relative rounded-2xl p-7 bg-gradient-to-br from-[#061426] via-slate-950 to-[#0A2246] text-white border-2 border-amber-400 shadow-xl shadow-amber-500/15 flex flex-col justify-between group cursor-default transition-all duration-300 overflow-hidden"
+            : `bg-white rounded-2xl p-6 shadow-xs border border-slate-200/90 border-t-4 ${item.accent} flex flex-col justify-between hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group cursor-default`
+          }
+        >
+          {item.featured && (
+            <div class="absolute -top-14 -right-14 w-40 h-40 bg-amber-400/15 rounded-full blur-2xl pointer-events-none"></div>
+          )}
+
+          <div>
+            <div class="flex items-center justify-between gap-3 mb-4">
+              <span class={item.featured
+                ? "inline-flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-amber-400/15 text-amber-300 border border-amber-400/50"
+                : "text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200"
+              }>
+                {item.featured && (
+                  <span class="relative flex h-2 w-2 shrink-0">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+                  </span>
+                )}
+                <span>{item.badge}</span>
+              </span>
+
+              <div class={item.featured
+                ? "w-10 h-10 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center font-bold text-sm shadow-md shadow-amber-400/25 transition-transform duration-300 group-hover:scale-110 shrink-0"
+                : "w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700 group-hover:bg-amber-500 group-hover:text-slate-950 transition-colors duration-300 text-sm shrink-0"
+              }>
+                <i class={item.icon}></i>
+              </div>
+            </div>
+
+            <p class={item.featured
+              ? "text-xs font-bold text-amber-300/90 uppercase tracking-wider mb-1"
+              : "text-xs font-bold text-slate-500 uppercase tracking-wider mb-1"
+            }>
+              {item.label}
+            </p>
+
+            <div class="flex items-baseline gap-2">
+              <span
+                class={item.featured
+                  ? "metric-counter text-4xl sm:text-5xl font-extrabold text-amber-400 font-['Plus_Jakarta_Sans'] tracking-tight tabular-nums transition-transform inline-block"
+                  : "metric-counter text-3xl sm:text-4xl font-extrabold text-slate-950 font-['Plus_Jakarta_Sans'] tracking-tight tabular-nums transition-transform inline-block"
+                }
+                data-target={item.kpi}
+              >
+                {item.kpi}
+              </span>
+              <span class={item.featured
+                ? "text-base font-extrabold text-amber-300 uppercase tracking-wide"
+                : "text-sm font-bold text-amber-600 uppercase"
+              }>
+                {item.unit}
+              </span>
+            </div>
+          </div>
+
+          <div class={item.featured
+            ? "mt-6 pt-3.5 border-t border-white/10 text-xs text-slate-300 leading-relaxed"
+            : "mt-5 pt-3 border-t border-slate-100 text-xs text-slate-600 leading-relaxed"
+          }>
+            {item.subtext}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  /* =========================================================================
+     FEATURED SALE CARD: Gentle Continuous Floating Animation Loop
+     ========================================================================= */
+  @keyframes sale-card-float {
+    0%, 100% {
+      transform: translateY(0px);
+      box-shadow: 0 14px 28px -4px rgba(245, 158, 11, 0.2), 0 8px 14px -6px rgba(15, 23, 42, 0.4);
+    }
+    50% {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 38px -4px rgba(245, 158, 11, 0.38), 0 16px 20px -6px rgba(15, 23, 42, 0.55);
+    }
+  }
+
+  [data-animate="fade-up"].in-view.sale-card-active,
+  .sale-card-active {
+    animation: sale-card-float 4.2s ease-in-out infinite;
+  }
+
+  .sale-card-active:hover {
+    animation-play-state: paused;
+    transform: translateY(-11px);
+    box-shadow: 0 28px 45px -4px rgba(245, 158, 11, 0.48), 0 20px 24px -6px rgba(15, 23, 42, 0.65);
+  }
+
+  /* =========================================================================
+     TACTILE METRIC LOCK-IN POP
+     ========================================================================= */
+  .metric-counter {
+    display: inline-block;
+    transform-origin: left center;
+  }
+
+  .metric-counter.metric-locked {
+    transform: scale(1.12);
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.6));
+    transition: transform 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.22s ease;
+  }
+</style>
+
+<script>
+  // =========================================================================
+  // SEQUENTIAL PROGRESSIVE NUMBER SCRAMBLE ANIMATION
+  // All start rolling together, then lock in cascade one-by-one
+  // =========================================================================
+  function initMetricScramble() {
+    const section = document.getElementById('resumen');
+    if (!section || section.dataset.counterInitialized) return;
+
+    const counters = section.querySelectorAll<HTMLElement>('.metric-counter');
+    if (!counters.length) return;
+
+    section.dataset.counterInitialized = 'true';
+    let hasAnimated = false;
+
+    function getRandomScramble(target: string): string {
+      if (target === "100%") {
+        const val = Math.floor(Math.random() * 88) + 11;
+        return val + "%";
+      }
+      return target.replace(/\d/g, () => Math.floor(Math.random() * 10).toString());
+    }
+
+    function runCascadeAnimation() {
+      if (hasAnimated) return;
+      hasAnimated = true;
+
+      // Start all counters scrambling rapidly
+      counters.forEach((el, index) => {
+        const target = el.getAttribute('data-target') || el.textContent?.trim() || '';
+
+        // Ticking scramble every 42ms
+        const intervalId = window.setInterval(() => {
+          el.textContent = getRandomScramble(target);
+        }, 42);
+
+        // Cascade timings:
+        // Metric 0 (Sale Price): locks in at 700ms
+        // Metric 1: locks in at 1250ms (550ms after #0)
+        // Metric 2: locks in at 1800ms (550ms after #1)
+        // Metric 3: locks in at 2350ms (550ms after #2)
+        // Metric 4: locks in at 2900ms (550ms after #3)
+        // Metric 5: locks in at 3450ms (550ms after #4)
+        const lockDelay = 700 + (index * 550);
+
+        window.setTimeout(() => {
+          clearInterval(intervalId);
+          el.textContent = target;
+
+          // Haptic-style visual pop when locking
+          el.classList.add('metric-locked');
+          window.setTimeout(() => {
+            el.classList.remove('metric-locked');
+          }, 320);
+        }, lockDelay);
+      });
+    }
+
+    // Trigger on scroll entering view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          runCascadeAnimation();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    observer.observe(section);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMetricScramble);
+  } else {
+    initMetricScramble();
+  }
+  document.addEventListener('astro:page-load', initMetricScramble);
+</script>

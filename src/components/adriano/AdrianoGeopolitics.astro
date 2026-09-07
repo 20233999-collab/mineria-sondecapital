@@ -1,0 +1,320 @@
+---
+// Componente de Geopolítica & Crisis Global de Suministro (Informar y Persuadir)
+const supplyRisks = [
+  {
+    mineral: "Disprosio (Dy) & Neodimio (Nd)",
+    use: "Imanes permanentes para turbinas eólicas, cazas F-35 y motores EV",
+    chinaShare: 90,
+    riskLevel: "Extremo",
+    riskBadge: "bg-red-500/20 text-red-400 border-red-500/40"
+  },
+  {
+    mineral: "Rubidio (Rb)",
+    use: "Computación cuántica, navegación inercial y telecomunicaciones militares",
+    chinaShare: 80,
+    riskLevel: "Crítico",
+    riskBadge: "bg-amber-500/20 text-amber-400 border-amber-500/40"
+  },
+  {
+    mineral: "Escandio (Sc) & Galio (Ga)",
+    use: "Aleaciones aeroespaciales de alta resistencia y semiconductores de potencia",
+    chinaShare: 85,
+    riskLevel: "Extremo",
+    riskBadge: "bg-red-500/20 text-red-400 border-red-500/40"
+  },
+  {
+    mineral: "Litio (Li) & Vanadio (V)",
+    use: "Baterías avanzadas de ion-litio y almacenamiento estático de energía",
+    chinaShare: 65,
+    riskLevel: "Alto",
+    riskBadge: "bg-blue-500/20 text-blue-400 border-blue-500/40"
+  }
+];
+---
+
+<section id="geopolitica" class="py-24 bg-slate-950 text-white relative overflow-hidden border-b border-slate-800">
+  <!-- Subtle background glow -->
+  <div class="absolute -top-40 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-40 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <!-- Header -->
+    <div class="max-w-3xl mb-16" data-animate="fade-up">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4 border border-amber-500/20">
+        <i class="fa-solid fa-shield-halved text-[11px]"></i>
+        <span>Seguridad de Suministro Soberano</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight font-['Plus_Jakarta_Sans'] leading-tight mb-4">
+        La Carrera Global de Minerales:<br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">
+          Por Qué Adriano es Estratégico para Occidente
+        </span>
+      </h2>
+      <p class="text-slate-400 text-base sm:text-lg leading-relaxed">
+        Las tierras raras y los metales estratégicos son la columna vertebral de la defensa moderna, la transición energética y los semiconductores. La extrema concentración de la cadena en un solo país ha creado una vulnerabilidad crítica para las potencias occidentales.
+      </p>
+    </div>
+
+    <!-- 3 Big Dominance Stats with Counter Animations -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16" data-animate="fade-up">
+      <div class="geo-stat-card bg-slate-900/90 border border-slate-800 hover:border-amber-500/40 rounded-2xl p-6 relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-500/5 group">
+        <div class="text-4xl sm:text-5xl font-extrabold text-amber-400 mb-2 font-['Plus_Jakarta_Sans'] tabular-nums geo-stat-counter" data-target="69%">0%</div>
+        <h3 class="text-base font-bold text-white mb-2 group-hover:text-amber-200 transition-colors">Extracción Global en Manos de China</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Más de 270,000 toneladas anuales de concentración primaria bajo control soberano de un solo actor geopolítico.
+        </p>
+      </div>
+
+      <div class="geo-stat-card bg-slate-900/90 border border-slate-800 hover:border-red-500/40 rounded-2xl p-6 relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-red-500/5 group">
+        <div class="text-4xl sm:text-5xl font-extrabold text-red-400 mb-2 font-['Plus_Jakarta_Sans'] tabular-nums geo-stat-counter" data-target=">85%">0%</div>
+        <h3 class="text-base font-bold text-white mb-2 group-hover:text-red-200 transition-colors">Capacidad de Refinamiento de TTRR</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Incluso el mineral extraído fuera de Asia suele depender de plantas químicas chinas para la separación en óxidos puros.
+        </p>
+      </div>
+
+      <div class="geo-stat-card bg-slate-900/90 border border-slate-800 hover:border-amber-500/40 rounded-2xl p-6 relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-amber-500/5 group">
+        <div class="text-4xl sm:text-5xl font-extrabold text-amber-400 mb-2 font-['Plus_Jakarta_Sans'] tabular-nums geo-stat-counter" data-target=">90%">0%</div>
+        <h3 class="text-base font-bold text-white mb-2 group-hover:text-amber-200 transition-colors">Monopolio en Imanes Permanentes</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Imanes de NdFeB indispensables para sistemas de guiado aeroespacial, radar, robótica avanzada y vehículos eléctricos.
+        </p>
+      </div>
+    </div>
+
+    <!-- Split Grid: Strategic Risk Bars vs The Peru / Adriano Moat -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <!-- Left: Supply Risk Matrix with Animated Bars -->
+      <div class="lg:col-span-7 bg-slate-900/70 border border-slate-800 rounded-2xl p-6 sm:p-8" data-animate="fade-up">
+        <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-800">
+          <div>
+            <h3 class="text-lg font-bold text-white">Matriz de Riesgo en Cadenas de Suministro</h3>
+            <p class="text-xs text-slate-400">Nivel de dominancia de refinamiento y criticidad geopolítica</p>
+          </div>
+          <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded bg-slate-800 text-slate-300">
+            Fuente: SMM & IEA
+          </span>
+        </div>
+
+        <div class="space-y-6">
+          {supplyRisks.map((item) => (
+            <div class="space-y-2">
+              <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
+                <span class="font-bold text-white text-sm">{item.mineral}</span>
+                <span class={`px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider text-[10px] border ${item.riskBadge}`}>
+                  Riesgo {item.riskLevel}
+                </span>
+              </div>
+              <p class="text-xs text-slate-400">{item.use}</p>
+              <!-- Animated Progress Bar -->
+              <div class="flex items-center gap-3">
+                <div class="w-full bg-slate-800/90 h-3 rounded-full overflow-hidden p-0.5 border border-slate-700/50">
+                  <div
+                    class="geo-risk-bar bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 h-full rounded-full transition-all duration-1000 ease-out shadow-[0_0_10px_rgba(245,158,11,0.3)]"
+                    style="width: 0%"
+                    data-percent={item.chinaShare}
+                  ></div>
+                </div>
+                <span class="geo-bar-percent text-xs font-mono font-extrabold text-amber-400 w-12 text-right">
+                  0%
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right: Why Peru & Adriano Wins (Cuadro con Resplandor Ámbar Continuo) -->
+      <div class="lg:col-span-5 peru-resplendence-card relative bg-gradient-to-br from-[#08182d] via-slate-900 to-[#061426] border border-amber-400/50 rounded-2xl p-6 sm:p-8 space-y-6 overflow-hidden group" data-animate="fade-up">
+        <!-- Ambient corner radial glow -->
+        <div class="absolute -top-16 -right-16 w-52 h-52 bg-amber-400/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-16 -left-16 w-52 h-52 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 w-12 h-12 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center text-xl font-bold shadow-md shadow-amber-400/30">
+          <i class="fa-solid fa-scale-balanced"></i>
+        </div>
+
+        <div class="relative z-10">
+          <span class="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-amber-400">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+            </span>
+            Respaldo Soberano & Comercial
+          </span>
+          <h3 class="text-2xl font-extrabold text-white mt-1.5 font-['Plus_Jakarta_Sans']">
+            Por Qué Perú Ofrece la Respuesta Definitiva
+          </h3>
+        </div>
+
+        <ul class="relative z-10 space-y-4 text-xs sm:text-sm text-slate-300">
+          <li class="flex items-start gap-3">
+            <i class="fa-solid fa-check-double text-amber-400 mt-1 shrink-0"></i>
+            <div>
+              <strong class="text-white">Alianza en Minerales Críticos 2026: </strong>Perú participó en la Reunión Ministerial de Minerales Críticos de EE.UU. junto con 53 naciones aliadas para blindar cadenas estratégicas.
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <i class="fa-solid fa-check-double text-amber-400 mt-1 shrink-0"></i>
+            <div>
+              <strong class="text-white">Tratados de Libre Comercio Multilaterales: </strong>Marco legal estable con tratados bilaterales vigentes con EE.UU., la Unión Europea, Japón, Corea del Sur y Canadá.
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <i class="fa-solid fa-check-double text-amber-400 mt-1 shrink-0"></i>
+            <div>
+              <strong class="text-white">Acceso al Océano Pacífico Directo: </strong>A solo 75 km de navegación hacia el Puerto de Salaverry, facilitando transporte marítimo hacia fundiciones y refinadoras occidentales.
+            </div>
+          </li>
+        </ul>
+
+        <div class="relative z-10 pt-4 border-t border-slate-800/80">
+          <a
+            href="#contacto"
+            class="inline-flex items-center gap-2 text-xs font-bold text-amber-400 hover:text-amber-300 transition-colors group/link"
+          >
+            <span>Consultar disponibilidad estratégica con Sonde Capital</span>
+            <i class="fa-solid fa-arrow-right transition-transform group-hover/link:translate-x-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* =========================================================================
+     RESPLANDOR Y PULSO AMBIENTAL EN EL CUADRO DE PERÚ
+     ========================================================================= */
+  @keyframes peru-card-glow {
+    0%, 100% {
+      box-shadow: 0 0 25px -4px rgba(245, 158, 11, 0.22),
+                  0 0 12px -2px rgba(245, 158, 11, 0.15),
+                  inset 0 0 16px rgba(245, 158, 11, 0.06);
+      border-color: rgba(245, 158, 11, 0.45);
+    }
+    50% {
+      box-shadow: 0 0 45px -2px rgba(245, 158, 11, 0.42),
+                  0 0 22px 0px rgba(245, 158, 11, 0.26),
+                  inset 0 0 24px rgba(245, 158, 11, 0.12);
+      border-color: rgba(251, 191, 36, 0.85);
+    }
+  }
+
+  .peru-resplendence-card {
+    animation: peru-card-glow 4.8s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .peru-resplendence-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 55px 0px rgba(245, 158, 11, 0.52),
+                0 0 28px 0px rgba(245, 158, 11, 0.32);
+  }
+
+  /* Barras de progreso animadas */
+  .geo-risk-bar {
+    transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+</style>
+
+<script>
+  // =========================================================================
+  // ANIMACIONES DE CONTADORES Y BARRAS DE PROGRESO EN GEOPOLÍTICA
+  // =========================================================================
+  function initGeopoliticsAnimations() {
+    const section = document.getElementById('geopolitica');
+    if (!section || section.dataset.geoAnimated) return;
+
+    const statEls = section.querySelectorAll<HTMLElement>('.geo-stat-counter');
+    const barEls = section.querySelectorAll<HTMLElement>('.geo-risk-bar');
+    const barPercentEls = section.querySelectorAll<HTMLElement>('.geo-bar-percent');
+
+    let animated = false;
+
+    function runAnimations() {
+      if (animated) return;
+      animated = true;
+      section.dataset.geoAnimated = 'true';
+
+      // 1. Animación de las 3 grandes métricas de dominancia
+      statEls.forEach((el, idx) => {
+        const targetStr = el.getAttribute('data-target') || el.textContent?.trim() || '';
+        const prefix = targetStr.startsWith('>') ? '>' : '';
+        const numericVal = parseInt(targetStr.replace(/[^\d]/g, ''), 10) || 0;
+
+        const duration = 1200;
+        const startTime = performance.now();
+
+        function updateNumber(now: number) {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // Curva de desaceleración cúbica suave
+          const easeOut = 1 - Math.pow(1 - progress, 3);
+          const current = Math.round(easeOut * numericVal);
+          el.textContent = `${prefix}${current}%`;
+
+          if (progress < 1) {
+            requestAnimationFrame(updateNumber);
+          } else {
+            el.textContent = targetStr;
+          }
+        }
+
+        setTimeout(() => {
+          requestAnimationFrame(updateNumber);
+        }, idx * 160);
+      });
+
+      // 2. Animación escalonada de las barras de riesgo y sus porcentajes
+      barEls.forEach((bar, idx) => {
+        const targetPercent = bar.getAttribute('data-percent') || '0';
+        const numPercent = parseInt(targetPercent, 10) || 0;
+        const percentEl = barPercentEls[idx];
+
+        setTimeout(() => {
+          bar.style.width = `${targetPercent}%`;
+
+          if (percentEl) {
+            const duration = 1000;
+            const startTime = performance.now();
+
+            function updateBarNum(now: number) {
+              const elapsed = now - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              const easeOut = 1 - Math.pow(1 - progress, 3);
+              const current = Math.round(easeOut * numPercent);
+              percentEl.textContent = `${current}%`;
+
+              if (progress < 1) {
+                requestAnimationFrame(updateBarNum);
+              } else {
+                percentEl.textContent = `${numPercent}%`;
+              }
+            }
+
+            requestAnimationFrame(updateBarNum);
+          }
+        }, 220 + (idx * 180));
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          runAnimations();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18 });
+
+    observer.observe(section);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGeopoliticsAnimations);
+  } else {
+    initGeopoliticsAnimations();
+  }
+  document.addEventListener('astro:page-load', initGeopoliticsAnimations);
+</script>

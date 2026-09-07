@@ -1,0 +1,336 @@
+---
+// Componente de Data Room Confidencial, Formulario de Solicitud de NDA y Footer Institucional
+---
+
+<section id="contacto" class="py-24 bg-slate-900 text-white relative">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header of the Contact Area -->
+    <div class="text-center max-w-3xl mx-auto mb-16" data-animate="fade-up">
+      <span class="text-xs uppercase font-extrabold tracking-widest text-amber-400 block mb-2">
+        Contacto Institucional & Debida Diligencia
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold font-['Plus_Jakarta_Sans']">
+        Acceso al Data Room & Solicitud de NDA
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base mt-2">
+        Para acceder al banco de datos geoquímicos, análisis multielementales ICP-MS de ACTLABS/ALS y títulos de concesión, complete el formulario de solicitud institucional.
+      </p>
+    </div>
+
+    <!-- Container Card: Left Info & Right Form -->
+    <div class="bg-slate-950 rounded-3xl shadow-2xl border border-slate-800 overflow-hidden mb-20" data-animate="fade-up">
+      <div class="grid grid-cols-1 lg:grid-cols-12">
+        <!-- Left Column: Confidentiality Briefing -->
+        <div class="lg:col-span-5 p-8 sm:p-12 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border-b lg:border-b-0 lg:border-r border-slate-800 flex flex-col justify-between">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-xs font-bold uppercase tracking-wider mb-6 border border-red-500/20">
+              <i class="fa-solid fa-lock text-[10px]"></i>
+              <span>Protocolo Estricto de NDA</span>
+            </div>
+
+            <h3 class="text-2xl font-extrabold text-white mb-4 font-['Plus_Jakarta_Sans']">
+              Protección de Información Estratégica
+            </h3>
+
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-8">
+              Dada la criticidad geopolítica de este activo y sus leyes excepcionales de Rubidio, Neodimio y Disprosio, la divulgación de las coordenadas exactas de las calicatas y los informes crudos de laboratorio se realiza exclusivamente bajo la firma de un Acuerdo de Confidencialidad bilateral formal.
+            </p>
+
+            <div class="space-y-4 text-xs text-slate-300">
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
+                <span>Ensayos de Espectrometría de Masas (ICP-MS)</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
+                <span>Certificados analíticos de ACTLABS y ALS-Chemex</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
+                <span>Títulos y planos de las 05 concesiones ante INGEMMET</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
+                <span>Mapas geológicos y registros de perforación LGR</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Institutional Contact Info -->
+          <div class="pt-8 border-t border-slate-800/80 mt-8 space-y-3 text-xs text-slate-400">
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-building text-amber-400 text-sm"></i>
+              <span>Sede Central: San Isidro Financial District, Lima, Perú</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-envelope text-amber-400 text-sm"></i>
+              <a href="mailto:inversiones@sondecapital.com" class="hover:text-white transition-colors">
+                inversiones@sondecapital.com
+              </a>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fa-solid fa-phone text-amber-400 text-sm"></i>
+              <span>Mesa de Inversiones: +51 (1) 700-0000</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Institutional Request Form -->
+        <div class="lg:col-span-7 p-8 sm:p-12 bg-white text-slate-900">
+          <form
+            id="nda-request-form"
+            onsubmit="event.preventDefault(); document.getElementById('nda-success-message').classList.remove('hidden'); this.classList.add('opacity-50', 'pointer-events-none');"
+            class="space-y-4"
+          >
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  Nombre Completo *
+                </label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Ej. Dr. Roberto Valenzuela"
+                  class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
+                />
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  Institución / Fondo / Minera *
+                </label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Nombre de la firma o fondo"
+                  class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  Cargo Directivo *
+                </label>
+                <input
+                  type="text"
+                  required
+                  placeholder="Ej. Managing Director / VP M&A"
+                  class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
+                />
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                  Correo Corporativo Institucional *
+                </label>
+                <input
+                  type="email"
+                  required
+                  placeholder="director@firma.com"
+                  class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                Vía de Participación de Interés *
+              </label>
+              <select class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all">
+                <option value="jv">Joint Venture & Operación (Opción Recomendada)</option>
+                <option value="acquisition">Adquisición Completa del Activo ($2.5B+ USD)</option>
+                <option value="offtake">Contrato de Suministro de Mineral Crudo (Offtake EXW)</option>
+                <option value="meeting">Solicitud de Reunión con el Equipo Directivo</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                Requerimientos Específicos o Mensaje (Opcional)
+              </label>
+              <textarea
+                rows="3"
+                placeholder="Indique si requiere información sobre elementos específicos (ej. Rubidio, Neodimio) o disponibilidad para visita a terreno."
+                class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
+              ></textarea>
+            </div>
+
+            <div class="pt-2">
+              <button
+                type="submit"
+                class="w-full inline-flex items-center justify-center gap-2.5 bg-slate-950 hover:bg-slate-800 text-white font-extrabold text-sm py-4 px-6 rounded-xl shadow-lg transition-all active:scale-95 border border-slate-800"
+              >
+                <i class="fa-solid fa-file-signature text-amber-400 text-xs"></i>
+                <span>Solicitar Credenciales de Data Room & NDA</span>
+              </button>
+
+              <p class="text-[11px] text-slate-400 mt-3 text-center leading-normal">
+                Toda solicitud está sujeta a verificación de identidad bajo estándares KYC/AML de Sonde Capital.
+              </p>
+            </div>
+          </form>
+
+          <!-- Success Alert Message -->
+          <div id="nda-success-message" class="hidden mt-4 p-5 rounded-2xl bg-teal-50 border border-teal-200 text-teal-900 text-xs sm:text-sm">
+            <div class="flex items-center gap-2 font-bold mb-1 text-teal-950">
+              <i class="fa-solid fa-circle-check text-teal-600 text-base"></i>
+              <span>Solicitud Registrada con Éxito</span>
+            </div>
+            <p class="text-xs text-teal-800 leading-relaxed">
+              El departamento de Relaciones con Inversionistas de Sonde Capital validará las credenciales y remitirá el Acuerdo de Confidencialidad formal a su correo institucional en un plazo máximo de 24 horas hábiles.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Institutional Footer Built-in -->
+    <!-- Institutional Custom Footer for Project Adriano -->
+    <footer class="pt-14 border-t border-slate-800 text-xs text-slate-400">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 mb-12">
+        <!-- Col 1: Brand & Project Focus (lg:col-span-4) -->
+        <div class="lg:col-span-4 space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="/assets/sonde_logo_transparent.png" alt="Sonde Capital" class="h-8 w-auto brightness-0 invert" />
+            <div class="flex flex-col">
+              <span class="text-xs tracking-widest text-white font-extrabold uppercase font-['Plus_Jakarta_Sans']">
+                Sonde Capital
+              </span>
+              <span class="text-[10px] tracking-wider text-amber-400 font-bold uppercase">
+                Metales Estratégicos Adriano
+              </span>
+            </div>
+          </div>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Plataforma institucional de evaluación técnica del yacimiento ofiolítico mantélico más relevante de la década en el norte de Perú. Formación de 2,328 hectáreas con 41 elementos certificados por 15 estudios independientes y acceso directo al Pacífico.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 text-[11px] font-bold">
+              <i class="fa-solid fa-shield-halved text-[9px]"></i> Estándares NI 43-101 / JORC
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-[11px] font-bold">
+              <i class="fa-solid fa-lock text-[9px]"></i> Acceso Vía NDA Exclusivo
+            </span>
+          </div>
+        </div>
+
+        <!-- Col 2: Project Key Navigation (lg:col-span-3) -->
+        <div class="lg:col-span-3">
+          <h4 class="text-xs uppercase tracking-wider text-slate-200 font-bold mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-compass text-amber-400 text-xs"></i>
+            <span>Navegación del Activo</span>
+          </h4>
+          <ul class="space-y-2.5 text-xs text-slate-400">
+            <li>
+              <a href="#resumen" class="hover:text-amber-400 transition-colors flex items-center gap-2">
+                <i class="fa-solid fa-chevron-right text-[9px] text-slate-600"></i>
+                <span>Escala &amp; Pilares Verificados ($2.5B+)</span>
+              </a>
+            </li>
+            <li>
+              <a href="#geopolitica" class="hover:text-amber-400 transition-colors flex items-center gap-2">
+                <i class="fa-solid fa-chevron-right text-[9px] text-slate-600"></i>
+                <span>Crisis Global &amp; Seguridad de Suministro</span>
+              </a>
+            </li>
+            <li>
+              <a href="#elementos" class="hover:text-amber-400 transition-colors flex items-center gap-2">
+                <i class="fa-solid fa-chevron-right text-[9px] text-slate-600"></i>
+                <span>Matriz de los 41 Elementos &amp; TTRR</span>
+              </a>
+            </li>
+            <li>
+              <a href="#geologia" class="hover:text-amber-400 transition-colors flex items-center gap-2">
+                <i class="fa-solid fa-chevron-right text-[9px] text-slate-600"></i>
+                <span>05 Concesiones &amp; Puerto Salaverry (75 km)</span>
+              </a>
+            </li>
+            <li>
+              <a href="#estructuras" class="hover:text-amber-400 transition-colors flex items-center gap-2">
+                <i class="fa-solid fa-chevron-right text-[9px] text-slate-600"></i>
+                <span>Estructuras de Inversión (Compra, JV, Offtake)</span>
+              </a>
+            </li>
+            <li>
+              <a href="#contacto" class="hover:text-amber-400 transition-colors flex items-center gap-2 font-semibold text-amber-300">
+                <i class="fa-solid fa-chevron-right text-[9px] text-amber-400"></i>
+                <span>Solicitud de Credenciales &amp; Data Room</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Corporate Global Offices (lg:col-span-3) -->
+        <div class="lg:col-span-3">
+          <h4 class="text-xs uppercase tracking-wider text-slate-200 font-bold mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-building text-amber-400 text-xs"></i>
+            <span>Oficinas Corporativas</span>
+          </h4>
+          <div class="space-y-4 text-xs">
+            <!-- US Office -->
+            <div class="bg-slate-900/90 rounded-xl p-3.5 border border-slate-800 space-y-1">
+              <div class="flex items-center gap-2 text-white font-bold">
+                <i class="fa-solid fa-flag-usa text-amber-400 text-xs"></i>
+                <span>Oficina en EE.UU.</span>
+              </div>
+              <p class="text-slate-300 font-medium leading-relaxed">
+                Greenville Ave. Allen, TX 75002
+              </p>
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold block">
+                Estados Unidos
+              </span>
+            </div>
+
+            <!-- Peru Office -->
+            <div class="bg-slate-900/90 rounded-xl p-3.5 border border-slate-800 space-y-1">
+              <div class="flex items-center gap-2 text-white font-bold">
+                <i class="fa-solid fa-location-dot text-amber-400 text-xs"></i>
+                <span>Oficina en Perú</span>
+              </div>
+              <p class="text-slate-300 font-medium leading-relaxed">
+                San Isidro Financial District, Lima
+              </p>
+              <span class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold block">
+                Perú
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 4: Institutional Contact (lg:col-span-2) -->
+        <div class="lg:col-span-2">
+          <h4 class="text-xs uppercase tracking-wider text-slate-200 font-bold mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-headset text-amber-400 text-xs"></i>
+            <span>Mesa de Inversión</span>
+          </h4>
+          <div class="space-y-3 text-xs text-slate-400">
+            <div>
+              <span class="text-[10px] uppercase tracking-wider text-slate-500 block font-semibold mb-1">Contacto Directo</span>
+              <a href="mailto:inversiones@sondecapital.com" class="text-slate-200 hover:text-amber-400 font-medium transition-colors break-all flex items-center gap-1.5">
+                <i class="fa-solid fa-envelope text-amber-400 text-[11px]"></i>
+                <span>inversiones@sondecapital.com</span>
+              </a>
+            </div>
+
+            <div class="pt-2 border-t border-slate-800/80">
+              <span class="text-[10px] uppercase tracking-wider text-slate-500 block font-semibold mb-1">Due Diligence</span>
+              <p class="text-slate-300 text-[11px] leading-relaxed">
+                Reuniones virtuales y coordinación de visitas técnicas presenciales con geólogos consultores.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Legal Disclaimer Bar -->
+      <div class="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-500 gap-4">
+        <p>© 2026 Sonde Capital · Metales Estratégicos &amp; Tierras Raras Adriano. Todos los derechos reservados.</p>
+        <p class="max-w-xl text-center sm:text-right text-slate-500 leading-normal">
+          Aviso de Confidencialidad: La información técnica, geológica y analítica contenida en este portal es de carácter estrictamente reservado para entidades evaluadoras calificadas. Prohibida su divulgación o reproducción sin autorización previa de Sonde Capital.
+        </p>
+      </div>
+    </footer>
+  </div>
+</section>

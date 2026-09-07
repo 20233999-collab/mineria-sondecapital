@@ -1,0 +1,156 @@
+---
+// Componente de Benchmarking Global: Adriano vs. Principales Proyectos Mundiales
+const comparisonData = [
+  {
+    parameter: "Diversidad Elemental",
+    adriano: "41 Metales (15 REE + 23 Estratégicos)",
+    serraVerde: "2-3 Elementos (Nd, Pr)",
+    mountainPass: "3-4 Elementos (Bastnäsita)",
+    mountWeld: "Tierras Raras Ligeras Base",
+    advantage: "41 elementos simultáneos sin precedentes"
+  },
+  {
+    parameter: "Origen Geológico",
+    adriano: "Ofiolítico de Origen Mantélico (Único)",
+    serraVerde: "Arcillas Iónicas de Laterita",
+    mountainPass: "Intrusión Carbonatita",
+    mountWeld: "Carbonatita Laterítica",
+    advantage: "Roca madre gabroica con minerales diseminados"
+  },
+  {
+    parameter: "Método de Extracción",
+    adriano: "100% Tajo Abierto (Open-Pit Superficial)",
+    serraVerde: "Tajo Abierto en Arcillas",
+    mountainPass: "Tajo Abierto Convencional",
+    mountWeld: "Tajo Abierto",
+    advantage: "Acceso inmediato sin desbroce estéril masivo"
+  },
+  {
+    parameter: "Rubidio (Grado Tecnológico)",
+    adriano: "154 ppm (Picos hasta 479 ppm)",
+    serraVerde: "Trazas insignificantes",
+    mountainPass: "No aprovechable",
+    mountWeld: "No reportado",
+    advantage: "Registro entre los más elevados a nivel mundial"
+  },
+  {
+    parameter: "Logística a Puerto Oceánico",
+    adriano: "75 km al Puerto de Salaverry (Pacífico)",
+    serraVerde: ">1,000 km al Atlántico (Goiás)",
+    mountainPass: "~350 km a Long Beach (Costas elevadas)",
+    mountWeld: ">1,000 km a Fremantle + flete a Malasia",
+    advantage: "Ahorro de más del 70% en flete y cero altitud"
+  },
+  {
+    parameter: "Seguridad de Procesamiento",
+    adriano: "Mineral crudo libre para refinación occidental",
+    serraVerde: "Consorcio EE.UU. en desarrollo",
+    mountainPass: "Histórica dependencia de envío a China",
+    mountWeld: "Planta de separación ubicada en Malasia",
+    advantage: "Alternativa soberana e independiente"
+  }
+];
+---
+
+<section class="py-20 bg-white border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-14" data-animate="fade-up">
+      <span class="text-xs uppercase font-extrabold tracking-widest text-amber-600 block mb-1">
+        Análisis Competitivo
+      </span>
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-950 font-['Plus_Jakarta_Sans']">
+        Benchmarking Global: ¿Por Qué Adriano Supera a los Referentes Mundiales?
+      </h2>
+      <p class="text-slate-600 text-sm sm:text-base mt-2">
+        Comparativa directa frente a los proyectos de tierras raras más cotizados en los mercados de capitales internacionales.
+      </p>
+    </div>
+
+    <!-- Comparative Table Desktop -->
+    <div class="hidden lg:block bg-white rounded-2xl shadow-xs border border-slate-200 overflow-hidden" data-animate="fade-up">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-slate-900 text-white text-xs uppercase tracking-wider">
+            <th class="py-4 px-5 font-bold">Parámetro Clave</th>
+            <th class="py-4 px-5 font-extrabold text-amber-400 bg-slate-950 border-x border-slate-800">
+              <div class="flex items-center gap-1.5">
+                <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                <span>Proyecto Adriano (Perú)</span>
+              </div>
+            </th>
+            <th class="py-4 px-5 font-semibold text-slate-300">Serra Verde (Brasil)</th>
+            <th class="py-4 px-5 font-semibold text-slate-300">Mountain Pass (EE.UU.)</th>
+            <th class="py-4 px-5 font-semibold text-slate-300">Mount Weld (Australia)</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-200 text-xs sm:text-sm">
+          {comparisonData.map((row, idx) => (
+            <tr class={idx % 2 === 0 ? "bg-white hover:bg-slate-50/70" : "bg-slate-50/40 hover:bg-slate-50"}>
+              <td class="py-4 px-5 font-bold text-slate-900">
+                {row.parameter}
+                <span class="block text-[11px] font-normal text-amber-600 mt-0.5">
+                  ✓ {row.advantage}
+                </span>
+              </td>
+              <td class="py-4 px-5 font-extrabold text-slate-950 bg-amber-50/60 border-x border-amber-200/80">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-circle-check text-amber-600 text-xs shrink-0"></i>
+                  <span>{row.adriano}</span>
+                </div>
+              </td>
+              <td class="py-4 px-5 text-slate-600">
+                {row.serraVerde}
+              </td>
+              <td class="py-4 px-5 text-slate-600">
+                {row.mountainPass}
+              </td>
+              <td class="py-4 px-5 text-slate-600">
+                {row.mountWeld}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Responsive Cards for Mobile & Tablet -->
+    <div class="lg:hidden space-y-4" data-animate="fade-up">
+      {comparisonData.map((row) => (
+        <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-xs space-y-3">
+          <div class="flex items-start justify-between">
+            <h4 class="font-bold text-slate-900 text-sm">{row.parameter}</h4>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 border border-amber-200">
+              Ventaja Adriano
+            </span>
+          </div>
+
+          <div class="p-3 bg-amber-50/80 rounded-lg border border-amber-200/80 text-xs">
+            <span class="font-extrabold text-slate-950 block mb-0.5">Adriano (Perú):</span>
+            <span class="text-slate-800 font-semibold">{row.adriano}</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-[11px] text-slate-600 pt-1">
+            <div class="bg-slate-50 p-2 rounded border border-slate-100">
+              <span class="font-bold text-slate-700 block">Serra Verde:</span>
+              {row.serraVerde}
+            </div>
+            <div class="bg-slate-50 p-2 rounded border border-slate-100">
+              <span class="font-bold text-slate-700 block">Mountain Pass:</span>
+              {row.mountainPass}
+            </div>
+            <div class="bg-slate-50 p-2 rounded border border-slate-100">
+              <span class="font-bold text-slate-700 block">Mount Weld:</span>
+              {row.mountWeld}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Footnote Citation -->
+    <div class="mt-6 text-center text-xs text-slate-500">
+      * Información compilada de reportes técnicos públicos, adquisiciones de M&A (2024–2026) y el memorándum técnico oficial de Sonde Capital.
+    </div>
+  </div>
+</section>

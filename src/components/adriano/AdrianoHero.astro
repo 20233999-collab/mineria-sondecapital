@@ -1,0 +1,170 @@
+---
+// Componente Hero Institucional con fondo de terreno real nítido, animación escalonada y badge sirena
+---
+
+<section id="hero" class="relative min-h-[94vh] flex items-center justify-center pt-24 pb-20 overflow-hidden bg-slate-950 text-white">
+  <!-- Real Deposit Background Image: High-res (2181x930) & Balanced Contrast -->
+  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+    <img
+      src="/assets/adriano/Foto Portada.png"
+      alt="Macizo Geológico del Proyecto Adriano"
+      class="w-full h-full object-cover object-center scale-100 filter brightness-85 contrast-110"
+      loading="eager"
+    />
+    <!-- Refined Gradient Overlays with Deep Financial Navy Blue Tint -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#061224]/85 via-[#0B2144]/55 to-[#050E1C]/95"></div>
+    <div class="absolute inset-0 bg-[#0F2D5C]/25 mix-blend-color pointer-events-none"></div>
+    <div class="absolute inset-0 bg-radial from-[#0A2246]/45 via-transparent to-transparent"></div>
+    <!-- Fine Grid Overlay -->
+    <div
+      class="absolute inset-0 opacity-[0.08] pointer-events-none"
+      style="background-image: radial-gradient(#38BDF8 1px, transparent 1px); background-size: 36px 36px;"
+    ></div>
+  </div>
+
+  <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <!-- 1. Confidentiality Badge (Fondo transparente, letras amarillas y contorno amarillo con respiración sutil) -->
+    <div
+      data-animate="fade-up"
+      data-delay="100"
+      class="inline-block mb-7"
+    >
+      <div class="siren-badge inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border text-[11px] font-extrabold tracking-wider uppercase bg-transparent transition-all duration-300">
+        <!-- Amber/Yellow Light Indicator -->
+        <span class="relative flex h-2.5 w-2.5 shrink-0">
+          <span class="siren-beacon-ping absolute inline-flex h-full w-full rounded-full opacity-75"></span>
+          <span class="siren-beacon-dot relative inline-flex rounded-full h-2.5 w-2.5"></span>
+        </span>
+        <i class="fa-solid fa-shield-halved text-[11px]"></i>
+        <span>Estrictamente Confidencial · Exclusivo para Inversionistas Calificados</span>
+      </div>
+    </div>
+
+    <!-- 2. Display Main Heading (Delay 300ms) -->
+    <h1
+      data-animate="fade-up"
+      data-delay="300"
+      class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] mb-5 font-['Plus_Jakarta_Sans'] drop-shadow-md"
+    >
+      Metales Estratégicos &<br class="hidden sm:inline" />
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-amber-400 to-amber-500">
+        Tierras Raras Adriano
+      </span>
+    </h1>
+
+    <!-- 3. Positioning Subtitle (Delay 500ms) -->
+    <p
+      data-animate="fade-up"
+      data-delay="500"
+      class="text-lg sm:text-2xl font-bold text-amber-400 tracking-normal mb-6 max-w-3xl mx-auto drop-shadow-sm"
+    >
+      El Activo Mineral de Origen Mantélico Más Relevante de la Década
+    </p>
+
+    <!-- 4. Contextualization Paragraph (Delay 700ms) -->
+    <p
+      data-animate="fade-up"
+      data-delay="700"
+      class="text-base sm:text-lg text-slate-200 max-w-3xl mx-auto leading-relaxed mb-10 font-medium drop-shadow-xs"
+    >
+      Oportunidad de inversión exclusiva en uno de los yacimientos minerales más extraordinarios jamás identificados: una formación ofiolítica de <strong class="text-white font-bold underline decoration-amber-500/60 underline-offset-4">2.328 hectáreas</strong> en el norte de Perú, que <strong class="text-white font-bold">contiene 41 metales estratégicos</strong> con acceso directo en superficie y a solo 75 km del Puerto de Salaverry.
+    </p>
+
+    <!-- 5. Dual Primary Call to Actions (Delay 900ms) -->
+    <div
+      data-animate="fade-up"
+      data-delay="900"
+      class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-14"
+    >
+      <a
+        href="#elementos"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-extrabold text-sm px-8 py-4 rounded-xl shadow-xl hover:shadow-amber-500/25 transition-all hover:-translate-y-0.5 active:scale-95 border border-amber-400/50"
+      >
+        <i class="fa-solid fa-atom text-xs"></i>
+        <span>Explorar los 41 Elementos</span>
+      </a>
+
+      <a
+        href="#contacto"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-slate-900/90 hover:bg-slate-800 text-white font-semibold text-sm px-7 py-4 rounded-xl border border-slate-600 hover:border-amber-400/60 transition-all backdrop-blur-md active:scale-95 shadow-md"
+      >
+        <i class="fa-solid fa-calendar-check text-amber-400 text-xs"></i>
+        <span>Agenda una reunión con el equipo directivo</span>
+      </a>
+    </div>
+
+    <!-- 6. Certified Labs & Validation Ribbon (Delay 1100ms) -->
+    <div
+      data-animate="fade-up"
+      data-delay="1100"
+      class="pt-7 border-t border-slate-800/90 flex flex-col md:flex-row items-center justify-center gap-5 text-xs text-slate-300"
+    >
+      <span class="uppercase tracking-wider font-extrabold text-slate-400 text-[10px]">
+        Validación Analítica Independiente (15 Estudios · 2004–2022):
+      </span>
+      <div class="flex flex-wrap items-center justify-center gap-6 font-semibold text-slate-200">
+        <span class="flex items-center gap-1.5">
+          <i class="fa-solid fa-circle-check text-amber-400 text-[10px]"></i>
+          ACTLABS (Canadá)
+        </span>
+        <span class="flex items-center gap-1.5">
+          <i class="fa-solid fa-circle-check text-amber-400 text-[10px]"></i>
+          ALS-Chemex (Vancouver)
+        </span>
+        <span class="flex items-center gap-1.5">
+          <i class="fa-solid fa-circle-check text-amber-400 text-[10px]"></i>
+          SGS del Perú
+        </span>
+        <span class="px-2.5 py-0.5 rounded-full bg-slate-800/90 border border-slate-700 text-amber-300 text-[11px] font-bold">
+          Ensayos ICP-MS & LGR
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* =========================================================================
+     YELLOW CONFIDENTIALITY BADGE (Fondo 100% transparente, letras y borde amarillos)
+     ========================================================================= */
+  @keyframes badge-gentle-amber-loop {
+    0%, 100% {
+      background-color: transparent;
+      color: #FACC15; /* yellow-400 */
+      border-color: rgba(250, 204, 21, 0.75);
+      box-shadow: 0 0 10px rgba(250, 204, 21, 0.15);
+    }
+    50% {
+      background-color: transparent; /* Fondo siempre transparente */
+      color: #FDE047; /* yellow-300: pulso sutil y luminoso */
+      border-color: rgba(253, 224, 71, 0.95);
+      box-shadow: 0 0 18px rgba(250, 204, 21, 0.35);
+    }
+  }
+
+  @keyframes beacon-amber-pulse {
+    0%, 100% {
+      transform: scale(0.95);
+      opacity: 0.85;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  }
+
+  .siren-badge {
+    background-color: transparent !important;
+    animation: badge-gentle-amber-loop 6.5s infinite ease-in-out;
+  }
+
+  .siren-beacon-dot {
+    background-color: #FACC15;
+    animation: beacon-amber-pulse 6.5s infinite ease-in-out;
+  }
+
+  .siren-beacon-ping {
+    background-color: #FACC15;
+    animation: ping 2.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+</style>

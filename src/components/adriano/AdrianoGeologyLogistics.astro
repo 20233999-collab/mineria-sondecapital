@@ -1,0 +1,142 @@
+---
+// Componente de Ficha Geológica, Concesiones Tituladas & Corredor Logístico Salaverry
+const concessions = [
+  { name: "Atahualpa", code: "Titulada INGEMMET", status: "Propiedad 100% Definitiva" },
+  { name: "Bonanza", code: "Titulada INGEMMET", status: "Propiedad 100% Definitiva" },
+  { name: "Gasñape", code: "Titulada INGEMMET", status: "Propiedad 100% Definitiva" },
+  { name: "Huascar", code: "Titulada INGEMMET", status: "Propiedad 100% Definitiva" },
+  { name: "Incanato", code: "Titulada INGEMMET", status: "Propiedad 100% Definitiva" }
+];
+---
+
+<section id="geologia" class="py-24 bg-white border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Title -->
+    <div class="max-w-3xl mb-16" data-animate="fade-up">
+      <span class="text-xs uppercase font-extrabold tracking-widest text-amber-600 block mb-1">
+        Geología Estructural & Logística Portuaria
+      </span>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-950 font-['Plus_Jakarta_Sans'] tracking-tight">
+        Yacimiento Ofiolítico Mantélico & Concesiones Tituladas
+      </h2>
+      <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+        El proyecto está consolidado sobre un macizo geológico de escala masiva en la Región La Libertad, garantizando total seguridad jurídica y una ubicación logística costera insuperable.
+      </p>
+    </div>
+
+    <!-- 2 Columns Grid: Geological Anatomy vs Logistics -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+      <!-- Left Column: Geological Anatomy -->
+      <div class="lg:col-span-7 bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200 flex flex-col justify-between" data-animate="fade-up">
+        <div>
+          <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-200">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold text-sm">
+                <i class="fa-solid fa-earth-americas"></i>
+              </div>
+              <h3 class="text-lg font-bold text-slate-950">Anatomía del Depósito Mineral</h3>
+            </div>
+            <span class="text-xs font-bold text-amber-700 bg-amber-100/70 px-3 py-1 rounded-full border border-amber-200">
+              Formación Única Mundial
+            </span>
+          </div>
+
+          <div class="space-y-4 text-xs sm:text-sm text-slate-700 mb-8 leading-relaxed">
+            <p>
+              A diferencia de las arcillas iónicas o carbonatitas convencionales, Adriano es un <strong class="text-slate-950 font-bold">cuerpo ofiolítico de origen mantélico</strong> (roca originada en el límite profundo de la corteza y manto terrestre) emplazado en basaltos del Jurásico Superior.
+            </p>
+            <p>
+              Los minerales y tierras raras se encuentran diseminados de forma homogénea en una roca madre gabroica masiva, permitiendo una extracción mecánica directa a cielo abierto (<strong class="text-slate-950 font-bold">tajo abierto 100%</strong>).
+            </p>
+          </div>
+
+          <!-- Technical Specs Highlights -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
+              <span class="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">Diámetro Continuo</span>
+              <span class="text-xl font-extrabold text-slate-950 font-mono">~20 km</span>
+              <span class="text-[11px] text-slate-500 block mt-0.5">Estructura circular masiva</span>
+            </div>
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
+              <span class="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">Perforación LGR</span>
+              <span class="text-xl font-extrabold text-slate-950 font-mono">180 m</span>
+              <span class="text-[11px] text-slate-500 block mt-0.5">Leyes confirmadas a profundidad</span>
+            </div>
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs">
+              <span class="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">Potencial Vertical</span>
+              <span class="text-xl font-extrabold text-slate-950 font-mono">&gt;1,000 m</span>
+              <span class="text-[11px] text-slate-500 block mt-0.5">Continuidad en profundidad</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Concessions Table Sub-card -->
+        <div class="bg-white rounded-xl p-4 border border-slate-200">
+          <div class="flex items-center justify-between mb-3 text-xs">
+            <span class="font-bold text-slate-900 uppercase tracking-wider">05 Concesiones Mineras Registradas (2,328 ha)</span>
+            <span class="text-teal-700 font-semibold flex items-center gap-1">
+              <i class="fa-solid fa-circle-check text-xs"></i> 100% Tituladas
+            </span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-xs">
+            {concessions.map(c => (
+              <div class="p-2 rounded-lg bg-slate-50 border border-slate-100">
+                <span class="font-bold text-slate-900 block text-xs">{c.name}</span>
+                <span class="text-[10px] text-slate-500 block">{c.code}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Maritime Logistics Corridor -->
+      <div class="lg:col-span-5 bg-gradient-to-br from-slate-900 to-slate-950 text-white rounded-2xl p-6 sm:p-8 flex flex-col justify-between" data-animate="fade-up">
+        <div>
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl mb-6">
+            <i class="fa-solid fa-route"></i>
+          </div>
+
+          <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400">
+            Ventaja Logística Portuaria
+          </span>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-4 font-['Plus_Jakarta_Sans']">
+            A Solo 75 km del Puerto de Salaverry
+          </h3>
+
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+            A diferencia de la mayoría de proyectos mineros en Perú situados a más de 4,000 metros sobre el nivel del mar en la alta cordillera andina, el Proyecto Adriano goza de una ubicación costera privilegiada.
+          </p>
+
+          <ul class="space-y-3.5 text-xs text-slate-300">
+            <li class="flex items-start gap-3 bg-slate-800/60 p-3 rounded-xl border border-slate-700/60">
+              <i class="fa-solid fa-road text-amber-400 mt-1 shrink-0"></i>
+              <div>
+                <strong class="text-white font-semibold">Carretera Asfaltada Operativa los 365 Días:</strong>
+                Tránsito continuo de camiones de carga pesada sin interrupciones por nevadas o temporadas de lluvia andina.
+              </div>
+            </li>
+            <li class="flex items-start gap-3 bg-slate-800/60 p-3 rounded-xl border border-slate-700/60">
+              <i class="fa-solid fa-money-bill-trend-up text-amber-400 mt-1 shrink-0"></i>
+              <div>
+                <strong class="text-white font-semibold">Ahorro de más del 70% en Flete Terrestre:</strong>
+                Flete directo en cortas distancias hasta el muelle de aguas profundas para exportación en buques Panamax y Supramax.
+              </div>
+            </li>
+            <li class="flex items-start gap-3 bg-slate-800/60 p-3 rounded-xl border border-slate-700/60">
+              <i class="fa-solid fa-heart-pulse text-amber-400 mt-1 shrink-0"></i>
+              <div>
+                <strong class="text-white font-semibold">Cero Riesgos de Gran Altitud:</strong>
+                Entorno geográfico cercano al nivel del mar que facilita la contratación y productividad del personal técnico sin contingencias de soroche.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-8 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+          <span>Puerto de Salaverry, La Libertad</span>
+          <span class="font-mono text-amber-400 font-bold">Ruta del Pacífico</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

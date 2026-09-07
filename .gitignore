@@ -27,3 +27,5 @@ pnpm-debug.log*
 .vercel
 .env*
 .playwright-mcp/
+agents/
+.~lock.*

@@ -1,0 +1,942 @@
+---
+// Componente de Matriz Interactiva de los 41 Elementos y Tierras Raras de Adriano
+// Extraído de: Relacion de TTRR Adriano Agosto 26 V2.xlsx y memorándum oficial
+const elementsList = [
+  // 15 Tierras Raras (REE)
+  {
+    item: 10,
+    symbol: "Ce",
+    name: "Cerio",
+    category: "ree-light",
+    categoryName: "Tierras Raras Ligeras (LREE)",
+    ppm: "117.43 ppm",
+    tons: "274,786 MT",
+    priority: "Crítica",
+    priorityClass: "bg-amber-100 text-amber-800 border-amber-300",
+    application: "Catalizadores automotrices, aleaciones aeroespaciales y pulido de vidrio de precisión."
+  },
+  {
+    item: 7,
+    symbol: "La",
+    name: "Lantano",
+    category: "ree-light",
+    categoryName: "Tierras Raras Ligeras (LREE)",
+    ppm: "67.3 ppm",
+    tons: "198,535 MT",
+    priority: "Crítica",
+    priorityClass: "bg-amber-100 text-amber-800 border-amber-300",
+    application: "Baterías híbridas NiMH, lentes ópticos de grado militar y craqueo de petróleo."
+  },
+  {
+    item: 9,
+    symbol: "Nd",
+    name: "Neodimio",
+    category: "ree-light",
+    categoryName: "Tierras Raras Ligeras (LREE)",
+    ppm: "42.56 ppm",
+    tons: "125,552 MT",
+    priority: "Extrema",
+    priorityClass: "bg-red-100 text-red-800 border-red-300",
+    application: "Imanes permanentes NdFeB de ultra-alta potencia para motores de EV, turbinas eólicas y cazas."
+  },
+  {
+    item: 13,
+    symbol: "Y",
+    name: "Itrio",
+    category: "ree-heavy",
+    categoryName: "Tierras Raras Pesadas (HREE)",
+    ppm: "32.61 ppm",
+    tons: "96,199 MT",
+    priority: "Extrema",
+    priorityClass: "bg-red-100 text-red-800 border-red-300",
+    application: "Láseres de alta energía, superconductores, recubrimientos térmicos de turbinas de aviación."
+  },
+  {
+    item: 17,
+    symbol: "Pr",
+    name: "Praseodimio",
+    category: "ree-light",
+    categoryName: "Tierras Raras Ligeras (LREE)",
+    ppm: "11.7 ppm",
+    tons: "34,515 MT",
+    priority: "Extrema",
+    priorityClass: "bg-red-100 text-red-800 border-red-300",
+    application: "Imanes de tierras raras junto al Neodimio, motores aeronáuticos y cristales de protección militar."
+  },
+  {
+    item: 11,
+    symbol: "Sm",
+    name: "Samario",
+    category: "ree-light",
+    categoryName: "Tierras Raras Ligeras (LREE)",
+    ppm: "9.68 ppm",
+    tons: "28,556 MT",
+    priority: "Crítica",
+    priorityClass: "bg-amber-100 text-amber-800 border-amber-300",
+    application: "Imanes permanentes Samario-Cobalto (SmCo) que operan a temperaturas extremas en defensa y misiles."
+  },
+  {
+    item: 6,
+    symbol: "Sc",
+    name: "Escandio",
+    category: "ree-light",
+    categoryName: "Tierras Raras (REE)",
+    ppm: "8.18 ppm",
+    tons: "24,131 MT",
+    priority: "Extrema",
+    priorityClass: "bg-red-100 text-red-800 border-red-300",
+    application: "Aleaciones de aluminio-escandio para fuselajes de aviones supersónicos y celdas de combustible de óxido sólido."
+  },
+  {
+    item: 22,
+    symbol: "Gd",
+    name: "Gadolinio",
+    category: "ree-heavy",
+    categoryName: "Tierras Raras Pesadas (HREE)",
+    ppm: "7.5 ppm",
+    tons: "22,125 MT",
+    priority: "Crítica",
+    priorityClass: "bg-amber-100 text-amber-800 border-amber-300",
+    application: "Agentes de contraste para resonancia magnética (MRI) y barras de control en reactores nucleares."
+  },
+  {
+    item: 19,
+    symbol: "Dy",
+    name: "Disprosio",
+    category: "ree-heavy",
+    categoryName: "Tierras Raras Pesadas (HREE)",
+    ppm: "6.2 ppm",
+    tons: "18,290 MT",
+    priority: "Extrema",
+    priorityClass: "bg-red-100 text-red-800 border-red-300",
+    application: "Mantiene la magnetización de imanes permanentes a temperaturas elevadas; crítico en vehículos eléctricos."
+  },
+  {
+    item: 12,
+    symbol: "Yb",
+    name: "Yterbio",
+    category: "ree-heavy",
+    categoryName: "Tierras Raras Pesadas (HREE)",
+    ppm: "5.14 ppm",
+    tons: "15,163 MT",
+    priority: "Alta",
+    priorityClass: "bg-blue-100 text-blue-800 border-blue-300",
+    application: "Láseres de fibra óptica industriales para corte de acero, amplificadores de señal y relojes atómicos."
+  },
+  {
+    item: 18,
+    symbol: "Er",
+    name: "Erbio",
+    category: "ree-heavy",
+    categoryName: "Tierras Raras Pesadas (HREE)",
+    ppm: "4.3 ppm",
+    tons: "12,685 MT",
+    priority: "Alta",
+    priorityClass: "bg-blue-100 text-blue-800 border-blue-300",
+    application: "Amplificadores ópticos para cableados submarinos de internet transoceánico y tecnología láser médica."
+  },
+  {
+    item: 20,
+    symbol: "Eu",
+    name: "Europio",
+    category: "ree-heavy",
+    categoryName: "Tierras Raras Pesadas (HREE)",
+    ppm: "2.03 ppm",
+    tons: "4,750 MT",
+    priority: "Alta",
+    priorityClass: "bg-blue-100 text-blue-800 border-blue-300",
+    application: "Fósforos rojos en pantallas de ultra-alta definición y medidas de seguridad antifraude en billetes de banco."
+  },
+  {
+    item: 23,
+    symbol: "Ho",
+    name: "Holmio",
+    category: "ree-heavy",
+    categoryName: "Tierras Raras Pesadas (HREE)",
+    ppm: "1.2 ppm",
+    tons: "280,800 MT",
+    priority: "Alta",
+    priorityClass: "bg-blue-100 text-blue-800 border-blue-300",
+    application: "Mayor momento magnético de cualquier elemento natural; vital en concentradores de flujo magnético."
+  },
+  {
+    item: 21,
+    symbol: "Tb",
+    name: "Terbio",
+    category: "ree-heavy",
+    categoryName: "Tierras Raras Pesadas (HREE)",
+    ppm: "1.18 ppm",
+    tons: "3,481 MT",
+    priority: "Extrema",
+    priorityClass: "bg-red-100 text-red-800 border-red-300",
+    application: "Actuadores magnetostrictivos navales de sonar (Terfenol-D), pantallas de estado sólido e imanes resistentes."
+  },
+  {
+    item: 24,
+    symbol: "Lu",
+    name: "Lutecio",
+    category: "ree-heavy",
+    categoryName: "Tierras Raras Pesadas (HREE)",
+    ppm: "0.74 ppm",
+    tons: "2,183 MT",
+    priority: "Alta",
+    priorityClass: "bg-blue-100 text-blue-800 border-blue-300",
+    application: "Detectores de tomografía por emisión de positrones (PET), catalizadores de refino y litografía UV extrema."
+  },
+  {
+    item: 25,
+    symbol: "Tm",
+    name: "Tulio",
+    category: "ree-heavy",
+    categoryName: "Tierras Raras Pesadas (HREE)",
+    ppm: "0.6 ppm",
+    tons: "1,770 MT",
+    priority: "Alta",
+    priorityClass: "bg-blue-100 text-blue-800 border-blue-300",
+    application: "Fuentes de radiación portátiles para medicina nuclear, satélites espaciales y láseres quirúrgicos."
+  },
+
+  // Metales Estratégicos & Tecnológicos
+  {
+    item: 3,
+    symbol: "Rb",
+    name: "Rubidio",
+    category: "strategic",
+    categoryName: "Metal Estratégico Élite",
+    ppm: "154 ppm",
+    tons: "454,300 MT",
+    priority: "Extrema",
+    priorityClass: "bg-red-100 text-red-800 border-red-300",
+    application: "REGISTRO RÉCORD MUNDIAL. Clave para computación cuántica, relojes atómicos GPS, propulsores iónicos y telecomunicaciones."
+  },
+  {
+    item: 16,
+    symbol: "Zr",
+    name: "Circonio",
+    category: "strategic",
+    categoryName: "Metal Estratégico",
+    ppm: "351 ppm",
+    tons: "1,035,450 MT",
+    priority: "Crítica",
+    priorityClass: "bg-amber-100 text-amber-800 border-amber-300",
+    application: "Revestimiento de combustible en reactores nucleares debido a su baja absorción de neutrones térmicos."
+  },
+  {
+    item: 27,
+    symbol: "Sr",
+    name: "Estroncio",
+    category: "strategic",
+    categoryName: "Metal Estratégico",
+    ppm: "138 ppm",
+    tons: "407,100 MT",
+    priority: "Alta",
+    priorityClass: "bg-blue-100 text-blue-800 border-blue-300",
+    application: "Ferritas para imanes cerámicos, aleaciones de fundición para automoción y pirotecnia de señalización militar."
+  },
+  {
+    item: 15,
+    symbol: "Nb",
+    name: "Niobio",
+    category: "strategic",
+    categoryName: "Metal Estratégico",
+    ppm: "42 ppm",
+    tons: "1,239,000 MT",
+    priority: "Extrema",
+    priorityClass: "bg-red-100 text-red-800 border-red-300",
+    application: "Superaleaciones para motores de cohetes, gasoductos de alta presión y magnetos superconductores del CERN."
+  },
+  {
+    item: 34,
+    symbol: "Cr",
+    name: "Cromo",
+    category: "strategic",
+    categoryName: "Metal Estratégico",
+    ppm: "29 ppm",
+    tons: "85,550 MT",
+    priority: "Alta",
+    priorityClass: "bg-blue-100 text-blue-800 border-blue-300",
+    application: "Producción de acero inoxidable, blindajes de vehículos terrestres y superaleaciones resistentes a la corrosión."
+  },
+  {
+    item: 14,
+    symbol: "Ga",
+    name: "Galio",
+    category: "strategic",
+    categoryName: "Metal Tecnológico Crítico",
+    ppm: "23 ppm",
+    tons: "6,785 MT",
+    priority: "Extrema",
+    priorityClass: "bg-red-100 text-red-800 border-red-300",
+    application: "Semiconductores de nitruro de galio (GaN) para radares militares AESA, cargadores ultra-rápidos y chips 5G/6G."
+  },
+  {
+    item: 32,
+    symbol: "Li",
+    name: "Litio",
+    category: "strategic",
+    categoryName: "Metal de Transición Energética",
+    ppm: "21 ppm",
+    tons: "61,950 MT",
+    priority: "Crítica",
+    priorityClass: "bg-amber-100 text-amber-800 border-amber-300",
+    application: "Cátodos para baterías de almacenamiento de energía y vehículos eléctricos; lubricantes aeroespaciales."
+  },
+  {
+    item: 1,
+    symbol: "B",
+    name: "Boro",
+    category: "strategic",
+    categoryName: "Metal Estratégico",
+    ppm: "20 ppm",
+    tons: "59,000 MT",
+    priority: "Alta",
+    priorityClass: "bg-blue-100 text-blue-800 border-blue-300",
+    application: "Compuestos de boro para blindaje contra neutrones, imanes NdFeB y fibras de vidrio de alta resistencia."
+  },
+  {
+    item: 5,
+    symbol: "Th",
+    name: "Torio",
+    category: "strategic",
+    categoryName: "Actínido Estratégico",
+    ppm: "17.46 ppm",
+    tons: "51,507 MT",
+    priority: "Alta",
+    priorityClass: "bg-blue-100 text-blue-800 border-blue-300",
+    application: "Combustible nuclear de cuarta generación (reactores de sales fundidas MSR) con menor residuo radiactivo."
+  },
+  {
+    item: 8,
+    symbol: "Hf",
+    name: "Hafnio",
+    category: "strategic",
+    categoryName: "Metal Tecnológico",
+    ppm: "11.8 ppm",
+    tons: "34,810 MT",
+    priority: "Extrema",
+    priorityClass: "bg-red-100 text-red-800 border-red-300",
+    application: "Dieléctricos high-k para procesadores de IA de última generación y toberas de motores de cohetes espaciales."
+  },
+  {
+    item: 39,
+    symbol: "Ni",
+    name: "Níquel",
+    category: "strategic",
+    categoryName: "Metal de Batería & Acero",
+    ppm: "8.32 ppm",
+    tons: "24,544 MT",
+    priority: "Alta",
+    priorityClass: "bg-blue-100 text-blue-800 border-blue-300",
+    application: "Química NMC para baterías de vehículos eléctricos de alto rango y superaleaciones de aviación."
+  },
+  {
+    item: 33,
+    symbol: "V",
+    name: "Vanadio",
+    category: "strategic",
+    categoryName: "Metal Crítico Industrial",
+    ppm: "7.7 ppm",
+    tons: "22,715 MT",
+    priority: "Crítica",
+    priorityClass: "bg-amber-100 text-amber-800 border-amber-300",
+    application: "Baterías de flujo redox para almacenamiento a escala de red eléctrica y aleaciones de titanio para defensa."
+  },
+  {
+    item: 31,
+    symbol: "Se",
+    name: "Selenio",
+    category: "strategic",
+    categoryName: "Metal Estratégico",
+    ppm: "5.0 ppm",
+    tons: "14,750 MT",
+    priority: "Media",
+    priorityClass: "bg-slate-100 text-slate-800 border-slate-300",
+    application: "Celdas solares fotovoltaicas CIGS, vidrios térmicos arquitectónicos y semiconductores especializados."
+  },
+  {
+    item: 4,
+    symbol: "Cs",
+    name: "Cesio",
+    category: "strategic",
+    categoryName: "Metal Estratégico",
+    ppm: "4.77 ppm",
+    tons: "14,071 MT",
+    priority: "Extrema",
+    priorityClass: "bg-red-100 text-red-800 border-red-300",
+    application: "Definición del segundo en relojes atómicos internacionales, fluidos de perforación profunda y visión nocturna."
+  },
+  {
+    item: 35,
+    symbol: "U",
+    name: "Uranio",
+    category: "strategic",
+    categoryName: "Energía Nuclear",
+    ppm: "4.2 ppm",
+    tons: "12,390 MT",
+    priority: "Alta",
+    priorityClass: "bg-blue-100 text-blue-800 border-blue-300",
+    application: "Generación de energía nuclear limpia de base para descarbonización industrial."
+  },
+  {
+    item: 26,
+    symbol: "Ta",
+    name: "Tántalo",
+    category: "strategic",
+    categoryName: "Metal Electrónico Crítico",
+    ppm: "2.47 ppm",
+    tons: "7,286 MT",
+    priority: "Extrema",
+    priorityClass: "bg-red-100 text-red-800 border-red-300",
+    application: "Capacitores de tantalio para teléfonos inteligentes, sistemas de aviónica y electrónica automotriz severa."
+  },
+  {
+    item: 37,
+    symbol: "Be",
+    name: "Berilio",
+    category: "strategic",
+    categoryName: "Metal Aeroespacial",
+    ppm: "2.18 ppm",
+    tons: "6,431 MT",
+    priority: "Extrema",
+    priorityClass: "bg-red-100 text-red-800 border-red-300",
+    application: "Espejos del telescopio espacial James Webb, giroscopios inerciales y componentes estructurales de satélites."
+  },
+  {
+    item: 36,
+    symbol: "Co",
+    name: "Cobalto",
+    category: "strategic",
+    categoryName: "Metal de Batería & Turbina",
+    ppm: "1.7 ppm",
+    tons: "5,015 MT",
+    priority: "Crítica",
+    priorityClass: "bg-amber-100 text-amber-800 border-amber-300",
+    application: "Estabilidad térmica en cátodos de baterías de iones de litio y superaleaciones de turbinas a gas."
+  },
+  {
+    item: 38,
+    symbol: "Ge",
+    name: "Germanio",
+    category: "strategic",
+    categoryName: "Metal de Semiconductores",
+    ppm: "0.26 ppm",
+    tons: "767 MT",
+    priority: "Extrema",
+    priorityClass: "bg-red-100 text-red-800 border-red-300",
+    application: "Óptica infrarroja para visión militar nocturna, paneles solares de satélites y chips de silicio-germanio (SiGe)."
+  },
+  {
+    item: 28,
+    symbol: "In",
+    name: "Indio",
+    category: "strategic",
+    categoryName: "Metal Tecnológico",
+    ppm: "0.20 ppm",
+    tons: "590 MT",
+    priority: "Crítica",
+    priorityClass: "bg-amber-100 text-amber-800 border-amber-300",
+    application: "Óxido de indio y estaño (ITO) para pantallas táctiles, semiconductores III-V y soldaduras criogénicas."
+  },
+  {
+    item: 2,
+    symbol: "Au",
+    name: "Oro",
+    category: "strategic",
+    categoryName: "Metal Precioso & Conductor",
+    ppm: "0.134 ppm",
+    tons: "395 MT",
+    priority: "Alta",
+    priorityClass: "bg-blue-100 text-blue-800 border-blue-300",
+    application: "Conectores microelectrónicos de fiabilidad crítica para la industria aeroespacial y reserva soberana."
+  },
+  {
+    item: 30,
+    symbol: "Ti",
+    name: "Titanio",
+    category: "strategic",
+    categoryName: "Metal Estructural Crítico",
+    ppm: "0.188 %",
+    tons: "5,546,000 MT",
+    priority: "Alta",
+    priorityClass: "bg-blue-100 text-blue-800 border-blue-300",
+    application: "Estructuras de aeronaves civiles y militares, blindaje naval y prótesis biocompatibles."
+  },
+  {
+    item: 29,
+    symbol: "K",
+    name: "Potasio",
+    category: "strategic",
+    categoryName: "Mineral Industrial",
+    ppm: "3.65 %",
+    tons: "107,675,000 MT",
+    priority: "Media",
+    priorityClass: "bg-slate-100 text-slate-800 border-slate-300",
+    application: "Seguridad agroalimentaria mundial, fertilizantes de alta solubilidad y compuestos químicos."
+  },
+  {
+    item: 40,
+    symbol: "Al",
+    name: "Aluminio",
+    category: "strategic",
+    categoryName: "Metal Estructural Base",
+    ppm: "0.07 %",
+    tons: "206,500,000 MT",
+    priority: "Media",
+    priorityClass: "bg-slate-100 text-slate-800 border-slate-300",
+    application: "Estructuras ligeras para automoción eléctrica, cables de transmisión de alta tensión e ingeniería civil."
+  }
+];
+---
+
+<section id="elementos" class="py-24 bg-slate-50 border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header of the Matrix -->
+    <div class="text-center max-w-3xl mx-auto mb-12" data-animate="fade-up">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-700 text-xs font-bold uppercase tracking-wider mb-3 border border-amber-500/20">
+        <i class="fa-solid fa-flask-vial text-[11px]"></i>
+        <span>Catálogo Certificado Oficial · Ensayos ICP-MS</span>
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-950 font-['Plus_Jakarta_Sans']">
+        Matriz de los 41 Elementos & Tierras Raras
+      </h2>
+      <p class="text-slate-600 text-sm sm:text-base mt-2">
+        Datos analíticos oficiales extraídos del archivo <span class="font-mono text-slate-900 font-semibold">Relación de TTRR Adriano</span>. Explora concentraciones, estimaciones de tonelaje y aplicaciones de alta tecnología.
+      </p>
+    </div>
+
+    <!-- Search & Filter Controls -->
+    <div class="bg-white p-4 sm:p-5 rounded-2xl shadow-xs border border-slate-200 mb-8 space-y-4" data-animate="fade-up">
+      <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+        <!-- Live Search Input -->
+        <div class="relative w-full md:w-80">
+          <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+          <input
+            id="element-search"
+            type="text"
+            placeholder="Buscar por elemento, símbolo o uso..."
+            class="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
+          />
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2 w-full md:w-auto items-center">
+          <button
+            type="button"
+            class="filter-btn active px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-slate-950 text-white shadow-xs"
+            data-filter="all"
+          >
+            Todos (41)
+          </button>
+          <button
+            type="button"
+            class="filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-slate-100 hover:bg-slate-200 text-slate-700"
+            data-filter="ree"
+          >
+            Tierras Raras (15 REE)
+          </button>
+          <button
+            type="button"
+            class="filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-slate-100 hover:bg-slate-200 text-slate-700"
+            data-filter="strategic"
+          >
+            Metales Estratégicos (23+)
+          </button>
+          <button
+            type="button"
+            class="filter-btn px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-slate-100 hover:bg-slate-200 text-slate-700"
+            data-filter="extreme"
+          >
+            Prioridad Extrema
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Counter Results -->
+      <div class="flex items-center justify-between text-xs text-slate-500 pt-2 border-t border-slate-100">
+        <div>
+          Mostrando <span id="elements-count" class="font-bold text-slate-900">8</span> de 41 elementos verificados
+        </div>
+        <div class="text-[11px] text-amber-700 font-semibold flex items-center gap-1.5">
+          <i class="fa-solid fa-circle-info"></i>
+          <span>Haz clic sobre cualquier elemento para ver especificaciones técnicas completas</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Elements Grid -->
+    <div id="elements-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 relative">
+      {elementsList.map((item, idx) => (
+        <div
+          class={`element-card bg-white rounded-xl p-5 border border-slate-200 shadow-xs hover:border-amber-400 hover:shadow-md transition-all duration-300 cursor-pointer flex flex-col justify-between group ${idx >= 8 ? 'extra-element hidden' : ''}`}
+          data-index={idx}
+          data-symbol={item.symbol.toLowerCase()}
+          data-name={item.name.toLowerCase()}
+          data-category={item.category}
+          data-priority={item.priority.toLowerCase()}
+          data-app={item.application.toLowerCase()}
+          data-item-json={JSON.stringify(item)}
+          data-animate={idx < 8 ? "fade-up" : undefined}
+          data-delay={idx < 8 ? (idx % 4) * 80 + Math.floor(idx / 4) * 120 : undefined}
+        >
+          <div>
+            <!-- Card Header: Symbol & Priority Badge -->
+            <div class="flex items-start justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl sm:text-3xl font-black font-mono text-slate-900 group-hover:text-amber-600 transition-colors">
+                  {item.symbol}
+                </span>
+                <div class="flex flex-col">
+                  <span class="text-xs font-bold text-slate-800 leading-tight">
+                    {item.name}
+                  </span>
+                  <span class="text-[10px] text-slate-500 font-medium">
+                    #{item.item}
+                  </span>
+                </div>
+              </div>
+
+              <span class={`text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full border ${item.priorityClass}`}>
+                {item.priority}
+              </span>
+            </div>
+
+            <!-- Category Indicator -->
+            <div class="text-[11px] font-semibold text-slate-500 mb-3 line-clamp-1">
+              {item.categoryName}
+            </div>
+
+            <!-- Concentration & Tons -->
+            <div class="bg-slate-50 rounded-lg p-2.5 mb-3 border border-slate-100 flex items-center justify-between text-xs">
+              <div>
+                <span class="text-[10px] uppercase tracking-wider text-slate-400 block font-semibold">Concentración</span>
+                <span class="font-extrabold text-slate-950 font-mono text-sm">{item.ppm}</span>
+              </div>
+              <div class="text-right">
+                <span class="text-[10px] uppercase tracking-wider text-slate-400 block font-semibold">Tonelaje Est.</span>
+                <span class="font-bold text-slate-700 font-mono">{item.tons}</span>
+              </div>
+            </div>
+
+            <!-- Application snippet -->
+            <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+              {item.application}
+            </p>
+          </div>
+
+          <!-- Bottom Action Cue -->
+          <div class="mt-4 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 group-hover:text-amber-600 font-semibold transition-colors">
+            <span>Ficha completa</span>
+            <i class="fa-solid fa-arrow-right text-[10px] transition-transform group-hover:translate-x-1"></i>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Expand / Collapse Section (A partir de la 2da fila de elementos) -->
+    <div id="expand-controls" class="relative mt-4 text-center">
+      <!-- Gradient fade overlay that sits above the second row when collapsed -->
+      <div
+        id="expand-gradient"
+        class="absolute -top-36 left-0 right-0 h-36 bg-gradient-to-t from-slate-50 via-slate-50/85 to-transparent pointer-events-none transition-opacity duration-300 z-10"
+      ></div>
+
+      <div class="relative z-20 pt-2 flex flex-col items-center justify-center gap-2">
+        <button
+          id="toggle-expand-btn"
+          type="button"
+          class="inline-flex items-center gap-3 px-8 py-3.5 rounded-xl bg-slate-950 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-xl hover:shadow-slate-950/20 transition-all duration-300 border border-slate-800 active:scale-95 group cursor-pointer"
+        >
+          <i class="fa-solid fa-layer-group text-amber-400 text-xs"></i>
+          <span id="toggle-expand-text">Ver todos los 41 elementos</span>
+          <i id="toggle-expand-icon" class="fa-solid fa-chevron-down text-amber-400 text-xs transition-transform duration-300 group-hover:translate-y-0.5"></i>
+        </button>
+        <span id="expand-subtext" class="text-[11px] text-slate-500 font-medium">
+          Mostrando las primeras 2 filas (8 de 41 metales certificados)
+        </span>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div id="no-elements-msg" class="hidden py-16 text-center bg-white rounded-2xl border border-slate-200 p-8">
+      <i class="fa-solid fa-flask text-3xl text-slate-300 mb-3"></i>
+      <h4 class="text-base font-bold text-slate-900">No se encontraron elementos coincidentes</h4>
+      <p class="text-xs text-slate-500 mt-1">Prueba con otro término de búsqueda o limpia los filtros.</p>
+    </div>
+  </div>
+
+  <!-- Interactive Detail Modal / Drawer -->
+  <div id="element-modal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative animate-in fade-in zoom-in-95 duration-200">
+      <button
+        id="close-modal-btn"
+        type="button"
+        class="absolute top-5 right-5 text-slate-400 hover:text-slate-900 text-lg p-2 rounded-lg transition-colors"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="flex items-center gap-4 mb-6 pb-4 border-b border-slate-100">
+        <div class="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-3xl font-black font-mono text-amber-600">
+          <span id="modal-symbol">Rb</span>
+        </div>
+        <div>
+          <h3 id="modal-name" class="text-2xl font-extrabold text-slate-950 font-['Plus_Jakarta_Sans']">Rubidio</h3>
+          <span id="modal-category" class="text-xs font-semibold text-slate-500">Metal Estratégico Élite</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 mb-6">
+        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200/80">
+          <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">Concentración Media</span>
+          <span id="modal-ppm" class="text-lg font-extrabold text-slate-950 font-mono">154 ppm</span>
+        </div>
+        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200/80">
+          <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">Tonelaje Estimado</span>
+          <span id="modal-tons" class="text-lg font-extrabold text-slate-950 font-mono">454,300 MT</span>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-xs sm:text-sm text-slate-600 mb-6">
+        <div>
+          <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-1">Aplicación en Industria de Alta Tecnología:</h4>
+          <p id="modal-application" class="leading-relaxed bg-amber-50/60 p-3 rounded-xl border border-amber-200/60 text-slate-800 font-medium">
+            Clave para computación cuántica, relojes atómicos GPS y telecomunicaciones militares.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-1">Relevancia Geopolítica:</h4>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Elemento con alto grado de escasez global e indispensable para la seguridad tecnológica de las potencias de la OCDE. Validado bajo normas de ensayo ICP-MS por laboratorios internacionales independientes.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
+        <a
+          href="#contacto"
+          id="modal-request-btn"
+          class="flex-1 inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-800 text-white text-xs font-bold py-3 px-4 rounded-xl transition-all shadow-xs"
+        >
+          <i class="fa-solid fa-file-shield text-amber-400"></i>
+          <span>Solicitar Certificado ICP-MS</span>
+        </a>
+        <button
+          id="modal-ok-btn"
+          type="button"
+          class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold py-3 px-5 rounded-xl transition-all"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Animación suave para revelar tarjetas adicionales al pulsar 'Ver más' */
+  @keyframes card-reveal-fade {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .card-reveal-anim {
+    animation: card-reveal-fade 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+</style>
+
+<script is:inline>
+  function initMatrixComponent() {
+    const searchInput = document.getElementById('element-search');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.element-card');
+    const countEl = document.getElementById('elements-count');
+    const noResultsMsg = document.getElementById('no-elements-msg');
+
+    const expandControls = document.getElementById('expand-controls');
+    const expandGradient = document.getElementById('expand-gradient');
+    const toggleExpandBtn = document.getElementById('toggle-expand-btn');
+    const toggleExpandText = document.getElementById('toggle-expand-text');
+    const toggleExpandIcon = document.getElementById('toggle-expand-icon');
+    const expandSubtext = document.getElementById('expand-subtext');
+
+    let currentFilter = 'all';
+    let currentQuery = '';
+    let isExpanded = false;
+
+    function renderMatrix() {
+      let visibleCount = 0;
+      const isFilteringOrSearching = currentQuery !== '' || currentFilter !== 'all';
+
+      cards.forEach((card) => {
+        const idx = parseInt(card.dataset.index || '0', 10);
+        const symbol = card.dataset.symbol || '';
+        const name = card.dataset.name || '';
+        const category = card.dataset.category || '';
+        const priority = card.dataset.priority || '';
+        const app = card.dataset.app || '';
+
+        const matchesQuery = !currentQuery || 
+          symbol.includes(currentQuery) || 
+          name.includes(currentQuery) || 
+          app.includes(currentQuery);
+
+        let matchesFilter = true;
+        if (currentFilter === 'ree') {
+          matchesFilter = category.includes('ree');
+        } else if (currentFilter === 'strategic') {
+          matchesFilter = category === 'strategic';
+        } else if (currentFilter === 'extreme') {
+          matchesFilter = priority === 'extrema';
+        }
+
+        const passes = matchesQuery && matchesFilter;
+
+        if (passes) {
+          // Si busca o filtra, o el usuario expandió, o está en las primeras 2 filas (idx < 8)
+          if (isFilteringOrSearching || isExpanded || idx < 8) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (countEl) {
+        if (!isFilteringOrSearching && !isExpanded) {
+          countEl.textContent = '8';
+        } else {
+          countEl.textContent = visibleCount.toString();
+        }
+      }
+
+      if (noResultsMsg) {
+        if (visibleCount === 0) {
+          noResultsMsg.classList.remove('hidden');
+        } else {
+          noResultsMsg.classList.add('hidden');
+        }
+      }
+
+      // Control de visibilidad del botón de expansión
+      if (isFilteringOrSearching) {
+        expandControls?.classList.add('hidden');
+      } else {
+        expandControls?.classList.remove('hidden');
+        if (isExpanded) {
+          expandGradient?.classList.add('opacity-0', 'pointer-events-none');
+          if (toggleExpandText) toggleExpandText.textContent = 'Ver menos elementos';
+          if (toggleExpandIcon) {
+            toggleExpandIcon.classList.remove('fa-chevron-down');
+            toggleExpandIcon.classList.add('fa-chevron-up');
+          }
+          if (expandSubtext) expandSubtext.textContent = 'Mostrando los 41 metales certificados al 100%';
+        } else {
+          expandGradient?.classList.remove('opacity-0', 'pointer-events-none');
+          if (toggleExpandText) toggleExpandText.textContent = 'Ver todos los 41 elementos';
+          if (toggleExpandIcon) {
+            toggleExpandIcon.classList.remove('fa-chevron-up');
+            toggleExpandIcon.classList.add('fa-chevron-down');
+          }
+          if (expandSubtext) expandSubtext.textContent = 'Mostrando las primeras 2 filas (8 de 41 metales certificados)';
+        }
+      }
+    }
+
+    toggleExpandBtn?.addEventListener('click', () => {
+      isExpanded = !isExpanded;
+      renderMatrix();
+
+      if (isExpanded) {
+        // Añadir animación escalonada de aparición a las tarjetas recién desplegadas
+        const extraCards = document.querySelectorAll('.element-card.extra-element:not(.hidden)');
+        extraCards.forEach((c, i) => {
+          c.classList.remove('card-reveal-anim');
+          void c.offsetWidth;
+          c.classList.add('card-reveal-anim');
+          c.style.animationDelay = `${(i % 4) * 45}ms`;
+        });
+      } else {
+        const matrixSection = document.getElementById('elementos');
+        matrixSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+
+    searchInput?.addEventListener('input', (e) => {
+      currentQuery = e.target.value.toLowerCase().trim();
+      renderMatrix();
+    });
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('active', 'bg-slate-950', 'text-white', 'shadow-xs');
+          b.classList.add('bg-slate-100', 'text-slate-700');
+        });
+        btn.classList.add('active', 'bg-slate-950', 'text-white', 'shadow-xs');
+        btn.classList.remove('bg-slate-100', 'text-slate-700');
+
+        currentFilter = btn.dataset.filter || 'all';
+        renderMatrix();
+      });
+    });
+
+    // Modal logic
+    const modal = document.getElementById('element-modal');
+    const closeBtn = document.getElementById('close-modal-btn');
+    const okBtn = document.getElementById('modal-ok-btn');
+    const modalSymbol = document.getElementById('modal-symbol');
+    const modalName = document.getElementById('modal-name');
+    const modalCategory = document.getElementById('modal-category');
+    const modalPpm = document.getElementById('modal-ppm');
+    const modalTons = document.getElementById('modal-tons');
+    const modalApplication = document.getElementById('modal-application');
+    const modalReqBtn = document.getElementById('modal-request-btn');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        try {
+          const data = JSON.parse(card.dataset.itemJson || '{}');
+          if (modalSymbol) modalSymbol.textContent = data.symbol;
+          if (modalName) modalName.textContent = data.name;
+          if (modalCategory) modalCategory.textContent = data.categoryName;
+          if (modalPpm) modalPpm.textContent = data.ppm;
+          if (modalTons) modalTons.textContent = data.tons;
+          if (modalApplication) modalApplication.textContent = data.application;
+          modal?.classList.remove('hidden');
+          modal?.classList.add('flex');
+        } catch (e) {
+          console.error(e);
+        }
+      });
+    });
+
+    function closeModal() {
+      modal?.classList.add('hidden');
+      modal?.classList.remove('flex');
+    }
+
+    closeBtn?.addEventListener('click', closeModal);
+    okBtn?.addEventListener('click', closeModal);
+    modalReqBtn?.addEventListener('click', closeModal);
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMatrixComponent);
+  } else {
+    initMatrixComponent();
+  }
+  document.addEventListener('astro:page-load', initMatrixComponent);
+</script>

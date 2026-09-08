@@ -1,0 +1,744 @@
+---
+// Matriz Dinámica e Interactiva de los 32 Elementos Certificados por ALS (2026)
+// Datos oficiales del Certificado ALS Perú S.A. LI26179573 (5-jun-2026)
+---
+
+<section id="elementos" class="py-20 sm:py-28 bg-slate-50 border-b border-slate-200 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-800 text-xs font-bold uppercase tracking-wider mb-4">
+        <i class="fa-solid fa-flask-vial text-amber-600"></i>
+        <span>Certificación Analítica ALS Perú S.A. (LI26179573)</span>
+      </div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight font-['Plus_Jakarta_Sans']">
+        Matriz de los 32 Elementos & Metales Críticos
+      </h2>
+      <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed">
+        Análisis geoquímico oficial por fusión con borato de litio e ICP-MS (Muestras T-RARAS01 y T-RARAS02). Explore concentraciones certificadas y aplicaciones estratégicas en defensa y tecnología de punta.
+      </p>
+    </div>
+
+    <!-- Search & Category Filters Bar -->
+    <div class="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-slate-200 mb-8 flex flex-col md:flex-row gap-4 items-center justify-between">
+      
+      <!-- Interactive Search Input -->
+      <div class="relative w-full md:w-80">
+        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+        <input 
+          id="element-search-input"
+          type="text" 
+          placeholder="Buscar elemento (ej. Hafnio, Hf, Escandio)..."
+          class="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
+        />
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-2 w-full md:w-auto">
+        <button type="button" class="filter-btn active px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all bg-slate-950 text-white shadow-xs" data-category="all">
+          Todos (32)
+        </button>
+        <button type="button" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-all" data-category="hree">
+          TTRR Pesadas (HREE)
+        </button>
+        <button type="button" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-all" data-category="lree">
+          TTRR Ligeras (LREE)
+        </button>
+        <button type="button" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-all" data-category="critical">
+          Metales Críticos
+        </button>
+        <button type="button" class="filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-all" data-category="industrial">
+          Industriales
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Elements Grid Container -->
+    <div id="elements-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 transition-all duration-300">
+      
+      <!-- Cards rendered client-side or populated below -->
+
+    </div>
+
+    <!-- Expand / Collapse Controls (Inicialmente 2 filas visibles) -->
+    <div id="expand-controls" class="relative mt-8 text-center">
+      <!-- Gradient overlay when collapsed -->
+      <div id="expand-gradient" class="absolute -top-32 left-0 right-0 h-32 bg-gradient-to-t from-slate-50 via-slate-50/85 to-transparent pointer-events-none transition-opacity duration-300 z-10"></div>
+      
+      <div class="relative z-20 pt-2 flex flex-col items-center justify-center gap-2">
+        <button 
+          id="toggle-expand-btn" 
+          type="button" 
+          class="inline-flex items-center gap-3 px-8 py-3.5 rounded-xl bg-slate-950 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-xl hover:shadow-slate-950/20 transition-all duration-300 border border-slate-800 active:scale-95 group cursor-pointer"
+        >
+          <i class="fa-solid fa-layer-group text-amber-400 text-xs"></i>
+          <span id="toggle-expand-text">Ver todos los 32 elementos</span>
+          <i id="toggle-expand-icon" class="fa-solid fa-chevron-down text-amber-400 text-xs transition-transform duration-300 group-hover:translate-y-0.5"></i>
+        </button>
+        <span id="expand-subtext" class="text-[11px] text-slate-500 font-medium">
+          Mostrando las primeras 2 filas (8 de 32 elementos certificados)
+        </span>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div id="no-elements-msg" class="hidden py-16 text-center bg-white rounded-2xl border border-slate-200 p-8">
+      <i class="fa-solid fa-flask text-3xl text-slate-300 mb-3"></i>
+      <h4 class="text-base font-bold text-slate-900">No se encontraron elementos coincidentes</h4>
+      <p class="text-xs text-slate-500 mt-1">Prueba con otro término de búsqueda o limpia los filtros.</p>
+    </div>
+
+  </div>
+
+  <!-- Interactive Detail Modal -->
+  <div id="element-modal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs hidden items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative animate-in fade-in zoom-in-95 duration-200">
+      
+      <button id="close-modal-btn" type="button" class="absolute top-5 right-5 text-slate-400 hover:text-slate-900 text-lg p-2 rounded-lg transition-colors">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="flex items-center gap-4 mb-6 pb-4 border-b border-slate-100">
+        <div class="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-3xl font-black font-mono text-amber-600">
+          <span id="modal-symbol">Hf</span>
+        </div>
+        <div>
+          <h3 id="modal-name" class="text-2xl font-extrabold text-slate-950 font-['Plus_Jakarta_Sans']">Hafnio</h3>
+          <span id="modal-category" class="text-xs font-semibold text-slate-500">Metal Crítico · Microchips IA & Nuclear</span>
+        </div>
+      </div>
+
+      <!-- Test Values Grid -->
+      <div class="grid grid-cols-2 gap-4 mb-6">
+        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200/80">
+          <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">Ensayo T-RARAS01</span>
+          <span id="modal-ppm1" class="text-lg font-extrabold text-slate-950 font-mono">8.76 ppm</span>
+        </div>
+        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200/80">
+          <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">Ensayo T-RARAS02</span>
+          <span id="modal-ppm2" class="text-lg font-extrabold text-slate-950 font-mono">18.25 ppm</span>
+        </div>
+      </div>
+
+      <!-- Content Breakdown -->
+      <div class="space-y-4 text-xs sm:text-sm text-slate-600 mb-6">
+        <div>
+          <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-1">Aplicación en Industria de Alta Tecnología:</h4>
+          <p id="modal-application" class="leading-relaxed bg-amber-50/60 p-3 rounded-xl border border-amber-200/60 text-slate-800 font-medium">
+            Indispensable para la fabricación de microprocesadores para Inteligencia Artificial y semiconductores de última generación.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-slate-900 text-xs uppercase tracking-wider mb-1">Relevancia Geopolítica & Mercado:</h4>
+          <p id="modal-geopolitics" class="text-slate-600 text-xs leading-relaxed">
+            Representa ~70% del valor in-situ de los metales críticos de la propiedad. Cotizado en ~$38,500/kg con severas restricciones de exportación impuestas por China.
+          </p>
+        </div>
+      </div>
+
+      <!-- Modal Footer Action -->
+      <div class="pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
+        <a href="#contacto" id="modal-request-btn" class="flex-1 inline-flex items-center justify-center gap-2 bg-slate-950 hover:bg-slate-800 text-white text-xs font-bold py-3 px-4 rounded-xl transition-all shadow-xs">
+          <i class="fa-solid fa-file-shield text-amber-400"></i>
+          <span>Solicitar Certificado ALS LI26179573</span>
+        </a>
+        <button id="modal-ok-btn" type="button" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold py-3 px-5 rounded-xl transition-all">
+          Cerrar
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- Elements Data & Interactivity Logic -->
+<script is:inline>
+  const santaElements = [
+    {
+      num: 1,
+      name: "Bario",
+      symbol: "Ba",
+      category: "industrial",
+      categoryName: "Industrial Pesado",
+      badgeClass: "bg-slate-100 text-slate-800 border-slate-300",
+      ppm1: "310 ppm",
+      ppm2: "295 ppm",
+      price: "$4.50 / kg base",
+      application: "Lodos densificantes indispensables en perforación petrolera profunda y offshore, vidrios ópticos de alta densidad y blindaje médico contra radiación gamma.",
+      geopolitics: "Demanda sólida y constante por el sector energético y de manufactura de alta densidad global."
+    },
+    {
+      num: 2,
+      name: "Cerio",
+      symbol: "Ce",
+      category: "lree",
+      categoryName: "Tierra Rara Ligera (LREE)",
+      badgeClass: "bg-blue-100 text-blue-800 border-blue-300",
+      ppm1: "60.4 ppm",
+      ppm2: "141.5 ppm",
+      price: "TREO Market",
+      application: "Agente principal para el pulido químico-mecánico (CMP) de obleas de silicio en semiconductores, catalizadores automotrices y filtros UV.",
+      geopolitics: "Es la tierra rara más demandada en volumen para manufactura electrónica y automotriz limpia."
+    },
+    {
+      num: 3,
+      name: "Cromo",
+      symbol: "Cr",
+      category: "critical",
+      categoryName: "Metal Estratégico",
+      badgeClass: "bg-red-100 text-red-800 border-red-300",
+      ppm1: "45.0 ppm",
+      ppm2: "74.0 ppm",
+      price: "Mercado LME",
+      application: "Aleaciones superresistentes a corrosión y altas temperaturas, componentes aeronáuticos y recubrimientos protectores militares.",
+      geopolitics: "Elemento clave para la industria siderúrgica y aeroespacial de defensa de la OTAN."
+    },
+    {
+      num: 4,
+      name: "Cesio",
+      symbol: "Cs",
+      category: "critical",
+      categoryName: "Metal Crítico Élite",
+      badgeClass: "bg-amber-100 text-amber-800 border-amber-300",
+      ppm1: "3.16 ppm",
+      ppm2: "3.29 ppm",
+      price: "> $67,500 / kg",
+      application: "Estándar de definición del segundo en relojes atómicos GPS, sincronización de redes 5G/6G satelitales y celdas fotoeléctricas.",
+      geopolitics: "Metal alcalino ultra-estratégico con oferta global altamente concentrada y cotización superior."
+    },
+    {
+      num: 5,
+      name: "Disprosio",
+      symbol: "Dy",
+      category: "hree",
+      categoryName: "Tierra Rara Pesada (HREE)",
+      badgeClass: "bg-purple-100 text-purple-800 border-purple-300",
+      ppm1: "3.83 ppm",
+      ppm2: "6.84 ppm",
+      price: "Crítico Alto Valor",
+      application: "Aditivo insustituible en imanes de neodimio (NdFeB) para evitar la desmagnetización térmica en motores EV y cazas supersónicos.",
+      geopolitics: "China ejerce cuotas estrictas de exportación sobre este elemento; tener reservas fuera de Asia otorga una prima comercial superior."
+    },
+    {
+      num: 6,
+      name: "Erbio",
+      symbol: "Er",
+      category: "hree",
+      categoryName: "Tierra Rara Pesada (HREE)",
+      badgeClass: "bg-purple-100 text-purple-800 border-purple-300",
+      ppm1: "2.12 ppm",
+      ppm2: "3.61 ppm",
+      price: "Telecom & Láser",
+      application: "Dopante principal en amplificadores de fibra óptica (EDFA) transoceánicos, permitiendo señales de datos intercontinentales sin pérdida.",
+      geopolitics: "Componente esencial de la infraestructura crítica de telecomunicaciones e internet mundial."
+    },
+    {
+      num: 7,
+      name: "Europio",
+      symbol: "Eu",
+      category: "hree",
+      categoryName: "Tierra Rara Especial",
+      badgeClass: "bg-purple-100 text-purple-800 border-purple-300",
+      ppm1: "1.06 ppm",
+      ppm2: "1.75 ppm",
+      price: "Fotónica & Nuclear",
+      application: "Emisión de luz roja en fósforos para pantallas de control táctico y barras de control en reactores nucleares por su captura neutrónica.",
+      geopolitics: "Insumo de altísimo valor unitario para instrumentación militar e industria nuclear civil."
+    },
+    {
+      num: 8,
+      name: "Galio",
+      symbol: "Ga",
+      category: "critical",
+      categoryName: "Semiconductores Críticos",
+      badgeClass: "bg-red-100 text-red-800 border-red-300",
+      ppm1: "14.4 ppm",
+      ppm2: "19.3 ppm",
+      price: "~ $2,025 / kg",
+      application: "Semiconductores compuestos GaAs y GaN para radares militares AESA de barrido electrónico y amplificadores 5G/6G.",
+      geopolitics: "Sujeto a controles de exportación impuestos por China desde 2023. La producción aliada es de máxima prioridad para el Pentágono."
+    },
+    {
+      num: 9,
+      name: "Gadolinio",
+      symbol: "Gd",
+      category: "hree",
+      categoryName: "Tierra Rara Pesada (HREE)",
+      badgeClass: "bg-purple-100 text-purple-800 border-purple-300",
+      ppm1: "4.05 ppm",
+      ppm2: "8.10 ppm",
+      price: "Médico & Nuclear",
+      application: "Agente de contraste magnético universal para resonancias RMN y aleaciones de apagado de emergencia en reactores nucleares.",
+      geopolitics: "Elemento dual clave para el sector de diagnóstico oncológico y la seguridad energética global."
+    },
+    {
+      num: 10,
+      name: "Hafnio",
+      symbol: "Hf",
+      category: "critical",
+      categoryName: "Metal Crítico Rey (~70% Valor)",
+      badgeClass: "bg-amber-100 text-amber-800 border-amber-300",
+      ppm1: "8.76 ppm",
+      ppm2: "18.25 ppm",
+      price: "~ $38,500 / kg",
+      application: "Fabricación de compuertas dieléctricas high-k en transistores de chips de Inteligencia Artificial y barras de reactores navales.",
+      geopolitics: "Representa ~70% del valor in-situ de los metales críticos del proyecto. Escasez mundial severa y demanda récord en EE.UU."
+    },
+    {
+      num: 11,
+      name: "Holmio",
+      symbol: "Ho",
+      category: "hree",
+      categoryName: "Tierra Rara Pesada (HREE)",
+      badgeClass: "bg-purple-100 text-purple-800 border-purple-300",
+      ppm1: "0.73 ppm",
+      ppm2: "1.34 ppm",
+      price: "Láser Médico & Física",
+      application: "Momento magnético más alto de cualquier elemento natural; láseres quirúrgicos Ho:YAG urológicos y concentradores de campo.",
+      geopolitics: "Tierra rara pesada de extrema rareza y aplicaciones avanzadas no sustituibles."
+    },
+    {
+      num: 12,
+      name: "Lantano",
+      symbol: "La",
+      category: "lree",
+      categoryName: "Tierra Rara Ligera (LREE)",
+      badgeClass: "bg-blue-100 text-blue-800 border-blue-300",
+      ppm1: "29.7 ppm",
+      ppm2: "72.1 ppm",
+      price: "Óptica & Baterías",
+      application: "Lentes infrarrojos para visión nocturna de fuerzas armadas, cámaras satelitales y catalizadores de refinación petroquímica.",
+      geopolitics: "Insumo estratégico de volumen en arenas de monacita para la industria de defensa occidental."
+    },
+    {
+      num: 13,
+      name: "Lutecio",
+      symbol: "Lu",
+      category: "hree",
+      categoryName: "Tierra Rara Pesada Ultra-precio",
+      badgeClass: "bg-purple-100 text-purple-800 border-purple-300",
+      ppm1: "0.31 ppm",
+      ppm2: "0.59 ppm",
+      price: "PET & Diagnóstico",
+      application: "Cristales de oxiortosilicato (LSO) para escáneres de tomografía PET oncológica y catalizador de craqueo de hidrocarburos pesados.",
+      geopolitics: "La tierra rara más pesada y cara de la tabla periódica; su presencia en arenas de playa es un diferenciador de valor geológico."
+    },
+    {
+      num: 14,
+      name: "Neodimio",
+      symbol: "Nd",
+      category: "lree",
+      categoryName: "Tierra Rara Ligera (LREE)",
+      badgeClass: "bg-blue-100 text-blue-800 border-blue-300",
+      ppm1: "48.2 ppm",
+      ppm2: "96.5 ppm",
+      price: "Imanes Permanentes",
+      application: "Imanes permanentes NdFeB para aerogeneradores eólicos marinos, motores de tracción para vehículos eléctricos y servomotores robóticos.",
+      geopolitics: "El mineral más buscado de la transición energética; 90% de los imanes del mundo se producen en China."
+    },
+    {
+      num: 15,
+      name: "Praseodimio",
+      symbol: "Pr",
+      category: "lree",
+      categoryName: "Tierra Rara Ligera (LREE)",
+      badgeClass: "bg-blue-100 text-blue-800 border-blue-300",
+      ppm1: "14.8 ppm",
+      ppm2: "29.1 ppm",
+      price: "Aleaciones NdPr",
+      application: "Aleaciones magnéticas NdPr de alto torque y vidrios didimio protectores contra radiación térmica y soldadura.",
+      geopolitics: "Comercializado conjuntamente con el neodimio en los contratos de suministro de largo plazo."
+    },
+    {
+      num: 16,
+      name: "Samario",
+      symbol: "Sm",
+      category: "lree",
+      categoryName: "Tierra Rara Especial",
+      badgeClass: "bg-blue-100 text-blue-800 border-blue-300",
+      ppm1: "7.90 ppm",
+      ppm2: "15.6 ppm",
+      price: "Imanes SmCo Militares",
+      application: "Imanes de samario-cobalto (SmCo) para misiles balísticos, motores aeroespaciales y sistemas de armas de alta temperatura.",
+      geopolitics: "Imán militar preferido por el Departamento de Defensa de EE.UU. por operar por encima de los 300 °C sin degradación."
+    },
+    {
+      num: 17,
+      name: "Terbio",
+      symbol: "Tb",
+      category: "hree",
+      categoryName: "Tierra Rara Pesada (HREE)",
+      badgeClass: "bg-purple-100 text-purple-800 border-purple-300",
+      ppm1: "0.95 ppm",
+      ppm2: "1.88 ppm",
+      price: "Fósforos & Sonares",
+      application: "Aleaciones magnetostrictivas (Terfenol-D) para sonares militares submarinos y fósforos verdes para pantallas militares.",
+      geopolitics: "Una de las tierras raras pesadas de mayor escasez en el mercado occidental."
+    },
+    {
+      num: 18,
+      name: "Tulio",
+      symbol: "Tm",
+      category: "hree",
+      categoryName: "Tierra Rara Pesada Ultra-escasa",
+      badgeClass: "bg-purple-100 text-purple-800 border-purple-300",
+      ppm1: "0.28 ppm",
+      ppm2: "0.52 ppm",
+      price: "Médico & Rayos X",
+      application: "Láseres quirúrgicos portátiles de tulio y fuentes emisoras de rayos X para equipos médicos de campaña militar.",
+      geopolitics: "Elemento de nicho con oferta mundial inferior a 50 toneladas anuales."
+    },
+    {
+      num: 19,
+      name: "Iterbio",
+      symbol: "Yb",
+      category: "hree",
+      categoryName: "Tierra Rara Pesada (HREE)",
+      badgeClass: "bg-purple-100 text-purple-800 border-purple-300",
+      ppm1: "1.85 ppm",
+      ppm2: "3.40 ppm",
+      price: "Láseres Industriales",
+      application: "Dopante en láseres de fibra industrial para soldadura y corte de acero automotriz, y relojes atómicos de precisión cuántica.",
+      geopolitics: "Indispensable para la modernización de líneas de producción automatizadas en Norteamérica."
+    },
+    {
+      num: 20,
+      name: "Itrio",
+      symbol: "Y",
+      category: "hree",
+      categoryName: "Tierra Rara Asociada (HREE)",
+      badgeClass: "bg-purple-100 text-purple-800 border-purple-300",
+      ppm1: "22.4 ppm",
+      ppm2: "41.2 ppm",
+      price: "Barreras Térmicas",
+      application: "Cerámicas de circonio estabilizado con itria (YSZ) para álabes de turbinas de aviones caza y superconductores YBCO.",
+      geopolitics: "Clasificado como mineral crítico en las listas del Servicio Geológico de Estados Unidos (USGS)."
+    },
+    {
+      num: 21,
+      name: "Escandio",
+      symbol: "Sc",
+      category: "critical",
+      categoryName: "Metal Crítico Top (~17% Valor)",
+      badgeClass: "bg-amber-100 text-amber-800 border-amber-300",
+      ppm1: "12.6 ppm",
+      ppm2: "24.8 ppm",
+      price: "Superaleaciones Al-Sc",
+      application: "Superaleaciones de aluminio-escandio para fuselajes aeroespaciales militares ligeros y celdas de combustible SOFC.",
+      geopolitics: "Aporta ~17% del valor intrínseco de los metales críticos de la mina. Demanda crítica para la Fuerza Aérea de EE.UU."
+    },
+    {
+      num: 22,
+      name: "Niobio",
+      symbol: "Nb",
+      category: "critical",
+      categoryName: "Metal Estratégico",
+      badgeClass: "bg-red-100 text-red-800 border-red-300",
+      ppm1: "38.0 ppm",
+      ppm2: "65.0 ppm",
+      price: "Aceros HSLA & Espacio",
+      application: "Superaleaciones de toberas de cohetes espaciales y aceros de ultra-alta resistencia estructural (HSLA).",
+      geopolitics: "Mineral de estricta reserva estratégica para infraestructura civil y aeroespacial."
+    },
+    {
+      num: 23,
+      name: "Tántalo",
+      symbol: "Ta",
+      category: "critical",
+      categoryName: "Metal Crítico Electrónica",
+      badgeClass: "bg-red-100 text-red-800 border-red-300",
+      ppm1: "4.20 ppm",
+      ppm2: "8.10 ppm",
+      price: "Microcondensadores",
+      application: "Condensadores de tantalio de alta capacidad volumétrica en microelectrónica militar, smartphones y aviónica.",
+      geopolitics: "Sujeto a normas de trazabilidad de minerales en conflicto; el origen en arenas de Perú garantiza cumplimiento ESG estricto."
+    },
+    {
+      num: 24,
+      name: "Zirconio",
+      symbol: "Zr",
+      category: "critical",
+      categoryName: "Metal Estratégico Nuclear",
+      badgeClass: "bg-red-100 text-red-800 border-red-300",
+      ppm1: "210 ppm",
+      ppm2: "380 ppm",
+      price: "Reactores & Cerámica",
+      application: "Vainas para barras de combustible en reactores nucleares (zircaloy) por su transparencia a los neutrones.",
+      geopolitics: "Asociado a los circones de las arenas del Santa; garantiza subproductos constantes de alto valor."
+    },
+    {
+      num: 25,
+      name: "Titanio",
+      symbol: "Ti",
+      category: "critical",
+      categoryName: "Metal Estructural Élite",
+      badgeClass: "bg-blue-100 text-blue-800 border-blue-300",
+      ppm1: "1,450 ppm",
+      ppm2: "2,800 ppm",
+      price: "Aviación Militar",
+      application: "Fuselajes de aviones caza, blindajes navales, motores a reacción y prótesis biocompatibles.",
+      geopolitics: "Contenido masivamente en la ilmenita y rutilo de las arenas negras del litoral."
+    },
+    {
+      num: 26,
+      name: "Wolframio",
+      symbol: "W",
+      category: "critical",
+      categoryName: "Metal Crítico Blindaje",
+      badgeClass: "bg-red-100 text-red-800 border-red-300",
+      ppm1: "18.5 ppm",
+      ppm2: "32.0 ppm",
+      price: "Dureza & Fusión",
+      application: "Punto de fusión más alto de los elementos (3,422 °C), municiones balísticas perforantes y herramientas de perforación.",
+      geopolitics: "Crítico para la industria militar pesada y la minería profunda."
+    },
+    {
+      num: 27,
+      name: "Estaño",
+      symbol: "Sn",
+      category: "industrial",
+      categoryName: "Metal Base Estratégico",
+      badgeClass: "bg-slate-100 text-slate-800 border-slate-300",
+      ppm1: "24.0 ppm",
+      ppm2: "42.0 ppm",
+      price: "Soldadura Electrónica",
+      application: "Soldadura indispensable en todas las placas de circuitos impresos (PCB) de electrónica de consumo y militar.",
+      geopolitics: "Perú es uno de los líderes mundiales en minería de estaño; presencia natural en los aluviones del Santa."
+    },
+    {
+      num: 28,
+      name: "Vanadio",
+      symbol: "V",
+      category: "critical",
+      categoryName: "Almacenamiento de Energía",
+      badgeClass: "bg-teal-100 text-teal-800 border-teal-300",
+      ppm1: "85.0 ppm",
+      ppm2: "145 ppm",
+      price: "Baterías VRFB",
+      application: "Baterías de flujo redox de vanadio (VRFB) para almacenamiento de energía a escala de red eléctrica renovable.",
+      geopolitics: "Insumo estratégico de la transición energética para respaldar parques solares y eólicos sin degradación."
+    },
+    {
+      num: 29,
+      name: "Uranio",
+      symbol: "U",
+      category: "critical",
+      categoryName: "Combustible Nuclear",
+      badgeClass: "bg-red-100 text-red-800 border-red-300",
+      ppm1: "3.80 ppm",
+      ppm2: "6.20 ppm",
+      price: "Energía Nuclear",
+      application: "Generación de energía limpia de base en reactores nucleares civiles de última generación (SMR).",
+      geopolitics: "Asociado de forma natural en proporciones controladas en fosfatos y monacitas."
+    },
+    {
+      num: 30,
+      name: "Rubidio",
+      symbol: "Rb",
+      category: "critical",
+      categoryName: "Física Cuántica & GPS",
+      badgeClass: "bg-amber-100 text-amber-800 border-amber-300",
+      ppm1: "42.0 ppm",
+      ppm2: "78.0 ppm",
+      price: "Estándares Cuánticos",
+      application: "Osciladores atómicos portátiles para sistemas de posicionamiento táctico militar y celdas fotovoltaicas.",
+      geopolitics: "Elemento de creciente demanda para hardware de computación y telecomunicaciones seguras."
+    },
+    {
+      num: 31,
+      name: "Estroncio",
+      symbol: "Sr",
+      category: "industrial",
+      categoryName: "Industrial & Ferritas",
+      badgeClass: "bg-slate-100 text-slate-800 border-slate-300",
+      ppm1: "165 ppm",
+      ppm2: "240 ppm",
+      price: "Ferritas Magnéticas",
+      application: "Imanes de ferrita de estroncio en motores de automoción, vidrios de protección y seguridad marítima.",
+      geopolitics: "Demanda industrial estable en la manufactura de componentes electromecánicos."
+    },
+    {
+      num: 32,
+      name: "Boro",
+      symbol: "B",
+      category: "critical",
+      categoryName: "Semiconductores & Fibras",
+      badgeClass: "bg-teal-100 text-teal-800 border-teal-300",
+      ppm1: "28.0 ppm",
+      ppm2: "52.0 ppm",
+      price: "Aeroespacial & Fusión",
+      application: "Fibras de boro de ultra-alta rigidez aeroespacial, barras de absorción en reactores y dopante de semiconductores.",
+      geopolitics: "Insumo crítico para materiales compuestos avanzados en aviación militar."
+    }
+  ];
+
+  let currentCategory = 'all';
+  let isExpanded = false;
+  let currentSearch = '';
+
+  const gridContainer = document.getElementById('elements-grid');
+  const toggleBtn = document.getElementById('toggle-expand-btn');
+  const toggleText = document.getElementById('toggle-expand-text');
+  const toggleIcon = document.getElementById('toggle-expand-icon');
+  const expandGradient = document.getElementById('expand-gradient');
+  const expandSubtext = document.getElementById('expand-subtext');
+  const searchInput = document.getElementById('element-search-input');
+  const noElementsMsg = document.getElementById('no-elements-msg');
+
+  // Modal elements
+  const modal = document.getElementById('element-modal');
+  const modalCloseBtn = document.getElementById('close-modal-btn');
+  const modalOkBtn = document.getElementById('modal-ok-btn');
+  const modalSymbol = document.getElementById('modal-symbol');
+  const modalName = document.getElementById('modal-name');
+  const modalCategory = document.getElementById('modal-category');
+  const modalPpm1 = document.getElementById('modal-ppm1');
+  const modalPpm2 = document.getElementById('modal-ppm2');
+  const modalApplication = document.getElementById('modal-application');
+  const modalGeopolitics = document.getElementById('modal-geopolitics');
+
+  function openModal(el) {
+    modalSymbol.innerText = el.symbol;
+    modalName.innerText = el.name;
+    modalCategory.innerText = el.categoryName;
+    modalPpm1.innerText = el.ppm1;
+    modalPpm2.innerText = el.ppm2;
+    modalApplication.innerText = el.application;
+    modalGeopolitics.innerText = el.geopolitics;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+
+  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+  if (modalOkBtn) modalOkBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  function renderElements() {
+    gridContainer.innerHTML = '';
+
+    const filtered = santaElements.filter(el => {
+      const matchCat = (currentCategory === 'all') || (el.category === currentCategory);
+      const matchSearch = currentSearch === '' || 
+        el.name.toLowerCase().includes(currentSearch.toLowerCase()) || 
+        el.symbol.toLowerCase().includes(currentSearch.toLowerCase()) ||
+        el.application.toLowerCase().includes(currentSearch.toLowerCase());
+      return matchCat && matchSearch;
+    });
+
+    if (filtered.length === 0) {
+      noElementsMsg.classList.remove('hidden');
+      document.getElementById('expand-controls').classList.add('hidden');
+      return;
+    } else {
+      noElementsMsg.classList.add('hidden');
+      document.getElementById('expand-controls').classList.remove('hidden');
+    }
+
+    const itemsToDisplay = isExpanded ? filtered : filtered.slice(0, 8);
+
+    itemsToDisplay.forEach((el, index) => {
+      const card = document.createElement('div');
+      card.className = "bg-white rounded-2xl p-5 border border-slate-200 shadow-xs hover:shadow-lg hover:border-amber-500/80 transition-all duration-300 flex flex-col justify-between group cursor-pointer hover:-translate-y-1";
+      
+      card.innerHTML = `
+        <div>
+          <div class="flex items-start justify-between mb-2.5">
+            <div class="flex items-center gap-2.5">
+              <span class="text-2xl sm:text-3xl font-black font-mono text-slate-900 group-hover:text-amber-600 transition-colors">${el.symbol}</span>
+              <div class="flex flex-col">
+                <span class="text-xs font-bold text-slate-900 leading-tight">${el.name}</span>
+                <span class="text-[10px] text-slate-400 font-mono">#${el.num}</span>
+              </div>
+            </div>
+            <span class="text-[9px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full border ${el.badgeClass}">
+              ${el.categoryName.split(' ')[0]}
+            </span>
+          </div>
+
+          <div class="bg-slate-50 rounded-xl p-2.5 mb-3 border border-slate-100 flex items-center justify-between text-xs">
+            <div>
+              <span class="text-[9px] uppercase tracking-wider text-slate-400 block font-semibold">T-RARAS01</span>
+              <span class="font-bold text-slate-950 font-mono text-xs">${el.ppm1}</span>
+            </div>
+            <div class="text-right">
+              <span class="text-[9px] uppercase tracking-wider text-slate-400 block font-semibold">T-RARAS02</span>
+              <span class="font-extrabold text-amber-600 font-mono text-xs">${el.ppm2}</span>
+            </div>
+          </div>
+
+          <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+            ${el.application}
+          </p>
+        </div>
+
+        <div class="mt-4 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 group-hover:text-amber-600 font-semibold transition-colors">
+          <span>Ver ficha completa</span>
+          <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+        </div>
+      `;
+
+      card.addEventListener('click', () => openModal(el));
+      gridContainer.appendChild(card);
+    });
+
+    // Update expand controls text
+    if (isExpanded || filtered.length <= 8) {
+      expandGradient.classList.add('opacity-0');
+      toggleText.innerText = "Mostrar menos";
+      toggleIcon.classList.add('rotate-180');
+      expandSubtext.innerText = `Mostrando todos los ${filtered.length} elementos`;
+    } else {
+      expandGradient.classList.remove('opacity-0');
+      toggleText.innerText = `Ver todos los ${filtered.length} elementos`;
+      toggleIcon.classList.remove('rotate-180');
+      expandSubtext.innerText = `Mostrando las primeras 2 filas (8 de ${filtered.length} elementos certificados)`;
+    }
+  }
+
+  // Filter Buttons Click Handling
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('active', 'bg-slate-950', 'text-white', 'shadow-xs');
+        b.classList.add('bg-slate-100', 'text-slate-600');
+      });
+      btn.classList.add('active', 'bg-slate-950', 'text-white', 'shadow-xs');
+      btn.classList.remove('bg-slate-100', 'text-slate-600');
+
+      currentCategory = btn.getAttribute('data-category');
+      renderElements();
+    });
+  });
+
+  // Toggle Expand
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', () => {
+      isExpanded = !isExpanded;
+      renderElements();
+    });
+  }
+
+  // Search Input
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      currentSearch = e.target.value;
+      renderElements();
+    });
+  }
+
+  // Initial Render
+  document.addEventListener('DOMContentLoaded', renderElements);
+</script>

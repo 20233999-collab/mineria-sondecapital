@@ -1,0 +1,93 @@
+---
+// Header Institucional Slim para Las Arenas del Santa
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      
+      <!-- Brand & Asset Identifier -->
+      <a href="/proyectos/arenas-del-santa" class="flex items-center gap-3 group">
+        <img 
+          src="/assets/sonde_logo_transparent.png" 
+          alt="Sonde Capital" 
+          class="h-7 w-auto brightness-0 invert opacity-95 group-hover:opacity-100 transition-opacity"
+        />
+        <div class="flex flex-col">
+          <span class="text-[11px] tracking-wider text-white font-black uppercase font-['Plus_Jakarta_Sans'] leading-tight">
+            Sonde Capital
+          </span>
+          <span class="text-[9px] tracking-widest text-amber-400 font-bold uppercase">
+            Las Arenas del Santa
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold text-slate-300">
+        <a href="#escala" class="hover:text-amber-400 transition-colors">Escala</a>
+        <a href="#geopolitica" class="hover:text-amber-400 transition-colors">Nexo EE.UU.</a>
+        <a href="#anclas" class="hover:text-amber-400 transition-colors">Oro & Magnetita</a>
+        <a href="#especiales" class="hover:text-amber-400 transition-colors">7 Minerales</a>
+        <a href="#elementos" class="hover:text-amber-400 transition-colors">32 Elementos</a>
+        <a href="#geologia" class="hover:text-amber-400 transition-colors">Geología</a>
+        <a href="#inversion" class="hover:text-amber-400 transition-colors">Vías de Inversión</a>
+      </nav>
+
+      <!-- CTA Button & Mobile Toggle -->
+      <div class="flex items-center gap-3">
+        <a 
+          href="#contacto" 
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs tracking-wide transition-all shadow-md shadow-amber-500/20 active:scale-95"
+        >
+          <i class="fa-solid fa-lock text-[10px]"></i>
+          <span class="hidden sm:inline">Solicitar NDA</span>
+          <span class="sm:hidden">NDA</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button 
+          id="mobile-menu-btn" 
+          type="button" 
+          class="lg:hidden text-slate-400 hover:text-white p-2 rounded-lg focus:outline-none"
+          aria-label="Abrir menú"
+        >
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Navigation -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-slate-950/95 border-b border-slate-800 px-4 pt-3 pb-6 space-y-3 text-xs font-medium text-slate-300">
+    <a href="#escala" class="block py-1.5 hover:text-amber-400">Escala ($690 MM)</a>
+    <a href="#geopolitica" class="block py-1.5 hover:text-amber-400">Nexo Perú - EE.UU.</a>
+    <a href="#anclas" class="block py-1.5 hover:text-amber-400">Oro ($4.4k) & Magnetita (700M TM)</a>
+    <a href="#especiales" class="block py-1.5 hover:text-amber-400">7 Minerales Especiales</a>
+    <a href="#elementos" class="block py-1.5 hover:text-amber-400">Matriz de 32 Elementos ALS</a>
+    <a href="#geologia" class="block py-1.5 hover:text-amber-400">Geología & Salaverry/Chancay</a>
+    <a href="#inversion" class="block py-1.5 hover:text-amber-400">Estructuras de Inversión</a>
+    <div class="pt-2 border-t border-slate-800">
+      <a href="#contacto" class="w-full text-center py-2.5 rounded-xl bg-amber-500 text-slate-950 font-bold block">
+        Solicitar Credenciales de Data Room
+      </a>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  const menuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    // Cerrar al hacer clic en un enlace
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  }
+</script>

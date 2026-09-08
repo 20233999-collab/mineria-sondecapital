@@ -119,13 +119,18 @@ graph TD
 - **Titulares de Alto Impacto:**
   - **Título Display:** *"Las Arenas del Santa"*
   - **Subtítulo Estratégico:** *"Depósito de Placer Aurífero & Minerales Pesados de Origen Fluvio-Marino"*
-  - **Párrafo de Contextualización Ejecutiva:**  
-    > *"Una de las formaciones litorales con mayor concentración documentada de **monacita, oro nativo y minerales pesados** en la cuenca del Pacífico sudamericano. **2,100 hectáreas consolidadas** a lo largo de 45 km de costa en La Libertad, Perú, con **32 elementos confirmados por ALS (2026)**, logística directa sobre la Carretera Panamericana y salida inmediata a los puertos de Salaverry y Chancay."*
+    <!-- Contextualization Paragraph (Resumen en 2 líneas) -->
+    <p class="hero-item text-base sm:text-lg lg:text-xl text-slate-200 max-w-4xl mx-auto mb-10 leading-relaxed font-normal">
+      <span class="block text-white font-semibold">Mayor concentración de monacita, oro nativo y minerales pesados en el litoral del Pacífico sur.</span>
+      <span class="block text-slate-300 text-sm sm:text-base mt-1 font-normal">2,100 hectáreas consolidadas con 32 elementos certificados por ALS (2026) y salida portuaria directa a Salaverry y Chancay.</span>
+    </p>
 - **Botones de Acción Inmediata (Dual CTA):**
   1. *Botón Primario (Dorado Ámbar):* `"Explorar los 32 Elementos & TTRR"` (scroll suave a la matriz interactiva).
   2. *Botón Secundario (Vidrio Esmerilado Dark):* `"Agendar Reunión Técnica"` (scroll al módulo de Data Room).
-- **Cinta Inferior de Homologación Científica:**
-  - Cinta con isotipos discretos que acreditan: *Certificación ALS Chemex (Ensayo LI26179573, 2026)* · *Estudio Histórico INGEMMET (1986)* · *Campaña de 41 Calicatas MRC1 (2018)* · *MVM Drilling SAC*.
+- **Validación Científica & Ensayos ("Caleta" & Elegante):**
+  - Micro-tira sutil y de bajo contraste (`text-slate-500` e iconos minimalistas) situada debajo de los CTAs:
+    *Certificación ALS Perú S.A. (LI26179573, 2026)* · *Estudio INGEMMET Monacita & Placeres* · *Campaña 41 Calicatas MRC1* · *06 Informes Técnicos (1982–2026)*.
+  - Diseñada intencionalmente para transmitir respaldo sin generar ruido visual ni competir con el mensaje central.
 
 ---
 
@@ -143,18 +148,28 @@ graph TD
 ---
 
 ### SECCIÓN 4: Contexto Geoestratégico: "El Nexo Perú-EE.UU.: Una Ventana Táctica"
-- **Propósito:** Sustentar por qué Las Arenas del Santa es un activo crítico de seguridad nacional para EE.UU. y sus aliados.
-- **Contenido Específico Aprobado por Dirección:**
-  - **Glosa Modificada (Caso 2):**
-    > *"Las Arenas del Santa presenta una mineralogía análoga a la industria doméstica de los EE.UU. Para compradores e inversionistas institucionales occidentales, esto implica una curva de aprendizaje metalúrgico inexistente: es un tipo de depósito de arenas de monacita ya dominado tecnológicamente en Norteamérica.*  
-    > *Ubicado estratégicamente sobre la Carretera Panamericana, a 75 km del puerto de Salaverry y con conexión a mediano plazo al Megapuerto de Chancay (reduciendo el tránsito hacia Asia a 21-23 días). En el marco del **Memorándum de Entendimiento sobre Cooperación en Minerales Críticos y Tierras Raras firmado entre el Perú y EE. UU. (febrero 2026)**, este proyecto representa la frontera diplomática ideal para asegurar autonomía frente a China en el suministro de Hafnio, Escandio y Tierras Raras Pesadas."*
-  - **Los 5 Pilares de Ajuste Estratégico para EE.UU.:**
-    1. *Desarticulación del Monopolio Chino:* China controla el 85% de la refinación y 90% de los imanes. El acceso directo a este yacimiento asegura insumos clave para los programas de defensa (cazas F-35, submarinos clase Virginia y misiles Tomahawk).
-    2. *Sinergia con la Cadena de Suministro Doméstica de EE.UU.:* Compatible con la planta de separación de tierras raras pesadas de Aclara Resources en Luisiana (inversión de US$ 277 MM).
-    3. *Ensamble Mineralógico Perfecto:* Placer costero de monacita con costos CAPEX y OPEX radicalmente inferiores a la minería en roca dura.
-    4. *Concentración Excepcional de Metales Críticos:* El Hafnio representa ~70% y el Escandio ~17% del valor intrínseco de los metales críticos detectados por ALS.
-    5. *Blindaje Legal y Tributario en Perú:* Estabilidad jurídica por 10 a 15 años bajo la Ley General de Minería (D.L. 109 y D.L. 708), con libre convertibilidad y repatriación de divisas.
-- **Diseño:** Bloque tecnológico oscuro (`bg-slate-950`) con tarjeta iluminada (*glow pulsante*) en el cuadro de ajuste estratégico de EE.UU. y badges comparativos.
+- **Propósito:** Sustentar por qué Las Arenas del Santa es un activo crítico de seguridad nacional para EE.UU. y sus aliados, mediante una **arquitectura 100% visual y gráfica** (eliminando párrafos densos de texto).
+- **Estructura Gráfica Implementada:**
+  1. **Corredor Bilateral de Suministro Crítico (Visual Flow Pipeline):**
+     - Nodo 1: *Mina Santa* (2,100 ha con Monacita, Hafnio y Escandio nativo).
+     - Nodo 2: *Corredor Marítimo* (75 km autovía a Salaverry y salida directa por el Pacífico sin problemas de altura).
+     - Nodo 3: *Planta Luisiana* (Sinergia directa con Aclara en EE.UU., inversión de US$ 277 MM para separación de pesadas).
+     - Tag: *0% Curva Metalúrgica* (depósito análogo al dominado en Norteamérica).
+  2. **Matriz Gráfica de Hardware de Defensa (Pentágono):**
+     - *Cazas F-35 Lightning II*: `Hf · Sc` para toberas térmicas a >2,000°C y fuselajes ultraligeros.
+     - *Submarinos Clase Virginia*: `Hafnio Puro` para barras de control nuclear naval.
+     - *Misiles Guiados & Hipersónicos*: `Nd · Dy` para imanes permanentes de alta coercitividad.
+     - *Radares AESA & Chips 2nm*: `Ga · Hf` para semiconductores de nitruro de galio (GaN) y dieléctricos IA.
+  3. **Indicadores Comparativos Rápidos:**
+     - `>90%`: Monopolio Chino de Tierras Raras Pesadas.
+     - `0 Días`: Tiempo de Adaptación Metalúrgica.
+     - `15 Años`: Estabilidad Jurídica Garantizada por Tratados.
+  4. **Cuadro Resplandeciente (Preservado y Destacado):**
+     - Título: *"¿Por Qué EE. UU. y Fondos Occidentales Deben Adquirir Las Arenas del Santa?"*
+     - Barras gráficas de desglose del valor in-situ: Hafnio (~70%), Escandio (~17%), TTRR Pesadas & Galio (~13%).
+     - Badges de minería a cielo abierto y certificación ALS 2026.
+  5. **4 Pilares Gráficos Inferiores:**
+     - *Autonomía Hemisférica*, *Plug & Play Metalúrgico*, *Blindaje Jurídico*, *Escudo de Oro Nativo*.
 
 ---
 

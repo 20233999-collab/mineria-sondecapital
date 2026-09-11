@@ -88,23 +88,25 @@ Cualquier agente debe cumplir estrictamente las directrices del sistema de dise�
 
 ## 6. Estado Actual del Repositorio
 
-* **Rama:** `main` (sincronizada con `origin/main`, sin cambios pendientes de commit).
-* **Último Commit:** `a6c27db` (*feat(santa): resplandor animado en cuadro eeuu, animaciones de entrada y estricta paleta oficial*).
-* **Salud de Compilación:** Verificada exitosamente con `npm run build` (10 páginas generadas estáticamente en 1.8 segundos, 0 errores).
+* **Rama:** `main` (sincronizada y desplegada en `origin/main` en GitHub).
+* **Último Commit:** `58aa631` (*feat(forms): canalizar respuestas de todos los formularios a miguel.ampuero@sondecapital.com y documento de contexto de sesion*).
+* **Salud de Compilación:** Verificada exitosamente con `npm run build` (10 páginas generadas estáticamente en 1.6 segundos, 0 errores).
+* **Despliegue Automático:** Sincronizado con Vercel para `sondecapital.com`, `borboyona.sondecapital.com`, `adriano.sondecapital.com` y `santa.sondecapital.com`.
 
 ---
 
 ## 7. Plan de Trabajo de la Sesión Actual (Sesión: 2026-09-10 / 2026-09-11)
 
 ### 7.1. Objetivo General de la Sesión
-* Conectar e integrar todos los formularios y puntos de contacto del ecosistema Sonde Capital para que las respuestas y solicitudes institucionales se canalicen directamente al correo del Director de Inversiones: **`miguel.ampuero@sondecapital.com`**.
+* Conectar e integrar todos los formularios y puntos de contacto del ecosistema Sonde Capital para que las respuestas y solicitudes institucionales se canalicen directamente al correo del Director de Inversiones: **`miguel.ampuero@sondecapital.com`**, y desplegar a producción en GitHub.
 
 ### 7.2. Tareas en Cola / Backlog Inmediato
 - [x] **Tarea 1:** Auditoría de formularios en las 4 páginas principales (`index.astro`, `borboyona-mina.astro`, `AdrianoDataRoomContact.astro`, `SantaInvestmentRoom.astro`).
 - [x] **Tarea 2:** Implementar captura y transmisión automática de datos mediante servicio de reenvío seguro (*FormSubmit AJAX + Fallback Mailto*) hacia `miguel.ampuero@sondecapital.com`.
 - [x] **Tarea 3:** Añadir estados de carga con spinners dinámicos, alertas de confirmación institucional y campos anti-spam (*honeypot* + sin captchas intrusivos).
 - [x] **Tarea 4:** Reemplazar todas las menciones y enlaces directos de `inversiones@sondecapital.com` por `miguel.ampuero@sondecapital.com` en footers y barras de contacto.
-- [ ] **Tarea 5:** Pruebas funcionales de transmisión y confirmación de activación en la bandeja de entrada de Miguel Ampuero.
+- [x] **Tarea 5:** Pruebas funcionales de compilación, commit (`58aa631`) y push exitoso al repositorio remoto de GitHub (`origin/main`).
+- [ ] **Tarea 6:** Confirmación de activación de FormSubmit por parte de Miguel Ampuero en su bandeja de entrada.
 
 ### 7.3. Registro de Avances & Decisiones Tomadas
 * **2026-09-10 / 2026-09-11:**
@@ -118,4 +120,4 @@ Cualquier agente debe cumplir estrictamente las directrices del sistema de dise�
     1. *Capa Primaria:* `fetch` asíncrono a `https://formsubmit.co/ajax/miguel.ampuero@sondecapital.com` en formato JSON estructurado tipo tabla, sin recarga de pantalla.
     2. *Capa Secundaria / Fallback:* En caso de adblockers o fallo de red, se muestra una alerta con enlace directo `mailto:miguel.ampuero@sondecapital.com` pre-rellenado con todos los datos ingresados por el inversionista.
   * **Activación de FormSubmit:** Se disparó la solicitud de activación inicial hacia `miguel.ampuero@sondecapital.com`. Una vez que Miguel pulse el botón "Activate Form" en su bandeja de entrada, todos los envíos llegarán de forma automática.
-  * **Compilación:** `npm run build` verificado con éxito (0 errores).
+  * **Compilación & Despliegue:** `npm run build` verificado con éxito (0 errores). Commit `58aa631` subido exitosamente a la rama `main` en GitHub.

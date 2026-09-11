@@ -317,7 +317,7 @@ const projects = [
           <div class="space-y-3 pt-2">
             <div class="flex items-center gap-3 text-sm text-slate-300">
               <i class="fa-solid fa-envelope text-amber-400 w-5"></i>
-              <span>inversiones@sondecapital.com</span>
+              <a href="mailto:miguel.ampuero@sondecapital.com" class="hover:text-amber-400 transition-colors">miguel.ampuero@sondecapital.com</a>
             </div>
             <div class="flex items-center gap-3 text-sm text-slate-300">
               <i class="fa-solid fa-phone text-amber-400 w-5"></i>
@@ -335,45 +335,59 @@ const projects = [
           <h3 class="text-xl font-bold text-slate-900 mb-2">Solicitud de Reunión / Acceso a Documentación</h3>
           <p class="text-xs text-slate-500 mb-6">Completa los datos para recibir las credenciales de acceso al Data Room confidencial.</p>
 
-          <form class="space-y-4" onsubmit="event.preventDefault(); alert('Gracias por su interés en Sonde Capital. Un director de inversiones se comunicará a la brevedad.');">
+          <form 
+            id="corporate-contact-form"
+            action="https://formsubmit.co/miguel.ampuero@sondecapital.com"
+            method="POST"
+            class="space-y-4"
+          >
+            <!-- FormSubmit Configurations -->
+            <input type="hidden" name="_subject" value="[Sonde Capital] Nueva Solicitud de Inversión / Data Room General" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" style="display:none" />
+
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nombre Completo</label>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nombre Completo *</label>
                 <input
                   type="text"
+                  name="nombre"
                   required
                   placeholder="Ej. Ing. Carlos Mendoza"
-                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white"
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
                 />
               </div>
               <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Empresa / Fondo</label>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Empresa / Fondo *</label>
                 <input
                   type="text"
+                  name="empresa"
                   required
                   placeholder="Ej. Andean Capital Partners"
-                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white"
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
                 />
               </div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Correo Corporativo</label>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Correo Corporativo *</label>
                 <input
                   type="email"
+                  name="email"
                   required
                   placeholder="carlos@fondo.com"
-                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white"
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
                 />
               </div>
               <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Proyecto de Interés</label>
-                <select class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white">
-                  <option value="borboyona">Proyecto Polimetálico Borboyona</option>
-                  <option value="arenas">Proyecto Arenas del Santa</option>
-                  <option value="adriano">Strategic Metals Adriano</option>
-                  <option value="todos">Portafolio Completo</option>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Proyecto de Interés *</label>
+                <select name="proyecto_interes" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all">
+                  <option value="Proyecto Polimetálico Borboyona">Proyecto Polimetálico Borboyona</option>
+                  <option value="Proyecto Arenas del Santa">Proyecto Arenas del Santa</option>
+                  <option value="Strategic Metals Adriano">Strategic Metals Adriano</option>
+                  <option value="Portafolio Completo">Portafolio Completo</option>
                 </select>
               </div>
             </div>
@@ -382,21 +396,106 @@ const projects = [
               <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Mensaje / Requerimiento Específico</label>
               <textarea
                 rows="3"
+                name="mensaje"
                 placeholder="Indique el ticket de interés estimado o dudas técnicas sobre el yacimiento..."
-                class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white"
+                class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
               ></textarea>
             </div>
 
             <button
+              id="corp-submit-btn"
               type="submit"
-              class="w-full py-3.5 px-6 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm transition-all shadow-md active:scale-95 flex items-center justify-center gap-2"
+              class="w-full py-3.5 px-6 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              <i class="fa-solid fa-paper-plane text-amber-400 text-xs"></i>
-              <span>Enviar Solicitud de Inversión</span>
+              <i id="corp-btn-icon" class="fa-solid fa-paper-plane text-amber-400 text-xs"></i>
+              <span id="corp-btn-text">Enviar Solicitud de Inversión</span>
             </button>
           </form>
+
+          <!-- Error Alert Message -->
+          <div id="corp-error-message" class="hidden mt-4 p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-xs">
+            <div class="flex items-center gap-2 font-bold mb-1">
+              <i class="fa-solid fa-triangle-exclamation text-amber-600"></i>
+              <span>Aviso de Transmisión</span>
+            </div>
+            <p class="text-amber-800 leading-relaxed mb-2" id="corp-error-text">
+              No se pudo enviar la solicitud automáticamente. Por favor envíe su requerimiento directamente a nuestra Dirección de Inversiones:
+            </p>
+            <a id="corp-error-mailto" href="mailto:miguel.ampuero@sondecapital.com" class="inline-flex items-center gap-1.5 font-bold text-amber-900 underline hover:text-amber-700">
+              <i class="fa-solid fa-envelope"></i> miguel.ampuero@sondecapital.com
+            </a>
+          </div>
+
+          <!-- Success Alert Message -->
+          <div id="corp-success-message" class="hidden mt-4 p-5 rounded-2xl bg-teal-50 border border-teal-200 text-teal-900 text-xs sm:text-sm">
+            <div class="flex items-center gap-2 font-bold mb-1 text-teal-950">
+              <i class="fa-solid fa-circle-check text-teal-600 text-base"></i>
+              <span>Solicitud Registrada con Éxito</span>
+            </div>
+            <p class="text-xs text-teal-800 leading-relaxed">
+              Gracias por su interés en Sonde Capital. Su requerimiento ha sido enviado directamente a la Dirección de Inversiones (<strong class="text-teal-950 font-semibold">miguel.ampuero@sondecapital.com</strong>). Un director se comunicará a la brevedad.
+            </p>
+          </div>
+
         </div>
       </div>
     </div>
   </section>
+
+  <script is:inline>
+    const corpForm = document.getElementById('corporate-contact-form');
+    const corpSuccessMsg = document.getElementById('corp-success-message');
+    const corpErrorMsg = document.getElementById('corp-error-message');
+    const corpSubmitBtn = document.getElementById('corp-submit-btn');
+    const corpBtnIcon = document.getElementById('corp-btn-icon');
+    const corpBtnText = document.getElementById('corp-btn-text');
+
+    if (corpForm) {
+      corpForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        if (corpSubmitBtn) corpSubmitBtn.disabled = true;
+        if (corpBtnIcon) corpBtnIcon.className = "fa-solid fa-circle-notch fa-spin text-amber-400 text-xs";
+        if (corpBtnText) corpBtnText.textContent = "Transmitiendo Solicitud...";
+        if (corpErrorMsg) corpErrorMsg.classList.add('hidden');
+
+        const formData = new FormData(corpForm);
+        const data = Object.fromEntries(formData.entries());
+        data['origen_url'] = window.location.href;
+        data['fecha_hora'] = new Date().toLocaleString('es-PE', { timeZone: 'America/Lima' });
+
+        try {
+          const response = await fetch("https://formsubmit.co/ajax/miguel.ampuero@sondecapital.com", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify(data)
+          });
+
+          const result = await response.json();
+
+          if (response.ok || (result && (result.success === "true" || result.success === true || (result.message && result.message.includes("Activate"))))) {
+            corpForm.classList.add('hidden');
+            if (corpSuccessMsg) corpSuccessMsg.classList.remove('hidden');
+          } else {
+            throw new Error(result.message || "Error al procesar la solicitud");
+          }
+        } catch (err) {
+          console.warn("FormSubmit Corp notice:", err);
+          const mailtoSubject = encodeURIComponent("[Sonde Capital] Solicitud de Inversión / Data Room");
+          const mailtoBody = encodeURIComponent(`Nombre: ${data.nombre || ''}\nEmpresa: ${data.empresa || ''}\nEmail: ${data.email || ''}\nProyecto: ${data.proyecto_interes || ''}\nMensaje: ${data.mensaje || ''}`);
+          const mailtoLink = document.getElementById('corp-error-mailto');
+          if (mailtoLink) {
+            mailtoLink.href = `mailto:miguel.ampuero@sondecapital.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+          }
+          if (corpErrorMsg) corpErrorMsg.classList.remove('hidden');
+          if (corpSubmitBtn) corpSubmitBtn.disabled = false;
+          if (corpBtnIcon) corpBtnIcon.className = "fa-solid fa-paper-plane text-amber-400 text-xs";
+          if (corpBtnText) corpBtnText.textContent = "Reintentar Envío";
+        }
+      });
+    }
+  </script>
 </Layout>

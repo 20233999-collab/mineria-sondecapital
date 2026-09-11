@@ -64,8 +64,8 @@
             </div>
             <div class="flex items-center gap-3">
               <i class="fa-solid fa-envelope text-amber-400 text-sm"></i>
-              <a href="mailto:inversiones@sondecapital.com" class="hover:text-white transition-colors">
-                inversiones@sondecapital.com
+              <a href="mailto:miguel.ampuero@sondecapital.com" class="hover:text-white transition-colors">
+                miguel.ampuero@sondecapital.com
               </a>
             </div>
             <div class="flex items-center gap-3">
@@ -79,9 +79,17 @@
         <div class="lg:col-span-7 p-8 sm:p-12 bg-white text-slate-900">
           <form
             id="nda-request-form"
-            onsubmit="event.preventDefault(); document.getElementById('nda-success-message').classList.remove('hidden'); this.classList.add('opacity-50', 'pointer-events-none');"
+            action="https://formsubmit.co/miguel.ampuero@sondecapital.com"
+            method="POST"
             class="space-y-4"
           >
+            <!-- FormSubmit Configurations -->
+            <input type="hidden" name="_subject" value="[Sonde Capital - Adriano] Solicitud de Data Room & NDA" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" style="display:none" />
+            <input type="hidden" name="proyecto" value="Strategic Metals & Rare Earths Adriano (Sur del Perú)" />
+
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
@@ -89,6 +97,7 @@
                 </label>
                 <input
                   type="text"
+                  name="nombre"
                   required
                   placeholder="Ej. Dr. Roberto Valenzuela"
                   class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
@@ -101,6 +110,7 @@
                 </label>
                 <input
                   type="text"
+                  name="institucion"
                   required
                   placeholder="Nombre de la firma o fondo"
                   class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
@@ -115,6 +125,7 @@
                 </label>
                 <input
                   type="text"
+                  name="cargo"
                   required
                   placeholder="Ej. Managing Director / VP M&A"
                   class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
@@ -127,6 +138,7 @@
                 </label>
                 <input
                   type="email"
+                  name="email"
                   required
                   placeholder="director@firma.com"
                   class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
@@ -138,11 +150,11 @@
               <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                 Vía de Participación de Interés *
               </label>
-              <select class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all">
-                <option value="jv">Joint Venture & Operación (Opción Recomendada)</option>
-                <option value="acquisition">Adquisición Completa del Activo ($2.5B+ USD)</option>
-                <option value="offtake">Contrato de Suministro de Mineral Crudo (Offtake EXW)</option>
-                <option value="meeting">Solicitud de Reunión con el Equipo Directivo</option>
+              <select name="interes_participacion" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all">
+                <option value="Joint Venture & Operación">Joint Venture & Operación (Opción Recomendada)</option>
+                <option value="Adquisición Completa ($2.5B+ USD)">Adquisición Completa del Activo ($2.5B+ USD)</option>
+                <option value="Contrato Offtake Suministro EXW">Contrato de Suministro de Mineral Crudo (Offtake EXW)</option>
+                <option value="Reunión Directiva">Solicitud de Reunión con el Equipo Directivo</option>
               </select>
             </div>
 
@@ -152,6 +164,7 @@
               </label>
               <textarea
                 rows="3"
+                name="mensaje"
                 placeholder="Indique si requiere información sobre elementos específicos (ej. Rubidio, Neodimio) o disponibilidad para visita a terreno."
                 class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 text-xs sm:text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
               ></textarea>
@@ -159,11 +172,12 @@
 
             <div class="pt-2">
               <button
+                id="adriano-submit-btn"
                 type="submit"
-                class="w-full inline-flex items-center justify-center gap-2.5 bg-slate-950 hover:bg-slate-800 text-white font-extrabold text-sm py-4 px-6 rounded-xl shadow-lg transition-all active:scale-95 border border-slate-800"
+                class="w-full inline-flex items-center justify-center gap-2.5 bg-slate-950 hover:bg-slate-800 text-white font-extrabold text-sm py-4 px-6 rounded-xl shadow-lg transition-all active:scale-95 border border-slate-800 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                <i class="fa-solid fa-file-signature text-amber-400 text-xs"></i>
-                <span>Solicitar Credenciales de Data Room & NDA</span>
+                <i id="adriano-btn-icon" class="fa-solid fa-file-signature text-amber-400 text-xs"></i>
+                <span id="adriano-btn-text">Solicitar Credenciales de Data Room & NDA</span>
               </button>
 
               <p class="text-[11px] text-slate-400 mt-3 text-center leading-normal">
@@ -172,6 +186,20 @@
             </div>
           </form>
 
+          <!-- Error Alert Message -->
+          <div id="adriano-error-message" class="hidden mt-4 p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-xs">
+            <div class="flex items-center gap-2 font-bold mb-1">
+              <i class="fa-solid fa-triangle-exclamation text-amber-600"></i>
+              <span>Aviso de Transmisión</span>
+            </div>
+            <p class="text-amber-800 leading-relaxed mb-2" id="adriano-error-text">
+              No se pudo transmitir la solicitud automáticamente. Por favor remita su requerimiento directamente a nuestro Director de Inversiones:
+            </p>
+            <a id="adriano-error-mailto" href="mailto:miguel.ampuero@sondecapital.com" class="inline-flex items-center gap-1.5 font-bold text-amber-900 underline hover:text-amber-700">
+              <i class="fa-solid fa-envelope"></i> miguel.ampuero@sondecapital.com
+            </a>
+          </div>
+
           <!-- Success Alert Message -->
           <div id="nda-success-message" class="hidden mt-4 p-5 rounded-2xl bg-teal-50 border border-teal-200 text-teal-900 text-xs sm:text-sm">
             <div class="flex items-center gap-2 font-bold mb-1 text-teal-950">
@@ -179,7 +207,7 @@
               <span>Solicitud Registrada con Éxito</span>
             </div>
             <p class="text-xs text-teal-800 leading-relaxed">
-              El departamento de Relaciones con Inversionistas de Sonde Capital validará las credenciales y remitirá el Acuerdo de Confidencialidad formal a su correo institucional en un plazo máximo de 24 horas hábiles.
+              La solicitud ha sido remitida a la Dirección de Inversiones de Sonde Capital (<strong class="text-teal-950 font-semibold">miguel.ampuero@sondecapital.com</strong>). Validaremos sus credenciales y remitiremos el Acuerdo de Confidencialidad formal (NDA) en un plazo máximo de 24 horas hábiles.
             </p>
           </div>
         </div>
@@ -308,9 +336,9 @@
           <div class="space-y-3 text-xs text-slate-400">
             <div>
               <span class="text-[10px] uppercase tracking-wider text-slate-500 block font-semibold mb-1">Contacto Directo</span>
-              <a href="mailto:inversiones@sondecapital.com" class="text-slate-200 hover:text-amber-400 font-medium transition-colors break-all flex items-center gap-1.5">
+              <a href="mailto:miguel.ampuero@sondecapital.com" class="text-slate-200 hover:text-amber-400 font-medium transition-colors break-all flex items-center gap-1.5">
                 <i class="fa-solid fa-envelope text-amber-400 text-[11px]"></i>
-                <span>inversiones@sondecapital.com</span>
+                <span>miguel.ampuero@sondecapital.com</span>
               </a>
             </div>
 
@@ -334,3 +362,60 @@
     </footer>
   </div>
 </section>
+
+<script is:inline>
+  const adrianoForm = document.getElementById('nda-request-form');
+  const adrianoSuccessMsg = document.getElementById('nda-success-message');
+  const adrianoErrorMsg = document.getElementById('adriano-error-message');
+  const adrianoSubmitBtn = document.getElementById('adriano-submit-btn');
+  const adrianoBtnIcon = document.getElementById('adriano-btn-icon');
+  const adrianoBtnText = document.getElementById('adriano-btn-text');
+
+  if (adrianoForm) {
+    adrianoForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (adrianoSubmitBtn) adrianoSubmitBtn.disabled = true;
+      if (adrianoBtnIcon) adrianoBtnIcon.className = "fa-solid fa-circle-notch fa-spin text-amber-400 text-xs";
+      if (adrianoBtnText) adrianoBtnText.textContent = "Transmitiendo Solicitud Institucional...";
+      if (adrianoErrorMsg) adrianoErrorMsg.classList.add('hidden');
+
+      const formData = new FormData(adrianoForm);
+      const data = Object.fromEntries(formData.entries());
+      data['origen_url'] = window.location.href;
+      data['fecha_hora'] = new Date().toLocaleString('es-PE', { timeZone: 'America/Lima' });
+
+      try {
+        const response = await fetch("https://formsubmit.co/ajax/miguel.ampuero@sondecapital.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (response.ok || (result && (result.success === "true" || result.success === true || (result.message && result.message.includes("Activate"))))) {
+          adrianoForm.classList.add('hidden');
+          if (adrianoSuccessMsg) adrianoSuccessMsg.classList.remove('hidden');
+        } else {
+          throw new Error(result.message || "Error al procesar la solicitud");
+        }
+      } catch (err) {
+        console.warn("FormSubmit Adriano notice:", err);
+        const mailtoSubject = encodeURIComponent("[Sonde Capital - Adriano] Solicitud de Data Room & NDA");
+        const mailtoBody = encodeURIComponent(`Nombre: ${data.nombre || ''}\nInstitución: ${data.institucion || ''}\nCargo: ${data.cargo || ''}\nEmail: ${data.email || ''}\nInterés: ${data.interes_participacion || ''}\nMensaje: ${data.mensaje || ''}`);
+        const mailtoLink = document.getElementById('adriano-error-mailto');
+        if (mailtoLink) {
+          mailtoLink.href = `mailto:miguel.ampuero@sondecapital.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+        }
+        if (adrianoErrorMsg) adrianoErrorMsg.classList.remove('hidden');
+        if (adrianoSubmitBtn) adrianoSubmitBtn.disabled = false;
+        if (adrianoBtnIcon) adrianoBtnIcon.className = "fa-solid fa-file-signature text-amber-400 text-xs";
+        if (adrianoBtnText) adrianoBtnText.textContent = "Reintentar Envío de Solicitud";
+      }
+    });
+  }
+</script>

@@ -213,60 +213,168 @@ import ChancayLogisticsCorridor from '../../components/ChancayLogisticsCorridor.
           </div>
 
           <div class="lg:col-span-6 bg-white text-slate-900 p-5 sm:p-8 rounded-2xl shadow-xl">
-            <form onsubmit="event.preventDefault(); alert('Solicitud registrada para el Proyecto Borboyona & Tocllano. El equipo de Sonde Capital / Lone Star enviará las credenciales a su correo corporativo.');" class="space-y-4">
+            <form 
+              id="borboyona-form"
+              action="https://formsubmit.co/miguel.ampuero@sondecapital.com" 
+              method="POST" 
+              class="space-y-4"
+            >
+              <!-- FormSubmit Configurations -->
+              <input type="hidden" name="_subject" value="[Sonde Capital - Borboyona] Solicitud de Data Room & Acceso a Mina" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="text" name="_honey" style="display:none" />
+              <input type="hidden" name="proyecto" value="Mina Polimetálica Borboyona & Tocllano (Huancavelica)" />
+
               <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nombre Completo</label>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nombre Completo *</label>
                 <input
                   type="text"
+                  name="nombre"
                   required
                   placeholder="Ej. Ing. Roberto Valdivia"
-                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white"
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
                 />
               </div>
 
               <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Empresa / Fondo / Trading House</label>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Empresa / Fondo / Trading House *</label>
                 <input
                   type="text"
+                  name="empresa"
                   required
                   placeholder="Ej. Global Resource Partners"
-                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white"
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
                 />
               </div>
 
               <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Correo Electrónico Corporativo</label>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Correo Electrónico Corporativo *</label>
                 <input
                   type="email"
+                  name="email"
                   required
                   placeholder="rvaldivia@holding.com"
-                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white"
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
                 />
               </div>
 
               <div>
-                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Interés Transaccional</label>
-                <select class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white">
-                  <option>Adquisición Total del Activo (Venta 100%)</option>
-                  <option>Joint Venture / Operador Estratégico</option>
-                  <option>Acuerdo de Offtake / Financiamiento</option>
-                  <option>Solicitar Visita Técnica a Mina</option>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Interés Transaccional *</label>
+                <select name="interes_transaccional" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all">
+                  <option value="Adquisición Total (Venta 100%)">Adquisición Total del Activo (Venta 100%)</option>
+                  <option value="Joint Venture / Operador Estratégico">Joint Venture / Operador Estratégico</option>
+                  <option value="Acuerdo Offtake / Financiamiento">Acuerdo de Offtake / Financiamiento</option>
+                  <option value="Solicitar Visita Técnica a Mina">Solicitar Visita Técnica a Mina</option>
                 </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Requerimientos Específicos (Opcional)</label>
+                <textarea
+                  rows="2"
+                  name="mensaje"
+                  placeholder="Indique si requiere información sobre las concesiones o programación de visita a Huancavelica..."
+                  class="w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:bg-white transition-all"
+                ></textarea>
               </div>
 
               <div class="pt-2">
                 <button
+                  id="borboyona-submit-btn"
                   type="submit"
-                  class="w-full bg-slate-950 hover:bg-slate-900 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-md flex justify-center items-center gap-2 text-sm active:scale-95"
+                  class="w-full bg-slate-950 hover:bg-slate-900 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-md flex justify-center items-center gap-2 text-sm active:scale-95 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  <i class="fa-solid fa-lock text-amber-400 text-xs"></i>
-                  <span>Solicitar Acceso al Data Room</span>
+                  <i id="borboyona-btn-icon" class="fa-solid fa-lock text-amber-400 text-xs"></i>
+                  <span id="borboyona-btn-text">Solicitar Acceso al Data Room</span>
                 </button>
               </div>
             </form>
+
+            <!-- Error Alert Message -->
+            <div id="borboyona-error-message" class="hidden mt-4 p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-xs">
+              <div class="flex items-center gap-2 font-bold mb-1">
+                <i class="fa-solid fa-triangle-exclamation text-amber-600"></i>
+                <span>Aviso de Transmisión</span>
+              </div>
+              <p class="text-amber-800 leading-relaxed mb-2" id="borboyona-error-text">
+                No se pudo procesar el envío automático. Por favor remita su solicitud directamente a nuestra Dirección de Inversiones:
+              </p>
+              <a id="borboyona-error-mailto" href="mailto:miguel.ampuero@sondecapital.com" class="inline-flex items-center gap-1.5 font-bold text-amber-900 underline hover:text-amber-700">
+                <i class="fa-solid fa-envelope"></i> miguel.ampuero@sondecapital.com
+              </a>
+            </div>
+
+            <!-- Success Alert Message -->
+            <div id="borboyona-success-message" class="hidden mt-4 p-5 rounded-2xl bg-teal-50 border border-teal-200 text-teal-900 text-xs sm:text-sm">
+              <div class="flex items-center gap-2 font-bold mb-1 text-teal-950">
+                <i class="fa-solid fa-circle-check text-teal-600 text-base"></i>
+                <span>Solicitud Registrada con Éxito</span>
+              </div>
+              <p class="text-xs text-teal-800 leading-relaxed">
+                Su solicitud ha sido remitida a la Dirección de Inversiones (<strong class="text-teal-950 font-semibold">miguel.ampuero@sondecapital.com</strong>). El equipo de Sonde Capital / Lone Star enviará las credenciales a su correo corporativo en un plazo máximo de 24 horas hábiles.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <script is:inline>
+    const borboyonaForm = document.getElementById('borboyona-form');
+    const borboyonaSuccessMsg = document.getElementById('borboyona-success-message');
+    const borboyonaErrorMsg = document.getElementById('borboyona-error-message');
+    const borboyonaSubmitBtn = document.getElementById('borboyona-submit-btn');
+    const borboyonaBtnIcon = document.getElementById('borboyona-btn-icon');
+    const borboyonaBtnText = document.getElementById('borboyona-btn-text');
+
+    if (borboyonaForm) {
+      borboyonaForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        if (borboyonaSubmitBtn) borboyonaSubmitBtn.disabled = true;
+        if (borboyonaBtnIcon) borboyonaBtnIcon.className = "fa-solid fa-circle-notch fa-spin text-amber-400 text-xs";
+        if (borboyonaBtnText) borboyonaBtnText.textContent = "Transmitiendo Solicitud...";
+        if (borboyonaErrorMsg) borboyonaErrorMsg.classList.add('hidden');
+
+        const formData = new FormData(borboyonaForm);
+        const data = Object.fromEntries(formData.entries());
+        data['origen_url'] = window.location.href;
+        data['fecha_hora'] = new Date().toLocaleString('es-PE', { timeZone: 'America/Lima' });
+
+        try {
+          const response = await fetch("https://formsubmit.co/ajax/miguel.ampuero@sondecapital.com", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify(data)
+          });
+
+          const result = await response.json();
+
+          if (response.ok || (result && (result.success === "true" || result.success === true || (result.message && result.message.includes("Activate"))))) {
+            borboyonaForm.classList.add('hidden');
+            if (borboyonaSuccessMsg) borboyonaSuccessMsg.classList.remove('hidden');
+          } else {
+            throw new Error(result.message || "Error al procesar la solicitud");
+          }
+        } catch (err) {
+          console.warn("FormSubmit Borboyona notice:", err);
+          const mailtoSubject = encodeURIComponent("[Sonde Capital - Borboyona] Solicitud de Data Room");
+          const mailtoBody = encodeURIComponent(`Nombre: ${data.nombre || ''}\nEmpresa: ${data.empresa || ''}\nEmail: ${data.email || ''}\nInterés: ${data.interes_transaccional || ''}\nMensaje: ${data.mensaje || ''}`);
+          const mailtoLink = document.getElementById('borboyona-error-mailto');
+          if (mailtoLink) {
+            mailtoLink.href = `mailto:miguel.ampuero@sondecapital.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+          }
+          if (borboyonaErrorMsg) borboyonaErrorMsg.classList.remove('hidden');
+          if (borboyonaSubmitBtn) borboyonaSubmitBtn.disabled = false;
+          if (borboyonaBtnIcon) borboyonaBtnIcon.className = "fa-solid fa-lock text-amber-400 text-xs";
+          if (borboyonaBtnText) borboyonaBtnText.textContent = "Reintentar Solicitud";
+        }
+      });
+    }
+  </script>
 </Layout>

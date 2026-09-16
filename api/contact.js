@@ -226,9 +226,9 @@ export default async function handler(req, res) {
 
     let resendResult = await resendResponse.json();
 
-    // If Resend failed because of domain verification restriction (403), fallback to registered account email
+    // If Resend failed because of domain verification restriction (403), fallback to primaryDest (the sandbox account owner)
     if (!resendResponse.ok && resendResult?.name === 'validation_error') {
-      console.warn('Resend domain sandbox restriction detected. Dispatching to verified account email (mi.ampueroo@gmail.com) as primary:', resendResult.message);
+      console.warn(`Resend domain restriction detected. Dispatching directly to verified account email (${primaryDest}):`, resendResult.message);
       
       const fallbackResponse = await fetch('https://api.resend.com/emails', {
         method: 'POST',
@@ -238,8 +238,8 @@ export default async function handler(req, res) {
         },
         body: JSON.stringify({
           from: 'Sonde Capital <onboarding@resend.dev>',
-          to: ['mi.ampueroo@gmail.com'],
-          subject: `[LEAD M&A] (Para: ${primaryDest}) ${emailSubject}`,
+          to: [primaryDest],
+          subject: emailSubject,
           html: htmlBody,
           reply_to: email
         })

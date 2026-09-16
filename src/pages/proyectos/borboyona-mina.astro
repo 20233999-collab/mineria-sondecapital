@@ -84,42 +84,42 @@ import ChancayLogisticsCorridor from '../../components/ChancayLogisticsCorridor.
   </section>
 
   <!-- 2. INTERACTIVE TESORO EXPLORER SECTION -->
-  <section id="tesoro" class="py-20 sm:py-28 bg-slate-900">
+  <section id="tesoro" class="py-20 sm:py-28 bg-slate-900 scroll-reveal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <TesoroStructureExplorer />
     </div>
   </section>
 
   <!-- 3. INTERACTIVE ALTITUDE & ADITS SLICER SECTION -->
-  <section id="altitud" class="py-20 sm:py-28 bg-slate-50 border-t border-slate-200">
+  <section id="altitud" class="py-20 sm:py-28 bg-slate-50 border-t border-slate-200 scroll-reveal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <BorboyonaAltitudeViewer />
     </div>
   </section>
 
   <!-- 4. CRITICAL METALS & ENERGY TRANSITION MATRIX -->
-  <section id="minerales" class="py-20 sm:py-28 bg-white border-y border-slate-200">
+  <section id="minerales" class="py-20 sm:py-28 bg-white border-y border-slate-200 scroll-reveal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <CriticalMetalsMatrix />
     </div>
   </section>
 
   <!-- 5. STANFORD BENCHMARKING (ANTAMINA, BINGHAM, ESCONDIDA) -->
-  <section id="benchmarking" class="py-20 sm:py-28 bg-slate-50">
+  <section id="benchmarking" class="py-20 sm:py-28 bg-slate-50 scroll-reveal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <GlobalBenchmarking />
     </div>
   </section>
 
   <!-- 6. LOGISTICS & CHANCAY MEGAPORT CORRIDOR -->
-  <section id="logistica" class="py-20 sm:py-28 bg-white border-b border-slate-200">
+  <section id="logistica" class="py-20 sm:py-28 bg-white border-b border-slate-200 scroll-reveal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <ChancayLogisticsCorridor />
     </div>
   </section>
 
   <!-- 7. LEGAL, SOCIAL & PERU RISK-FREE ENVIRONMENT -->
-  <section class="py-14 sm:py-28 bg-slate-50">
+  <section class="py-14 sm:py-28 bg-slate-50 scroll-reveal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
         <span class="text-xs uppercase font-extrabold tracking-widest text-amber-600 block mb-2">
@@ -133,7 +133,7 @@ import ChancayLogisticsCorridor from '../../components/ChancayLogisticsCorridor.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 scroll-reveal-stagger">
         <!-- 100% Titulado -->
         <div class="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xs card-hover">
           <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-slate-900 text-amber-400 flex items-center justify-center text-lg sm:text-xl mb-4 sm:mb-6">
@@ -180,16 +180,17 @@ import ChancayLogisticsCorridor from '../../components/ChancayLogisticsCorridor.
   </section>
 
   <!-- 8. DATA ROOM ACCESS TERMINAL & NDA REQUEST -->
-  <section id="contacto" class="py-14 sm:py-24 bg-slate-950 text-white relative overflow-hidden">
+  <section id="contacto" class="py-14 sm:py-24 bg-slate-950 text-white relative overflow-hidden scroll-reveal">
     <div class="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bg-slate-900 border border-slate-800 rounded-2xl sm:rounded-3xl p-5 sm:p-12 shadow-2xl">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           <div class="lg:col-span-6 space-y-4 sm:space-y-6">
-            <span class="text-xs uppercase font-extrabold tracking-widest text-amber-400 block">
-              Proceso Transaccional Confidencial
-            </span>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/90 border border-amber-500/30 text-amber-400 text-xs font-extrabold uppercase tracking-widest">
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping shrink-0"></span>
+              <span>Proceso Transaccional Confidencial</span>
+            </div>
             <h3 class="text-xl sm:text-4xl font-extrabold text-white leading-tight">
               Solicitar Data Room & Due Diligence Técnico
             </h3>
@@ -277,10 +278,10 @@ import ChancayLogisticsCorridor from '../../components/ChancayLogisticsCorridor.
                 <button
                   id="borboyona-submit-btn"
                   type="submit"
-                  class="w-full bg-slate-950 hover:bg-slate-900 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-md flex justify-center items-center gap-2 text-sm active:scale-95 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                  class="form-submit-loop-btn w-full bg-slate-950 hover:bg-slate-900 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-md flex justify-center items-center gap-2 text-sm active:scale-95 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed relative overflow-hidden"
                 >
-                  <i id="borboyona-btn-icon" class="fa-solid fa-lock text-amber-400 text-xs"></i>
-                  <span id="borboyona-btn-text">Solicitar Acceso al Data Room</span>
+                  <i id="borboyona-btn-icon" class="fa-solid fa-lock text-amber-400 text-xs relative z-10"></i>
+                  <span id="borboyona-btn-text" class="relative z-10">Solicitar Acceso al Data Room</span>
                 </button>
               </div>
             </form>
@@ -370,6 +371,39 @@ import ChancayLogisticsCorridor from '../../components/ChancayLogisticsCorridor.
         }
       });
     }
+
+    // IntersectionObserver for Section Entrance Animations
+    if (typeof window !== 'undefined') {
+      const initScrollObserver = () => {
+        if ('IntersectionObserver' in window) {
+          const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                scrollObserver.unobserve(entry.target);
+              }
+            });
+          }, {
+            threshold: 0.08,
+            rootMargin: "0px 0px -30px 0px"
+          });
+
+          document.querySelectorAll('.scroll-reveal').forEach((el) => {
+            scrollObserver.observe(el);
+          });
+        } else {
+          document.querySelectorAll('.scroll-reveal').forEach((el) => {
+            el.classList.add('in-view');
+          });
+        }
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScrollObserver);
+      } else {
+        initScrollObserver();
+      }
+    }
   </script>
 
   <style>
@@ -412,6 +446,51 @@ import ChancayLogisticsCorridor from '../../components/ChancayLogisticsCorridor.
     .hero-enter-carousel {
       animation: heroReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1.75s both;
       will-change: transform, opacity;
+    }
+
+    /* Scroll Reveal Section Transitions (GPU-accelerated, Apple & Linear easing) */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .scroll-reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered items inside revealed sections */
+    .scroll-reveal-stagger > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .scroll-reveal.in-view .scroll-reveal-stagger > *:nth-child(1) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.1s;
+    }
+
+    .scroll-reveal.in-view .scroll-reveal-stagger > *:nth-child(2) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.22s;
+    }
+
+    .scroll-reveal.in-view .scroll-reveal-stagger > *:nth-child(3) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.34s;
+    }
+
+    .scroll-reveal.in-view .scroll-reveal-stagger > *:nth-child(4) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 0.46s;
     }
 
     /* Attention-Grabbing Looping Animation for Primary CTA (Solicitar Data Room) */
@@ -463,6 +542,39 @@ import ChancayLogisticsCorridor from '../../components/ChancayLogisticsCorridor.
       transform: scale(0.97) !important;
     }
 
+    /* Attention-Grabbing Looping Animation for Form Submit Button */
+    .form-submit-loop-btn {
+      animation: formSubmitPulse 3.5s ease-in-out infinite;
+      will-change: box-shadow;
+    }
+
+    .form-submit-loop-btn::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 50%;
+      height: 200%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(245, 158, 11, 0.25),
+        transparent
+      );
+      transform: rotate(25deg);
+      animation: ctaSweepSheen 3.8s cubic-bezier(0.4, 0, 0.2, 1) infinite 1s;
+      pointer-events-none;
+    }
+
+    @keyframes formSubmitPulse {
+      0%, 100% {
+        box-shadow: 0 4px 14px 0 rgba(15, 23, 42, 0.4), 0 0 0 0 rgba(245, 158, 11, 0.3);
+      }
+      50% {
+        box-shadow: 0 8px 24px 0 rgba(15, 23, 42, 0.5), 0 0 0 5px rgba(245, 158, 11, 0.18);
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .hero-enter-badge,
       .hero-enter-title,
@@ -470,10 +582,15 @@ import ChancayLogisticsCorridor from '../../components/ChancayLogisticsCorridor.
       .hero-enter-cta,
       .hero-enter-carousel,
       .cta-attention-btn,
-      .cta-attention-btn::after {
+      .cta-attention-btn::after,
+      .scroll-reveal,
+      .scroll-reveal-stagger > *,
+      .form-submit-loop-btn,
+      .form-submit-loop-btn::after {
         animation: none !important;
         opacity: 1 !important;
         transform: none !important;
+        transition: none !important;
       }
     }
   </style>

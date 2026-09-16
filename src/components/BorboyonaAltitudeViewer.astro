@@ -17,10 +17,13 @@
     </div>
 
     <!-- Altitude indicator badge -->
-    <div class="flex items-center gap-3 bg-slate-900 text-white px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-xs self-start lg:self-auto">
-      <i class="fa-solid fa-layer-group text-amber-400 text-sm"></i>
+    <div class="active-cota-pulse flex items-center gap-3 bg-slate-900 text-white px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl shadow-xs self-start lg:self-auto border border-amber-500/30">
+      <div class="relative flex items-center justify-center">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping absolute"></span>
+        <i class="fa-solid fa-layer-group text-amber-400 text-sm relative z-10"></i>
+      </div>
       <div>
-        <span class="text-[9px] sm:text-[10px] uppercase tracking-wider text-slate-400 block font-semibold">Cota Activa</span>
+        <span class="text-[9px] sm:text-[10px] uppercase tracking-wider text-amber-400/90 block font-bold">Cota Activa</span>
         <span class="text-sm sm:text-base font-extrabold text-white tabular-nums" id="activeAltitudeBadge">2,228 msnm</span>
       </div>
     </div>
@@ -31,11 +34,12 @@
     <div class="lg:col-span-4 space-y-2.5" id="levelSelectorContainer">
       <button
         type="button"
-        class="altitude-level-btn w-full text-left p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border transition-all flex items-center justify-between group bg-slate-900 text-white border-slate-900 shadow-md"
+        class="altitude-level-btn labor-record-loop w-full text-left p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border transition-all flex items-center justify-between group bg-slate-900 text-white border-amber-500/40 shadow-md relative overflow-hidden"
         data-level="2228"
       >
         <div class="flex items-center gap-2.5 sm:gap-3 min-w-0 flex-1">
-          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs shrink-0 shadow-xs">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-xs shrink-0 shadow-xs relative">
+            <span class="absolute -top-0.5 -right-0.5 w-2 h-2 bg-amber-300 rounded-full animate-ping"></span>
             2228m
           </div>
           <div class="min-w-0 flex-1">
@@ -337,3 +341,38 @@
     });
   });
 </script>
+
+<style>
+  .active-cota-pulse {
+    animation: cotaHaloPulse 3.5s ease-in-out infinite;
+  }
+  @keyframes cotaHaloPulse {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.15);
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 16px 2px rgba(245, 158, 11, 0.35);
+      border-color: rgba(245, 158, 11, 0.6);
+    }
+  }
+  .labor-record-loop {
+    animation: recordBorderGlow 3.5s ease-in-out infinite;
+  }
+  @keyframes recordBorderGlow {
+    0%, 100% {
+      border-color: rgba(245, 158, 11, 0.3);
+      box-shadow: 0 4px 12px 0 rgba(15, 23, 42, 0.4);
+    }
+    50% {
+      border-color: rgba(245, 158, 11, 0.7);
+      box-shadow: 0 6px 20px -2px rgba(245, 158, 11, 0.25);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .active-cota-pulse,
+    .labor-record-loop {
+      animation: none !important;
+    }
+  }
+</style>

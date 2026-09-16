@@ -191,3 +191,33 @@ Cuando el equipo decida verificar el dominio `sondecapital.com` en Resend para q
 3. Copiar los 3 registros DNS que entrega Resend (1 registro TXT para SPF y 2 registros CNAME/MX para DKIM).
 4. Añadir esos registros en el editor de zonas DNS del hosting donde residen los nameservers (`A2 Hosting` / cPanel).
 5. Tras unos minutos se activará el estado verificado y el sistema podrá enviar correos a cualquier destinatario sin restricciones.
+
+---
+
+## 12. Sistema de Animaciones y Micro-Interacciones (Borboyona)
+
+Implementado siguiendo estrictamente las directrices de `animation-on-scroll`, `animation-systems`, `beam-glow-states` y `high-end-visual-design`:
+
+### 12.1 Animaciones de Entrada en Scroll (`scroll-reveal`)
+- **Motor:** `IntersectionObserver` nativo con umbral de 8% y margen inferior de -30px.
+- **Transición:** `opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1)` y `transform: translateY(28px) -> 0`. Acelerado 100% por GPU sin re-layout.
+- **Ejecución única:** `once = true` para evitar re-disparos molestos al hacer micro-scroll.
+- **Escalonamiento:** Clase `.scroll-reveal-stagger` para cards en cascada (delays progresivos de 100ms a 460ms).
+- **Accesibilidad:** Regla `@media (prefers-reduced-motion: reduce)` que neutraliza todas las transiciones y loops instantáneamente.
+
+### 12.2 Componentes Clave con Animación en LOOP (Puntos Focales de Conversión)
+1. **CTA Principal del Hero (`Solicitar Data Room`):**
+   - Pulso respiratorio de aura dorada (`ctaGoldAuraPulse`) cada 3s + barrido de haz luminoso reflectante (`ctaSweepSheen`) continuo.
+2. **Megaestructura «El Tesoro» (`+6.0 km`):**
+   - Borde respiratorio perimetral ámbar (`tesoroGlowPulse` cada 4s) con micro-radar ping en el indicador de extensión horizontal.
+3. **Corte Geológico & Socavones (`Labor NP 502 Récord` - 333 oz/t Ag):**
+   - Pulso vivo en la cota activa (`cotaHaloPulse`) y resplandor perimetral en la labor récord (`recordBorderGlow` cada 3.5s).
+4. **Matriz de Minerales Críticos (Ficha de Valor Bruto):**
+   - Respiración áurea en la tarjeta de valuación in-situ (`grossValuePulse` cada 4s) destacando los *$929,295 MM USD*.
+5. **Benchmarking Stanford (Dr. Marco Einaudi):**
+   - Resplandor institucional en el contenedor de dictamen (`stanfordAuraPulse`) y texto animado con brillo dorado continuo (`monstruo-potencial-shimmer` cada 4s) en la frase *«monstruo potencial»*.
+6. **Corredor Logístico Chancay (Hito 04 - Megapuerto):**
+   - Card 04 con borde de luz pulsante (`chancayGlowPulse` cada 3.8s) y radar ping en el nodo "04 Hub Transpacífico".
+7. **Terminal de Envío de Data Room (Botón Submit):**
+   - Botón de solicitud con micro-aura viva (`formSubmitPulse` cada 3.5s) y barrido de luz en el candado de seguridad.
+

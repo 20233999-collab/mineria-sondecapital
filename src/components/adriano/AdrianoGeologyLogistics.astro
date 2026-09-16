@@ -89,14 +89,20 @@ const concessions = [
         </div>
       </div>
 
-      <!-- Right Column: Maritime Logistics Corridor -->
-      <div class="lg:col-span-5 bg-gradient-to-br from-slate-900 to-slate-950 text-white rounded-2xl p-6 sm:p-8 flex flex-col justify-between" data-animate="fade-up">
-        <div>
-          <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-xl mb-6">
+      <!-- Right Column: Maritime Logistics Corridor (Tarjeta Estrella con Bucle Continuo) -->
+      <div 
+        class="lg:col-span-5 salaverry-card-loop relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-950 to-[#041021] text-white rounded-2xl p-6 sm:p-8 flex flex-col justify-between border-2 border-teal-500/70 shadow-xl group" 
+        data-animate="fade-up"
+      >
+        <!-- Continuous loop sheen highlight -->
+        <span class="salaverry-sheen-sweep pointer-events-none absolute inset-0 z-0"></span>
+
+        <div class="relative z-10">
+          <div class="w-12 h-12 rounded-xl bg-teal-500/15 border border-teal-500/40 flex items-center justify-center text-teal-400 text-xl mb-6 shadow-sm">
             <i class="fa-solid fa-route"></i>
           </div>
 
-          <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400">
+          <span class="text-xs font-extrabold uppercase tracking-widest text-teal-400">
             Ventaja Logística Portuaria
           </span>
           <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-4 font-['Plus_Jakarta_Sans']">
@@ -109,21 +115,21 @@ const concessions = [
 
           <ul class="space-y-3.5 text-xs text-slate-300">
             <li class="flex items-start gap-3 bg-slate-800/60 p-3 rounded-xl border border-slate-700/60">
-              <i class="fa-solid fa-road text-amber-400 mt-1 shrink-0"></i>
+              <i class="fa-solid fa-road text-teal-400 mt-1 shrink-0"></i>
               <div>
                 <strong class="text-white font-semibold">Carretera Asfaltada Operativa los 365 Días:</strong>
                 Tránsito continuo de camiones de carga pesada sin interrupciones por nevadas o temporadas de lluvia andina.
               </div>
             </li>
             <li class="flex items-start gap-3 bg-slate-800/60 p-3 rounded-xl border border-slate-700/60">
-              <i class="fa-solid fa-money-bill-trend-up text-amber-400 mt-1 shrink-0"></i>
+              <i class="fa-solid fa-money-bill-trend-up text-teal-400 mt-1 shrink-0"></i>
               <div>
                 <strong class="text-white font-semibold">Ahorro de más del 70% en Flete Terrestre:</strong>
                 Flete directo en cortas distancias hasta el muelle de aguas profundas para exportación en buques Panamax y Supramax.
               </div>
             </li>
             <li class="flex items-start gap-3 bg-slate-800/60 p-3 rounded-xl border border-slate-700/60">
-              <i class="fa-solid fa-heart-pulse text-amber-400 mt-1 shrink-0"></i>
+              <i class="fa-solid fa-heart-pulse text-teal-400 mt-1 shrink-0"></i>
               <div>
                 <strong class="text-white font-semibold">Cero Riesgos de Gran Altitud:</strong>
                 Entorno geográfico cercano al nivel del mar que facilita la contratación y productividad del personal técnico sin contingencias de soroche.
@@ -132,11 +138,59 @@ const concessions = [
           </ul>
         </div>
 
-        <div class="mt-8 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+        <div class="relative z-10 mt-8 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
           <span>Puerto de Salaverry, La Libertad</span>
-          <span class="font-mono text-amber-400 font-bold">Ruta del Pacífico</span>
+          <span class="font-mono text-teal-400 font-bold">Ruta del Pacífico</span>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  /* =========================================================================
+     ANIMACIÓN EN LOOP CONTINUO PARA CORREDOR PORTUARIO SALAVERRY
+     ========================================================================= */
+  @keyframes salaverryGlowPulse {
+    0%, 100% {
+      border-color: rgba(20, 184, 166, 0.65);
+      box-shadow: 0 10px 28px -6px rgba(20, 184, 166, 0.22), 0 0 16px 0 rgba(20, 184, 166, 0.1);
+    }
+    50% {
+      border-color: rgba(45, 212, 191, 1);
+      box-shadow: 0 16px 40px -4px rgba(20, 184, 166, 0.45), 0 0 26px 4px rgba(20, 184, 166, 0.3);
+    }
+  }
+
+  @keyframes salaverrySheen {
+    0% {
+      transform: translateX(-150%) skewX(-20deg);
+    }
+    30%, 100% {
+      transform: translateX(250%) skewX(-20deg);
+    }
+  }
+
+  .salaverry-card-loop {
+    animation: salaverryGlowPulse 4s ease-in-out infinite;
+  }
+
+  .salaverry-sheen-sweep {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(45, 212, 191, 0.18) 45%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(45, 212, 191, 0.18) 55%,
+      transparent 100%
+    );
+    animation: salaverrySheen 4.2s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .salaverry-card-loop,
+    .salaverry-sheen-sweep {
+      animation: none !important;
+    }
+  }
+</style>

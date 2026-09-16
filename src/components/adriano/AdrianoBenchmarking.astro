@@ -73,10 +73,15 @@ const comparisonData = [
         <thead>
           <tr class="bg-slate-900 text-white text-xs uppercase tracking-wider">
             <th class="py-4 px-5 font-bold">Parámetro Clave</th>
-            <th class="py-4 px-5 font-extrabold text-amber-400 bg-slate-950 border-x border-slate-800">
-              <div class="flex items-center gap-1.5">
-                <i class="fa-solid fa-star text-amber-400 text-xs"></i>
-                <span>Proyecto Adriano (Perú)</span>
+            <th class="py-4 px-5 font-extrabold text-amber-300 bg-slate-950 border-x border-amber-500/70 relative overflow-hidden adriano-th-loop">
+              <span class="benchmark-sheen-sweep absolute inset-0 pointer-events-none"></span>
+              <div class="flex items-center gap-2 relative z-10">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+                </span>
+                <i class="fa-solid fa-crown text-amber-400 text-xs"></i>
+                <span class="tracking-wide">Proyecto Adriano (Perú)</span>
               </div>
             </th>
             <th class="py-4 px-5 font-semibold text-slate-300">Serra Verde (Brasil)</th>
@@ -154,3 +159,49 @@ const comparisonData = [
     </div>
   </div>
 </section>
+
+<style>
+  /* =========================================================================
+     ANIMACIÓN EN LOOP CONTINUO PARA LA COLUMNA DE ADRIANO
+     ========================================================================= */
+  @keyframes benchmarkThGlow {
+    0%, 100% {
+      background-color: #020617;
+      border-color: rgba(245, 158, 11, 0.5);
+    }
+    50% {
+      background-color: #0c1b33;
+      border-color: rgba(251, 191, 36, 1);
+    }
+  }
+
+  @keyframes benchmarkSheen {
+    0% {
+      transform: translateX(-150%) skewX(-20deg);
+    }
+    30%, 100% {
+      transform: translateX(250%) skewX(-20deg);
+    }
+  }
+
+  .adriano-th-loop {
+    animation: benchmarkThGlow 4s ease-in-out infinite;
+  }
+
+  .benchmark-sheen-sweep {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(245, 158, 11, 0.22) 50%,
+      transparent 100%
+    );
+    animation: benchmarkSheen 4.2s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .adriano-th-loop,
+    .benchmark-sheen-sweep {
+      animation: none !important;
+    }
+  }
+</style>

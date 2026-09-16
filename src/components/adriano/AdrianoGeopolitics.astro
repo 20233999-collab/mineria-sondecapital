@@ -126,6 +126,8 @@ const supplyRisks = [
 
       <!-- Right: Why Peru & Adriano Wins (Cuadro con Resplandor Ámbar Continuo) -->
       <div class="lg:col-span-5 peru-resplendence-card relative bg-gradient-to-br from-[#08182d] via-slate-900 to-[#061426] border border-amber-400/50 rounded-2xl p-6 sm:p-8 space-y-6 overflow-hidden group" data-animate="fade-up">
+        <!-- Continuous loop liquid sheen highlight -->
+        <div class="peru-sheen-sweep absolute inset-0 pointer-events-none z-0"></div>
         <!-- Ambient corner radial glow -->
         <div class="absolute -top-16 -right-16 w-52 h-52 bg-amber-400/20 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute -bottom-16 -left-16 w-52 h-52 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -215,6 +217,35 @@ const supplyRisks = [
   /* Barras de progreso animadas */
   .geo-risk-bar {
     transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .peru-sheen-sweep {
+    background: linear-gradient(
+      105deg,
+      transparent 20%,
+      rgba(245, 158, 11, 0.08) 45%,
+      rgba(255, 255, 255, 0.12) 50%,
+      rgba(245, 158, 11, 0.08) 55%,
+      transparent 80%
+    );
+    background-size: 200% 100%;
+    animation: peruSheenSweep 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes peruSheenSweep {
+    0% {
+      background-position: 200% 0;
+    }
+    45%, 100% {
+      background-position: -200% 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .peru-resplendence-card,
+    .peru-sheen-sweep {
+      animation: none !important;
+    }
   }
 </style>
 

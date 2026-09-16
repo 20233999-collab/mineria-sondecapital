@@ -83,18 +83,21 @@ const timelinePhases = [
         </div>
       </div>
 
-      <!-- Option 2: Joint Venture (Recommended) -->
+      <!-- Option 2: Joint Venture (Recommended) - Star Card with Loop Animation -->
       <div
         data-animate="fade-up"
         data-delay="100"
-        class="bg-slate-950 text-white rounded-2xl p-8 border-2 border-amber-500 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden group"
+        class="jv-card-loop bg-slate-950 text-white rounded-2xl p-8 border-2 border-amber-500 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden group"
       >
+        <!-- Continuous loop sheen highlight -->
+        <span class="jv-sheen-sweep pointer-events-none absolute inset-0 z-0"></span>
+
         <!-- Recommended Badge -->
-        <div class="absolute top-0 right-0 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-bl-xl shadow-xs">
+        <div class="absolute top-0 right-0 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-bl-xl shadow-xs z-10">
           Opción Recomendada
         </div>
 
-        <div>
+        <div class="relative z-10">
           <div class="w-12 h-12 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center text-xl mb-6 shadow-sm">
             <i class="fa-solid fa-handshake"></i>
           </div>
@@ -187,3 +190,51 @@ const timelinePhases = [
     </div>
   </div>
 </section>
+
+<style>
+  /* =========================================================================
+     ANIMACIÓN EN LOOP CONTINUO PARA TARJETA JOINT VENTURE (Opción Recomendada)
+     ========================================================================= */
+  @keyframes jvGlowPulse {
+    0%, 100% {
+      border-color: rgba(245, 158, 11, 0.7);
+      box-shadow: 0 10px 28px -6px rgba(245, 158, 11, 0.2), 0 0 16px 0 rgba(245, 158, 11, 0.1);
+    }
+    50% {
+      border-color: rgba(251, 191, 36, 1);
+      box-shadow: 0 16px 42px -4px rgba(245, 158, 11, 0.45), 0 0 26px 4px rgba(245, 158, 11, 0.3);
+    }
+  }
+
+  @keyframes jvSheen {
+    0% {
+      transform: translateX(-150%) skewX(-20deg);
+    }
+    30%, 100% {
+      transform: translateX(250%) skewX(-20deg);
+    }
+  }
+
+  .jv-card-loop {
+    animation: jvGlowPulse 4s ease-in-out infinite;
+  }
+
+  .jv-sheen-sweep {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(245, 158, 11, 0.15) 45%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(245, 158, 11, 0.15) 55%,
+      transparent 100%
+    );
+    animation: jvSheen 4.5s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .jv-card-loop,
+    .jv-sheen-sweep {
+      animation: none !important;
+    }
+  }
+</style>

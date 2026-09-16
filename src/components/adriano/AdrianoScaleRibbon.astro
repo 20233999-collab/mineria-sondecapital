@@ -94,10 +94,13 @@ const metrics = [
           }
         >
           {item.featured && (
-            <div class="absolute -top-14 -right-14 w-40 h-40 bg-amber-400/15 rounded-full blur-2xl pointer-events-none"></div>
+            <>
+              <div class="scale-sheen-sweep absolute inset-0 pointer-events-none z-0"></div>
+              <div class="absolute -top-14 -right-14 w-40 h-40 bg-amber-400/20 rounded-full blur-2xl pointer-events-none"></div>
+            </>
           )}
 
-          <div>
+          <div class="relative z-10">
             <div class="flex items-center justify-between gap-3 mb-4">
               <span class={item.featured
                 ? "inline-flex items-center gap-2 text-[10px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full bg-amber-400/15 text-amber-300 border border-amber-400/50"
@@ -160,16 +163,40 @@ const metrics = [
 
 <style>
   /* =========================================================================
-     FEATURED SALE CARD: Gentle Continuous Floating Animation Loop
+     FEATURED SALE CARD: Continuous Floating & Sheen Sweep Animation Loop
      ========================================================================= */
   @keyframes sale-card-float {
     0%, 100% {
       transform: translateY(0px);
-      box-shadow: 0 14px 28px -4px rgba(245, 158, 11, 0.2), 0 8px 14px -6px rgba(15, 23, 42, 0.4);
+      box-shadow: 0 14px 28px -4px rgba(245, 158, 11, 0.22), 0 0 16px 0 rgba(245, 158, 11, 0.12);
+      border-color: rgba(245, 158, 11, 0.85);
     }
     50% {
       transform: translateY(-8px);
-      box-shadow: 0 24px 38px -4px rgba(245, 158, 11, 0.38), 0 16px 20px -6px rgba(15, 23, 42, 0.55);
+      box-shadow: 0 24px 44px -4px rgba(245, 158, 11, 0.45), 0 0 28px 4px rgba(245, 158, 11, 0.3);
+      border-color: rgba(251, 191, 36, 1);
+    }
+  }
+
+  .scale-sheen-sweep {
+    background: linear-gradient(
+      105deg,
+      transparent 20%,
+      rgba(245, 158, 11, 0.08) 45%,
+      rgba(255, 255, 255, 0.14) 50%,
+      rgba(245, 158, 11, 0.08) 55%,
+      transparent 80%
+    );
+    background-size: 200% 100%;
+    animation: scaleSheenSweep 4.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes scaleSheenSweep {
+    0% {
+      background-position: 200% 0;
+    }
+    40%, 100% {
+      background-position: -200% 0;
     }
   }
 
@@ -196,6 +223,13 @@ const metrics = [
     transform: scale(1.12);
     filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.6));
     transition: transform 0.22s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.22s ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sale-card-active,
+    .scale-sheen-sweep {
+      animation: none !important;
+    }
   }
 </style>
 

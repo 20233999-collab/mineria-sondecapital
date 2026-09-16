@@ -158,11 +158,25 @@ Cualquier agente debe cumplir estrictamente las directrices del sistema de dise�
     * Compilación con 0 errores mediante `npm run build`.
     * Push a GitHub `main` y despliegue exitoso en producción en Vercel con alias activo en **`https://santa.sondecapital.com`**.
 
-* **2026-09-16 (Dinamización & Rediseño del Hero de Adriano - `adriano.sondecapital.com`):**
-  * **Título de Gran Impacto:** Modificado a **"El Monstruo Polimetálico de los Andes"** con degradado en oro/ámbar y tipografía imponente `Plus Jakarta Sans`.
-  * **Eliminación Total de la Descripción:** Se suprimió el bloque descriptivo y subtítulo del Hero, logrando una composición ultralimpia, contundente y de alta conversión ejecutiva.
-  * **Rediseño de CTAs (Cortos & Llamativos):**
-    * *CTA Primario:* **"Solicitar Data Room"** (enlace a `#contacto`) con clase `.adriano-cta-primary-loop`, halo perimetral respiratorio continuo y haz de luz líquida transversal (`adrianoLiquidSheen`).
-    * *CTA Secundario:* **"Explorar 41 Elementos"** (enlace a `#elementos`) con acabado en cristal oscuro satinado e icono dinámico de átomo.
-  * **Animaciones de Entrada Escalonadas:** Secuencia fluida mediante CSS keyframes acelerados por GPU y atributos `data-animate="fade-up"` (Badge: 0.05s / 100ms -> Título: 0.18s / 200ms -> CTAs: 0.32s / 350ms -> Cinta de Laboratorios: 0.46s / 500ms).
-  * **Verificación & Despliegue en Producción:** Verificado con `npm run build` (0 errores) y desplegado en Vercel con alias activo en **`https://adriano.sondecapital.com`**.
+* **2026-09-16 (Dinamización Integral & Rediseño de Adriano - `adriano.sondecapital.com`):**
+  * **Hero Reestructurado (`AdrianoHero.astro`):**
+    * *Título de Gran Impacto:* Modificado a **"El Monstruo Polimetálico de los Andes"** con degradado en oro/ámbar y tipografía imponente `Plus Jakarta Sans`.
+    * *Eliminación Total de la Descripción:* Se suprimió el bloque descriptivo y subtítulo del Hero, logrando una composición ultralimpia, contundente y de alta conversión ejecutiva.
+    * *Rediseño de CTAs (Cortos & Llamativos):*
+      * *CTA Primario:* **"Solicitar Data Room"** (enlace a `#contacto`) con clase `.adriano-cta-primary-loop`, halo perimetral respiratorio continuo y haz de luz líquida transversal (`adrianoLiquidSheen`).
+      * *CTA Secundario:* **"Explorar 41 Elementos"** (enlace a `#elementos`) con acabado en cristal oscuro satinado e icono dinámico de átomo.
+    * *Animaciones de Entrada Escalonadas:* Secuencia fluida mediante CSS keyframes acelerados por GPU y atributos `data-animate="fade-up"` (Badge: 0.05s / 100ms -> Título: 0.18s / 200ms -> CTAs: 0.32s / 350ms -> Cinta de Laboratorios: 0.46s / 500ms).
+  * **Sistema de Animaciones Continuas en Bucle (Star Elements Loops en Todas las Secciones):**
+    * *Sec. 2 (Escala & Pilares - `AdrianoScaleRibbon.astro`):* Tarjeta de oportunidad maestra **$2.5B+ USD** con haz continuo de luz líquida en ángulo (`scale-sheen-sweep`) y elevación flotante con halo dorado.
+    * *Sec. 3 (Geopolítica Global - `AdrianoGeopolitics.astro`):* Tarjeta institucional *"Por Qué Perú Ofrece la Respuesta Definitiva"* con barrido de luz continua cada 4.5s (`peru-sheen-sweep`).
+    * *Sec. 4 (Benchmarking Internacional - `AdrianoBenchmarking.astro`):* Encabezado de la columna Proyecto Adriano con pulso de resplandor ámbar perimetral (`adriano-th-loop`) y barrido lumínico (`benchmark-sheen-sweep`).
+    * *Sec. 5 (Matriz de 41 Elementos - `AdrianoElementsMatrix.astro`):* Botón de despliegue interactivo *"Ver todos los 41 elementos"* con bucle de haz de luz y resplandor continuo (`expand-btn-loop`, `expand-btn-sheen`), más aura respiratoria dorada en las fichas estrella de Neodimio (`Nd`) y Rubidio (`Rb`).
+    * *Sec. 6 (Geología & Conectividad - `AdrianoGeologyLogistics.astro`):* Tarjeta del Corredor Portuario Puerto Salaverry (75 km) con pulso continuo esmeralda/ámbar (`salaverry-card-loop`, `salaverryGlowPulse`) y barrido de luz líquida (`salaverry-sheen-sweep`).
+    * *Sec. 7 (Galería de Terreno - `AdrianoFieldGallery.astro`):* Tarjeta de Encuentro Diplomático con la Embajada de la India potenciada con halo continuo ámbar (`diplomatic-card-loop`) y baliza de radar pulsante.
+    * *Sec. 8 (Vías de Inversión - `AdrianoEngagement.astro`):* Tarjeta de Opción 2: Joint Venture & Operación (Recomendada) con pulso perimetral dorado (`jv-card-loop`, `jvGlowPulse`) y haz transversal (`jv-sheen-sweep`).
+    * *Sec. 9 (Data Room & Formulario - `AdrianoDataRoomContact.astro`):* Botón de envío de solicitud de NDA con gradiente dorado vibrante, halo pulsante (`adriano-submit-loop`) y destello continuo de luz líquida (`adriano-submit-sheen`).
+  * **Footer Dedicado de Adriano:**
+    * Inclusión de la línea de contacto telefónico y WhatsApp directo: **`+51 968899700`**, unificada con el correo `miguel.ampuero@sondecapital.com`.
+  * **Verificación & Despliegue en Producción:**
+    * Compilación con 0 errores mediante `npm run build`.
+    * Push a GitHub `main` y despliegue inmediato en producción en Vercel con alias activo en **`https://adriano.sondecapital.com`**.

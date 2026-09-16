@@ -171,10 +171,12 @@
               <button
                 id="adriano-submit-btn"
                 type="submit"
-                class="w-full inline-flex items-center justify-center gap-2.5 bg-slate-950 hover:bg-slate-800 text-white font-extrabold text-sm py-4 px-6 rounded-xl shadow-lg transition-all active:scale-95 border border-slate-800 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                class="adriano-submit-loop relative overflow-hidden w-full inline-flex items-center justify-center gap-2.5 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-300 text-slate-950 font-extrabold text-sm py-4 px-6 rounded-xl shadow-lg transition-all active:scale-95 border border-amber-300 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                <i id="adriano-btn-icon" class="fa-solid fa-file-signature text-amber-400 text-xs"></i>
-                <span id="adriano-btn-text">Solicitar Credenciales de Data Room & NDA</span>
+                <!-- Liquid light sweep sheen -->
+                <span class="adriano-submit-sheen pointer-events-none absolute inset-0" aria-hidden="true"></span>
+                <i id="adriano-btn-icon" class="fa-solid fa-file-signature text-slate-950 text-xs relative z-10"></i>
+                <span id="adriano-btn-text" class="relative z-10">Solicitar Credenciales de Data Room & NDA</span>
               </button>
 
               <p class="text-[11px] text-slate-400 mt-3 text-center leading-normal">
@@ -333,9 +335,13 @@
           <div class="space-y-3 text-xs text-slate-400">
             <div>
               <span class="text-[10px] uppercase tracking-wider text-slate-500 block font-semibold mb-1">Contacto Directo</span>
-              <a href="mailto:miguel.ampuero@sondecapital.com" class="text-slate-200 hover:text-amber-400 font-medium transition-colors break-all flex items-center gap-1.5">
+              <a href="mailto:miguel.ampuero@sondecapital.com" class="text-slate-200 hover:text-amber-400 font-medium transition-colors break-all flex items-center gap-1.5 mb-1.5">
                 <i class="fa-solid fa-envelope text-amber-400 text-[11px]"></i>
                 <span>miguel.ampuero@sondecapital.com</span>
+              </a>
+              <a href="https://wa.me/51968899700" target="_blank" rel="noopener noreferrer" class="text-slate-200 hover:text-amber-400 font-medium transition-colors flex items-center gap-1.5">
+                <i class="fa-brands fa-whatsapp text-emerald-400 text-[12px]"></i>
+                <span>+51 968899700</span>
               </a>
             </div>
 
@@ -416,3 +422,50 @@
     });
   }
 </script>
+
+<style>
+  .adriano-submit-loop {
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.35);
+    animation: adrianoSubmitPulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes adrianoSubmitPulse {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.3), 0 4px 15px rgba(0, 0, 0, 0.3);
+      transform: translateY(0);
+    }
+    50% {
+      box-shadow: 0 0 35px rgba(245, 158, 11, 0.6), 0 8px 25px rgba(245, 158, 11, 0.25);
+      transform: translateY(-1px);
+    }
+  }
+
+  .adriano-submit-sheen {
+    background: linear-gradient(
+      105deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.45) 45%,
+      rgba(255, 255, 255, 0.7) 50%,
+      rgba(255, 255, 255, 0.45) 55%,
+      transparent 80%
+    );
+    background-size: 200% 100%;
+    animation: adrianoSubmitSweep 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes adrianoSubmitSweep {
+    0% {
+      background-position: 200% 0;
+    }
+    60%, 100% {
+      background-position: -200% 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .adriano-submit-loop,
+    .adriano-submit-sheen {
+      animation: none !important;
+    }
+  }
+</style>

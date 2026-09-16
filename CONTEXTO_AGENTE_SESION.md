@@ -129,5 +129,9 @@ Cualquier agente debe cumplir estrictamente las directrices del sistema de dise�
     * Inyectadas en Vercel vía CLI para `Production`, `Preview` y `Development`: `RESEND_API_KEY`, `LEADS_EMAIL_PRIMARY` (`miguel.ampuero333@gmail.com`), `LEADS_EMAIL_SECONDARY` (`miguel.ampuero@sondecapital.com`).
   * **Conexión de Formularios:** Actualizados los 4 formularios ([`index.astro`](./src/pages/index.astro), [`borboyona-mina.astro`](./src/pages/proyectos/borboyona-mina.astro), [`AdrianoDataRoomContact.astro`](./src/components/adriano/AdrianoDataRoomContact.astro), [`SantaInvestmentRoom.astro`](./src/components/santa/SantaInvestmentRoom.astro)) para despachar hacia `/api/contact`.
   * **Middleware Local:** Añadido plugin `devApiPlugin` en [`astro.config.mjs`](./astro.config.mjs) para habilitar pruebas completas en entorno local (`astro dev`).
-  * **Verificación de Entrega:** Entrega probada y confirmada con Resend hacia la cuenta verificada `mi.ampueroo@gmail.com` (IDs de entrega `77456a75...` y `9263798b...`).
-  * **Doble Respaldo:** Mecanismo híbrido que despacha por Resend y simultáneamente activa respaldo FormSubmit hacia ambas cuentas solicitadas.
+  * **Verificación de Entrega:** Se actualizó la API Key vinculada directamente a la cuenta titular `miguel.ampuero333@gmail.com` (`re_QuykMgQh...`), permitiendo la recepción inmediata de leads en dicha bandeja sin restricciones DNS de sandbox.
+  * **Pruebas en Vivo en Producción:** Verificadas exitosamente en los tres subdominios con IDs de entrega:
+    * Santa: `9835178c-5328-4e74-953d-ba2c81fb279e`
+    * Borboyona: `01a0aae5-00cc-75bd-9e87-c7a71fb5a66b`
+    * Adriano: `01a0aae5-04d0-70cb-94a5-d38d0b8ffe7f`
+  * **Doble Respaldo:** Mecanismo híbrido que despacha por Resend directo a `miguel.ampuero333@gmail.com` y simultáneamente activa respaldo FormSubmit hacia ambas cuentas solicitadas (`miguel.ampuero333@gmail.com` y `miguel.ampuero@sondecapital.com`).

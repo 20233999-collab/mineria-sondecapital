@@ -79,36 +79,39 @@ Cualquier agente debe cumplir estrictamente las directrices del sistema de dise�
 * **Valorización & Salida:** Precio de adquisición total del activo establecido en **$690 MM USD** (o esquemas de Joint Venture / Offtake).
 * **Doble Motor de Valorización:**
   1. *Oro Aluvial:* 20 millones de onzas de potencial (~USD 86.6B a precio récord actual), extracción gravimétrica limpia sin cianuro.
-  2. *Magnetita Masiva:* 700 millones de toneladas métricas (~USD 70B para la industria global de acero verde).
-  3. *Elementos Críticos de Defensa:* Monacita, Hafnio (reactores navales/nucleares) y Escandio (superaleaciones para cazas F-35 y misiles hipersónicos).
+  2. *Magnetita Masiva:* 700,000,000,000 TM (700 mil millones de toneladas métricas inferidas, ~USD $700,000,000,000 in-situ para la industria global de acero verde).
+  3. *Elementos Críticos de Defensa:* Monacita (tierras raras pesadas), Hafnio (reactores navales/nucleares) y Escandio (superaleaciones para cazas F-35 y misiles hipersónicos).
 * **Eje Geopolítico:** Centrado en el **Memorándum de Entendimiento sobre Cooperación en Minerales Críticos Perú-EE.UU. (Febrero 2026)**.
-* **Componentes Destacados:** Módulos en [`src/components/santa/`](file:///home/laptop/Documentos/mineria-sondecapital/src/components/santa/), destacando [`SantaAnchorAssets.astro`](file:///home/laptop/Documentos/mineria-sondecapital/src/components/santa/SantaAnchorAssets.astro), [`SantaElementsMatrix.astro`](file:///home/laptop/Documentos/mineria-sondecapital/src/components/santa/SantaElementsMatrix.astro) (32 minerales certificados por ALS) y [`SantaGeopoliticsUsa.astro`](file:///home/laptop/Documentos/mineria-sondecapital/src/components/santa/SantaGeopoliticsUsa.astro).
+* **Componentes Destacados:** Módulos en [`src/components/santa/`](file:///home/laptop/Documentos/mineria-sondecapital/src/components/santa/):
+  * [`SantaHero.astro`](file:///home/laptop/Documentos/mineria-sondecapital/src/components/santa/SantaHero.astro): Fotografía real de terreno visible con gradiente de alta fidelidad, entrada secuencial escalonada en 4 fases, CTAs concisos y botón primario con animación de loop continuo.
+  * [`SantaKpiRibbon.astro`](file:///home/laptop/Documentos/mineria-sondecapital/src/components/santa/SantaKpiRibbon.astro): Bento grid de métricas duras con recurso de magnetita calibrado a 700,000,000,000 TM / USD $700B y bucle de resplandor continuo en la tarjeta principal de $690 MM USD.
+  * [`SantaGeopoliticsUsa.astro`](file:///home/laptop/Documentos/mineria-sondecapital/src/components/santa/SantaGeopoliticsUsa.astro): Marco del Tratado Bilateral Perú-EE.UU. con animación continua de haz líquido en la tarjeta de ajuste estratégico de defensa.
+  * [`SantaAnchorAssets.astro`](file:///home/laptop/Documentos/mineria-sondecapital/src/components/santa/SantaAnchorAssets.astro): Oro Nativo ($86.6B) con pulso perimetral ámbar y destello continuo, más Magnetita unificada a 700B TM.
+  * [`SantaSpecialMinerals.astro`](file:///home/laptop/Documentos/mineria-sondecapital/src/components/santa/SantaSpecialMinerals.astro): Los 7 minerales especiales con bucle continuo de resplandor en Monacita (vector geopolítico maestro).
+  * [`SantaElementsMatrix.astro`](file:///home/laptop/Documentos/mineria-sondecapital/src/components/santa/SantaElementsMatrix.astro): Matriz interactiva de los 32 elementos certificados por ALS (2026) con bucle continuo en el botón de expansión interactiva.
+  * [`SantaGeologyLogistics.astro`](file:///home/laptop/Documentos/mineria-sondecapital/src/components/santa/SantaGeologyLogistics.astro): Ficha geológica, 41 calicatas, radar de prospección pulsante y bucle continuo en la tarjeta del Megapuerto de Chancay.
+  * [`SantaInvestmentRoom.astro`](file:///home/laptop/Documentos/mineria-sondecapital/src/components/santa/SantaInvestmentRoom.astro): Estructura de inversión con bucle continuo en la Opción 1 ($690 MM USD) y en el botón de solicitud de NDA, conectado al endpoint `/api/contact`.
+  * [`SantaFooter.astro`](file:///home/laptop/Documentos/mineria-sondecapital/src/components/santa/SantaFooter.astro): Footer exclusivo con oficinas en Allen (TX) y San Isidro (Lima), canalización a `miguel.ampuero@sondecapital.com` y línea directa telefónica/WhatsApp institucional `+51 968899700`.
 
 ---
 
 ## 6. Estado Actual del Repositorio
 
 * **Rama:** `main` (sincronizada y desplegada en `origin/main` en GitHub).
-* **Último Commit:** `58aa631` (*feat(forms): canalizar respuestas de todos los formularios a miguel.ampuero@sondecapital.com y documento de contexto de sesion*).
-* **Salud de Compilación:** Verificada exitosamente con `npm run build` (10 páginas generadas estáticamente en 1.6 segundos, 0 errores).
-* **Despliegue Automático:** Sincronizado con Vercel para `sondecapital.com`, `borboyona.sondecapital.com`, `adriano.sondecapital.com` y `santa.sondecapital.com`.
+* **Últimos Commits Clave:**
+  * `fe586c2`: *feat(santa): entrance animations across all sections and continuous attention loops on star elements*.
+  * `b60dc8e`: *feat(santa): revamp hero with real photo background, 4-phase sequential stagger, redesigned loop CTAs, and update magnetite KPI to 700B TM*.
+* **Salud de Compilación:** Verificada exitosamente con `npm run build` (10 páginas generadas estáticamente en 2.05s, 0 errores).
+* **Despliegue Automático:** Sincronizado en producción con Vercel para `sondecapital.com`, `borboyona.sondecapital.com`, `adriano.sondecapital.com` y `santa.sondecapital.com`.
 
 ---
 
-## 7. Plan de Trabajo de la Sesión Actual (Sesión: 2026-09-10 / 2026-09-11)
+## 7. Plan de Trabajo & Bitácora de Sesiones
 
-### 7.1. Objetivo General de la Sesión
-* Conectar e integrar todos los formularios y puntos de contacto del ecosistema Sonde Capital para que las respuestas y solicitudes institucionales se canalicen directamente al correo del Director de Inversiones: **`miguel.ampuero@sondecapital.com`**, y desplegar a producción en GitHub.
+### 7.1. Objetivo General de la Sesión Actual
+* Perfeccionar y dinamizar integralmente la plataforma satélite de **Las Arenas del Santa** (`santa.sondecapital.com`): visibilidad de fotografía real, animaciones secuenciales en Hero, actualización de escala geológica de magnetita, animaciones de entrada en todas las secciones (`data-animate="fade-up"`), bucles continuos en elementos estrella y actualización de datos de contacto institucional en el footer.
 
-### 7.2. Tareas en Cola / Backlog Inmediato
-- [x] **Tarea 1:** Auditoría de formularios en las 4 páginas principales (`index.astro`, `borboyona-mina.astro`, `AdrianoDataRoomContact.astro`, `SantaInvestmentRoom.astro`).
-- [x] **Tarea 2:** Implementar captura y transmisión automática de datos mediante servicio de reenvío seguro (*FormSubmit AJAX + Fallback Mailto*) hacia `miguel.ampuero@sondecapital.com`.
-- [x] **Tarea 3:** Añadir estados de carga con spinners dinámicos, alertas de confirmación institucional y campos anti-spam (*honeypot* + sin captchas intrusivos).
-- [x] **Tarea 4:** Reemplazar todas las menciones y enlaces directos de `inversiones@sondecapital.com` por `miguel.ampuero@sondecapital.com` en footers y barras de contacto.
-- [x] **Tarea 5:** Pruebas funcionales de compilación, commit (`58aa631`) y push exitoso al repositorio remoto de GitHub (`origin/main`).
-- [ ] **Tarea 6:** Confirmación de activación de FormSubmit por parte de Miguel Ampuero en su bandeja de entrada.
-
-### 7.3. Registro de Avances & Decisiones Tomadas
+### 7.2. Registro de Avances & Decisiones Tomadas
 * **2026-09-10 / 2026-09-11:**
   * **Contextualización & Documentación:** Sincronización del contexto global del portafolio y creación de [`CONTEXTO_AGENTE_SESION.md`](./CONTEXTO_AGENTE_SESION.md), referenciado en [`AGENTS.md`](./AGENTS.md) y [`CLAUDE.md`](./CLAUDE.md).
   * **Integración de Formularios a `miguel.ampuero@sondecapital.com`:**
@@ -117,21 +120,40 @@ Cualquier agente debe cumplir estrictamente las directrices del sistema de dise�
     * **Metales Adriano (`AdrianoDataRoomContact.astro`):** Formulario de NDA conectado con asunto `[Sonde Capital - Adriano] Solicitud de Data Room & NDA`.
     * **Mina Santa (`SantaInvestmentRoom.astro`):** Formulario de NDA conectado con asunto `[Sonde Capital - Las Arenas del Santa] Nueva Solicitud de Data Room & NDA`.
   * **Mecanismo de Resiliencia (Doble Capa):**
-    1. *Capa Primaria:* `fetch` asíncrono a `https://formsubmit.co/ajax/miguel.ampuero@sondecapital.com` en formato JSON estructurado tipo tabla, sin recarga de pantalla.
-    2. *Capa Secundaria / Fallback:* En caso de adblockers o fallo de red, se muestra una alerta con enlace directo `mailto:miguel.ampuero@sondecapital.com` pre-rellenado con todos los datos ingresados por el inversionista.
-  * **Activación de FormSubmit:** Se disparó la solicitud de activación inicial hacia `miguel.ampuero@sondecapital.com`. Una vez que Miguel pulse el botón "Activate Form" en su bandeja de entrada, todos los envíos llegarán de forma automática.
-  * **Compilación & Despliegue:** `npm run build` verificado con éxito (0 errores). Commit `58aa631` subido exitosamente a la rama `main` en GitHub.
+    1. *Capa Primaria:* `fetch` asíncrono a FormSubmit en formato JSON estructurado.
+    2. *Capa Secundaria / Fallback:* En caso de bloqueo o fallo de red, alerta institucional con enlace directo `mailto:miguel.ampuero@sondecapital.com`.
+  * **Compilación & Despliegue:** `npm run build` verificado con éxito (0 errores).
 
-* **2026-09-16 (Implementación Opción B: Serverless + Resend API):**
-  * **Arquitectura Transaccional:** Se creó el endpoint serverless [`api/contact.js`](./api/contact.js) para procesar solicitudes de leads institucionales con plantilla HTML ejecutiva (branding Sonde Capital, modo Navy & Gold, metadatos y botón de respuesta directa).
+* **2026-09-16 (Sesión de Infraestructura Transaccional: Serverless + Resend API):**
+  * **Arquitectura Transaccional:** Creación del endpoint serverless [`api/contact.js`](./api/contact.js) para procesar solicitudes de leads institucionales con plantilla HTML ejecutiva (branding Sonde Capital, modo Navy & Gold, metadatos y botón de respuesta directa).
   * **Variables de Entorno:**
     * Inyectadas en `.env.local` (protegido por `.gitignore`, sin exposición en git).
     * Inyectadas en Vercel vía CLI para `Production`, `Preview` y `Development`: `RESEND_API_KEY`, `LEADS_EMAIL_PRIMARY` (`miguel.ampuero333@gmail.com`), `LEADS_EMAIL_SECONDARY` (`miguel.ampuero@sondecapital.com`).
-  * **Conexión de Formularios:** Actualizados los 4 formularios ([`index.astro`](./src/pages/index.astro), [`borboyona-mina.astro`](./src/pages/proyectos/borboyona-mina.astro), [`AdrianoDataRoomContact.astro`](./src/components/adriano/AdrianoDataRoomContact.astro), [`SantaInvestmentRoom.astro`](./src/components/santa/SantaInvestmentRoom.astro)) para despachar hacia `/api/contact`.
+  * **Conexión de Formularios:** Actualizados los 4 formularios para despachar hacia `/api/contact`.
   * **Middleware Local:** Añadido plugin `devApiPlugin` en [`astro.config.mjs`](./astro.config.mjs) para habilitar pruebas completas en entorno local (`astro dev`).
-  * **Verificación de Entrega:** Se actualizó la API Key vinculada directamente a la cuenta titular `miguel.ampuero333@gmail.com` (`re_QuykMgQh...`), permitiendo la recepción inmediata de leads en dicha bandeja sin restricciones DNS de sandbox.
-  * **Pruebas en Vivo en Producción:** Verificadas exitosamente en los tres subdominios con IDs de entrega:
-    * Santa: `9835178c-5328-4e74-953d-ba2c81fb279e`
-    * Borboyona: `01a0aae5-00cc-75bd-9e87-c7a71fb5a66b`
-    * Adriano: `01a0aae5-04d0-70cb-94a5-d38d0b8ffe7f`
-  * **Doble Respaldo:** Mecanismo híbrido que despacha por Resend directo a `miguel.ampuero333@gmail.com` y simultáneamente activa respaldo FormSubmit hacia ambas cuentas solicitadas (`miguel.ampuero333@gmail.com` y `miguel.ampuero@sondecapital.com`).
+  * **Pruebas en Vivo en Producción:** Verificadas exitosamente en los tres subdominios con IDs de entrega confirmados en Resend y despacho simultáneo a FormSubmit como respaldo.
+
+* **2026-09-16 (Sesión de Rediseño & Dinamización de Las Arenas del Santa - `santa.sondecapital.com`):**
+  * **Rediseño del Hero (`SantaHero.astro`):**
+    * *Fondo Fotográfico:* Ajuste de opacidad y degradados radiales para que la fotografía real de la mina en las playas del Río Santa sea nítida y visible manteniendo legibilidad AAA.
+    * *Animación de Entrada en 4 Fases:* Título institucional (Fase 1: 0ms) -> Descripción de valor (Fase 2: 150ms) -> CTAs principales (Fase 3: 300ms) -> Bloque de activos ancla y píldoras clave (Fase 4: 450ms).
+    * *Optimización de Textos:* Eliminación de la frase "Depósito de placer..." por un encabezado ejecutivo conciso de alta gama; bloque "Mayor concentración..." potenciado con métricas doradas y píldoras de activos.
+    * *CTAs Más Cortos & Dinámicos:* Rediseño a "Solicitar Data Room" y "Explorar 32 Elementos".
+    * *Animación en Loop en CTA Primario:* Implementación de clase `.santa-cta-primary-loop` con resplandor dorado perimetral oscilante y haz de luz líquida en ángulo continuo (`santaCtaSheen`).
+  * **Calibración de Escala Geológica (`SantaKpiRibbon.astro` & `SantaAnchorAssets.astro`):**
+    * Ajuste del recurso de Magnetita a la cifra oficial de **`700,000,000,000 TM`** (700 mil millones de TM) con una valorización estimada in-situ de **`USD $700,000,000,000`**, unificada en toda la plataforma.
+    * Incorporación de animación en bucle continuo (`kpi-primary-loop`) en la tarjeta de adquisición de **USD $690 MM+**.
+  * **Sistema de Animaciones de Entrada On-Scroll:**
+    * Estandarización de directiva `data-animate="fade-up"` con retardos progresivos (`data-delay` de 0ms a 500ms) observados por `IntersectionObserver` acelerado por GPU en todas las secciones (Sec 1 a Sec 8).
+  * **Diseño de Animaciones Continuas en Bucle (Star Elements Loops):**
+    * *Sec. 3 (Geopolítica):* Haz continuo de luz líquida (`usa-sweep-sheen`) recorriendo la tarjeta del marco bilateral de defensa EE.UU.
+    * *Sec. 4 (Activos Ancla):* Pulso continuo ámbar y destello transversal (`gold-card-loop` / `gold-sheen-sweep`) en la tarjeta de Oro Nativo ($86.6B USD).
+    * *Sec. 5 (Minerales Especiales):* Resplandor oscilante y destello en la tarjeta de Monacita / Tierras Raras (`monacita-card-loop`).
+    * *Sec. 6 (Matriz de 32 Elementos):* Pulso dorado perimetral continuo en el botón interactivo de despliegue (`expand-btn-loop`).
+    * *Sec. 7 (Geología & Conectividad):* Pulso perimetral esmeralda/turquesa en la tarjeta del Megapuerto de Chancay (`chancay-card-loop`) y radar de campo pulsante.
+    * *Sec. 8 (Estructura de Inversión):* Bucle continuo de resplandor perimetral en la Opción 1 de Compra Total USD $690,000,000 (`investment-card-loop`) y pulso continuo con haz de luz en el botón de envío de NDA (`santa-btn-pulse-loop`).
+  * **Footer Dedicado Santa (`SantaFooter.astro`):**
+    * Inclusión de la línea de contacto institucional y WhatsApp: **`+51 968899700`**, junto con la dirección de correo del Director de Inversiones `miguel.ampuero@sondecapital.com` y las oficinas corporativas en Texas y Lima.
+  * **Verificación & Despliegue en Producción:**
+    * Compilación con 0 errores mediante `npm run build`.
+    * Push a GitHub `main` y despliegue exitoso en producción en Vercel con alias activo en **`https://santa.sondecapital.com`**.

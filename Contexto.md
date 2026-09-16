@@ -226,17 +226,22 @@ Implementado siguiendo estrictamente las directrices de `animation-on-scroll`, `
 ## 13. Header Exclusivo y Navegación de Borboyona (`BorboyonaHeader.astro`)
 
 - **Componente:** [`src/components/BorboyonaHeader.astro`](file:///home/laptop/Documentos/mineria-sondecapital/src/components/BorboyonaHeader.astro).
-- **Logo Institucional:** Preserva exactamente el logotipo oficial de Sonde Capital (`/assets/sonde_logo_transparent.png`) con el subtítulo institucional Private Equity y etiqueta Borboyona.
-- **Navegación Técnica Directa (Desktop & Mobile Drawer):**
-  - **Estructura 6 km:** Enlace a `#tesoro`.
+- **Estilo Visual:** Fondo blanco translúcido (`bg-white/95 backdrop-blur-md`) con tipografía oscura de alto contraste (`text-slate-700`) y bordes nítidos (`border-slate-200/90`).
+- **Logo Institucional:** Preserva exactamente el logotipo oficial de Sonde Capital (`/assets/sonde_logo_transparent.png`) con el subtítulo institucional Private Equity y etiqueta Borboyona, con espaciado amplio (`mr-4 lg:mr-8 xl:mr-10`) para evitar cualquier colisión.
+- **Navegación Técnica Directa (Desktop & Mobile Drawer) en una sola línea (`whitespace-nowrap`):**
+  - **«El Tesoro»:** Enlace a `#tesoro` (destacado en dorado).
   - **Socavones:** Enlace a `#altitud`.
   - **Minerales Críticos:** Enlace a `#minerales`.
   - **Stanford / Antamina:** Enlace a `#benchmarking`.
   - **Megapuerto Chancay:** Enlace a `#logistica`.
-  - **Garantías Legales:** Enlace a `#garantias`.
+  - **Garantías:** Enlace a `#garantias`.
 - **CTA Único con Animación en Loop:**
   - Botón: **"Agendar Reunión"** enlazado directamente a `#contacto` / `#dataroom`.
   - Efecto: Animación continua de pulso dorado respiratorio (`headerCtaPulse` cada 3s) y destello de luz líquido (`headerCtaSweep` cada 3.2s) para maximizar la acción del inversionista institucional.
   - Soporte responsive con menú lateral desplegable para dispositivos móviles con cierre automático al hacer tap.
+
+### 13.1 Actualizaciones Globales en Footer y Contacto
+- **Proyectos Estratégicos:** Simplificado a **"Borboyona"** en los enlaces del pie de página.
+- **Teléfono Oficial Corporativo:** Actualizado a **`+51 968899700`** con enlace clickeable `tel:` en todos los portales y formularios de contacto.
 
 

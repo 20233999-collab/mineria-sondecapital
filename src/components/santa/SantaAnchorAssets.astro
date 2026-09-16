@@ -5,8 +5,8 @@
 <section id="anclas" class="py-20 sm:py-28 bg-slate-50 border-b border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <!-- Section Title -->
-    <div class="text-center max-w-3xl mx-auto mb-16">
+    <!-- Section Title (Animación de entrada) -->
+    <div class="text-center max-w-3xl mx-auto mb-16" data-animate="fade-up" data-delay="0">
       <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-800 text-xs font-bold uppercase tracking-wider mb-4">
         <i class="fa-solid fa-coins text-amber-600"></i>
         <span>Doble Motor de Flujo de Caja & Volumen Masivo</span>
@@ -22,16 +22,23 @@
     <!-- Two Monumental Honor Cards -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
       
-      <!-- Card 1: Oro Nativo (Au) -->
-      <div class="bg-white rounded-3xl p-8 sm:p-10 border-2 border-amber-400 shadow-xl shadow-amber-500/10 flex flex-col justify-between relative overflow-hidden group hover:border-amber-500 transition-all duration-300">
-        <div class="absolute top-0 right-0 bg-gradient-to-l from-amber-500 to-amber-600 text-slate-950 font-black text-[11px] uppercase tracking-widest px-4 py-1.5 rounded-bl-2xl shadow-sm">
+      <!-- Card 1: Oro Nativo (Au) - CON ANIMACIÓN EN LOOP CONTINUO -->
+      <div 
+        data-animate="fade-up" 
+        data-delay="150"
+        class="gold-card-loop bg-white rounded-3xl p-8 sm:p-10 border-2 border-amber-400 shadow-xl shadow-amber-500/10 flex flex-col justify-between relative overflow-hidden group hover:border-amber-500 transition-all duration-300"
+      >
+        <!-- Haz líquido reflectante continuo -->
+        <span class="gold-sheen-sweep absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-amber-400/20 to-transparent skew-x-12 pointer-events-none"></span>
+
+        <div class="absolute top-0 right-0 bg-gradient-to-l from-amber-500 to-amber-600 text-slate-950 font-black text-[11px] uppercase tracking-widest px-4 py-1.5 rounded-bl-2xl shadow-sm z-10">
           Valor Refugio & Liquidez Inmediata
         </div>
 
-        <div>
+        <div class="relative z-10">
           <!-- Header -->
           <div class="flex items-center gap-4 mb-6">
-            <div class="w-16 h-16 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-600 text-3xl font-black font-mono">
+            <div class="w-16 h-16 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-600 text-3xl font-black font-mono shadow-xs">
               Au
             </div>
             <div>
@@ -93,7 +100,7 @@
           </div>
         </div>
 
-        <div class="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+        <div class="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 relative z-10">
           <span class="flex items-center gap-1.5 text-slate-700 font-medium">
             <i class="fa-solid fa-circle-check text-amber-500 text-xs"></i>
             Validado por 6 estudios (1982–2004)
@@ -103,7 +110,11 @@
       </div>
 
       <!-- Card 2: Magnetita (Fe) -->
-      <div class="bg-white rounded-3xl p-8 sm:p-10 border-2 border-slate-300 shadow-xl shadow-slate-900/5 flex flex-col justify-between relative overflow-hidden group hover:border-slate-800 transition-all duration-300">
+      <div 
+        data-animate="fade-up" 
+        data-delay="300"
+        class="bg-white rounded-3xl p-8 sm:p-10 border-2 border-slate-300 shadow-xl shadow-slate-900/5 flex flex-col justify-between relative overflow-hidden group hover:border-slate-800 transition-all duration-300"
+      >
         <div class="absolute top-0 right-0 bg-gradient-to-l from-slate-900 to-slate-800 text-white font-black text-[11px] uppercase tracking-widest px-4 py-1.5 rounded-bl-2xl shadow-sm">
           Sustento de Volumen & Acero Verde
         </div>
@@ -159,9 +170,9 @@
                 Volumen Estimado In-Situ
               </span>
               <span class="text-xl sm:text-2xl font-black text-slate-900 font-mono">
-                700 MM TM
+                700,000,000,000 TM
               </span>
-              <span class="text-[11px] text-slate-700 block font-bold">USD $70,000,000,000</span>
+              <span class="text-[11px] text-slate-700 block font-bold">USD $700,000,000,000</span>
             </div>
           </div>
 
@@ -195,3 +206,43 @@
 
   </div>
 </section>
+
+<style>
+  /* =========================================================================
+     ANIMACIÓN EN LOOP CONTINUO PARA LA TARJETA DE ORO (Au)
+     ========================================================================= */
+  @keyframes goldCardPulse {
+    0%, 100% {
+      border-color: rgba(251, 191, 36, 0.75);
+      box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.18), 0 0 0 1px rgba(245, 158, 11, 0.25);
+    }
+    50% {
+      border-color: rgba(217, 119, 6, 1);
+      box-shadow: 0 20px 35px -5px rgba(245, 158, 11, 0.38), 0 0 25px 3px rgba(245, 158, 11, 0.35);
+    }
+  }
+
+  @keyframes goldSheenSweep {
+    0% {
+      transform: translateX(-150%) skewX(-20deg);
+    }
+    30%, 100% {
+      transform: translateX(250%) skewX(-20deg);
+    }
+  }
+
+  .gold-card-loop {
+    animation: goldCardPulse 3.8s ease-in-out infinite;
+  }
+
+  .gold-sheen-sweep {
+    animation: goldSheenSweep 4.2s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gold-card-loop,
+    .gold-sheen-sweep {
+      animation: none !important;
+    }
+  }
+</style>

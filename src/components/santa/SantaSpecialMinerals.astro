@@ -5,8 +5,8 @@
 <section id="especiales" class="py-20 bg-white border-b border-slate-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <!-- Section Header -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-slate-200 gap-4">
+    <!-- Section Header (Animación de entrada) -->
+    <div data-animate="fade-up" data-delay="0" class="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-slate-200 gap-4">
       <div>
         <span class="text-xs uppercase font-extrabold tracking-widest text-amber-600 block mb-1">
           Asociación Mineralógica Principal
@@ -23,9 +23,16 @@
     <!-- 5 Complementary Cards (Summed to Oro and Magnetita) -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       
-      <!-- Mineral 1: Monacita (Tierras Raras) - Featured Card -->
-      <div class="bg-gradient-to-br from-amber-500/10 via-white to-white rounded-2xl p-6 border-2 border-amber-400 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
-        <div>
+      <!-- Mineral 1: Monacita (Tierras Raras) - Featured Card CON ANIMACIÓN EN LOOP -->
+      <div 
+        data-animate="fade-up" 
+        data-delay="100"
+        class="monacita-card-loop bg-gradient-to-br from-amber-500/10 via-white to-white rounded-2xl p-6 border-2 border-amber-400 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden group"
+      >
+        <!-- Haz de destello continuo en loop -->
+        <span class="monacita-sheen-sweep absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-amber-400/20 to-transparent skew-x-12 pointer-events-none"></span>
+
+        <div class="relative z-10">
           <div class="flex items-start justify-between mb-3">
             <div>
               <span class="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-800 border border-amber-500/30">
@@ -48,14 +55,18 @@
           </div>
         </div>
 
-        <div class="pt-3 border-t border-amber-100 flex items-center justify-between text-[11px] text-slate-500">
+        <div class="pt-3 border-t border-amber-100 flex items-center justify-between text-[11px] text-slate-500 relative z-10">
           <span>Alta conc. en Guadalupito</span>
           <span class="font-bold text-amber-800">Mena Crítica</span>
         </div>
       </div>
 
       <!-- Mineral 2: Ilmenita -->
-      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:border-slate-400 transition-all duration-300 flex flex-col justify-between">
+      <div 
+        data-animate="fade-up" 
+        data-delay="200"
+        class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:border-slate-400 transition-all duration-300 flex flex-col justify-between"
+      >
         <div>
           <div class="flex items-start justify-between mb-3">
             <div>
@@ -87,7 +98,11 @@
       </div>
 
       <!-- Mineral 3: Andalucita -->
-      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:border-slate-400 transition-all duration-300 flex flex-col justify-between">
+      <div 
+        data-animate="fade-up" 
+        data-delay="300"
+        class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:border-slate-400 transition-all duration-300 flex flex-col justify-between"
+      >
         <div>
           <div class="flex items-start justify-between mb-3">
             <div>
@@ -119,7 +134,11 @@
       </div>
 
       <!-- Mineral 4: Circones -->
-      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:border-slate-400 transition-all duration-300 flex flex-col justify-between">
+      <div 
+        data-animate="fade-up" 
+        data-delay="400"
+        class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:border-slate-400 transition-all duration-300 flex flex-col justify-between"
+      >
         <div>
           <div class="flex items-start justify-between mb-3">
             <div>
@@ -151,7 +170,11 @@
       </div>
 
       <!-- Mineral 5: Hematita -->
-      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:border-slate-400 transition-all duration-300 flex flex-col justify-between">
+      <div 
+        data-animate="fade-up" 
+        data-delay="500"
+        class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs hover:border-slate-400 transition-all duration-300 flex flex-col justify-between"
+      >
         <div>
           <div class="flex items-start justify-between mb-3">
             <div>
@@ -186,3 +209,43 @@
 
   </div>
 </section>
+
+<style>
+  /* =========================================================================
+     ANIMACIÓN EN LOOP CONTINUO PARA LA TARJETA DE MONACITA
+     ========================================================================= */
+  @keyframes monacitaCardPulse {
+    0%, 100% {
+      border-color: rgba(245, 158, 11, 0.7);
+      box-shadow: 0 4px 18px -2px rgba(245, 158, 11, 0.18);
+    }
+    50% {
+      border-color: rgba(217, 119, 6, 1);
+      box-shadow: 0 8px 28px 2px rgba(245, 158, 11, 0.35);
+    }
+  }
+
+  @keyframes monacitaSheenSweep {
+    0% {
+      transform: translateX(-150%) skewX(-20deg);
+    }
+    30%, 100% {
+      transform: translateX(250%) skewX(-20deg);
+    }
+  }
+
+  .monacita-card-loop {
+    animation: monacitaCardPulse 3.5s ease-in-out infinite;
+  }
+
+  .monacita-sheen-sweep {
+    animation: monacitaSheenSweep 3.8s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .monacita-card-loop,
+    .monacita-sheen-sweep {
+      animation: none !important;
+    }
+  }
+</style>

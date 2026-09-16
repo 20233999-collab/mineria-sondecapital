@@ -210,14 +210,17 @@
       </div>
 
       <!-- Right Column (lg:col-span-5): Cuadro Resplandeciente con Movimiento Continuo -->
-      <div class="lg:col-span-5 usa-glow-card rounded-3xl p-7 sm:p-8 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border-2 flex flex-col justify-between relative overflow-hidden group geo-reveal" style="transition-delay: 0.25s;">
+      <div data-animate="fade-up" data-delay="250" class="lg:col-span-5 usa-glow-card rounded-3xl p-7 sm:p-8 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border-2 flex flex-col justify-between relative overflow-hidden group geo-reveal" style="transition-delay: 0.25s;">
         
+        <!-- Haz de destello transversal continuo en loop -->
+        <span class="usa-sweep-sheen absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-blue-400/20 to-transparent skew-x-12 pointer-events-none"></span>
+
         <!-- Glowing Ambient Radial (Soft Pulsing halo inside) -->
         <div class="absolute -top-24 -right-24 w-72 h-72 bg-blue-500/25 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
         <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
         <div>
-          <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
+          <div class="flex items-center justify-between pb-4 border-b border-slate-800 mb-6 relative z-10">
             <span class="text-xs font-extrabold uppercase tracking-wider text-amber-400 flex items-center gap-2">
               <i class="fa-solid fa-flag-usa text-amber-400"></i>
               <span>Ajuste Estratégico del Activo</span>
@@ -227,16 +230,16 @@
             </span>
           </div>
 
-          <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 leading-snug">
+          <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 leading-snug relative z-10">
             ¿Por Qué EE. UU. y Fondos Occidentales Deben Adquirir Las Arenas del Santa?
           </h3>
 
-          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 font-normal relative z-10">
             La adquisición de <strong class="text-white font-semibold">Las Arenas del Santa</strong> no es solo una transacción minera de alta rentabilidad por sus <strong class="text-amber-400">$690 MM+ USD</strong>; es una maniobra geopolítica indispensable para romper el cerco asiático en el Pacífico y asegurar minerales de defensa.
           </p>
 
           <!-- The Value Breakdown Bars (Gráfico de Valor In-Situ en Paleta Oficial: Oro y Azul) -->
-          <div class="space-y-4 bg-slate-950/85 p-4 sm:p-5 rounded-2xl border border-slate-800/90 mb-6">
+          <div class="space-y-4 bg-slate-950/85 p-4 sm:p-5 rounded-2xl border border-slate-800/90 mb-6 relative z-10">
             <div>
               <div class="flex justify-between text-xs font-semibold mb-1.5">
                 <span class="text-slate-300 flex items-center gap-1.5">
@@ -278,7 +281,7 @@
           </div>
         </div>
 
-        <div class="pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between">
+        <div class="pt-4 border-t border-slate-800 text-xs text-slate-400 flex items-center justify-between relative z-10">
           <span class="flex items-center gap-1.5 text-slate-300 font-medium">
             <i class="fa-solid fa-check text-amber-400"></i>
             Minería a cielo abierto (0% molienda de roca)
@@ -295,51 +298,43 @@
     <!-- 4 Pilares Gráficos de Ventaja Táctica -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       
-      <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800 hover:border-amber-500/40 transition-colors group geo-reveal" style="transition-delay: 0.5s;">
+      <div data-animate="fade-up" data-delay="300" class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800 hover:border-amber-500/40 transition-colors group geo-reveal" style="transition-delay: 0.5s;">
         <div class="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-sm mb-3 group-hover:scale-110 transition-transform">
           <i class="fa-solid fa-shield-halved"></i>
         </div>
-        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-1.5 group-hover:text-amber-400 transition-colors">
-          Autonomía Hemisférica
-        </h4>
-        <p class="text-[11px] text-slate-400 leading-relaxed">
-          Suministro seguro dentro de las Américas, mitigando los embargos de exportación impuestos por Pekín.
+        <h4 class="text-xs font-bold text-white mb-1">0% Curva Metalúrgica</h4>
+        <p class="text-[11px] text-slate-400 leading-snug">
+          Arenas desagregadas con separación gravimétrica y magnética convencional. Sin lixiviación ácida ni relaves tóxicos.
         </p>
       </div>
 
-      <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition-colors group geo-reveal" style="transition-delay: 0.6s;">
+      <div data-animate="fade-up" data-delay="380" class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition-colors group geo-reveal" style="transition-delay: 0.6s;">
         <div class="w-9 h-9 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-sm mb-3 group-hover:scale-110 transition-transform">
-          <i class="fa-solid fa-gears"></i>
+          <i class="fa-solid fa-industry"></i>
         </div>
-        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-1.5 group-hover:text-blue-400 transition-colors">
-          Plug & Play Metalúrgico
-        </h4>
-        <p class="text-[11px] text-slate-400 leading-relaxed">
-          Separación gravimétrica y magnética estándar ya dominada por la industria de arenas pesadas en Norteamérica.
+        <h4 class="text-xs font-bold text-white mb-1">Sinergia Directa con EE.UU.</h4>
+        <p class="text-[11px] text-slate-400 leading-snug">
+          Materia prima lista para alimentar la nueva refinería de tierras raras pesadas de Aclara en Luisiana (US$ 277 MM).
         </p>
       </div>
 
-      <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition-colors group geo-reveal" style="transition-delay: 0.7s;">
-        <div class="w-9 h-9 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-sm mb-3 group-hover:scale-110 transition-transform">
+      <div data-animate="fade-up" data-delay="460" class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800 hover:border-amber-500/40 transition-colors group geo-reveal" style="transition-delay: 0.7s;">
+        <div class="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-sm mb-3 group-hover:scale-110 transition-transform">
           <i class="fa-solid fa-scale-balanced"></i>
         </div>
-        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-1.5 group-hover:text-blue-400 transition-colors">
-          Blindaje Jurídico
-        </h4>
-        <p class="text-[11px] text-slate-400 leading-relaxed">
-          Convenios de estabilidad tributaria y cambiaria de 10 a 15 años amparados bajo el D.L. 109/708.
+        <h4 class="text-xs font-bold text-white mb-1">Seguridad Jurídica y TLC</h4>
+        <p class="text-[11px] text-slate-400 leading-snug">
+          Tratado de Libre Comercio Perú-EE.UU. vigente, convenios de estabilidad tributaria y 100% libre repatriación de capitales.
         </p>
       </div>
 
-      <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800 hover:border-amber-500/40 transition-colors group geo-reveal" style="transition-delay: 0.8s;">
-        <div class="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-sm mb-3 group-hover:scale-110 transition-transform">
-          <i class="fa-solid fa-coins"></i>
+      <div data-animate="fade-up" data-delay="540" class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/40 transition-colors group geo-reveal" style="transition-delay: 0.8s;">
+        <div class="w-9 h-9 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-sm mb-3 group-hover:scale-110 transition-transform">
+          <i class="fa-solid fa-anchor"></i>
         </div>
-        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-1.5 group-hover:text-amber-400 transition-colors">
-          Escudo de Oro Nativo
-        </h4>
-        <p class="text-[11px] text-slate-400 leading-relaxed">
-          20M oz de oro de placer que garantizan flujo de caja inmediato y amortiguan los ciclos de precios de las TTRR.
+        <h4 class="text-xs font-bold text-white mb-1">Costos Logísticos Mínimos</h4>
+        <p class="text-[11px] text-slate-400 leading-snug">
+          Plena conectividad marítima por la costa norte del Perú a nivel del mar, a 75 km de Salaverry y con enlace a Chancay.
         </p>
       </div>
 
@@ -369,6 +364,19 @@
     }
   }
 
+  @keyframes usaSweepSheen {
+    0% {
+      transform: translateX(-150%) skewX(-20deg);
+    }
+    30%, 100% {
+      transform: translateX(250%) skewX(-20deg);
+    }
+  }
+
+  .usa-sweep-sheen {
+    animation: usaSweepSheen 4.2s ease-in-out infinite;
+  }
+
   /* Animación de entrada fluida escalonada */
   .geo-reveal {
     opacity: 0;
@@ -379,6 +387,13 @@
   .geo-reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .usa-glow-card,
+    .usa-sweep-sheen {
+      animation: none !important;
+    }
   }
 </style>
 

@@ -221,3 +221,22 @@ Implementado siguiendo estrictamente las directrices de `animation-on-scroll`, `
 7. **Terminal de Envío de Data Room (Botón Submit):**
    - Botón de solicitud con micro-aura viva (`formSubmitPulse` cada 3.5s) y barrido de luz en el candado de seguridad.
 
+---
+
+## 13. Header Exclusivo y Navegación de Borboyona (`BorboyonaHeader.astro`)
+
+- **Componente:** [`src/components/BorboyonaHeader.astro`](file:///home/laptop/Documentos/mineria-sondecapital/src/components/BorboyonaHeader.astro).
+- **Logo Institucional:** Preserva exactamente el logotipo oficial de Sonde Capital (`/assets/sonde_logo_transparent.png`) con el subtítulo institucional Private Equity y etiqueta Borboyona.
+- **Navegación Técnica Directa (Desktop & Mobile Drawer):**
+  - **Estructura 6 km:** Enlace a `#tesoro`.
+  - **Socavones:** Enlace a `#altitud`.
+  - **Minerales Críticos:** Enlace a `#minerales`.
+  - **Stanford / Antamina:** Enlace a `#benchmarking`.
+  - **Megapuerto Chancay:** Enlace a `#logistica`.
+  - **Garantías Legales:** Enlace a `#garantias`.
+- **CTA Único con Animación en Loop:**
+  - Botón: **"Agendar Reunión"** enlazado directamente a `#contacto` / `#dataroom`.
+  - Efecto: Animación continua de pulso dorado respiratorio (`headerCtaPulse` cada 3s) y destello de luz líquido (`headerCtaSweep` cada 3.2s) para maximizar la acción del inversionista institucional.
+  - Soporte responsive con menú lateral desplegable para dispositivos móviles con cierre automático al hacer tap.
+
+

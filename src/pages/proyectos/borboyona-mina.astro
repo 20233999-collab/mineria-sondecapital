@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import BorboyonaHeader from '../../components/BorboyonaHeader.astro';
 import BorboyonaGalleryCarousel from '../../components/BorboyonaGalleryCarousel.astro';
 import BorboyonaAltitudeViewer from '../../components/BorboyonaAltitudeViewer.astro';
 import TesoroStructureExplorer from '../../components/TesoroStructureExplorer.astro';
@@ -11,7 +12,11 @@ import ChancayLogisticsCorridor from '../../components/ChancayLogisticsCorridor.
 <Layout
   title="Mina Polimetálica Borboyona & Tocllano | Sonde Capital"
   description="Depósito de skarn y vetas polimetálicas de alta ley de clase mundial en Huancavelica, Perú. +3,000 millones de toneladas de recursos inferidos, estructura El Tesoro de 6 km y leyes excepcionales de plata, cobre, plomo y zinc."
+  hideHeader={true}
 >
+  <!-- Header Institucional Slim & Navegación Exclusiva Borboyona -->
+  <BorboyonaHeader />
+
   <!-- 1. KINETIC SPATIAL HERO SECTION (HIGH DYNAMISM & IMPACT) -->
   <section class="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white pt-24 pb-20 sm:pt-36 sm:pb-32 border-b border-slate-800">
     <!-- Ambient texture and luminous atmospheric bloom -->
@@ -119,7 +124,7 @@ import ChancayLogisticsCorridor from '../../components/ChancayLogisticsCorridor.
   </section>
 
   <!-- 7. LEGAL, SOCIAL & PERU RISK-FREE ENVIRONMENT -->
-  <section class="py-14 sm:py-28 bg-slate-50 scroll-reveal">
+  <section id="garantias" class="py-14 sm:py-28 bg-slate-50 scroll-reveal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
         <span class="text-xs uppercase font-extrabold tracking-widest text-amber-600 block mb-2">
@@ -181,6 +186,7 @@ import ChancayLogisticsCorridor from '../../components/ChancayLogisticsCorridor.
 
   <!-- 8. DATA ROOM ACCESS TERMINAL & NDA REQUEST -->
   <section id="contacto" class="py-14 sm:py-24 bg-slate-950 text-white relative overflow-hidden scroll-reveal">
+    <div id="dataroom" class="absolute -top-24 pointer-events-none"></div>
     <div class="absolute top-0 right-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

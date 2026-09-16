@@ -43,7 +43,8 @@ El ecosistema representa tres activos estratégicos independientes en territorio
   * [`ChancayLogisticsCorridor.astro`](./src/components/ChancayLogisticsCorridor.astro) (Ruta logística al puerto de Chancay).
 * **Experiencia de Usuario en Hero:**
   * Coreografía de animación secuencial por capas: Título principal (0.2s) -> Descripción geológica (0.85s) -> CTAs directos (1.4s) -> Carrusel de muestras (1.75s).
-  * CTAs concisos y directos: `Solicitar Data Room` (ancla a `#dataroom` para captura de leads) y `Explorar Socavón` (ancla a `#altitud`).
+  * CTAs concisos y directos: `Solicitar Data Room` (ancla a `#dataroom` para captura de leads) con animación continua de atracción visual (aura dorada pulsante cada 3s + destello de luz líquido transversal) y `Explorar Socavón` (ancla a `#altitud`).
+  * Titular limpio sin redundancias: Eliminación del texto repetitivo «Depósito Polimetálico» en la cabecera.
   * Marca 100% institucional Sonde Capital (sin menciones a Lone Star Minerals).
 
 ---

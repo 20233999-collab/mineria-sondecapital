@@ -30,14 +30,11 @@ import ChancayLogisticsCorridor from '../../components/ChancayLogisticsCorridor.
       <!-- Status & Confidentiality Badge -->
       <div class="hero-enter-badge inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-slate-900/90 border border-amber-500/40 text-amber-300 text-[10px] sm:text-xs font-extrabold uppercase tracking-wider sm:tracking-widest mb-6 backdrop-blur-md shadow-lg shadow-amber-500/5 max-w-full text-center">
         <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping shrink-0"></span>
-        <span class="truncate sm:whitespace-normal">Activo Polimetálico de Escala Mundial · Oportunidad M&amp;A</span>
+        <span class="truncate sm:whitespace-normal">Oportunidad M&amp;A Institucional · Huancavelica, Perú</span>
       </div>
 
       <!-- Main Kinetic Headline (Paso 1: Aparece Primero) -->
       <div class="hero-enter-title max-w-5xl mx-auto mb-6">
-        <span class="text-[11px] sm:text-sm font-extrabold uppercase tracking-[0.25em] sm:tracking-[0.3em] text-slate-400 block mb-2">
-          Depósito Polimetálico de Escala Mundial · Perú
-        </span>
         <h1 class="text-3xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.15] sm:leading-[1.1]">
           Mina Polimetálica <br />
           <span class="relative inline-block mt-1 sm:mt-2">
@@ -56,14 +53,14 @@ import ChancayLogisticsCorridor from '../../components/ChancayLogisticsCorridor.
         Un yacimiento tipo Skarn y Vetas de alta ley con potencial documentado de <strong class="text-white">+3,000 Millones de Toneladas</strong>. Calificado por la Universidad de Stanford como un <em class="text-amber-300 not-italic font-bold">«monstruo geológico»</em> análogo a Antamina y Bingham Canyon.
       </p>
 
-      <!-- Action Buttons (Paso 3: Aparece después de la descripción - Opción 1 Concisa) -->
+      <!-- Action Buttons (Paso 3: Aparece después de la descripción - Opción 1 Concisa con Loop Atractivo) -->
       <div class="hero-enter-cta flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-lg mx-auto mb-10 sm:mb-14 w-full">
         <a
           href="#dataroom"
-          class="btn-nested w-full sm:w-auto bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 shadow-xl shadow-amber-500/10 group justify-center cursor-pointer"
+          class="btn-nested cta-attention-btn w-full sm:w-auto bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 shadow-xl shadow-amber-500/10 group justify-center cursor-pointer relative overflow-hidden"
         >
-          <span>Solicitar Data Room</span>
-          <div class="btn-nested-icon bg-slate-950/10 text-slate-950 shrink-0">
+          <span class="relative z-10">Solicitar Data Room</span>
+          <div class="btn-nested-icon bg-slate-950/10 text-slate-950 shrink-0 relative z-10">
             <i class="fa-solid fa-lock text-xs"></i>
           </div>
         </a>
@@ -417,12 +414,63 @@ import ChancayLogisticsCorridor from '../../components/ChancayLogisticsCorridor.
       will-change: transform, opacity;
     }
 
+    /* Attention-Grabbing Looping Animation for Primary CTA (Solicitar Data Room) */
+    .cta-attention-btn {
+      animation: ctaGoldAuraPulse 3s ease-in-out infinite;
+      will-change: transform, box-shadow;
+    }
+
+    /* Moving light sheen / continuous shimmer sweep */
+    .cta-attention-btn::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 50%;
+      height: 200%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.45),
+        transparent
+      );
+      transform: rotate(25deg);
+      animation: ctaSweepSheen 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      pointer-events-none;
+    }
+
+    @keyframes ctaGoldAuraPulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px 0 rgba(245, 158, 11, 0.35), 0 0 0 0 rgba(245, 158, 11, 0.4);
+      }
+      50% {
+        transform: scale(1.035);
+        box-shadow: 0 10px 32px 0 rgba(245, 158, 11, 0.65), 0 0 0 8px rgba(245, 158, 11, 0.15);
+      }
+    }
+
+    @keyframes ctaSweepSheen {
+      0%, 25% {
+        left: -60%;
+      }
+      70%, 100% {
+        left: 150%;
+      }
+    }
+
+    .cta-attention-btn:active {
+      transform: scale(0.97) !important;
+    }
+
     @media (prefers-reduced-motion: reduce) {
       .hero-enter-badge,
       .hero-enter-title,
       .hero-enter-desc,
       .hero-enter-cta,
-      .hero-enter-carousel {
+      .hero-enter-carousel,
+      .cta-attention-btn,
+      .cta-attention-btn::after {
         animation: none !important;
         opacity: 1 !important;
         transform: none !important;

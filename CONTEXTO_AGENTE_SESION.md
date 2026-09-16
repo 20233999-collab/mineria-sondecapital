@@ -157,3 +157,12 @@ Cualquier agente debe cumplir estrictamente las directrices del sistema de dise�
   * **Verificación & Despliegue en Producción:**
     * Compilación con 0 errores mediante `npm run build`.
     * Push a GitHub `main` y despliegue exitoso en producción en Vercel con alias activo en **`https://santa.sondecapital.com`**.
+
+* **2026-09-16 (Dinamización & Rediseño del Hero de Adriano - `adriano.sondecapital.com`):**
+  * **Título de Gran Impacto:** Modificado a **"El Monstruo Polimetálico de los Andes"** con degradado en oro/ámbar y tipografía imponente `Plus Jakarta Sans`.
+  * **Eliminación Total de la Descripción:** Se suprimió el bloque descriptivo y subtítulo del Hero, logrando una composición ultralimpia, contundente y de alta conversión ejecutiva.
+  * **Rediseño de CTAs (Cortos & Llamativos):**
+    * *CTA Primario:* **"Solicitar Data Room"** (enlace a `#contacto`) con clase `.adriano-cta-primary-loop`, halo perimetral respiratorio continuo y haz de luz líquida transversal (`adrianoLiquidSheen`).
+    * *CTA Secundario:* **"Explorar 41 Elementos"** (enlace a `#elementos`) con acabado en cristal oscuro satinado e icono dinámico de átomo.
+  * **Animaciones de Entrada Escalonadas:** Secuencia fluida mediante CSS keyframes acelerados por GPU y atributos `data-animate="fade-up"` (Badge: 0.05s / 100ms -> Título: 0.18s / 200ms -> CTAs: 0.32s / 350ms -> Cinta de Laboratorios: 0.46s / 500ms).
+  * **Verificación & Despliegue en Producción:** Verificado con `npm run build` (0 errores) y desplegado en Vercel con alias activo en **`https://adriano.sondecapital.com`**.

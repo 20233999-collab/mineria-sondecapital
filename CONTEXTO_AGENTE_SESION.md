@@ -121,3 +121,13 @@ Cualquier agente debe cumplir estrictamente las directrices del sistema de dise�
     2. *Capa Secundaria / Fallback:* En caso de adblockers o fallo de red, se muestra una alerta con enlace directo `mailto:miguel.ampuero@sondecapital.com` pre-rellenado con todos los datos ingresados por el inversionista.
   * **Activación de FormSubmit:** Se disparó la solicitud de activación inicial hacia `miguel.ampuero@sondecapital.com`. Una vez que Miguel pulse el botón "Activate Form" en su bandeja de entrada, todos los envíos llegarán de forma automática.
   * **Compilación & Despliegue:** `npm run build` verificado con éxito (0 errores). Commit `58aa631` subido exitosamente a la rama `main` en GitHub.
+
+* **2026-09-16 (Implementación Opción B: Serverless + Resend API):**
+  * **Arquitectura Transaccional:** Se creó el endpoint serverless [`api/contact.js`](./api/contact.js) para procesar solicitudes de leads institucionales con plantilla HTML ejecutiva (branding Sonde Capital, modo Navy & Gold, metadatos y botón de respuesta directa).
+  * **Variables de Entorno:**
+    * Inyectadas en `.env.local` (protegido por `.gitignore`, sin exposición en git).
+    * Inyectadas en Vercel vía CLI para `Production`, `Preview` y `Development`: `RESEND_API_KEY`, `LEADS_EMAIL_PRIMARY` (`miguel.ampuero333@gmail.com`), `LEADS_EMAIL_SECONDARY` (`miguel.ampuero@sondecapital.com`).
+  * **Conexión de Formularios:** Actualizados los 4 formularios ([`index.astro`](./src/pages/index.astro), [`borboyona-mina.astro`](./src/pages/proyectos/borboyona-mina.astro), [`AdrianoDataRoomContact.astro`](./src/components/adriano/AdrianoDataRoomContact.astro), [`SantaInvestmentRoom.astro`](./src/components/santa/SantaInvestmentRoom.astro)) para despachar hacia `/api/contact`.
+  * **Middleware Local:** Añadido plugin `devApiPlugin` en [`astro.config.mjs`](./astro.config.mjs) para habilitar pruebas completas en entorno local (`astro dev`).
+  * **Verificación de Entrega:** Entrega probada y confirmada con Resend hacia la cuenta verificada `mi.ampueroo@gmail.com` (IDs de entrega `77456a75...` y `9263798b...`).
+  * **Doble Respaldo:** Mecanismo híbrido que despacha por Resend y simultáneamente activa respaldo FormSubmit hacia ambas cuentas solicitadas.

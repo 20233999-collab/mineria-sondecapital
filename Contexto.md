@@ -78,7 +78,7 @@ El ecosistema representa tres activos estratégicos independientes en territorio
   3. **Minerales Críticos de Defensa:** Monacita, Hafnio (para barras de control en reactores nucleares/navales de EE.UU.) y Escandio (superaleaciones ligeras de aluminio-escandio para cazas F-35 y fuselajes hipersónicos).
 * **Eje Geopolítico:** Basado en el **Memorándum de Entendimiento (MoU) sobre Cooperación en Minerales Críticos Perú-Estados Unidos (Febrero 2026)**.
 * **Componentes Clave (en [`src/components/santa/`](./src/components/santa/)):**
-  * `SantaHero.astro`: Resumen ejecutivo en dos líneas con métricas principales.
+  * `SantaHero.astro`: Portada de alto impacto con fotografía real visible de la mina, coreografía de entrada secuencial en 4 fases (Título -> Tesis de concentración -> CTAs -> Validación ALS), eliminación de texto redundante y CTAs rediseñados (`Solicitar Data Room` con loop continuo áureo + `Explorar 32 Elementos`).
   * `SantaAnchorAssets.astro`: Módulos Bento de los 2 motores de valorización (Oro y Magnetita).
   * `SantaElementsMatrix.astro`: Matriz de 32 minerales certificados por laboratorios ALS.
   * `SantaGeopoliticsUsa.astro`: Eje de cooperación bilateral con EE.UU. (MoU 2026).

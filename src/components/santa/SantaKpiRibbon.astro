@@ -2,11 +2,11 @@
 // Bento Grid de Escala & Métricas Verificadas para Las Arenas del Santa
 ---
 
-<section id="escala" class="py-16 sm:py-20 bg-slate-900 border-y border-slate-800 relative z-20">
+<section id="escala" class="py-16 sm:py-20 bg-slate-900 border-y border-slate-800 relative z-20 overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <!-- Section Title & Context -->
-    <div class="text-center max-w-3xl mx-auto mb-12">
+    <!-- Section Title & Context (Animación de entrada Fase 1) -->
+    <div class="text-center max-w-3xl mx-auto mb-12" data-animate="fade-up" data-delay="0">
       <span class="text-xs uppercase font-extrabold tracking-widest text-amber-400 block mb-2">
         Pilares Cuantitativos de la Transacción
       </span>
@@ -18,21 +18,29 @@
       </p>
     </div>
 
-    <!-- 6 Bento Grid Cards -->
+    <!-- 6 Bento Grid Cards con Stagger de Entrada -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       
-      <!-- Card 1: $690 MM+ USD (Sale / Asking Price) - Featured Accent -->
-      <div class="bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 border-2 border-amber-500/80 rounded-2xl p-7 shadow-xl shadow-amber-500/10 flex flex-col justify-between relative overflow-hidden group hover:border-amber-400 transition-all duration-300">
-        <div class="absolute -top-12 -right-12 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl pointer-events-none"></div>
+      <!-- Card 1: $690 MM+ USD (Sale / Asking Price) - Featured Accent con LOOP CONTINUO -->
+      <div 
+        data-animate="fade-up" 
+        data-delay="100"
+        class="card-glow-loop bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 border-2 border-amber-500/80 rounded-2xl p-7 shadow-xl shadow-amber-500/10 flex flex-col justify-between relative overflow-hidden group hover:border-amber-300 transition-all duration-300"
+      >
+        <!-- Aura respiratoria en loop -->
+        <div class="card-orb-loop absolute -top-12 -right-12 w-36 h-36 bg-amber-500/20 rounded-full blur-2xl pointer-events-none"></div>
         
-        <div class="flex items-center justify-between mb-4">
+        <!-- Haz de destello transversal en loop -->
+        <span class="card-sweep-sheen absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-amber-400/15 to-transparent skew-x-12 pointer-events-none"></span>
+
+        <div class="flex items-center justify-between mb-4 relative z-10">
           <span class="text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
             Adquisición Completa
           </span>
           <i class="fa-solid fa-crown text-amber-400 text-sm animate-pulse"></i>
         </div>
 
-        <div>
+        <div class="relative z-10">
           <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Precio de Venta Solicitado</p>
           <div class="flex items-baseline gap-1 text-3xl sm:text-4xl font-black text-white font-mono tracking-tight text-amber-400">
             <span class="scramble-santa" data-final="$690 MM+ USD" data-delay="0">$690 MM+ USD</span>
@@ -42,14 +50,18 @@
           </p>
         </div>
 
-        <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-amber-400 font-semibold">
+        <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-amber-400 font-semibold relative z-10">
           <span>Sujeto a Due Diligence</span>
           <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
         </div>
       </div>
 
       <!-- Card 2: 32 Elementos Confirmados -->
-      <div class="bg-slate-950 border border-slate-800 hover:border-slate-700 rounded-2xl p-7 shadow-lg flex flex-col justify-between group transition-all duration-300">
+      <div 
+        data-animate="fade-up" 
+        data-delay="200"
+        class="bg-slate-950 border border-slate-800 hover:border-slate-700 rounded-2xl p-7 shadow-lg flex flex-col justify-between group transition-all duration-300"
+      >
         <div class="flex items-center justify-between mb-4">
           <span class="text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full bg-teal-500/15 text-teal-400 border border-teal-500/30">
             Espectro Elemental
@@ -74,7 +86,11 @@
       </div>
 
       <!-- Card 3: 2,100 Hectáreas (45 km) -->
-      <div class="bg-slate-950 border border-slate-800 hover:border-slate-700 rounded-2xl p-7 shadow-lg flex flex-col justify-between group transition-all duration-300">
+      <div 
+        data-animate="fade-up" 
+        data-delay="300"
+        class="bg-slate-950 border border-slate-800 hover:border-slate-700 rounded-2xl p-7 shadow-lg flex flex-col justify-between group transition-all duration-300"
+      >
         <div class="flex items-center justify-between mb-4">
           <span class="text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full bg-blue-500/15 text-blue-400 border border-blue-500/30">
             Escala Territorial
@@ -98,8 +114,12 @@
         </div>
       </div>
 
-      <!-- Card 4: 700 MM TM Magnetita -->
-      <div class="bg-slate-950 border border-slate-800 hover:border-slate-700 rounded-2xl p-7 shadow-lg flex flex-col justify-between group transition-all duration-300">
+      <!-- Card 4: 700,000,000,000 Magnetita (Actualizado a 700,000,000,000 TM) -->
+      <div 
+        data-animate="fade-up" 
+        data-delay="400"
+        class="bg-slate-950 border border-slate-800 hover:border-slate-700 rounded-2xl p-7 shadow-lg flex flex-col justify-between group transition-all duration-300"
+      >
         <div class="flex items-center justify-between mb-4">
           <span class="text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
             Volumen Siderúrgico
@@ -109,11 +129,11 @@
 
         <div>
           <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Recurso de Magnetita (Fe)</p>
-          <div class="text-3xl sm:text-4xl font-black text-white font-mono tracking-tight">
-            <span class="scramble-santa" data-final="700 MM TM" data-delay="900">700 MM TM</span>
+          <div class="text-2xl sm:text-3xl lg:text-2xl xl:text-3xl font-black text-white font-mono tracking-tight">
+            <span class="scramble-santa" data-final="700,000,000,000 TM" data-delay="900">700,000,000,000 TM</span>
           </div>
           <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-            Hasta 12% en arenas negras de Prioridad 1. Aporta USD $70,000,000,000 in-situ para la industria global de acero verde.
+            Hasta 12% en arenas negras de Prioridad 1. Aporta USD $700,000,000,000 in-situ para la industria global de acero verde.
           </p>
         </div>
 
@@ -124,7 +144,11 @@
       </div>
 
       <!-- Card 5: 20 MM Oz Au Potencial -->
-      <div class="bg-slate-950 border border-slate-800 hover:border-slate-700 rounded-2xl p-7 shadow-lg flex flex-col justify-between group transition-all duration-300">
+      <div 
+        data-animate="fade-up" 
+        data-delay="500"
+        class="bg-slate-950 border border-slate-800 hover:border-slate-700 rounded-2xl p-7 shadow-lg flex flex-col justify-between group transition-all duration-300"
+      >
         <div class="flex items-center justify-between mb-4">
           <span class="text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">
             Valor Refugio
@@ -149,7 +173,11 @@
       </div>
 
       <!-- Card 6: 100% Cielo Abierto & Logística -->
-      <div class="bg-slate-950 border border-slate-800 hover:border-slate-700 rounded-2xl p-7 shadow-lg flex flex-col justify-between group transition-all duration-300">
+      <div 
+        data-animate="fade-up" 
+        data-delay="600"
+        class="bg-slate-950 border border-slate-800 hover:border-slate-700 rounded-2xl p-7 shadow-lg flex flex-col justify-between group transition-all duration-300"
+      >
         <div class="flex items-center justify-between mb-4">
           <span class="text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
             Operatividad Total
@@ -178,13 +206,72 @@
   </div>
 </section>
 
+<style>
+  /* =========================================================================
+     ANIMACIONES EN LOOP CONTINUO PARA LA TARJETA PRINCIPAL ($690 MM+ USD)
+     1. cardGlowPulse: Pulso perimetral dorado continuo (3.5s)
+     2. cardSheenSweep: Haz de luz líquido que cruza la tarjeta (3.8s)
+     3. cardOrbBreathe: Respiración del fondo lumínico difuso (3.5s)
+     ========================================================================= */
+  @keyframes cardGlowPulse {
+    0%, 100% {
+      border-color: rgba(245, 158, 11, 0.75);
+      box-shadow: 0 0 16px 1px rgba(245, 158, 11, 0.22), 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+      border-color: rgba(251, 191, 36, 1);
+      box-shadow: 0 0 32px 3px rgba(245, 158, 11, 0.42), 0 25px 35px -5px rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  @keyframes cardSheenSweep {
+    0% {
+      transform: translateX(-150%) skewX(-20deg);
+    }
+    32%, 100% {
+      transform: translateX(250%) skewX(-20deg);
+    }
+  }
+
+  @keyframes cardOrbBreathe {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(0.95);
+    }
+    50% {
+      opacity: 0.75;
+      transform: scale(1.15);
+    }
+  }
+
+  .card-glow-loop {
+    animation: cardGlowPulse 3.5s ease-in-out infinite;
+  }
+
+  .card-sweep-sheen {
+    animation: cardSheenSweep 3.8s ease-in-out infinite;
+  }
+
+  .card-orb-loop {
+    animation: cardOrbBreathe 3.5s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card-glow-loop,
+    .card-sweep-sheen,
+    .card-orb-loop {
+      animation: none !important;
+    }
+  }
+</style>
+
 <!-- Progressive Cascading Number Scramble Animation Script -->
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
     const scrambleElements = document.querySelectorAll('.scramble-santa');
     if (!scrambleElements.length) return;
 
-    const chars = '0123456789$MB+ha%km.,';
+    const chars = '0123456789$MB+ha%km.,TM';
     let observerTriggered = false;
 
     const runScramble = (el) => {
@@ -231,3 +318,4 @@
     }
   });
 </script>
+

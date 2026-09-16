@@ -41,6 +41,10 @@ El ecosistema representa tres activos estratégicos independientes en territorio
   * [`BorboyonaAltitudeViewer.astro`](./src/components/BorboyonaAltitudeViewer.astro) (Visualizador de cotas y relieve geográfico).
   * [`TesoroStructureExplorer.astro`](./src/components/TesoroStructureExplorer.astro) (Explorador interactivo de la veta El Tesoro).
   * [`ChancayLogisticsCorridor.astro`](./src/components/ChancayLogisticsCorridor.astro) (Ruta logística al puerto de Chancay).
+* **Experiencia de Usuario en Hero:**
+  * Coreografía de animación secuencial por capas: Título principal (0.2s) -> Descripción geológica (0.85s) -> CTAs directos (1.4s) -> Carrusel de muestras (1.75s).
+  * CTAs concisos y directos: `Solicitar Data Room` (ancla a `#dataroom` para captura de leads) y `Explorar Socavón` (ancla a `#altitud`).
+  * Marca 100% institucional Sonde Capital (sin menciones a Lone Star Minerals).
 
 ---
 

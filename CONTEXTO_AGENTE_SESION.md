@@ -180,3 +180,9 @@ Cualquier agente debe cumplir estrictamente las directrices del sistema de dise�
   * **Verificación & Despliegue en Producción:**
     * Compilación con 0 errores mediante `npm run build`.
     * Push a GitHub `main` y despliegue inmediato en producción en Vercel con alias activo en **`https://adriano.sondecapital.com`**.
+
+* **2026-09-24 (Ajuste de Títulos Oficiales en Plataformas de Adriano y Borboyona):**
+  * **Mina Adriano (`adriano.sondecapital.com`):** Retorno al nombre canónico **"Mina Polimetálica Adriano"** tanto en `<title>` como en el display H1 del Hero (`AdrianoHero.astro` y `metales-adriano.astro`).
+  * **Mina Borboyona (`borboyona.sondecapital.com`):** Asignación del título oficial de impacto **"El Monstruo Polimetálico de los Andes"** tanto en `<title>` como en el display H1 del Hero (`borboyona-mina.astro`), en plena correspondencia con la calificación geológica de Stanford.
+  * **Verificación & Despliegue:** Compilación con 0 errores y sincronización en GitHub y Vercel.
+

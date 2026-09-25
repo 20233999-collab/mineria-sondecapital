@@ -3,7 +3,7 @@
 > **Aviso para Agentes de IA & Desarrolladores:**  
 > Este documento es la **Fuente Única de Verdad (Single Source of Truth)** de todo el ecosistema digital de Sonde Capital. Contiene la visión corporativa, el detalle técnico-financiero de los 3 megaproyectos mineros, las directrices de diseño institucional, la infraestructura de hosting/subdominios y el funcionamiento de la canalización de leads mediante funciones serverless.
 >
-> **Última actualización:** 16 de Septiembre de 2026.
+> **Última actualización:** 25 de Septiembre de 2026.
 
 ---
 
@@ -27,7 +27,7 @@
 
 El ecosistema representa tres activos estratégicos independientes en territorio peruano:
 
-### A. Mina Polimetálica Borboyona & Tocllano (Huancavelica)
+### A. Borboyona "El Monstruo Polimetálico de los Andes" (Huancavelica)
 * **Subdominio de Producción:** `borboyona.sondecapital.com`
 * **Ruta en Astro:** [`src/pages/proyectos/borboyona-mina.astro`](./src/pages/proyectos/borboyona-mina.astro)
 * **Tipo de Yacimiento:** Skarn Polimetálico masivo de alta ley (Cobre, Plata, Plomo, Zinc y Oro).
@@ -49,7 +49,7 @@ El ecosistema representa tres activos estratégicos independientes en territorio
 
 ---
 
-### B. Metales Estratégicos & Tierras Raras Adriano (Sur del Perú)
+### B. "Adriano" Mina de Tierras Raras y Metales Estratégicos (Sur del Perú)
 * **Subdominio de Producción:** `adriano.sondecapital.com`
 * **Ruta en Astro:** [`src/pages/proyectos/metales-adriano.astro`](./src/pages/proyectos/metales-adriano.astro)
 * **Documento Rector:** [`PRD_REDISENO_ADRIANO.md`](./PRD_REDISENO_ADRIANO.md)
@@ -94,8 +94,8 @@ El ecosistema representa tres activos estratégicos independientes en territorio
 * **Hosting & CDN:** [Vercel](https://vercel.com) con reescrituras de dominio basadas en el encabezado `Host` configuradas en [`vercel.json`](./vercel.json).
 * **Subdominios Oficiales en Vercel:**
   * `sondecapital.com` -> Portal Corporativo (`src/pages/index.astro`)
-  * `borboyona.sondecapital.com` -> Mina Borboyona (`src/pages/proyectos/borboyona-mina.astro`)
-  * `adriano.sondecapital.com` -> Metales Adriano (`src/pages/proyectos/metales-adriano.astro`)
+  * `borboyona.sondecapital.com` -> Borboyona "El Monstruo Polimetálico de los Andes" (`src/pages/proyectos/borboyona-mina.astro`)
+  * `adriano.sondecapital.com` -> "Adriano" Mina de Tierras Raras y Metales Estratégicos (`src/pages/proyectos/metales-adriano.astro`)
   * `santa.sondecapital.com` -> Mina Las Arenas del Santa (`src/pages/proyectos/arenas-del-santa.astro`)
 
 ---

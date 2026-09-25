@@ -35,8 +35,8 @@ El repositorio unifica la web corporativa principal y tres plataformas satélite
 | Proyecto | Subdominio de Producción | Ruta en Astro | Archivo Fuente Principal |
 | :--- | :--- | :--- | :--- |
 | **Corporativo Sonde Capital** | `sondecapital.com` | `/` | [`src/pages/index.astro`](file:///home/laptop/Documentos/mineria-sondecapital/src/pages/index.astro) |
-| **Mina Polimetálica Borboyona** | `borboyona.sondecapital.com` | `/proyectos/borboyona-mina` | [`src/pages/proyectos/borboyona-mina.astro`](file:///home/laptop/Documentos/mineria-sondecapital/src/pages/proyectos/borboyona-mina.astro) |
-| **Metales Estratégicos Adriano** | `adriano.sondecapital.com` | `/proyectos/metales-adriano` | [`src/pages/proyectos/metales-adriano.astro`](file:///home/laptop/Documentos/mineria-sondecapital/src/pages/proyectos/metales-adriano.astro) |
+| **Borboyona "El Monstruo Polimetálico de los Andes"** | `borboyona.sondecapital.com` | `/proyectos/borboyona-mina` | [`src/pages/proyectos/borboyona-mina.astro`](file:///home/laptop/Documentos/mineria-sondecapital/src/pages/proyectos/borboyona-mina.astro) |
+| **"Adriano" Mina de Tierras Raras y Metales Estratégicos** | `adriano.sondecapital.com` | `/proyectos/metales-adriano` | [`src/pages/proyectos/metales-adriano.astro`](file:///home/laptop/Documentos/mineria-sondecapital/src/pages/proyectos/metales-adriano.astro) |
 | **Las Arenas del Santa** | `santa.sondecapital.com` | `/proyectos/arenas-del-santa` | [`src/pages/proyectos/arenas-del-santa.astro`](file:///home/laptop/Documentos/mineria-sondecapital/src/pages/proyectos/arenas-del-santa.astro) |
 
 *Nota de redirecciones:* Existen rutas cortas de conveniencia en `src/pages/` (`borboyona.astro`, `arenas-del-santa.astro`, `metales-adriano.astro`, `mina-borboyona.astro`) que ejecutan `Astro.redirect()` a su ruta definitiva bajo `/proyectos/`.
@@ -181,8 +181,9 @@ Cualquier agente debe cumplir estrictamente las directrices del sistema de dise�
     * Compilación con 0 errores mediante `npm run build`.
     * Push a GitHub `main` y despliegue inmediato en producción en Vercel con alias activo en **`https://adriano.sondecapital.com`**.
 
-* **2026-09-24 (Ajuste de Títulos Oficiales en Plataformas de Adriano y Borboyona):**
-  * **Mina Adriano (`adriano.sondecapital.com`):** Retorno al nombre canónico **"Mina Polimetálica Adriano"** tanto en `<title>` como en el display H1 del Hero (`AdrianoHero.astro` y `metales-adriano.astro`).
-  * **Mina Borboyona (`borboyona.sondecapital.com`):** Asignación del título oficial de impacto **"El Monstruo Polimetálico de los Andes"** tanto en `<title>` como en el display H1 del Hero (`borboyona-mina.astro`), en plena correspondencia con la calificación geológica de Stanford.
-  * **Verificación & Despliegue:** Compilación con 0 errores y sincronización en GitHub y Vercel.
+* **2026-09-25 (Ajuste de Títulos Oficiales en Plataformas de Adriano y Borboyona):**
+  * **Mina Adriano (`adriano.sondecapital.com`):** Configurado el título oficial **"Adriano" Mina de Tierras Raras y Metales Estratégicos** tanto en `<title>` como en el display H1 del Hero (`AdrianoHero.astro` y `metales-adriano.astro`).
+  * **Mina Borboyona (`borboyona.sondecapital.com`):** Configurado el título oficial **Borboyona "El Monstruo Polimetálico de los Andes"** tanto en `<title>` como en el display H1 del Hero (`borboyona-mina.astro`).
+  * **Documentación & Despliegue:** Sincronizados `Contexto.md`, `CONTEXTO_AGENTE_SESION.md`, subida a GitHub `main` y despliegue a producción en Vercel.
+
 
